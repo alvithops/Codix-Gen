@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SustainAI - Reports &amp; Export Summary</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "brand-mint-subtle": "#ECFDF5",
+          "on-tertiary-fixed": "#2f1500",
+          "brand-emerald-dark": "#047857",
+          "info-sky": "#0284C7",
+          "info-sky-subtle": "#E0F2FE",
+          "surface-variant": "#d3e4fe",
+          "on-secondary": "#ffffff",
+          "secondary": "#006a61",
+          "accent-teal-subtle": "#CCFBF1",
+          "on-error-container": "#93000a",
+          "border-focus": "#10B981",
+          "secondary-fixed-dim": "#6bd8cb",
+          "text-strong": "#0F172A",
+          "tertiary-container": "#b15f00",
+          "border-subtle": "#E2E8F0",
+          "accent-teal": "#0F766E",
+          "danger-rose": "#E11D48",
+          "primary-fixed-dim": "#68dba9",
+          "danger-rose-subtle": "#FFE4E6",
+          "brand-forest": "#064E3B",
+          "surface-container-high": "#dce9ff",
+          "surface-container-highest": "#d3e4fe",
+          "error": "#ba1a1a",
+          "background": "#f8f9ff",
+          "surface-card-subtle": "#F1F5F9",
+          "surface": "#f8f9ff",
+          "on-primary-fixed-variant": "#005137",
+          "accent-amber": "#F59E0B",
+          "on-tertiary-container": "#fffbff",
+          "primary-fixed": "#85f8c4",
+          "on-surface": "#0b1c30",
+          "accent-amber-subtle": "#FEF3C7",
+          "surface-card": "#FFFFFF",
+          "tertiary-fixed": "#ffdcc3",
+          "inverse-surface": "#213145",
+          "on-secondary-fixed": "#00201d",
+          "surface-container-lowest": "#ffffff",
+          "primary-container": "#00855d",
+          "outline": "#6d7a72",
+          "surface-bright": "#f8f9ff",
+          "surface-container-low": "#eff4ff",
+          "on-background": "#0b1c30",
+          "tertiary-fixed-dim": "#ffb77d",
+          "on-primary": "#ffffff",
+          "brand-mint": "#34D399",
+          "error-container": "#ffdad6",
+          "tertiary": "#8d4b00",
+          "secondary-container": "#86f2e4",
+          "text-muted": "#64748B",
+          "on-surface-variant": "#3d4a42",
+          "on-primary-container": "#f5fff7",
+          "on-secondary-fixed-variant": "#005049",
+          "on-secondary-container": "#006f66",
+          "surface-base": "#F8FAFC",
+          "outline-variant": "#bccac0",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "surface-container": "#e5eeff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#eaf1ff",
+          "surface-tint": "#006c4a",
+          "on-tertiary": "#ffffff",
+          "on-error": "#ffffff",
+          "surface-dim": "#cbdbf5",
+          "secondary-fixed": "#89f5e7",
+          "inverse-primary": "#68dba9",
+          "primary": "#006948"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "gutter-mobile": "0.75rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "body-lg": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "display-hero": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "metric-display": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "code-mono": [
+            "monospace"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.005em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "22px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "metric-display": [
+            "32px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "code-mono": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "26px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex">
+<!-- Left Side Navigation Bar (SideNavBar) -->
+<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm select-none">
+<div class="flex flex-col gap-6">
+<!-- Brand Header -->
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</div>
+<div class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav aria-label="Main Navigation" class="flex flex-col gap-1.5">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-text-muted" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Waste Classifier -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-text-muted" data-icon="delete">delete</span>
+<span>Waste Classifier</span>
+</a>
+<!-- CV Analyzer -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-text-muted" data-icon="document_scanner">document_scanner</span>
+<span>CV Analyzer</span>
+</a>
+<!-- Plant Disease -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-text-muted" data-icon="potted_plant">potted_plant</span>
+<span>Plant Disease</span>
+</a>
+<!-- Reports (ACTIVE TAB) -->
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold text-label-md font-label-md shadow-sm border border-emerald-100" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="bar_chart" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+<span>Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-text-muted" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Section -->
+<div class="flex flex-col gap-4">
+<!-- SDG Compliance Badge -->
+<div class="p-3 bg-brand-mint-subtle/80 border border-emerald-200/60 rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-label-sm font-label-sm font-bold text-brand-forest uppercase tracking-wider">SDG Audit Level</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary">Tier 1</span>
+</div>
+<div class="text-label-sm font-label-sm text-text-muted leading-tight mb-2">9 Targets Verified on Blockchain &amp; ESG Standards</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94%]"></div>
+</div>
+</div>
+<!-- Upgrade Pro CTA Button -->
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-lg text-label-md font-label-md shadow-sm hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+<span>Upgrade Pro</span>
+</button>
+<!-- Language & User Profile Section -->
+<div class="pt-3 border-t border-border-subtle flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-muted px-1 text-label-md font-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
+<span>Language: EN</span>
+</div>
+<div class="inline-flex bg-surface-card-subtle p-0.5 rounded border border-border-subtle text-[11px] font-semibold">
+<span class="px-1.5 py-0.5 rounded bg-surface-card text-text-strong shadow-xs">EN</span>
+<span class="px-1.5 py-0.5 text-text-muted cursor-pointer hover:text-text-strong">ID</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-base border border-border-subtle mt-1">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim text-brand-forest flex items-center justify-center font-bold text-label-md">
+            AM
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="text-label-md font-label-md text-text-strong truncate">Alex Mercer</div>
+<div class="text-label-sm font-label-sm text-text-muted truncate">Lead Sustainability Auditor</div>
+</div>
+<span class="material-symbols-outlined text-text-muted cursor-pointer hover:text-text-strong" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper with Left Margin for Fixed Sidebar -->
+<div class="flex-1 ml-64 flex flex-col min-w-0">
+<!-- Docked Sticky Top Navigation Bar -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+<!-- Breadcrumbs & Search Area -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-label-md font-label-md text-text-muted">
+<span class="text-primary font-bold">SustainAI</span>
+<span class="text-slate-300">/</span>
+<span>Apps</span>
+<span class="text-slate-300">/</span>
+<span class="text-text-strong font-semibold">Reports &amp; Export Center</span>
+</div>
+<!-- Telemetry Status Tag -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 bg-brand-mint-subtle border border-emerald-200/60 rounded-full text-label-sm font-label-sm text-brand-forest">
+<span class="w-2 h-2 rounded-full bg-brand-emerald-dark animate-pulse"></span>
+<span>System Operational</span>
+<span class="text-slate-300">•</span>
+<span class="font-code-mono text-code-mono">310ms latency</span>
+<span class="text-slate-300">•</span>
+<span>Gemini 1.5 Flash Active</span>
+</div>
+</div>
+<!-- Navigation Links & Trailing Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-5 mr-2">
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">Live Diagnostics</a>
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">SDG Goals</a>
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">Documentation</a>
+</div>
+<!-- Quick Filter Period -->
+<div class="relative inline-flex items-center">
+<select aria-label="Select report timeframe" class="h-9 pl-3 pr-8 bg-surface-card border border-border-subtle rounded-lg text-label-md font-label-md text-text-strong focus:border-border-focus focus:ring-1 focus:ring-border-focus cursor-pointer appearance-none">
+<option>This Month (Nov 2026)</option>
+<option>Last 30 Days</option>
+<option>Quarterly Q4 2026</option>
+<option>Year-to-Date (2026)</option>
+<option>Custom Range...</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 text-text-muted text-lg" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Trailing Icon Actions -->
+<button aria-label="Notifications" class="w-9 h-9 flex items-center justify-center rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-card-subtle transition-colors relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
+</button>
+<button aria-label="Help &amp; Documentation" class="w-9 h-9 flex items-center justify-center rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-card-subtle transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</button>
+<!-- Primary Top Action -->
+<button class="h-9 px-3.5 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md flex items-center gap-2 shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>New Scan</span>
+</button>
+</div>
+</header>
+<!-- Main Workspace Container -->
+<main class="flex-1 p-8 max-w-7xl mx-auto w-full flex flex-col gap-8">
+<!-- Section 1: Page Header & Global Audit Toolbar -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-border-subtle">
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<h1 class="text-headline-xl font-headline-xl text-text-strong tracking-tight">Executive Sustainability &amp; Diagnostics Report</h1>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-teal-subtle text-accent-teal font-semibold border border-teal-200">ISO 14001 Validated</span>
+</div>
+<p class="text-body-md font-body-md text-text-muted max-w-3xl">
+            Consolidated intelligence audit aggregating Waste Management (SDG 11 &amp; 12), Green Talent &amp; CV Analytics (SDG 4 &amp; 8), and Agronomic Crop Health (SDG 2 &amp; 15).
+          </p>
+</div>
+<!-- Header Action Toolbar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<div class="relative">
+<select aria-label="Select facility or campus branch" class="h-10 pl-3 pr-8 bg-surface-card border border-border-subtle rounded-lg text-label-md font-label-md text-text-strong focus:border-border-focus focus:ring-1 focus:ring-border-focus cursor-pointer appearance-none shadow-xs">
+<option>All Operations • Global Campus</option>
+<option>Facility Sector 3B (Agritech &amp; Hydroponics)</option>
+<option>Sorting Facility Alpha (East Logistics Hub)</option>
+<option>Regional Talent HR Hub (APAC Region)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 text-text-muted text-lg" data-icon="tune">tune</span>
+</div>
+<button class="h-10 px-3 bg-surface-card border border-border-subtle hover:bg-surface-card-subtle text-text-strong rounded-lg text-label-md font-label-md flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[18px] text-text-muted" data-icon="schedule">schedule</span>
+<span>Schedule Digest</span>
+</button>
+<button class="h-10 px-3 bg-surface-card border border-border-subtle hover:bg-surface-card-subtle text-text-strong rounded-lg text-label-md font-label-md flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[18px] text-text-muted" data-icon="share">share</span>
+<span>Share Link</span>
+</button>
+<button class="h-10 px-4 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md flex items-center gap-2 shadow-sm transition-all duration-150 active:scale-98">
+<span class="material-symbols-outlined text-[18px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Export Master PDF</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Cross-Module Executive KPI Summary (4 Top Cards) -->
+<section aria-label="Cross-Module Key Performance Indicators" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- KPI Card 1: Waste & Circularity -->
+<article class="bg-surface-card rounded-xl p-5 border border-border-subtle shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-text-muted">Waste &amp; Circularity</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-brand-mint-subtle text-brand-forest border border-emerald-200">SDG 12.5 Verified</span>
+</div>
+<div class="text-metric-display font-metric-display text-text-strong tracking-tight">14,850 kg</div>
+<div class="text-label-sm font-label-sm text-text-muted mt-0.5">Diverted from Landfill</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-brand-forest font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+              +14.2% MoM
+            </span>
+<span class="text-text-muted">4,120 kg CO2e abated</span>
+</div>
+</article>
+<!-- KPI Card 2: Plant Pathology & Ag Health -->
+<article class="bg-surface-card rounded-xl p-5 border border-border-subtle shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-accent-teal"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-text-muted">Plant Pathology &amp; Ag</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-accent-teal-subtle text-accent-teal border border-teal-200">SDG 2 Food Security</span>
+</div>
+<div class="text-metric-display font-metric-display text-text-strong tracking-tight">97.6%</div>
+<div class="text-label-sm font-label-sm text-text-muted mt-0.5">Diagnostic Precision (CV)</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-brand-forest font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+              482 Crops Audited
+            </span>
+<span class="text-text-muted">18.2% Yield Loss Averted</span>
+</div>
+</article>
+<!-- KPI Card 3: CV & Talent ESG Index -->
+<article class="bg-surface-card rounded-xl p-5 border border-border-subtle shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-info-sky"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-text-muted">Talent &amp; Green Jobs</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-info-sky-subtle text-info-sky border border-sky-200">SDG 8 Decent Work</span>
+</div>
+<div class="text-metric-display font-metric-display text-text-strong tracking-tight">88.4 <span class="text-body-md font-body-md text-text-muted">/ 100</span></div>
+<div class="text-label-sm font-label-sm text-text-muted mt-0.5">Avg ATS Green Readiness</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-info-sky font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+              142 Resumes Scored
+            </span>
+<span class="text-text-muted">92% Green Alignment</span>
+</div>
+</article>
+<!-- KPI Card 4: Ecological ROI & Credits -->
+<article class="bg-surface-card rounded-xl p-5 border border-border-subtle shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-accent-amber"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-text-muted">EcoCredits &amp; ESG Status</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-accent-amber-subtle text-accent-amber border border-amber-200">BPP &amp; ISO 14001</span>
+</div>
+<div class="text-metric-display font-metric-display text-text-strong tracking-tight">14,820</div>
+<div class="text-label-sm font-label-sm text-text-muted mt-0.5">EcoCredits Certified</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-accent-teal font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+              99.4% Compliance
+            </span>
+<span class="text-brand-forest font-medium">0 Infractions</span>
+</div>
+</article>
+</section>
+<!-- Section 3: Core Visual Analytics & Multi-Module Breakdown (2-Column Asymmetric Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Macro Trends & SDG Impact Matrix (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Interactive Trend Chart Card -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm flex flex-col gap-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">Integrated Impact &amp; Verification Velocity</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Monthly progression across waste diversion, foliar pathology, and talent scoring.</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-text-muted">
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Waste (Tons)
+                </span>
+<span class="flex items-center gap-1.5 text-text-muted">
+<span class="w-3 h-3 rounded-full bg-info-sky inline-block"></span> Pathology
+                </span>
+<span class="flex items-center gap-1.5 text-text-muted">
+<span class="w-3 h-3 rounded-full bg-accent-amber inline-block"></span> Talent Index
+                </span>
+</div>
+</div>
+<!-- SVG Data Visualization -->
+<div class="w-full bg-surface-base rounded-lg p-4 border border-border-subtle relative">
+<svg aria-label="Monthly Integrated Impact Chart" class="w-full h-52 overflow-visible" viewbox="0 0 580 220">
+<!-- Grid Lines -->
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="580" y1="30" y2="30"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="580" y1="80" y2="80"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="580" y1="130" y2="130"></line>
+<line stroke="#E2E8F0" stroke-width="1" x1="0" x2="580" y1="180" y2="180"></line>
+<!-- Month Markers Bottom -->
+<text fill="#64748B" font-family="Inter" font-size="11" text-anchor="middle" x="35" y="202">Jun</text>
+<text fill="#64748B" font-family="Inter" font-size="11" text-anchor="middle" x="135" y="202">Jul</text>
+<text fill="#64748B" font-family="Inter" font-size="11" text-anchor="middle" x="235" y="202">Aug</text>
+<text fill="#64748B" font-family="Inter" font-size="11" text-anchor="middle" x="335" y="202">Sep</text>
+<text fill="#64748B" font-family="Inter" font-size="11" text-anchor="middle" x="435" y="202">Oct</text>
+<text fill="#006948" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="535" y="202">Nov (Active)</text>
+<!-- Area fill for Waste (Green) -->
+<defs>
+<lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006948" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#006948" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<polygon fill="url(#primaryAreaGrad)" points="35,145 135,130 235,110 335,85 435,65 535,42 535,180 35,180"></polygon>
+<!-- Line 1: Waste Diverted (Primary Emerald) -->
+<polyline fill="none" points="35,145 135,130 235,110 335,85 435,65 535,42" stroke="#006948" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<circle cx="535" cy="42" fill="#006948" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Line 2: Pathology CV Audits (Info Sky) -->
+<polyline fill="none" points="35,160 135,145 235,125 335,115 435,90 535,72" stroke="#0284C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="535" cy="72" fill="#0284C7" r="4" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Line 3: Talent ESG Index (Accent Amber) -->
+<polyline fill="none" points="35,130 135,120 235,100 335,105 435,82 535,78" stroke="#F59E0B" stroke-dasharray="4,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+<circle cx="535" cy="78" fill="#F59E0B" r="4" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Peak Callout Badge on Nov -->
+<rect fill="#0F172A" height="24" rx="4" width="100" x="475" y="10"></rect>
+<text fill="#FFFFFF" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="525" y="26">14.8t Peak Verified</text>
+</svg>
+</div>
+<!-- Chart Context Stats Footer -->
+<div class="grid grid-cols-3 gap-3 pt-2 text-center">
+<div class="p-2.5 rounded-lg bg-surface-card-subtle">
+<div class="text-label-sm font-label-sm text-text-muted">Compounded Velocity</div>
+<div class="text-headline-sm font-headline-sm text-brand-forest mt-0.5">+28.4%</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-card-subtle">
+<div class="text-label-sm font-label-sm text-text-muted">Anomaly Alerts</div>
+<div class="text-headline-sm font-headline-sm text-text-strong mt-0.5">0 Deficits</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-card-subtle">
+<div class="text-label-sm font-label-sm text-text-muted">Audit Verification</div>
+<div class="text-headline-sm font-headline-sm text-accent-teal mt-0.5">Instant Hash</div>
+</div>
+</div>
+</div>
+<!-- UN SDG Contribution Matrix Card -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">UN Sustainable Development Goals (SDG) Matrix</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Calculated against UN Habitat &amp; ESG disclosure frameworks.</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-brand-mint-subtle text-brand-forest font-semibold text-label-sm font-label-sm">
+                9 Goals Targeted
+              </span>
+</div>
+<!-- SDG List Progress Bars -->
+<div class="space-y-3.5 mt-1">
+<!-- SDG 12 -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1">
+<span class="font-semibold text-text-strong flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-accent-amber inline-block"></span>
+                    SDG 12: Responsible Consumption &amp; Production (Target 12.5)
+                  </span>
+<span class="text-text-strong font-bold">92% Met</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-accent-amber h-full rounded-full w-[92%]"></div>
+</div>
+</div>
+<!-- SDG 2 -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1">
+<span class="font-semibold text-text-strong flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary inline-block"></span>
+                    SDG 2: Zero Hunger &amp; Sustainable Agriculture (Crop Yields)
+                  </span>
+<span class="text-text-strong font-bold">88% Met</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[88%]"></div>
+</div>
+</div>
+<!-- SDG 8 & 4 -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1">
+<span class="font-semibold text-text-strong flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-info-sky inline-block"></span>
+                    SDG 8 &amp; 4: Decent Work, Green Skills, and Quality Education
+                  </span>
+<span class="text-text-strong font-bold">84% Met</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-info-sky h-full rounded-full w-[84%]"></div>
+</div>
+</div>
+<!-- SDG 11 & 15 -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1">
+<span class="font-semibold text-text-strong flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-brand-emerald-dark inline-block"></span>
+                    SDG 11 &amp; 15: Sustainable Cities &amp; Life on Land Biodiversity
+                  </span>
+<span class="text-text-strong font-bold">79% Met</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-brand-emerald-dark h-full rounded-full w-[79%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Recent Formal Audit Logs & Detailed Module Reports (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">Recent Audit Documents</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Official generated packages ready for dispatch.</p>
+</div>
+<button class="text-label-sm font-label-sm text-primary hover:underline font-semibold flex items-center gap-1">
+                  View All (28)
+                  <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Filter Segment Tabs -->
+<div class="flex items-center gap-1 p-1 bg-surface-card-subtle rounded-lg mb-4 overflow-x-auto">
+<button class="px-3 py-1.5 text-label-sm font-label-sm font-semibold rounded bg-surface-card text-primary shadow-xs whitespace-nowrap">
+                  All Modules
+                </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm text-text-muted hover:text-text-strong rounded transition-colors whitespace-nowrap">
+                  Waste Stream
+                </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm text-text-muted hover:text-text-strong rounded transition-colors whitespace-nowrap">
+                  Agronomy
+                </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm text-text-muted hover:text-text-strong rounded transition-colors whitespace-nowrap">
+                  Talent &amp; CV
+                </button>
+</div>
+<!-- Report Items List -->
+<div class="flex flex-col divide-y divide-border-subtle">
+<!-- Report 1 -->
+<div class="py-3.5 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-danger-rose-subtle text-danger-rose flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-text-strong group-hover:text-primary transition-colors cursor-pointer leading-snug">
+                        Q4 Campus Waste Stream &amp; Circular Economy Audit
+                      </div>
+<div class="text-label-sm font-label-sm text-text-muted mt-1 flex flex-wrap items-center gap-2">
+<span>4.2 MB</span>
+<span>•</span>
+<span>Generated 2h ago by Alex Mercer</span>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-mint-subtle text-brand-forest border border-emerald-200">
+                          Certified Ready
+                        </span>
+<span class="text-[11px] text-text-muted font-code-mono">Hash: #9a42f</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="QR Verification" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="QR Verification">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+</button>
+<button aria-label="Preview Document" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="Preview">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+<button aria-label="Download PDF" class="p-1.5 text-primary hover:bg-brand-mint-subtle rounded" title="Download">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Report 2 -->
+<div class="py-3.5 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-brand-mint-subtle text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="potted_plant">potted_plant</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-text-strong group-hover:text-primary transition-colors cursor-pointer leading-snug">
+                        Foliar Pathology &amp; Yield Risk Mitigation Plan - Tomato Sector 3B
+                      </div>
+<div class="text-label-sm font-label-sm text-text-muted mt-1 flex flex-wrap items-center gap-2">
+<span>2.8 MB</span>
+<span>•</span>
+<span>Generated 5h ago by Budi Hartono</span>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-accent-teal-subtle text-accent-teal border border-teal-200">
+                          Sent to Field Team
+                        </span>
+<span class="text-[11px] text-text-muted font-code-mono">Hash: #b731e</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="QR Verification" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="QR Verification">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+</button>
+<button aria-label="Preview Document" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="Preview">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+<button aria-label="Download Document" class="p-1.5 text-primary hover:bg-brand-mint-subtle rounded" title="Download">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Report 3 -->
+<div class="py-3.5 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-info-sky-subtle text-info-sky flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="badge">badge</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-text-strong group-hover:text-primary transition-colors cursor-pointer leading-snug">
+                        Green Collar ESG Workforce Competency Assessment
+                      </div>
+<div class="text-label-sm font-label-sm text-text-muted mt-1 flex flex-wrap items-center gap-2">
+<span>1.9 MB</span>
+<span>•</span>
+<span>Generated Yesterday by Arya Pratama</span>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-card-subtle text-text-muted border border-border-subtle">
+                          Archived
+                        </span>
+<span class="text-[11px] text-text-muted font-code-mono">Hash: #c440f</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="QR Verification" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="QR Verification">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+</button>
+<button aria-label="Preview Document" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="Preview">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+<button aria-label="Download Document" class="p-1.5 text-primary hover:bg-brand-mint-subtle rounded" title="Download">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Report 4 -->
+<div class="py-3.5 flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-accent-amber-subtle text-accent-amber flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="table_chart">table_chart</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-text-strong group-hover:text-primary transition-colors cursor-pointer leading-snug">
+                        Comprehensive Carbon Offset &amp; EcoCredits Ledger
+                      </div>
+<div class="text-label-sm font-label-sm text-text-muted mt-1 flex flex-wrap items-center gap-2">
+<span>1.1 MB (XLSX / CSV)</span>
+<span>•</span>
+<span>Generated Nov 05</span>
+</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-mint-subtle text-brand-forest border border-emerald-200">
+                          Audited Chain
+                        </span>
+<span class="text-[11px] text-text-muted font-code-mono">Hash: #f129d</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="QR Verification" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="QR Verification">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+</button>
+<button aria-label="Preview Document" class="p-1.5 text-text-muted hover:text-text-strong hover:bg-surface-card-subtle rounded" title="Preview">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+<button aria-label="Download Document" class="p-1.5 text-primary hover:bg-brand-mint-subtle rounded" title="Download">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Signature Box -->
+<div class="mt-4 p-3 bg-surface-card-subtle rounded-lg border border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-forest text-lg" data-icon="security">security</span>
+<span class="text-text-muted">Digital Key ID: <span class="font-code-mono text-text-strong">SHA256:88fb..091a</span></span>
+</div>
+<span class="text-brand-forest font-semibold">Valid</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Quick Export Configuration & Template Builder Panel (Bottom Section) -->
+<section class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="build_circle">build_circle</span>
+<h2 class="text-headline-md font-headline-md text-text-strong">Custom Export Builder &amp; Dispatch Pipeline</h2>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">
+              Select verified components to merge into a single consolidated audit deliverable with cryptographic sign-off.
+            </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-text-muted">Preset:</span>
+<span class="px-2.5 py-1 rounded bg-surface-card-subtle text-text-strong text-label-sm font-label-sm font-semibold border border-border-subtle">
+              Board Executive Package (Default)
+            </span>
+</div>
+</div>
+<!-- Configuration Grids -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+<!-- Column A: Checkboxes for Content Inclusion -->
+<div class="space-y-3">
+<label class="text-label-md font-label-md text-text-strong uppercase tracking-wider block text-xs">Included Intelligence Modules</label>
+<div class="space-y-2.5">
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>Executive Summary &amp; KPI Scorecards</span>
+</label>
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>Raw Telemetry &amp; Waste Stream Sorting Logs</span>
+</label>
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>Gemini AI Visual Bounding Boxes &amp; Leaf Heatmaps</span>
+</label>
+</div>
+</div>
+<!-- Column B: Certifications & Legal Signoffs -->
+<div class="space-y-3">
+<label class="text-label-md font-label-md text-text-strong uppercase tracking-wider block text-xs">Compliance &amp; Verifications</label>
+<div class="space-y-2.5">
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>SDG Impact Certification Stamp (Verified)</span>
+</label>
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>Regulatory Sign-off / Digital Auditor Signature</span>
+</label>
+<label class="flex items-center gap-3 text-label-md font-label-md text-text-strong cursor-pointer hover:text-primary transition-colors">
+<input class="w-4 h-4 rounded text-primary focus:ring-border-focus border-border-subtle" type="checkbox"/>
+<span>Anonymized Candidate PII Protection Layer</span>
+</label>
+</div>
+</div>
+<!-- Column C: Format & Compression Selector -->
+<div class="space-y-3">
+<label class="text-label-md font-label-md text-text-strong uppercase tracking-wider block text-xs">Output Format &amp; Delivery</label>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<label class="flex items-center gap-2 text-label-md font-label-md cursor-pointer">
+<input checked="" class="text-primary focus:ring-border-focus" name="format_option" type="radio"/>
+<span>PDF (Print-Ready ISO 14001)</span>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<label class="flex items-center gap-2 text-label-md font-label-md cursor-pointer">
+<input class="text-primary focus:ring-border-focus" name="format_option" type="radio"/>
+<span>Interactive Web Digest (Link + PIN)</span>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<label class="flex items-center gap-2 text-label-md font-label-md cursor-pointer">
+<input class="text-primary focus:ring-border-focus" name="format_option" type="radio"/>
+<span>Raw CSV &amp; GeoJSON Dataset Archive</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Builder Action Trigger Bar -->
+<div class="pt-4 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-brand-forest" data-icon="cloud_done">cloud_done</span>
+<span>Estimated Package Size: ~7.2 MB • Processing Time: ~2.4 seconds via Edge Node</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="h-11 px-4 bg-surface-card border border-border-subtle hover:bg-surface-card-subtle text-text-strong rounded-lg text-label-md font-label-md transition-colors w-full sm:w-auto">
+              Reset Options
+            </button>
+<button class="h-11 px-6 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-98 w-full sm:w-auto font-semibold">
+<span class="material-symbols-outlined text-[20px]" data-icon="archive">archive</span>
+<span>Download Consolidated Audit Package (.ZIP / PDF)</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Copyright & Certification Meta -->
+<footer class="px-8 py-5 border-t border-border-subtle text-center text-label-sm font-label-sm text-text-muted flex flex-col sm:flex-row items-center justify-between gap-2 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-2">
+<span class="font-bold text-text-strong">SustainAI</span>
+<span>— Global Environmental &amp; Talent Intelligence Network.</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:underline" href="#">Audit Ledger Standards</a>
+<span>•</span>
+<a class="hover:underline" href="#">Privacy Policy</a>
+<span>•</span>
+<span class="text-brand-forest font-medium">Node: ID-JAK-01 (Green Cloud)</span>
+</div>
+</footer>
+</div>
+</body></html>
