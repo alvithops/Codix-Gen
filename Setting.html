@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings &amp; System Configuration - SustainAI Platform</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact link mandated) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 via CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#bccac0",
+            "surface-variant": "#d3e4fe",
+            "info-sky-subtle": "#E0F2FE",
+            "brand-forest": "#064E3B",
+            "danger-rose-subtle": "#FFE4E6",
+            "on-secondary-container": "#006f66",
+            "tertiary-fixed": "#ffdcc3",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-secondary-fixed": "#00201d",
+            "on-surface-variant": "#3d4a42",
+            "on-background": "#0b1c30",
+            "secondary": "#006a61",
+            "on-primary-fixed-variant": "#005137",
+            "border-subtle": "#E2E8F0",
+            "text-strong": "#0F172A",
+            "danger-rose": "#E11D48",
+            "outline": "#6d7a72",
+            "surface-bright": "#f8f9ff",
+            "surface-card-subtle": "#F1F5F9",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#68dba9",
+            "error": "#ba1a1a",
+            "secondary-container": "#86f2e4",
+            "secondary-fixed-dim": "#6bd8cb",
+            "on-surface": "#0b1c30",
+            "on-primary-container": "#f5fff7",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#8d4b00",
+            "accent-teal-subtle": "#CCFBF1",
+            "surface-container-highest": "#d3e4fe",
+            "on-primary-fixed": "#002114",
+            "surface-container-low": "#eff4ff",
+            "inverse-surface": "#213145",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "surface-container": "#e5eeff",
+            "accent-amber-subtle": "#FEF3C7",
+            "primary-fixed": "#85f8c4",
+            "brand-emerald-dark": "#047857",
+            "primary-container": "#00855d",
+            "accent-teal": "#0F766E",
+            "secondary-fixed": "#89f5e7",
+            "tertiary-container": "#b15f00",
+            "surface-card": "#FFFFFF",
+            "on-tertiary-fixed": "#2f1500",
+            "surface": "#f8f9ff",
+            "surface-base": "#F8FAFC",
+            "on-secondary-fixed-variant": "#005049",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "primary-fixed-dim": "#68dba9",
+            "inverse-on-surface": "#eaf1ff",
+            "brand-mint-subtle": "#ECFDF5",
+            "text-muted": "#64748B",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "info-sky": "#0284C7",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "accent-amber": "#F59E0B",
+            "border-focus": "#10B981",
+            "surface-tint": "#006c4a",
+            "background": "#f8f9ff",
+            "primary": "#006948",
+            "brand-mint": "#34D399"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "metric-display": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "label-lg": [
+              "Inter"
+            ],
+            "label-sm": [
+              "Inter"
+            ],
+            "headline-xl-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "display-hero": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-xl": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "code-mono": [
+              "monospace"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "display-hero-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "metric-display": [
+              "32px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-lg-mobile": [
+              "22px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.03em",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-xl-mobile": [
+              "26px",
+              {
+                "lineHeight": "32px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "700"
+              }
+            ],
+            "display-hero": [
+              "48px",
+              {
+                "lineHeight": "56px",
+                "letterSpacing": "-0.025em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-md": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-xl": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "400"
+              }
+            ],
+            "code-mono": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-md": [
+              "15px",
+              {
+                "lineHeight": "22px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0.005em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "700"
+              }
+            ],
+            "display-hero-mobile": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="bg-surface text-text-strong font-body-md text-body-md antialiased min-h-screen flex selection:bg-brand-mint-subtle selection:text-primary">
+<!-- ========================================================================= -->
+<!-- SIDE NAVIGATION BAR (MANDATED SHARED COMPONENT)                            -->
+<!-- ========================================================================= -->
+<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm">
+<div class="flex flex-col gap-6">
+<!-- Brand Header -->
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">eco</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</span>
+<span class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</span>
+</div>
+</div>
+<!-- Upgrade / Tier Capsule -->
+<div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
+<div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
+</div>
+</div>
+<button class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm">
+          Upgrade Pro
+        </button>
+</div>
+<!-- Navigation Tabs (Settings is ACTIVE) -->
+<nav aria-label="Primary Navigation" class="flex flex-col gap-1.5">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#overview">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-label-md font-label-md">Overview</span>
+</a>
+<!-- Waste Classifier -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#waste">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+<span class="text-label-md font-label-md">Waste Classifier</span>
+</a>
+<!-- CV Analyzer -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#cv">
+<span class="material-symbols-outlined text-[20px]">document_scanner</span>
+<span class="text-label-md font-label-md">CV Analyzer</span>
+</a>
+<!-- Plant Disease -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#plant">
+<span class="material-symbols-outlined text-[20px]">potted_plant</span>
+<span class="text-label-md font-label-md">Plant Disease</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#reports">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<!-- Settings (ACTIVE TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs" href="#settings">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
+</a>
+</nav>
+</div>
+<!-- Footer Controls & User Profile -->
+<div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+<!-- Interactive Language Switcher EN | ID -->
+<div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+<div class="flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span class="text-label-sm font-label-sm">Language: EN</span>
+</div>
+<div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs">EN</span>
+<span class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</span>
+</div>
+</div>
+<!-- User Profile Card -->
+<div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
+<div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">
+          AM
+        </div>
+<div class="flex flex-col min-w-0">
+<div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
+<div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-text-muted ml-auto cursor-pointer hover:text-text-strong">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CONTENT CANVAS                                             -->
+<!-- ========================================================================= -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TOP NAVIGATION BAR (MANDATED SHARED COMPONENT) -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm backdrop-blur-md">
+<!-- Left: Breadcrumbs & System Status Pill -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-label-md font-label-md">
+<span class="text-text-muted hover:text-primary cursor-pointer">SustainAI</span>
+<span class="text-text-muted">/</span>
+<span class="text-text-muted">Apps</span>
+<span class="text-text-muted">/</span>
+<span class="text-text-strong font-semibold">Settings &amp; Configuration</span>
+</div>
+<div class="h-4 w-px bg-border-subtle"></div>
+<!-- Live Telemetry Badge -->
+<div class="flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle rounded-full border border-brand-mint/40">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm font-semibold text-brand-forest">
+            System Operational • Edge Latency 310ms • Gemini 1.5 Flash Active
+          </span>
+</div>
+</div>
+<!-- Right: Navigation Links, Notifications & Primary CTAs -->
+<div class="flex items-center gap-3">
+<nav class="hidden xl:flex items-center gap-5 mr-3 text-label-md font-label-md">
+<a class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#docs">
+<span class="material-symbols-outlined text-[18px]">help</span>
+            Documentation
+          </a>
+<a class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#audit">
+<span class="material-symbols-outlined text-[18px]">history</span>
+            Audit Logs
+          </a>
+</nav>
+<!-- Notification Bell -->
+<button class="relative p-2 text-text-muted hover:text-text-strong hover:bg-surface-base rounded-md transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
+</button>
+<div class="h-5 w-px bg-border-subtle mx-1"></div>
+<!-- Secondary CTA: Reset to Defaults -->
+<button class="px-3.5 py-2 text-label-md font-label-md font-semibold text-text-strong bg-surface-card border border-border-subtle rounded-md hover:bg-surface-base hover:border-primary transition-all">
+          Reset to Defaults
+        </button>
+<!-- Primary CTA: Save Changes -->
+<button class="flex items-center gap-2 px-4 py-2 text-label-md font-label-md font-semibold text-on-primary bg-primary rounded-md hover:bg-brand-emerald-dark shadow-sm hover:shadow-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">save</span>
+          Save Changes
+        </button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT -->
+<main class="flex-1 p-8 max-w-[1400px] w-full mx-auto space-y-8">
+<!-- PAGE HEADER -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-headline-xl font-headline-xl text-text-strong">Settings &amp; System Configuration</h1>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-teal-subtle text-accent-teal border border-accent-teal/30">
+              PRD v2.4 Spec
+            </span>
+</div>
+<p class="text-body-md font-body-md text-text-muted max-w-3xl">
+            Manage Gemini AI model engines, environment security, bilingual localization (EN/ID), SDG telemetry thresholds, and enterprise workspace preferences.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium bg-brand-mint-subtle text-brand-forest border border-brand-mint/40">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Environment: Production (Vercel Edge)
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium bg-surface-card text-text-strong border border-border-subtle shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+            API Security: Server-side Vault Active
+          </span>
+</div>
+</div>
+<!-- IN-PAGE TABS QUICK ANCHOR NAV -->
+<div class="flex items-center gap-2 border-b border-border-subtle">
+<button class="px-4 py-3 text-label-md font-label-md font-semibold text-primary border-b-2 border-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+          AI Engine &amp; API Keys
+        </button>
+<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">language</span>
+          Localization
+        </button>
+<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+          Inference &amp; Privacy
+        </button>
+<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">public</span>
+          UN SDG Targets
+        </button>
+<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">group</span>
+          Team &amp; Access
+        </button>
+</div>
+<!-- ===================================================================== -->
+<!-- SECTION 1: AI MODEL & API KEY CONFIGURATION                           -->
+<!-- ===================================================================== -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">smart_toy</span>
+              Google Gemini AI Engine &amp; API Keys
+            </h2>
+<p class="text-body-sm font-body-sm text-text-muted">
+              Configure multi-modal Gemini LLM engines, dedicated feature keys, and enterprise rotation policies (PRD Section 5.4 &amp; 6.4).
+            </p>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted bg-surface-card px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[18px]">security</span>
+            AES-256 Zero-Knowledge Server Vault
+          </div>
+</div>
+<!-- Engine Selector Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Active Engine: Gemini 1.5 Flash -->
+<div class="relative bg-surface-card border-2 border-primary rounded-xl p-5 shadow-xs flex flex-col justify-between">
+<div class="absolute top-4 right-4 flex items-center gap-1 px-2 py-0.5 bg-brand-mint-subtle text-brand-forest rounded-full text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Current Default
+            </div>
+<div>
+<div class="w-9 h-9 rounded-lg bg-brand-mint-subtle text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Gemini 1.5 Flash</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">
+                Optimized for sub-second edge CV inference, rapid waste classification, and field agricultural alerts.
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-text-muted">Latency: <strong class="text-primary">~290ms</strong></span>
+<span class="text-text-muted">Cost: <strong class="text-text-strong">1x Base</strong></span>
+</div>
+</div>
+<!-- Secondary Option: Gemini 1.5 Pro -->
+<div class="bg-surface-card border border-border-subtle hover:border-primary/50 transition-colors rounded-xl p-5 shadow-xs flex flex-col justify-between cursor-pointer">
+<div>
+<div class="w-9 h-9 rounded-lg bg-surface-card-subtle text-text-muted flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Gemini 1.5 Pro</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">
+                High-reasoning multimodal engine with 2M context window. Recommended for complex cross-SDG ESG audit reports.
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-text-muted">Latency: <strong class="text-text-strong">~820ms</strong></span>
+<button class="text-primary hover:text-brand-emerald-dark font-semibold">Switch Engine</button>
+</div>
+</div>
+<!-- Custom Fine-Tuned LoRA / Self-Hosted -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-5 shadow-xs flex flex-col justify-between opacity-80">
+<div>
+<div class="w-9 h-9 rounded-lg bg-surface-card-subtle text-text-muted flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Custom LoRA Adapter</h3>
+<span class="px-1.5 py-0.5 text-[10px] uppercase font-bold rounded bg-surface-card-subtle text-text-muted">Experimental</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">
+                Indonesian tropical crop pathology weights trained on 14,000 localized field samples (BPP West Java).
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-text-muted">Status: Ready to link</span>
+<button class="text-text-muted hover:text-text-strong font-semibold">Configure</button>
+</div>
+</div>
+</div>
+<!-- 3 Feature API Keys Management Table Card -->
+<div class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border-subtle">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Engine API Keys &amp; Subsystem Mapping</h3>
+<p class="text-body-sm font-body-sm text-text-muted">Isolated keys guarantee zero cascading downtime across micro-analyzers.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-surface-base text-text-strong text-label-sm font-label-sm rounded-md border border-border-subtle hover:bg-surface-card flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+                Ping All Endpoints
+              </button>
+<button class="px-3 py-1.5 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark flex items-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Add Key
+              </button>
+</div>
+</div>
+<div class="space-y-3">
+<!-- Key 1: CV Analyzer -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-3 min-w-[280px]">
+<div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_CV_ANALYZER</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
+                      Connected • 99.8% Uptime
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">Model tuning: ESG, ATS scoring rubric, and green job readiness.</p>
+</div>
+</div>
+<!-- Masked Value & Action Group -->
+<div class="flex items-center gap-3 flex-wrap">
+<div class="flex items-center gap-2 bg-surface-card px-3 py-1.5 rounded-lg border border-border-subtle font-code-mono text-body-sm text-text-muted">
+<span class="tracking-wider">••••••••••••••••3a9f</span>
+<button class="text-text-muted hover:text-text-strong" title="Toggle visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="text-text-muted hover:text-text-strong" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+                  298ms avg
+                </div>
+<button class="px-2.5 py-1 text-label-sm font-label-sm text-text-strong hover:text-primary bg-surface-card border border-border-subtle rounded-md">
+                  Rotate Key
+                </button>
+</div>
+</div>
+<!-- Key 2: Plant Disease -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-3 min-w-[280px]">
+<div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">potted_plant</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_PLANT_ANALYZER</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
+                      Connected • 99.8% Uptime
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">Model tuning: Multispectral foliar pathology and agronomic treatment synthesis.</p>
+</div>
+</div>
+<!-- Masked Value & Action Group -->
+<div class="flex items-center gap-3 flex-wrap">
+<div class="flex items-center gap-2 bg-surface-card px-3 py-1.5 rounded-lg border border-border-subtle font-code-mono text-body-sm text-text-muted">
+<span class="tracking-wider">••••••••••••••••7c42</span>
+<button class="text-text-muted hover:text-text-strong" title="Toggle visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="text-text-muted hover:text-text-strong" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+                  315ms avg
+                </div>
+<button class="px-2.5 py-1 text-label-sm font-label-sm text-text-strong hover:text-primary bg-surface-card border border-border-subtle rounded-md">
+                  Rotate Key
+                </button>
+</div>
+</div>
+<!-- Key 3: Waste Classifier -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-3 min-w-[280px]">
+<div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">recycling</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_WASTE_ANALYZER</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
+                      Connected • 99.9% Uptime
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">Model tuning: Material segmentation, recyclability matrix &amp; carbon offset factor.</p>
+</div>
+</div>
+<!-- Masked Value & Action Group -->
+<div class="flex items-center gap-3 flex-wrap">
+<div class="flex items-center gap-2 bg-surface-card px-3 py-1.5 rounded-lg border border-border-subtle font-code-mono text-body-sm text-text-muted">
+<span class="tracking-wider">••••••••••••••••e180</span>
+<button class="text-text-muted hover:text-text-strong" title="Toggle visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="text-text-muted hover:text-text-strong" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+                  284ms avg
+                </div>
+<button class="px-2.5 py-1 text-label-sm font-label-sm text-text-strong hover:text-primary bg-surface-card border border-border-subtle rounded-md">
+                  Rotate Key
+                </button>
+</div>
+</div>
+</div>
+<!-- PRD Compliance Notice -->
+<div class="flex items-center gap-2 p-3 bg-brand-mint-subtle/50 rounded-lg text-body-sm font-body-sm text-brand-forest border border-brand-mint/30">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span>All API keys are encrypted at rest with envelope KMS encryption. Client apps never receive raw Gemini credentials (PRD Section 6.5).</span>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 2: LOCALIZATION & BILINGUAL ENGINE                           -->
+<!-- ===================================================================== -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">translate</span>
+<h2 class="text-headline-md font-headline-md text-text-strong">Bilingual Localization Engine</h2>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+            Configure regional dialects, technical taxonomies, and persistent client-side localization across all inspection cards (PRD Section 5.2 &amp; 11.2).
+          </p>
+<div class="space-y-4">
+<!-- Language Selector Toggle -->
+<div>
+<label class="block text-label-md font-label-md font-semibold text-text-strong mb-2">Default Operational Language</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 rounded-lg border-2 border-primary bg-brand-mint-subtle cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
+<div>
+<div class="text-label-md font-label-md font-bold text-text-strong">English (EN-US)</div>
+<div class="text-[12px] text-text-muted">International ESG &amp; UN SDG Taxonomy</div>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-surface-card hover:bg-surface-base cursor-pointer">
+<input class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
+<div>
+<div class="text-label-md font-label-md font-bold text-text-strong">Bahasa Indonesia (ID)</div>
+<div class="text-[12px] text-text-muted">Istilah Pertanian &amp; Standar Bank Sampah</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Taxonomy Framework Selector -->
+<div>
+<label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">SDG &amp; Waste Taxonomy Mapping</label>
+<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<option selected="">Dual Framework: UN SDG 12 + KLHK Indonesia Waste Index</option>
+<option>Strict International: UN Global Compact SDG Indicators</option>
+<option>Localized: Balai Penyuluhan Pertanian (BPP) &amp; Bank Sampah Regional</option>
+</select>
+</div>
+<!-- Currency & Weight Metrics -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">Measurement Metric</label>
+<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<option selected="">Metric (Kilograms / Tonnes CO₂e)</option>
+<option>Imperial (lbs / Carbon Credit Equiv)</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">Carbon Offset Valuation</label>
+<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<option selected="">EcoCredits (EC) + IDR (Rp)</option>
+<option>USD ($) + Verra VCS Equivalents</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- SECTION 3: INFERENCE THRESHOLDS & PRIVACY COMPLIANCE                 -->
+<!-- ===================================================================== -->
+<div class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h2 class="text-headline-md font-headline-md text-text-strong">Inference Tuning &amp; Data Privacy</h2>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+            Calibrate algorithmic cutoff values, candidate PII sanitization, and automated edge file lifecycles.
+          </p>
+<!-- Slider 1: Waste Confidence Cutoff -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-label-md font-label-md">
+<span class="font-semibold text-text-strong">Waste Classification Confidence Cutoff</span>
+<span class="font-bold text-primary font-code-mono">85%</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="98" min="60" type="range" value="85"/>
+<div class="flex justify-between text-[11px] text-text-muted">
+<span>60% (High Recall)</span>
+<span>85% (Balanced Recommended)</span>
+<span>98% (Ultra Strict)</span>
+</div>
+</div>
+<!-- Slider 2: Crop Infection Sensitivity -->
+<div class="space-y-2 pt-2 border-t border-border-subtle">
+<div class="flex justify-between items-center text-label-md font-label-md">
+<span class="font-semibold text-text-strong">Crop Infection Early Warning Sensitivity</span>
+<span class="font-bold text-accent-teal font-code-mono">Stage 1 (Sub-clinical)</span>
+</div>
+<input class="w-full accent-accent-teal h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="3" min="1" type="range" value="1"/>
+<div class="flex justify-between text-[11px] text-text-muted">
+<span>Stage 1: Early Foliar Spores</span>
+<span>Stage 2: Visible Blight</span>
+<span>Stage 3: Advanced Lesions</span>
+</div>
+</div>
+<!-- Toggles for Privacy and Retention -->
+<div class="space-y-3 pt-3 border-t border-border-subtle">
+<!-- Toggle 1: Immediate Temporary Purge -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="text-label-md font-label-md font-semibold text-text-strong flex items-center gap-1.5">
+<span>Automatic Temporary File Purge</span>
+<span class="px-2 py-0.5 rounded text-[11px] bg-brand-mint-subtle text-primary font-bold">GDPR Ready</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+                  Erase uploaded candidate CV resumes and raw crop photos from memory immediately after inference verdict generation.
+                </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle 2: Vercel ISR Edge Caching -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="text-label-md font-label-md font-semibold text-text-strong">Edge Caching &amp; ISR Revalidation (3600s)</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+                  Cache aggregated SDG telemetry queries on Vercel Edge nodes to minimize duplicate API charges.
+                </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 4: UN SUSTAINABLE DEVELOPMENT GOALS (SDG) THRESHOLDS         -->
+<!-- ===================================================================== -->
+<section class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">eco</span>
+<h2 class="text-headline-md font-headline-md text-text-strong">UN SDG Alignment &amp; Metric Telemetry</h2>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+              Configure real-time target thresholds and automatic breach alert levels for integrated sustainability vectors (PRD Section 11.1).
+            </p>
+</div>
+<span class="px-3 py-1 bg-brand-mint-subtle rounded-full text-label-sm font-label-sm font-semibold text-brand-forest border border-brand-mint/40">
+            4 Active Framework Monitors
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- SDG 12 Card -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-accent-amber-subtle text-accent-amber border border-accent-amber/20">
+                  SDG 12
+                </span>
+<span class="material-symbols-outlined text-[20px] text-accent-amber">recycling</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Responsible Consumption</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">Material waste diversion &amp; recyclability auditing target.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Target Diversion</span>
+<span class="font-bold text-text-strong">85% Min</span>
+</div>
+<div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+<!-- SDG 2 Card -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-accent-teal-subtle text-accent-teal border border-accent-teal/20">
+                  SDG 2
+                </span>
+<span class="material-symbols-outlined text-[20px] text-accent-teal">agriculture</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Zero Hunger &amp; Farming</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">Crop disease yield loss mitigation and early intervention alerts.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Loss Tolerance</span>
+<span class="font-bold text-text-strong">&lt; 4.5% Yield</span>
+</div>
+<div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-accent-teal h-full rounded-full" style="width: 92%;"></div>
+</div>
+</div>
+</div>
+<!-- SDG 8 & 4 Card -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-info-sky-subtle text-info-sky border border-info-sky/20">
+                  SDG 8 &amp; 4
+                </span>
+<span class="material-symbols-outlined text-[20px] text-info-sky">school</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Decent Work &amp; Education</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">Green talent workforce index and ESG curriculum evaluation score.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">ATS Quality Bar</span>
+<span class="font-bold text-text-strong">75+ Index</span>
+</div>
+<div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-info-sky h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+<!-- SDG 11 & 15 Card -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-mint-subtle text-primary border border-brand-mint/20">
+                  SDG 11 &amp; 15
+                </span>
+<span class="material-symbols-outlined text-[20px] text-primary">park</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Cities &amp; Life on Land</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">Urban circularity, biodiversity protection, and soil toxin mitigation.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-text-muted">Soil Health Factor</span>
+<span class="font-bold text-text-strong">94% Certified</span>
+</div>
+<div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-brand-mint h-full rounded-full" style="width: 94%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 5: TEAM & WORKSPACE MEMBERS                                   -->
+<!-- ===================================================================== -->
+<section class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">group</span>
+<h2 class="text-headline-md font-headline-md text-text-strong">Team &amp; Workspace Access</h2>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+              Manage enterprise auditors, field agronomists, and developers according to PRD Section 2.3 roles.
+            </p>
+</div>
+<button class="flex items-center gap-2 px-3.5 py-2 bg-primary text-on-primary text-label-md font-label-md font-semibold rounded-md hover:bg-brand-emerald-dark transition-all self-start sm:self-auto shadow-xs">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+            Invite Team Member
+          </button>
+</div>
+<!-- Collaborators Table -->
+<div class="overflow-x-auto rounded-lg border border-border-subtle">
+<table class="w-full text-left border-collapse text-body-md font-body-md">
+<thead>
+<tr class="bg-surface-base border-b border-border-subtle text-label-md font-label-md text-text-muted">
+<th class="py-3 px-4">Member Name &amp; Contact</th>
+<th class="py-3 px-4">Workspace Role</th>
+<th class="py-3 px-4">Assigned Module Permission</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle">
+<!-- Member 1: Alex Mercer (Owner) -->
+<tr class="hover:bg-surface-base/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-brand-mint-subtle text-primary font-bold flex items-center justify-center text-sm border border-brand-mint/40">
+                      AM
+                    </div>
+<div>
+<div class="font-semibold text-text-strong">Alex Mercer</div>
+<div class="text-[12px] text-text-muted">alex.mercer@sustainai.io</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-brand-mint-subtle text-brand-forest">
+                    Lead Sustainability Auditor (Owner)
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-text-muted text-body-sm">
+                  Full Administrative &amp; API Vault Control
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                    Active Now
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1 text-text-muted hover:text-text-strong" title="Edit Permissions">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Member 2: Budi Hartono (Editor) -->
+<tr class="hover:bg-surface-base/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-accent-amber-subtle text-accent-amber font-bold flex items-center justify-center text-sm border border-accent-amber/40">
+                      BH
+                    </div>
+<div>
+<div class="font-semibold text-text-strong">Budi Hartono</div>
+<div class="text-[12px] text-text-muted">budi.h@agritech.bpp.id</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-surface-card-subtle text-text-strong border border-border-subtle">
+                    Agronomist &amp; Field Specialist (Editor)
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-text-muted text-body-sm">
+                  Plant Disease Diagnostic Models + Treatment Engine
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-text-muted">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+                    Seen 2h ago
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1 text-text-muted hover:text-text-strong" title="Edit Permissions">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Member 3: Arya Pratama (Member) -->
+<tr class="hover:bg-surface-base/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/40">
+                      AP
+                    </div>
+<div>
+<div class="font-semibold text-text-strong">Arya Pratama</div>
+<div class="text-[12px] text-text-muted">arya.pratama@esg-audit.co</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-surface-card-subtle text-text-strong border border-border-subtle">
+                    ESG &amp; Talent Auditor (Member)
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-text-muted text-body-sm">
+                  CV Analyzer Rubrics &amp; SDG 8 Benchmarking
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-text-muted">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+                    Seen Yesterday
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1 text-text-muted hover:text-text-strong" title="Edit Permissions">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- BOTTOM AUDIT LOG CALLOUT & FOOTER -->
+<footer class="pt-4 pb-12 flex flex-col md:flex-row items-center justify-between text-label-sm font-label-sm text-text-muted border-t border-border-subtle gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
+<span>Configuration Version: 2.4.0-prod • Last synced by Alex Mercer 14 minutes ago via Vercel Edge</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary transition-colors" href="#privacy">Privacy Governance</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#compliance">SDG ISO 14001 Matrix</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#support">Enterprise SLA Helpdesk</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
