@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SustainAI - CV Analyzer Studio</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f8f9ff",
+            "outline-variant": "#bccac0",
+            "secondary-container": "#86f2e4",
+            "on-surface": "#0b1c30",
+            "secondary-fixed": "#89f5e7",
+            "inverse-on-surface": "#eaf1ff",
+            "border-focus": "#10B981",
+            "on-secondary-container": "#006f66",
+            "border-subtle": "#E2E8F0",
+            "info-sky": "#0284C7",
+            "on-secondary-fixed-variant": "#005049",
+            "on-secondary-fixed": "#00201d",
+            "text-strong": "#0F172A",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "primary": "#006948",
+            "error": "#ba1a1a",
+            "primary-container": "#00855d",
+            "secondary": "#006a61",
+            "on-primary-container": "#f5fff7",
+            "on-background": "#0b1c30",
+            "on-error": "#ffffff",
+            "accent-teal-subtle": "#CCFBF1",
+            "on-tertiary-fixed": "#2f1500",
+            "on-primary-fixed": "#002114",
+            "brand-mint": "#34D399",
+            "brand-emerald-dark": "#047857",
+            "on-tertiary-container": "#fffbff",
+            "accent-teal": "#0F766E",
+            "tertiary-fixed-dim": "#ffb77d",
+            "accent-amber-subtle": "#FEF3C7",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "accent-amber": "#F59E0B",
+            "error-container": "#ffdad6",
+            "surface-bright": "#f8f9ff",
+            "info-sky-subtle": "#E0F2FE",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#3d4a42",
+            "surface-card": "#FFFFFF",
+            "danger-rose-subtle": "#FFE4E6",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#6bd8cb",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "tertiary": "#8d4b00",
+            "outline": "#6d7a72",
+            "danger-rose": "#E11D48",
+            "inverse-surface": "#213145",
+            "surface-container-highest": "#d3e4fe",
+            "background": "#f8f9ff",
+            "brand-mint-subtle": "#ECFDF5",
+            "surface-tint": "#006c4a",
+            "primary-fixed": "#85f8c4",
+            "surface-card-subtle": "#F1F5F9",
+            "brand-forest": "#064E3B",
+            "tertiary-container": "#b15f00",
+            "inverse-primary": "#68dba9",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#68dba9",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "tertiary-fixed": "#ffdcc3",
+            "text-muted": "#64748B",
+            "surface-base": "#F8FAFC",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#005137"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Plus Jakarta Sans"],
+            "metric-display": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "code-mono": ["monospace"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "metric-display": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #CBD5E1;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+</head>
+<body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint selection:text-brand-forest">
+<!-- ==================== 1. SIDEBAR NAVIGATION (SideNavBar Blueprint) ==================== -->
+<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm select-none">
+<!-- Top Section: Brand Identity & Menu -->
+<div class="flex flex-col gap-6">
+<!-- Brand Logo & Platform Title -->
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-[24px]">eco</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</span>
+<span class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors group" href="#overview">
+<span class="material-symbols-outlined text-[20px] text-text-muted group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-label-md font-label-md">Overview</span>
+</a>
+<!-- Waste Classifier -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors group" href="#waste-classifier">
+<span class="material-symbols-outlined text-[20px] text-text-muted group-hover:text-primary transition-colors">delete</span>
+<span class="text-label-md font-label-md">Waste Classifier</span>
+</a>
+<!-- CV Analyzer (ACTIVE MANDATORY ITEM) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs" href="#cv-analyzer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">document_scanner</span>
+<span class="text-label-md font-label-md">CV Analyzer</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-brand-emerald-dark"></span>
+</a>
+<!-- Plant Disease -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors group" href="#plant-disease">
+<span class="material-symbols-outlined text-[20px] text-text-muted group-hover:text-primary transition-colors">potted_plant</span>
+<span class="text-label-md font-label-md">Plant Disease</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors group" href="#reports">
+<span class="material-symbols-outlined text-[20px] text-text-muted group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors group" href="#settings">
+<span class="material-symbols-outlined text-[20px] text-text-muted group-hover:text-primary transition-colors">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+</nav>
+<!-- Pro / Impact Card -->
+<div class="p-3.5 bg-brand-mint-subtle/80 border border-brand-mint/30 rounded-xl relative overflow-hidden">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="text-label-sm font-label-sm font-bold text-brand-forest">SDG 8 &amp; 4 Impact</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted leading-tight text-[11px] mb-3">
+          AI tuned to green collar career benchmarks and ethical recruitment models.
+        </p>
+<button class="w-full py-1.5 px-3 bg-primary text-white rounded-lg text-label-sm font-label-sm font-semibold hover:bg-brand-emerald-dark transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+<span>Upgrade Pro</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Bottom Section: Language Switcher, Profile and Footer metadata -->
+<div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+<!-- Language switch EN/ID -->
+<div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">translate</span>
+<span class="text-label-sm font-label-sm text-text-muted">Language: EN</span>
+</div>
+<div class="flex bg-white rounded-md p-0.5 border border-border-subtle">
+<span class="px-1.5 py-0.5 text-[10px] font-bold text-white bg-primary rounded">EN</span>
+<span class="px-1.5 py-0.5 text-[10px] font-semibold text-text-muted hover:text-text-strong cursor-pointer">ID</span>
+</div>
+</div>
+<!-- User Profile Card -->
+<div class="flex items-center justify-between px-2 py-2 rounded-xl hover:bg-surface-base transition-colors group cursor-pointer border border-transparent hover:border-border-subtle">
+<div class="flex items-center gap-2.5">
+<img class="w-9 h-9 rounded-full object-cover ring-2 ring-brand-mint/40" data-alt="A portrait of Arya Pratama, a professional male sustainability auditor dressed in minimalist business casual green-toned attire in a sunlit eco-conscious modern architectural workspace, photographed with soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjX9vmeXrbXuyDOTquB3WmxrcEPYciT9a5L9ib7vThYK5cYfgllkenyBgbiX-wQz9kKmS4fVQYYmmvx8u_JhZQQPuRORJtjWnkyn_McHzSSIhT2gCdGjuO4L5ILd5KuJlnzP7GMfNy4Ku_F4s2AfWjmA1hbOMjLnLwKQVBRzHQMyYsiXzhvuDByAmsju_OxEntsgq9Rsx8BejD65ToQb9-FGxywXQi97CUV2EOpn4D"/>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-text-strong group-hover:text-primary transition-colors leading-snug">Arya Pratama</span>
+<span class="text-label-sm font-label-sm text-text-muted leading-none">Sustainability Auditor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[20px]">account_circle</span>
+</div>
+</div>
+</aside>
+<!-- ==================== 2. MAIN APPLICATION CONTENT CANVAS ==================== -->
+<div class="flex-1 flex flex-col ml-64 min-w-0">
+<!-- Top Navigation Bar (TopNavBar Blueprint) -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm backdrop-blur-md">
+<!-- Left side: Breadcrumb & Search -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-label-md font-label-md text-text-muted">
+<span class="font-extrabold text-primary text-headline-md font-headline-md tracking-tight mr-2">SustainAI</span>
+<span class="text-border-subtle font-normal">/</span>
+<span class="hover:text-text-strong cursor-pointer transition-colors">Apps</span>
+<span class="text-border-subtle font-normal">/</span>
+<span class="text-primary font-semibold">CV Analyzer</span>
+</div>
+<!-- Subtle Engine Status Indicator -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint-subtle border border-brand-mint/40 text-brand-forest text-label-sm font-label-sm">
+<span class="w-2 h-2 rounded-full bg-brand-emerald-dark animate-pulse"></span>
+<span>System Operational</span>
+<span class="text-text-muted">• AI Engine v2.4 Active</span>
+</div>
+</div>
+<!-- Right side: Actions, Navigation links & Quick CTA -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-5 mr-2">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#diagnostics">Live Diagnostics</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#sdg-goals">SDG Goals</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#documentation">Documentation</a>
+</div>
+<div class="flex items-center gap-1 text-text-muted border-l border-border-subtle pl-4">
+<button class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-surface-base hover:text-primary transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="w-1.5 h-1.5 bg-accent-amber rounded-full absolute top-2 right-2"></span>
+</button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-surface-base hover:text-primary transition-colors" title="Documentation &amp; Help">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<!-- Trailing CTA Button -->
+<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-brand-emerald-dark text-white rounded-lg text-label-md font-label-md font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>New Scan</span>
+</button>
+</div>
+</header>
+<!-- Page Body Container -->
+<main class="flex-1 p-8 space-y-6 max-w-[1400px] w-full mx-auto">
+<!-- ==================== PAGE HEADER & KPI ROW ==================== -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<h1 class="text-headline-xl font-headline-xl text-text-strong tracking-tight">AI CV Analyzer &amp; Career Impact Optimizer</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-accent-teal-subtle text-accent-teal border border-accent-teal/20">
+              SDG 8 &amp; SDG 4
+            </span>
+</div>
+<p class="text-body-md font-body-md text-text-muted max-w-2xl">
+            Evaluate resume ATS-compatibility, professional standards, and alignment with green economy &amp; sustainable industry roles.
+          </p>
+</div>
+<!-- Target Profile Dropdown Selector -->
+<div class="flex items-center gap-3 bg-surface-card border border-border-subtle p-2 rounded-xl shadow-sm self-start lg:self-auto">
+<div class="w-8 h-8 rounded-lg bg-surface-base flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">work_outline</span>
+</div>
+<div class="flex flex-col pr-3">
+<span class="text-[10px] uppercase font-bold text-text-muted tracking-wider">Benchmark Role</span>
+<select class="bg-transparent border-0 p-0 text-label-md font-label-md font-semibold text-text-strong focus:ring-0 cursor-pointer">
+<option selected="">Senior Sustainability &amp; ESG Consultant (Tech &amp; Mfg)</option>
+<option>Climate Risk &amp; Carbon Accounting Lead</option>
+<option>Circular Economy Program Manager</option>
+<option>Corporate Governance &amp; Ethics Auditor</option>
+</select>
+</div>
+</div>
+</div>
+<!-- ==================== KPI STATS CARDS ==================== -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Score Card 1: ATS Match -->
+<div class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-text-muted">Overall ATS Match Score</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-mint-subtle text-brand-forest">Certified</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">88</span>
+<span class="text-label-md font-label-md text-text-muted">/ 100</span>
+</div>
+<p class="text-label-sm font-label-sm text-brand-emerald-dark font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Strong Candidate Match for Green Tech
+            </p>
+</div>
+<!-- Gauge Graphic / Visual Meter -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-card-subtle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-label-md font-headline-md font-bold text-primary">88%</span>
+</div>
+</div>
+<!-- Score Card 2: ESG Skills Index -->
+<div class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-text-muted">ESG &amp; Sustainability Skills Index</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-accent-teal-subtle text-accent-teal">SDG 8 Alignment</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">92%</span>
+<span class="text-label-sm font-label-sm text-brand-emerald-dark font-semibold">High Alignment</span>
+</div>
+<p class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">trending_up</span>
+              +14% higher than regional candidate average
+            </p>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-brand-mint-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">nature_people</span>
+</div>
+</div>
+<!-- Score Card 3: Market Readiness -->
+<div class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-text-muted">Industry Readiness</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-accent-amber-subtle text-amber-900">Benchmark</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">Top 10%</span>
+</div>
+<p class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-accent-amber">stars</span>
+              Ranked in 90th percentile of clean tech talent
+            </p>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-accent-amber">
+<span class="material-symbols-outlined text-[28px]">workspace_premium</span>
+</div>
+</div>
+</div>
+<!-- ==================== MAIN WORKSPACE (SPLIT GRID 5:7) ==================== -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: DOCUMENT SOURCE & PARSED SECTIONS (5 Cols) -->
+<section class="lg:col-span-5 space-y-5">
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm p-5 space-y-4">
+<!-- File Info Header -->
+<div class="flex items-start justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-danger-rose-subtle text-danger-rose flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div>
+<h3 class="text-label-lg font-headline-sm text-text-strong truncate max-w-[200px]" title="Arya_Pratama_Senior_ESG_Analyst.pdf">
+                    Arya_Pratama_ESG.pdf
+                  </h3>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted mt-0.5">
+<span>2.4 MB</span>
+<span>•</span>
+<span class="text-brand-forest font-medium">Analyzed 3m ago</span>
+</div>
+</div>
+</div>
+<!-- Quick Document Utility Actions -->
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" title="Download Enhanced PDF">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" title="View Raw Extracted Text">
+<span class="material-symbols-outlined text-[18px]">text_fields</span>
+</button>
+<button class="p-2 rounded-lg text-text-muted hover:text-primary hover:bg-brand-mint-subtle transition-colors" title="Re-upload Resume">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Visual Toggle Tabs -->
+<div class="flex p-1 bg-surface-base rounded-xl border border-border-subtle text-label-sm font-label-sm">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-surface-card text-text-strong font-semibold shadow-xs flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Document Preview</span>
+</button>
+<button class="flex-1 py-1.5 px-3 rounded-lg text-text-muted hover:text-text-strong transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+<span>Parsed ATS JSON</span>
+</button>
+</div>
+<!-- Simulated Visual CV Document Preview -->
+<div class="border border-border-subtle rounded-xl bg-white p-5 shadow-xs relative overflow-hidden h-[540px] custom-scroll overflow-y-auto space-y-4 text-left">
+<!-- Subtle Watermark tag -->
+<div class="absolute top-3 right-3 text-[10px] px-2 py-0.5 bg-brand-mint-subtle text-brand-forest font-semibold rounded-md border border-brand-mint/30">
+                Parsed by SustainAI OCR
+              </div>
+<!-- Resume Header Simulated -->
+<div class="border-b border-border-subtle pb-3">
+<h4 class="text-headline-md font-headline-md text-text-strong font-bold">ARYA PRATAMA, M.Sc.</h4>
+<p class="text-label-md font-label-md text-primary font-semibold">Lead ESG Specialist &amp; Decarbonization Strategist</p>
+<p class="text-body-sm font-body-sm text-text-muted text-[12px] mt-1">
+                  Jakarta / Remote • linkedin.com/in/arya-pratama • contact@aryapratama.eco
+                </p>
+</div>
+<!-- Summary -->
+<div class="space-y-1">
+<h5 class="text-[11px] uppercase tracking-wider font-bold text-text-strong">Professional Summary</h5>
+<p class="text-[12px] font-body-sm text-on-surface-variant leading-relaxed bg-brand-mint-subtle/40 p-2.5 rounded-lg border-l-2 border-primary">
+                  Data-centric Sustainability Consultant with 6+ years driving Scope 1–3 greenhouse gas inventories, net-zero roadmaps, and GRI-compliant sustainability reporting across industrial manufacturing and tech conglomerates.
+                </p>
+</div>
+<!-- Experience Entry 1 -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-baseline">
+<h5 class="text-[12px] font-bold text-text-strong">Senior Environmental Analyst — EcoLogix Global</h5>
+<span class="text-[11px] text-text-muted font-medium">2021 — Present</span>
+</div>
+<ul class="list-disc pl-4 space-y-1 text-[11px] text-text-muted">
+<li>Orchestrated full lifecycle carbon accounting across 14 manufacturing hubs, identifying 28,000 MT CO2e in annual abatement potential.</li>
+<li class="bg-accent-amber-subtle/50 text-amber-950 p-1 rounded">
+                    Led circular economy supply chain review; improved raw material diversion rate across logistics operations.
+                    <span class="block text-[10px] text-accent-amber font-semibold mt-0.5">⚠️ AI Suggestion: Quantify metrics (e.g. +34% diversion rate)</span>
+</li>
+<li>Facilitated stakeholder assessments aligned with Task Force on Climate-related Financial Disclosures (TCFD).</li>
+</ul>
+</div>
+<!-- Experience Entry 2 -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-baseline">
+<h5 class="text-[12px] font-bold text-text-strong">Sustainability Researcher — GreenGrowth Institute</h5>
+<span class="text-[11px] text-text-muted font-medium">2018 — 2021</span>
+</div>
+<ul class="list-disc pl-4 space-y-1 text-[11px] text-text-muted">
+<li>Conducted Life Cycle Assessments (LCA) using openLCA and SimaPro for consumer packaging.</li>
+<li>Published 3 policy briefs contributing to national circular waste frameworks (SDG 12 &amp; SDG 8).</li>
+</ul>
+</div>
+<!-- Education & Certifications -->
+<div class="space-y-1 pt-2 border-t border-border-subtle">
+<h5 class="text-[11px] uppercase tracking-wider font-bold text-text-strong">Education &amp; Credentials</h5>
+<div class="text-[11px] text-text-muted space-y-0.5">
+<p><strong class="text-text-strong">M.Sc. Environmental Engineering</strong> — Universitas Indonesia (2018)</p>
+<p><strong class="text-text-strong">GRI Certified Sustainability Professional</strong> (2022)</p>
+<p><strong class="text-text-strong">ISO 14064 Carbon Verification Auditor</strong> (2023)</p>
+</div>
+</div>
+</div>
+<!-- Interactive File Dropzone for new upload -->
+<div class="p-4 border-2 border-dashed border-border-subtle hover:border-primary rounded-xl bg-surface-base hover:bg-brand-mint-subtle/40 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-[28px] text-text-muted group-hover:text-primary transition-colors">cloud_upload</span>
+<p class="text-label-md font-label-md text-text-strong mt-1">Drop updated resume file to re-analyze</p>
+<p class="text-label-sm font-label-sm text-text-muted">Supports PDF, DOCX, or TXT up to 10MB</p>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: AI DEEP DIAGNOSTICS & RECOMMENDATIONS (7 Cols) -->
+<section class="lg:col-span-7 space-y-5">
+<!-- DIAGNOSTIC 1: ATS BREAKDOWN & AUDIT METRICS -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm p-6 space-y-5">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">Executive Compatibility &amp; ATS Breakdown</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Parsed against automated enterprise talent filters and green economy keywords.</p>
+</div>
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest font-bold border border-brand-mint/40">
+                Grade: A-
+              </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+<!-- Item 1 -->
+<div class="space-y-1.5 p-3 rounded-xl bg-surface-base border border-border-subtle">
+<div class="flex justify-between text-label-md font-label-md">
+<span class="text-text-strong font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">key</span>
+                    Keywords &amp; ATS Parsing
+                  </span>
+<span class="text-brand-forest font-bold">94%</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 94%"></div>
+</div>
+<span class="text-[11px] text-text-muted">High density of target ESG phrasing</span>
+</div>
+<!-- Item 2 -->
+<div class="space-y-1.5 p-3 rounded-xl bg-surface-base border border-border-subtle">
+<div class="flex justify-between text-label-md font-label-md">
+<span class="text-text-strong font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-accent-amber">analytics</span>
+                    Quantified Impact &amp; Metrics
+                  </span>
+<span class="text-accent-amber font-bold">82%</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-accent-amber h-full rounded-full transition-all duration-500" style="width: 82%"></div>
+</div>
+<span class="text-[11px] text-text-muted">More $ or carbon savings metrics needed</span>
+</div>
+<!-- Item 3 -->
+<div class="space-y-1.5 p-3 rounded-xl bg-surface-base border border-border-subtle">
+<div class="flex justify-between text-label-md font-label-md">
+<span class="text-text-strong font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">format_shapes</span>
+                    Formatting &amp; Layout
+                  </span>
+<span class="text-brand-forest font-bold">95%</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 95%"></div>
+</div>
+<span class="text-[11px] text-text-muted">Clean single-column standard parser flow</span>
+</div>
+<!-- Item 4 -->
+<div class="space-y-1.5 p-3 rounded-xl bg-surface-base border border-border-subtle">
+<div class="flex justify-between text-label-md font-label-md">
+<span class="text-text-strong font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-accent-teal">psychology</span>
+                    Action Verbs &amp; Leadership
+                  </span>
+<span class="text-accent-teal font-bold">80%</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-accent-teal h-full rounded-full transition-all duration-500" style="width: 80%"></div>
+</div>
+<span class="text-[11px] text-text-muted">Solid assertive impact framing</span>
+</div>
+</div>
+</div>
+<!-- DIAGNOSTIC 2: KEY STRENGTHS & HIGH PRIORITY FIXES -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm p-6 space-y-4">
+<h3 class="text-headline-sm font-headline-sm text-text-strong flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">thumb_up</span>
+              Key Strengths &amp; Critical Optimization Points
+            </h3>
+<!-- Strengths Pill Tag Grid -->
+<div class="space-y-2">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-text-muted font-bold">Detected Candidate Strengths</span>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-brand-forest border border-brand-mint/40 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Clear GHG Protocol &amp; Scope 1-3 GHG Accounting</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-brand-forest border border-brand-mint/40 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Strong Cross-functional Stakeholder Management</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-brand-forest border border-brand-mint/40 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Verified GRI &amp; ISO 14064 Accreditations</span>
+</div>
+</div>
+</div>
+<!-- Suggestions / Warnings List -->
+<div class="space-y-2.5 pt-2">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-text-muted font-bold">Actionable Opportunities</span>
+<div class="p-3 bg-amber-50/70 border border-amber-200/80 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-accent-amber text-[20px] mt-0.5">priority_high</span>
+<div class="flex-1 space-y-0.5">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-amber-950">Add Quantified Carbon Reductions in 2022 Project</span>
+<span class="text-[10px] uppercase font-bold text-accent-amber px-2 py-0.5 bg-white rounded-md border border-amber-200">High Priority</span>
+</div>
+<p class="text-body-sm font-body-sm text-amber-900/90 text-[12px]">
+                    The recruiter algorithm for Senior ESG Consultant weighs quantifiable MT CO2e averted 2.3x higher than non-numerical job duty descriptions.
+                  </p>
+</div>
+</div>
+<div class="p-3 bg-blue-50/60 border border-blue-200/70 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-info-sky text-[20px] mt-0.5">lightbulb</span>
+<div class="flex-1 space-y-0.5">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-slate-900">Strengthen ISO 14001 Standards in Summary</span>
+<span class="text-[10px] uppercase font-bold text-info-sky px-2 py-0.5 bg-white rounded-md border border-blue-200">Keyword Gap</span>
+</div>
+<p class="text-body-sm font-body-sm text-slate-700 text-[12px]">
+                    92% of Tech &amp; Manufacturing job postings for this tier mandate ISO 14001 environmental management system familiarity.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- DIAGNOSTIC 3: SKILLS GAP & GREEN JOB MARKET ALIGNMENT (SDG 8 & 4) -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+                  Skills Gap &amp; Green Job Market Alignment
+                </h3>
+<p class="text-body-sm font-body-sm text-text-muted text-[13px]">
+                  Calibrated to United Nations SDG 8.5 (Productive Employment &amp; Decent Work)
+                </p>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Target: Tech/Manufacturing</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Matched Skills -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+                    Matched Competencies (7)
+                  </span>
+<span class="text-[11px] font-semibold text-text-muted">100% Verified</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">ESG Reporting</span>
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">GRI Standards</span>
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">Carbon Footprinting</span>
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">Scope 1, 2, 3</span>
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">GHG Protocol</span>
+<span class="px-2.5 py-1 rounded-md bg-white border border-border-subtle text-[11px] font-semibold text-text-strong">Lifecycle Analysis</span>
+</div>
+</div>
+<!-- Recommended / Missing Skills -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-accent-teal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add_box</span>
+                    Recommended to Add (3)
+                  </span>
+<span class="text-[11px] font-semibold text-brand-emerald-dark">+8% Match boost</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-accent-teal-subtle border border-accent-teal/30 text-[11px] font-bold text-accent-teal flex items-center gap-1 cursor-pointer hover:bg-accent-teal hover:text-white transition-colors">
+                    TCFD Framework <span class="text-[12px] font-normal">+</span>
+</span>
+<span class="px-2.5 py-1 rounded-md bg-accent-teal-subtle border border-accent-teal/30 text-[11px] font-bold text-accent-teal flex items-center gap-1 cursor-pointer hover:bg-accent-teal hover:text-white transition-colors">
+                    SimaPro / GaBi LCA <span class="text-[12px] font-normal">+</span>
+</span>
+<span class="px-2.5 py-1 rounded-md bg-accent-teal-subtle border border-accent-teal/30 text-[11px] font-bold text-accent-teal flex items-center gap-1 cursor-pointer hover:bg-accent-teal hover:text-white transition-colors">
+                    CBAM Compliance <span class="text-[12px] font-normal">+</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- DIAGNOSTIC 4: INTERACTIVE AI REWRITER & LIVE RECOMMENDATION -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">AI Rewriter &amp; Bullet Point Enhancer</h3>
+<span class="text-label-sm font-label-sm text-text-muted">Transforms generic duties into impactful, quantifiable achievements</span>
+</div>
+</div>
+<span class="text-[11px] px-2 py-1 bg-surface-base border border-border-subtle rounded-md text-text-muted font-mono">Model: Gemini Flash ESG</span>
+</div>
+<!-- Before vs After Comparison Card -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[12px]">
+<!-- Original Raw Text -->
+<div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-bold uppercase tracking-wider text-[10px]">Original Bullet Point</span>
+<span class="text-danger-rose font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">close</span> ATS Score: 64
+                  </span>
+</div>
+<p class="text-slate-700 italic leading-relaxed">
+                  "Led circular economy supply chain review; improved raw material diversion rate across logistics operations."
+                </p>
+<div class="text-[10px] text-text-muted">
+                  Critique: Lacks specific metrics, action verbs, and international framework standards.
+                </div>
+</div>
+<!-- AI Enhanced Suggestion -->
+<div class="p-3.5 rounded-xl bg-brand-mint-subtle/70 border border-brand-mint/50 space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="font-bold uppercase tracking-wider text-[10px] text-brand-forest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_back_ios_new</span>
+                    SustainAI Enhanced
+                  </span>
+<span class="text-brand-forest font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span> ATS Score: 96
+                  </span>
+</div>
+<p class="text-text-strong font-medium leading-relaxed">
+                  "Spearheaded circular economy audit across 8 logistics corridors, increasing material diversion rate by <strong>34%</strong> and averting <strong>1,420 MT</strong> of single-use industrial waste."
+                </p>
+<div class="text-[10px] text-brand-forest font-medium">
+                  Impact: Highlights leadership verb, verifiable percentage, and direct ecological tonnage.
+                </div>
+</div>
+</div>
+<!-- Action buttons for rewriter -->
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle bg-white text-text-strong text-label-sm font-label-sm font-semibold hover:bg-surface-base transition-colors flex items-center gap-1.5 active:scale-95">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Suggested Text</span>
+</button>
+<button class="px-4 py-1.5 rounded-lg bg-primary hover:bg-brand-emerald-dark text-white text-label-sm font-label-sm font-semibold transition-colors flex items-center gap-1.5 shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>Apply Recommendation</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- ==================== 4. BOTTOM ACTION & SUMMARY BAR ==================== -->
+<footer class="bg-surface-card rounded-2xl border border-border-subtle p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 mt-8">
+<!-- Left: SDG 8 Mission statement badge -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-accent-teal-subtle text-accent-teal flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">diversity_3</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-text-strong flex items-center gap-1.5">
+              UN SDG 8 Alignment &amp; Ethical Recruitment Verified
+              <span class="px-2 py-0.5 rounded text-[10px] bg-brand-mint-subtle text-brand-forest font-semibold">Fair AI</span>
+</h4>
+<p class="text-body-sm font-body-sm text-text-muted text-[12px]">
+              Empowering Decent Work &amp; Economic Growth through objective, skill-first resume optimization.
+            </p>
+</div>
+</div>
+<!-- Right: Action CTAs -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="px-4 py-2 rounded-lg border border-border-subtle bg-white text-text-strong text-label-md font-label-md font-medium hover:bg-surface-base transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share with Mentor</span>
+</button>
+<button class="px-4 py-2 rounded-lg border border-border-subtle bg-white text-text-strong text-label-md font-label-md font-medium hover:bg-surface-base transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">content_paste</span>
+<span>Copy Summary</span>
+</button>
+<button class="px-5 py-2 rounded-lg bg-primary hover:bg-brand-emerald-dark text-white text-label-md font-label-md font-semibold transition-colors flex items-center gap-1.5 shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Full Audit Report (PDF)</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
