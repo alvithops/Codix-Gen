@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SustainAI - Waste Classifier</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#005137",
+            "surface-base": "#F8FAFC",
+            "text-strong": "#0F172A",
+            "tertiary-container": "#b15f00",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#2f1500",
+            "on-secondary-fixed": "#00201d",
+            "secondary": "#006a61",
+            "error": "#ba1a1a",
+            "secondary-container": "#86f2e4",
+            "accent-amber-subtle": "#FEF3C7",
+            "on-surface": "#0b1c30",
+            "on-secondary-container": "#006f66",
+            "surface-variant": "#d3e4fe",
+            "surface-container-highest": "#d3e4fe",
+            "on-surface-variant": "#3d4a42",
+            "inverse-on-surface": "#eaf1ff",
+            "on-error": "#ffffff",
+            "inverse-surface": "#213145",
+            "text-muted": "#64748B",
+            "tertiary-fixed-dim": "#ffb77d",
+            "tertiary": "#8d4b00",
+            "surface-dim": "#cbdbf5",
+            "primary": "#006948",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "info-sky-subtle": "#E0F2FE",
+            "surface-card": "#FFFFFF",
+            "accent-teal": "#0F766E",
+            "secondary-fixed": "#89f5e7",
+            "primary-container": "#00855d",
+            "secondary-fixed-dim": "#6bd8cb",
+            "primary-fixed": "#85f8c4",
+            "danger-rose-subtle": "#FFE4E6",
+            "primary-fixed-dim": "#68dba9",
+            "accent-teal-subtle": "#CCFBF1",
+            "outline-variant": "#bccac0",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "surface-card-subtle": "#F1F5F9",
+            "inverse-primary": "#68dba9",
+            "border-focus": "#10B981",
+            "surface-container-low": "#eff4ff",
+            "outline": "#6d7a72",
+            "surface-tint": "#006c4a",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-fixed-variant": "#005049",
+            "accent-amber": "#F59E0B",
+            "tertiary-fixed": "#ffdcc3",
+            "brand-forest": "#064E3B",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#002114",
+            "brand-emerald-dark": "#047857",
+            "info-sky": "#0284C7",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#0b1c30",
+            "danger-rose": "#E11D48",
+            "brand-mint": "#34D399",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "surface": "#f8f9ff",
+            "brand-mint-subtle": "#ECFDF5",
+            "on-primary-container": "#f5fff7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "metric-display": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "code-mono": ["monospace"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "metric-display": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint-subtle selection:text-brand-forest">
+<!-- ================= PERSISTENT SIDE NAVIGATION (SHARED COMPONENT) ================= -->
+<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm">
+<!-- Brand Header -->
+<div>
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-10 h-10 rounded-xl bg-brand-mint-subtle text-primary flex items-center justify-center border border-border-focus">
+<span class="material-symbols-outlined text-primary" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md font-bold text-primary block leading-tight">SustainAI</span>
+<span class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</span>
+</div>
+</div>
+<!-- SDG Micro Badge -->
+<div class="mx-2 mb-5 px-3 py-1.5 rounded-lg bg-accent-teal-subtle text-accent-teal flex items-center justify-between border border-secondary-container">
+<span class="text-label-sm font-label-sm font-semibold">SDG 12 Target</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-card font-bold">12.5 Recycled</span>
+</div>
+<!-- Main Navigation Menu -->
+<nav class="space-y-1">
+<!-- Overview -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Overview</span>
+</a>
+<!-- Waste Classifier (Active Item) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold transition-all duration-150 ease-in-out cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete" style="font-variation-settings: 'FILL' 1;">delete</span>
+<span class="text-label-md font-label-md">Waste Classifier</span>
+</a>
+<!-- CV Analyzer -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="document_scanner">document_scanner</span>
+<span class="text-label-md font-label-md">CV Analyzer</span>
+</a>
+<!-- Plant Disease -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="potted_plant">potted_plant</span>
+<span class="text-label-md font-label-md">Plant Disease</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer / Utility -->
+<div class="space-y-3 pt-4 border-t border-border-subtle">
+<!-- Upgrade Promo CTA -->
+<div class="p-3 bg-surface-card-subtle rounded-xl border border-border-subtle">
+<div class="flex items-center gap-2 mb-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+<span class="text-label-sm font-label-sm font-bold">Edge Inference</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted leading-tight mb-2">99.8% precision with offline vision pack.</p>
+<button class="w-full py-1.5 px-3 bg-primary hover:bg-brand-emerald-dark text-on-primary text-label-sm font-label-sm rounded-lg transition-colors shadow-sm">Upgrade Pro</button>
+</div>
+<!-- Language Pill -->
+<div class="flex items-center justify-between px-3 py-2 text-text-muted hover:text-text-strong rounded-lg hover:bg-surface-base cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
+<span class="text-label-md font-label-md">Language: EN</span>
+</div>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-card border border-border-subtle text-text-muted font-bold">EN / ID</span>
+</div>
+<!-- Profile Tab -->
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-card hover:bg-surface-card-subtle transition cursor-pointer border border-border-subtle">
+<div class="w-8 h-8 rounded-full bg-brand-mint text-brand-forest flex items-center justify-center font-bold text-label-md">
+          AR
+        </div>
+<div class="flex-1 min-w-0">
+<p class="text-label-md font-label-md text-text-strong truncate">Arya Pratama</p>
+<p class="text-label-sm font-label-sm text-text-muted truncate">Sustainability Auditor</p>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT WRAPPER ================= -->
+<div class="ml-64 flex-1 flex flex-col min-w-0">
+<!-- TOP APP BAR (SHARED COMPONENT) -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm">
+<!-- Breadcrumbs & Identity -->
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md font-extrabold text-primary">SustainAI</span>
+<span class="text-text-muted">/</span>
+<span class="text-label-lg font-label-lg text-text-muted">Apps</span>
+<span class="text-text-muted">/</span>
+<span class="text-label-lg font-label-lg text-text-strong font-semibold">Waste Classifier</span>
+</div>
+<!-- Navigation links (from JSON) -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#">Live Diagnostics</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#">SDG Goals</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#">Documentation</a>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Model Latency Pill Indicator -->
+<div class="flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle border border-brand-mint rounded-full text-brand-forest">
+<span class="w-2 h-2 rounded-full bg-border-focus animate-pulse"></span>
+<span class="text-label-sm font-label-sm font-semibold">System Operational • 320ms</span>
+</div>
+<!-- Trailing Icon Buttons -->
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Help">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</button>
+<!-- New Scan CTA Button -->
+<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md transition shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>New Scan</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE CANVAS -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-[1280px] mx-auto space-y-6">
+<!-- Top Title & Subtitle Banner -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-text-strong tracking-tight">Classify Your Waste</h1>
+<p class="text-body-md font-body-md text-text-muted mt-1">Upload or capture an image to identify recyclability, material composition, and optimal disposal recommendations.</p>
+</div>
+<!-- Quick Stat Counters -->
+<div class="flex items-center gap-3">
+<div class="px-4 py-2 bg-surface-card rounded-xl border border-border-subtle shadow-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="recycling">recycling</span>
+<div>
+<p class="text-label-sm font-label-sm text-text-muted">Total Diverted</p>
+<p class="text-label-lg font-label-lg font-bold text-text-strong">42.8 kg CO2e</p>
+</div>
+</div>
+<div class="px-4 py-2 bg-surface-card rounded-xl border border-border-subtle shadow-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-teal text-[24px]" data-icon="token">token</span>
+<div>
+<p class="text-label-sm font-label-sm text-text-muted">EcoCredits</p>
+<p class="text-label-lg font-label-lg font-bold text-text-strong">1,240 Pts</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 2-COLUMN SPLIT INTERFACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT PANEL: INPUT & CAPTURE AREA (Span 5) -->
+<div class="lg:col-span-5 bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm flex flex-col gap-5">
+<!-- Header & Mode Switcher -->
+<div class="flex items-center justify-between">
+<h2 class="text-headline-sm font-headline-sm text-text-strong">Capture or Upload</h2>
+<span class="text-label-sm font-label-sm text-text-muted font-medium">Vision Engine v2.4</span>
+</div>
+<!-- Segmented Pill Mode Switcher -->
+<div class="grid grid-cols-2 p-1 bg-surface-card-subtle rounded-xl border border-border-subtle text-center">
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle transition text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="upload">upload</span>
+                Upload Image
+              </button>
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-text-muted hover:text-text-strong transition text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
+                Live Camera
+              </button>
+</div>
+<!-- Dropzone / Active Analyzed Preview Box -->
+<div class="relative rounded-xl border-2 border-dashed border-border-focus bg-brand-mint-subtle/30 p-5 flex flex-col items-center justify-center text-center transition group hover:bg-brand-mint-subtle/50">
+<!-- Analyzed Image Preview Frame -->
+<div class="w-full relative rounded-lg overflow-hidden border border-border-subtle bg-surface-card shadow-xs mb-4">
+<div class="relative h-60 w-full overflow-hidden bg-surface-base">
+<img class="w-full h-full object-cover" data-alt="A clean, studio-photographed single transparent PET plastic beverage bottle with a bright blue screw cap and paper label, centered on a neutral crisp slate surface with soft soft natural daylight lighting in a clean tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQdu8G8fj7MjCIEy6kwdolw_P4zdqrfCfhTjEpk5yflPOEISmboSjlQlwIFffcEH4ZFQBd0hJDWwwB88J2d9h15LAJcVLeMn2eXJBrtQgJGOcGJNpV8RxDWQnYn6ZioPF9n9YGswAm225GBf3lIhEPjEXz6nF24nh4Mop_yO2D2-zbaO9G9jld9rvYc8V7DYsAeoZGVcBlYTBGVpSOdaNiD1-g32wtcKEO3ZW0BHn"/>
+<!-- Computer Vision Bounding Box Overlays -->
+<div class="absolute inset-0 p-4 pointer-events-none">
+<!-- Bounding Box 1: Bottle Body -->
+<div class="absolute top-12 left-1/4 right-1/4 bottom-8 border-2 border-primary rounded-lg bg-primary/10 flex items-start justify-end p-1">
+<span class="text-label-sm font-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded font-mono font-bold shadow-xs">PET: 98%</span>
+</div>
+<!-- Bounding Box 2: Cap -->
+<div class="absolute top-4 left-[38%] right-[38%] h-8 border-2 border-accent-teal rounded bg-accent-teal/20 flex items-start justify-end p-0.5">
+<span class="text-label-sm font-label-sm bg-accent-teal text-surface-card px-1 py-0.2 rounded font-mono font-bold text-[9px]">PP Cap</span>
+</div>
+</div>
+<!-- Overlay Status Tag -->
+<div class="absolute top-3 left-3 bg-surface-card/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-border-subtle shadow-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-sm font-label-sm text-text-strong font-semibold">Active Frame Detected</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-text-strong/80 backdrop-blur-sm text-surface-card px-2 py-0.5 rounded text-label-sm font-label-sm">
+                    1080 x 1440 • 1.4 MB
+                  </div>
+</div>
+</div>
+<!-- Drag and Drop Actions Area -->
+<div class="flex items-center justify-between w-full pt-1">
+<div class="text-left">
+<p class="text-label-md font-label-md text-text-strong">sample_drink_bottle_pet.png</p>
+<p class="text-body-sm font-body-sm text-text-muted">Supports JPG, PNG, WebP up to 10MB</p>
+</div>
+<button class="px-3.5 py-1.5 bg-surface-card border border-border-subtle hover:border-primary text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-medium transition shadow-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="cached">cached</span>
+                  Replace
+                </button>
+</div>
+</div>
+<!-- Quick Sample Selectors -->
+<div>
+<p class="text-label-sm font-label-sm text-text-muted mb-2 font-medium">Try quick test specimens:</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-primary border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+                  Plastic Bottle
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
+                  Banana Peel
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
+                  Cardboard Box
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
+                  Lithium Battery
+                </button>
+</div>
+</div>
+<!-- AI Engine Metadata Specs -->
+<div class="pt-4 border-t border-border-subtle flex items-center justify-between text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="memory">memory</span>
+                Gemini 1.5 Flash Vision
+              </span>
+<span class="font-mono">Inference: 0.32s</span>
+</div>
+</div>
+<!-- RIGHT PANEL: AI ANALYSIS & RECOMMENDATIONS RESULTS (Span 7) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Primary Classification Card -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm">
+<!-- Result Header -->
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-headline-sm font-headline-sm text-text-strong">Analysis Results</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-brand-mint-subtle text-brand-forest border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      Scan Complete • 98.4% Confidence
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">Automated visual segmentation processed in 320ms</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-info-sky-subtle text-info-sky border border-info-sky/20 text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+                    SDG 12.5 Validated
+                  </span>
+</div>
+</div>
+<!-- Main Identified Object Headline -->
+<div class="py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-brand-mint-subtle text-primary flex items-center justify-center shrink-0 border border-brand-mint">
+<span class="material-symbols-outlined text-[28px]" data-icon="water_bottle" style="font-variation-settings: 'FILL' 1;">water_bottle</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md font-bold text-text-strong">PET Beverage Bottle</h3>
+<span class="px-2 py-0.5 rounded bg-surface-card-subtle text-text-muted font-mono text-label-sm font-label-sm">#1 PETE</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">Polyethylene Terephthalate polymer with separate cap assembly</p>
+</div>
+</div>
+<!-- Recyclability Tag Verdict -->
+<div class="flex md:flex-col items-end justify-between md:justify-center">
+<span class="px-3 py-1 rounded-full bg-brand-mint-subtle text-brand-forest text-label-md font-label-md font-bold border border-border-focus">
+                    Highly Recyclable
+                  </span>
+<span class="text-label-sm font-label-sm text-text-muted mt-1">Category 1 Plastic</span>
+</div>
+</div>
+<!-- Multi-Part Breakdown (Card Segments) -->
+<div class="mt-2 space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="text-label-md font-label-md text-text-muted tracking-wider">SORTING GUIDE BY PART</h4>
+<span class="text-label-sm font-label-sm text-text-muted">3 Components Detected</span>
+</div>
+<!-- Part 1: Bottle Body -->
+<div class="p-4 rounded-xl bg-surface-card border border-border-subtle hover:border-border-focus transition shadow-xs flex items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-brand-mint-subtle text-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_drink">local_drink</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg text-text-strong font-semibold">PET Bottle Body</p>
+<p class="text-body-sm font-body-sm text-text-muted">Material: Clear PET plastic (Resin Code 1)</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-lg bg-brand-mint-subtle text-brand-forest text-label-sm font-label-sm font-semibold border border-brand-mint">
+                      Recyclable (Blue Bin)
+                    </span>
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<!-- Part 2: Bottle Cap -->
+<div class="p-4 rounded-xl bg-surface-card border border-border-subtle hover:border-border-focus transition shadow-xs flex items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-accent-teal-subtle text-accent-teal flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="circle">circle</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg text-text-strong font-semibold">Plastic Screw Cap</p>
+<p class="text-body-sm font-body-sm text-text-muted">Material: Polypropylene (PP or HDPE)</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-lg bg-accent-teal-subtle text-accent-teal text-label-sm font-label-sm font-semibold border border-secondary-container">
+                      Separate &amp; Recycle
+                    </span>
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<!-- Part 3: Sleeve / Label -->
+<div class="p-4 rounded-xl bg-surface-card border border-border-subtle hover:border-border-focus transition shadow-xs flex items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-accent-amber-subtle text-accent-amber flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="label">label</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg text-text-strong font-semibold">Product Wrap Label</p>
+<p class="text-body-sm font-body-sm text-text-muted">Material: Paper/BOPP film with adhesive</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-lg bg-accent-amber-subtle text-text-strong text-label-sm font-label-sm font-semibold border border-accent-amber/30">
+                      Peel Off (General Waste)
+                    </span>
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="remove_circle_outline">remove_circle_outline</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step-by-Step Actionable Disposal Instructions -->
+<div class="bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="task_alt">task_alt</span>
+<h3 class="text-headline-sm font-headline-sm text-text-strong">Step-by-Step Disposal Action Plan</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Step 1 -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle relative flex flex-col justify-between">
+<div>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-label-sm font-label-sm flex items-center justify-center mb-2">1</span>
+<h4 class="text-label-lg font-label-lg text-text-strong mb-1">Rinse Contents</h4>
+<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">Empty all liquid remnants and quickly rinse with water to avoid cross-bin odor contamination.</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="water_drop">water_drop</span>
+                    Cleaned
+                  </span>
+</div>
+<!-- Step 2 -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle relative flex flex-col justify-between">
+<div>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-label-sm font-label-sm flex items-center justify-center mb-2">2</span>
+<h4 class="text-label-lg font-label-lg text-text-strong mb-1">Peel and Flatten</h4>
+<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">Remove product label along perforated seam. Crush bottle body flat to optimize compact storage.</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="compress">compress</span>
+                    Volume Reduced 70%
+                  </span>
+</div>
+<!-- Step 3 -->
+<div class="p-4 rounded-xl bg-surface-base border border-border-subtle relative flex flex-col justify-between">
+<div>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-label-sm font-label-sm flex items-center justify-center mb-2">3</span>
+<h4 class="text-label-lg font-label-lg text-text-strong mb-1">Sort into Blue Bin</h4>
+<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">Deposit body in designated recyclable blue plastics receptacle or local Waste Bank deposit box.</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete_sweep">delete_sweep</span>
+                    Ready for Collection
+                  </span>
+</div>
+</div>
+</div>
+<!-- Environmental Impact Card & Community Rewards -->
+<div class="p-5 rounded-2xl bg-gradient-to-r from-brand-mint-subtle via-accent-teal-subtle to-surface-card border border-border-focus shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[28px]" data-icon="compost">compost</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="text-label-lg font-label-lg font-bold text-brand-forest">Verified Ecological Impact</p>
+<span class="px-2 py-0.5 rounded bg-brand-forest text-on-primary text-[10px] font-bold">+15 EcoCredits</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-strong mt-0.5">
+                    Prevented <strong class="text-brand-forest">0.04 kg CO2e</strong> in atmospheric lifecycle emissions. Logged into circular economy ledger.
+                  </p>
+</div>
+</div>
+<!-- Claim Button -->
+<div class="shrink-0">
+<span class="text-label-sm font-label-sm text-text-muted block text-right mb-1">Bank Partner: Bank Sampah Bersih</span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 bg-brand-forest text-on-primary rounded-lg text-label-sm font-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+                  Audited Chain
+                </span>
+</div>
+</div>
+<!-- Bottom Action Footer -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md font-semibold transition shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark">bookmark</span>
+                  Save to Log
+                </button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-card border border-border-subtle hover:bg-surface-base text-text-strong rounded-lg text-label-md font-label-md font-semibold transition shadow-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+                  Print Waste Label
+                </button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-semibold transition">
+<span class="material-symbols-outlined text-[18px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+                Scan Another Item
+              </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
