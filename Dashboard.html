@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SustainAI - Sustainability &amp; Waste Intelligence Dashboard</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatum from specification -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#005137",
+            "surface-base": "#F8FAFC",
+            "text-strong": "#0F172A",
+            "tertiary-container": "#b15f00",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#2f1500",
+            "on-secondary-fixed": "#00201d",
+            "secondary": "#006a61",
+            "error": "#ba1a1a",
+            "secondary-container": "#86f2e4",
+            "accent-amber-subtle": "#FEF3C7",
+            "on-surface": "#0b1c30",
+            "on-secondary-container": "#006f66",
+            "surface-variant": "#d3e4fe",
+            "surface-container-highest": "#d3e4fe",
+            "on-surface-variant": "#3d4a42",
+            "inverse-on-surface": "#eaf1ff",
+            "on-error": "#ffffff",
+            "inverse-surface": "#213145",
+            "text-muted": "#64748B",
+            "tertiary-fixed-dim": "#ffb77d",
+            "tertiary": "#8d4b00",
+            "surface-dim": "#cbdbf5",
+            "primary": "#006948",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "info-sky-subtle": "#E0F2FE",
+            "surface-card": "#FFFFFF",
+            "accent-teal": "#0F766E",
+            "secondary-fixed": "#89f5e7",
+            "primary-container": "#00855d",
+            "secondary-fixed-dim": "#6bd8cb",
+            "primary-fixed": "#85f8c4",
+            "danger-rose-subtle": "#FFE4E6",
+            "primary-fixed-dim": "#68dba9",
+            "accent-teal-subtle": "#CCFBF1",
+            "outline-variant": "#bccac0",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "surface-card-subtle": "#F1F5F9",
+            "inverse-primary": "#68dba9",
+            "border-focus": "#10B981",
+            "surface-container-low": "#eff4ff",
+            "outline": "#6d7a72",
+            "surface-tint": "#006c4a",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-fixed-variant": "#005049",
+            "accent-amber": "#F59E0B",
+            "tertiary-fixed": "#ffdcc3",
+            "brand-forest": "#064E3B",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#002114",
+            "brand-emerald-dark": "#047857",
+            "info-sky": "#0284C7",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#0b1c30",
+            "danger-rose": "#E11D48",
+            "brand-mint": "#34D399",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "on-secondary": "#ffffff",
+            "surface": "#f8f9ff",
+            "brand-mint-subtle": "#ECFDF5",
+            "on-primary-container": "#f5fff7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "metric-display": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "code-mono": ["monospace"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "metric-display": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Ambient and subtle eco-tech shadows */
+    .shadow-eco-subtle {
+      box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+    }
+    .shadow-eco-hover {
+      box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint selection:text-brand-forest">
+<!-- ================= SIDE NAVIGATION BAR (MANDATORY SHARED COMPONENT) ================= -->
+<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle shadow-sm flex flex-col justify-between py-6 px-4">
+<!-- Brand Header -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</div>
+<div class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</div>
+</div>
+</div>
+<!-- Navigation Tabs (Exact Strings and Icons from JSON) -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- 1. Overview (Active Match) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold transition-all duration-150 ease-in-out cursor-pointer active:scale-98" href="#overview">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-md font-label-md">Overview</span>
+</a>
+<!-- 2. Waste Classifier -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer active:scale-98" href="#classifier">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+<span class="text-label-md font-label-md">Waste Classifier</span>
+</a>
+<!-- 3. CV Analyzer -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer active:scale-98" href="#analyzer">
+<span class="material-symbols-outlined text-[20px]">document_scanner</span>
+<span class="text-label-md font-label-md">CV Analyzer</span>
+</a>
+<!-- 4. Plant Disease -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer active:scale-98" href="#plant-disease">
+<span class="material-symbols-outlined text-[20px]">potted_plant</span>
+<span class="text-label-md font-label-md">Plant Disease</span>
+</a>
+<!-- 5. Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer active:scale-98" href="#reports">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<!-- 6. Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer active:scale-98" href="#settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Middle Promotional / SDG Impact Block -->
+<div class="px-2 my-4">
+<div class="p-3.5 rounded-xl bg-surface-base border border-border-subtle flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-brand-mint-subtle text-brand-forest font-semibold">SDG 11 &amp; 12</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted leading-tight">Campus Waste Target 2026: 85% diversion.</p>
+<button class="w-full py-1.5 px-3 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary text-label-sm font-label-sm font-semibold transition-colors duration-150 text-center">
+          Upgrade Pro
+        </button>
+</div>
+</div>
+<!-- Footer Controls (Exact labels & icons from JSON) -->
+<div class="flex flex-col gap-2 pt-3 border-t border-border-subtle">
+<!-- Language: EN -->
+<button class="flex items-center justify-between w-full px-3 py-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span class="text-label-md font-label-md">Language: EN</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted bg-surface-card-subtle px-1.5 py-0.5 rounded">ID</span>
+</button>
+<!-- Profile -->
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-base transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[24px]">account_circle</span>
+<div class="flex flex-col text-left overflow-hidden">
+<span class="text-label-md font-label-md text-text-strong truncate">Alex Mercer</span>
+<span class="text-label-sm font-label-sm text-text-muted truncate">Sustainability Officer</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN WRAPPER ================= -->
+<div class="ml-64 flex-1 flex flex-col min-w-0">
+<!-- ================= TOP NAVIGATION BAR (MANDATORY SHARED COMPONENT) ================= -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-6 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm">
+<!-- Left side: Search bar & Links -->
+<div class="flex items-center gap-8">
+<div class="relative w-80">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full pl-9 pr-4 py-2 text-body-sm font-body-sm bg-surface-base border border-border-subtle rounded-lg text-text-strong placeholder-text-muted focus:outline-none focus:border-border-focus focus:ring-1 focus:ring-border-focus transition-all" placeholder="Search telemetry, logs or SDG insights..." type="text"/>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md transition-colors" href="#">Live Diagnostics</a>
+<a class="text-text-muted hover:text-text-strong text-label-md font-label-md transition-colors" href="#">SDG Goals</a>
+<a class="text-text-muted hover:text-text-strong text-label-md font-label-md transition-colors" href="#">Documentation</a>
+</nav>
+</div>
+<!-- Right side: Status, Notifications, Help & Action -->
+<div class="flex items-center gap-4">
+<!-- Live System Status (trailing_secondary_action) -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-mint-subtle border border-brand-mint text-brand-forest">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm font-semibold">System Operational</span>
+</div>
+<!-- Trailing Icon Actions -->
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base relative transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
+</button>
+<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" title="Help">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<!-- Trailing Primary Action -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary font-label-md text-label-md transition-all duration-150 ease-in-out cursor-pointer active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>New Scan</span>
+</button>
+<!-- Profile Avatar -->
+<div class="w-9 h-9 rounded-full bg-brand-mint-subtle border border-primary flex items-center justify-center text-primary font-bold text-label-md">
+          AM
+        </div>
+</div>
+</header>
+<!-- ================= DASHBOARD CONTENT CANVAS ================= -->
+<main class="flex-1 p-6 lg:p-8 max-w-[1360px] w-full mx-auto space-y-6">
+<!-- SECTION 1: WELCOME & FILTER HEADER -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-headline-lg font-headline-lg text-text-strong">Welcome back, Alex 👋</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-brand-mint-subtle text-brand-forest text-label-sm font-label-sm font-semibold border border-brand-mint">
+              AI Engine v2.4 Active
+            </span>
+</div>
+<p class="text-body-md font-body-md text-text-muted mt-1">
+            Monitoring campus waste diversion and circular efficiency metrics aligned with UN SDG 11 &amp; 12.
+          </p>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<!-- Time Range Segmented Control -->
+<div class="bg-surface-card border border-border-subtle p-1 rounded-xl flex items-center shadow-eco-subtle">
+<button class="px-3 py-1.5 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors">Today</button>
+<button class="px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-brand-mint-subtle text-primary font-semibold">7 Days</button>
+<button class="px-3 py-1.5 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors">30 Days</button>
+<button class="px-3 py-1.5 rounded-lg text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors flex items-center gap-1">
+              Custom
+              <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</button>
+</div>
+<!-- Export Report Button -->
+<button class="flex items-center gap-2 px-3.5 py-2 bg-surface-card hover:bg-surface-card-subtle border border-border-subtle text-text-strong rounded-lg text-label-md font-label-md transition-colors shadow-eco-subtle">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Report</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: 4-COLUMN SUMMARY METRIC CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- KPI 1: Total Waste Processed -->
+<div class="bg-surface-card p-5 rounded-2xl border border-border-subtle shadow-eco-subtle hover:shadow-eco-hover transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-muted">Total Waste Processed</span>
+<div class="w-9 h-9 rounded-xl bg-brand-mint-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">scale</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">14,850</span>
+<span class="text-body-md font-body-md text-text-muted font-medium">kg</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex items-center text-label-sm font-label-sm text-brand-forest bg-brand-mint-subtle px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+              +14.2%
+            </span>
+<span class="text-label-sm font-label-sm text-text-muted">vs last month</span>
+</div>
+</div>
+<!-- KPI 2: Diversion Rate -->
+<div class="bg-surface-card p-5 rounded-2xl border border-border-subtle shadow-eco-subtle hover:shadow-eco-hover transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-muted">Diversion Rate</span>
+<div class="w-9 h-9 rounded-xl bg-accent-teal-subtle text-accent-teal flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">recycling</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">68.4%</span>
+<span class="text-body-md font-body-md text-text-muted font-medium">/ 65% target</span>
+</div>
+<div class="mt-3">
+<div class="w-full bg-surface-card-subtle h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 68.4%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5">
+<span class="text-label-sm font-label-sm text-primary font-semibold">+3.4% exceeded</span>
+<span class="text-label-sm font-label-sm text-text-muted">Goal: 85% by '26</span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Carbon Offset -->
+<div class="bg-surface-card p-5 rounded-2xl border border-border-subtle shadow-eco-subtle hover:shadow-eco-hover transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-muted">CO₂e Offset</span>
+<div class="w-9 h-9 rounded-xl bg-info-sky-subtle text-info-sky flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">forest</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">4,120</span>
+<span class="text-body-md font-body-md text-text-muted font-medium">kg CO₂e</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex items-center text-label-sm font-label-sm text-brand-forest bg-brand-mint-subtle px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-0.5">park</span>
+              198 trees equiv.
+            </span>
+<span class="text-label-sm font-label-sm text-text-muted">landfill diverted</span>
+</div>
+</div>
+<!-- KPI 4: Active Stations -->
+<div class="bg-surface-card p-5 rounded-2xl border border-border-subtle shadow-eco-subtle hover:shadow-eco-hover transition-all duration-200">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-muted">Active Smart Bins</span>
+<div class="w-9 h-9 rounded-xl bg-surface-card-subtle text-text-strong flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display text-text-strong">36 / 36</span>
+<span class="text-body-md font-body-md text-text-muted font-medium">units</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex items-center gap-1.5 text-label-sm font-label-sm text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-border-focus animate-ping"></span>
+              100% Online
+            </span>
+<span class="text-label-sm font-label-sm text-text-muted">• 0 alerts pending</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: ANALYTICS & BREAKDOWN (BENTO GRID) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Large Chart Panel (8 Columns) -->
+<div class="lg:col-span-8 bg-surface-card p-6 rounded-2xl border border-border-subtle shadow-eco-subtle flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">Waste Generation &amp; Diversion Trend</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Comparing recyclable and compost volume versus residual landfill</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-label-sm font-label-sm text-text-muted">Recyclable</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-brand-mint"></span>
+<span class="text-label-sm font-label-sm text-text-muted">Compost</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="text-label-sm font-label-sm text-text-muted">Landfill</span>
+</div>
+</div>
+</div>
+<!-- Stylized Crisp Bar & Line Chart Representation -->
+<div class="relative h-60 w-full flex items-end justify-between pt-8 pb-4 px-2 border-b border-border-subtle">
+<!-- Grid background guides -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-40">
+<div class="w-full border-b border-dashed border-border-subtle"></div>
+<div class="w-full border-b border-dashed border-border-subtle"></div>
+<div class="w-full border-b border-dashed border-border-subtle"></div>
+<div class="w-full border-b border-dashed border-border-subtle"></div>
+</div>
+<!-- Day 1: Mon -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-28 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-20 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-12 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Mon</span>
+</div>
+<!-- Day 2: Tue -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-32 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-24 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-10 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Tue</span>
+</div>
+<!-- Day 3: Wed -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-36 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-28 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-14 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Wed</span>
+</div>
+<!-- Day 4: Thu -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-40 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-32 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-11 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Thu</span>
+</div>
+<!-- Day 5: Fri (Peak) -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-44 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-36 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-16 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold">Fri (Peak)</span>
+</div>
+<!-- Day 6: Sat -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-24 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-18 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-08 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Sat</span>
+</div>
+<!-- Day 7: Sun -->
+<div class="flex flex-col items-center gap-2 z-10 group cursor-pointer">
+<div class="flex items-end gap-1.5 h-44">
+<div class="w-4 bg-primary rounded-t-md h-20 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-brand-mint rounded-t-md h-14 group-hover:brightness-110 transition-all"></div>
+<div class="w-4 bg-slate-200 rounded-t-md h-06 group-hover:bg-slate-300 transition-all"></div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">Sun</span>
+</div>
+</div>
+</div>
+<!-- Bottom Metric footer inside chart -->
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm text-text-muted">
+<span class="flex items-center gap-1.5 text-brand-forest font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+              Diversion efficiency improved by 8.4% over previous weekend
+            </span>
+<span class="text-label-sm font-label-sm">Updated 4 mins ago</span>
+</div>
+</div>
+<!-- Donut Breakdown Card (4 Columns) -->
+<div class="lg:col-span-4 bg-surface-card p-6 rounded-2xl border border-border-subtle shadow-eco-subtle flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-headline-md font-headline-md text-text-strong">Category Breakdown</h2>
+<button class="p-1 rounded-md text-text-muted hover:text-text-strong">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Stylized Circular / Donut Indicator -->
+<div class="relative w-44 h-44 mx-auto my-3 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="none" r="40" stroke="#F1F5F9" stroke-width="12"></circle>
+<!-- Segment 1: Plastic 38% -->
+<circle cx="50" cy="50" fill="none" r="40" stroke="#006948" stroke-dasharray="251.2" stroke-dashoffset="155.7" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Segment 2: Organic 32% -->
+<circle class="origin-center rotate-[137deg]" cx="50" cy="50" fill="none" r="40" stroke="#34D399" stroke-dasharray="251.2" stroke-dashoffset="170.8" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Segment 3: Paper 18% -->
+<circle class="origin-center rotate-[252deg]" cx="50" cy="50" fill="none" r="40" stroke="#F59E0B" stroke-dasharray="251.2" stroke-dashoffset="206.0" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-metric-display font-metric-display text-text-strong leading-none">14.8t</span>
+<span class="text-label-sm font-label-sm text-text-muted mt-1">Total Sorted</span>
+</div>
+</div>
+<!-- Legend Items -->
+<div class="space-y-2.5 mt-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-body-sm font-body-sm text-text-strong">Plastic (PET / HDPE)</span>
+</div>
+<span class="text-label-md font-label-md text-text-strong">38% (5.64t)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-brand-mint"></span>
+<span class="text-body-sm font-body-sm text-text-strong">Organic Food &amp; Biomass</span>
+</div>
+<span class="text-label-md font-label-md text-text-strong">32% (4.75t)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-accent-amber"></span>
+<span class="text-body-sm font-body-sm text-text-strong">Paper &amp; Cardboard</span>
+</div>
+<span class="text-label-md font-label-md text-text-strong">18% (2.67t)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-slate-400"></span>
+<span class="text-body-sm font-body-sm text-text-strong">Glass, Metals &amp; E-Waste</span>
+</div>
+<span class="text-label-md font-label-md text-text-strong">12% (1.78t)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<button class="w-full text-center text-primary font-semibold text-label-md hover:underline flex items-center justify-center gap-1">
+              View Detailed Material Composition
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: REAL-TIME AI SCAN FEED & QUICK CLASSIFIER WIDGET -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Table Feed: Recent AI Scans (8 Columns) -->
+<div class="lg:col-span-8 bg-surface-card p-6 rounded-2xl border border-border-subtle shadow-eco-subtle flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="text-headline-md font-headline-md text-text-strong">Recent AI Classification Feed</h2>
+<p class="text-body-sm font-body-sm text-text-muted">Edge-vision telemetry from smart receptacle station cams</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-text-muted">Live Stream</span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-subtle text-label-sm font-label-sm text-text-muted uppercase">
+<th class="py-3 px-3">Item / Image</th>
+<th class="py-3 px-3">Detected Material</th>
+<th class="py-3 px-3">Confidence</th>
+<th class="py-3 px-3">Classification</th>
+<th class="py-3 px-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle text-body-sm font-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-base transition-colors">
+<td class="py-3 px-3 flex items-center gap-3">
+<img class="w-10 h-10 rounded-lg object-cover border border-border-subtle" data-alt="A clean close-up shot of a clear plastic water bottle on a white sorting conveyor in a modern recycling facility. Bright natural lighting highlights the transparency of the recyclable PET polymer. The shot is clean tech minimalist with emerald green and cool slate accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_J1ML8a7_HcxWHgOFwMgwXyLeG10pFFg5jhsiKCPx0ZW0Ci0SPIhl6agqyw6RhH9WpB70opCqKoChMz0na1ADzuGJ44r5-jiHAY04fAck-ATyWtPipXxHBVP0_wj-PWMHK34Gzi-HDWsileY8dsRJGZXtMmr_phzTzvkvk2x-x8POtgElsgHmKe4_6JzsgZpoiPW1X0r3Eduw27vNplkL7bAygEsdPA8uOojovCNC"/>
+<div>
+<div class="font-semibold text-text-strong">PET Bottle (500ml)</div>
+<div class="text-label-sm font-label-sm text-text-muted">Station 04 • 2m ago</div>
+</div>
+</td>
+<td class="py-3 px-3 font-medium text-text-strong">Polyethylene Terephthalate</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-primary">98.4%</span>
+<div class="w-12 bg-surface-card-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest font-semibold">
+                        Recyclable
+                      </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-text-muted hover:text-primary transition-colors" title="Review Scan">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-base transition-colors">
+<td class="py-3 px-3 flex items-center gap-3">
+<img class="w-10 h-10 rounded-lg object-cover border border-border-subtle" data-alt="A freshly peeled orange rind and organic fruit peel sitting on an eco-friendly composting tray. Captured with sharp clarity under bright analytical lighting, emphasizing natural biological textures and zero-waste composting ethos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Ohq04P3L_JcF7vArXp3arX4Cf4HjEGoAGCtPUcedgOf_iY_izZNchwAqXHIhXjYEM9HTP2Hqlakm6qjJb_pze0KVNzKvFQLwoBNxHGX3B9CedsE7txeDsgFdAbWJJVEyN8EN_AmVoQU70cuj5-4f_9TDDmHdPmDORmdL2gf0S7fsYDdLW0eSnrVW1kIbYrt2g1BVLIe2fqLXbFxwb4eANTv1dsTtSt78CAw9pal6"/>
+<div>
+<div class="font-semibold text-text-strong">Fruit Peels &amp; Biomass</div>
+<div class="text-label-sm font-label-sm text-text-muted">Station 02 • 7m ago</div>
+</div>
+</td>
+<td class="py-3 px-3 font-medium text-text-strong">Organic Food Scrap</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-primary">96.1%</span>
+<div class="w-12 bg-surface-card-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 96%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-accent-teal-subtle text-accent-teal font-semibold">
+                        Compost
+                      </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-text-muted hover:text-primary transition-colors" title="Review Scan">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-base transition-colors">
+<td class="py-3 px-3 flex items-center gap-3">
+<img class="w-10 h-10 rounded-lg object-cover border border-border-subtle" data-alt="A small discarded household alkaline battery placed on a stainless steel diagnostic scanner plate. High contrast scientific laboratory lighting highlights the metal contacts, adhering to safe hazardous e-waste disposal guidelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6n_GKxqJo5LYelQ0x6J-AJH1lz1PQ-MH6fcp6hnPjz0rxwaRda0-78OYKNa-n64y0vpz3Lce4eRVzpFy7O2SFpTTEFHmPRHlZ_i2VgpKQ11HfLigtsxrJOFQwnISABsXiK_6MiD4J36f2GegVq-S3RIkLKfE5ePxwhVhyIXy4N4OvO9b5A-_tfM4SPPa2i3YjHfxem5mcJARKwMEAftWYwG0ObHsBLi6DMYr41RbW"/>
+<div>
+<div class="font-semibold text-text-strong">AA Alkaline Cell</div>
+<div class="text-label-sm font-label-sm text-text-muted">Station 09 • 14m ago</div>
+</div>
+</td>
+<td class="py-3 px-3 font-medium text-text-strong">Heavy Metal / E-Waste</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-accent-amber">94.8%</span>
+<div class="w-12 bg-surface-card-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-accent-amber h-full rounded-full" style="width: 94%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-danger-rose-subtle text-danger-rose font-semibold">
+                        Hazardous
+                      </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-danger-rose hover:bg-danger-rose-subtle transition-colors" title="Divert to Safe Lockbox">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-base transition-colors">
+<td class="py-3 px-3 flex items-center gap-3">
+<img class="w-10 h-10 rounded-lg object-cover border border-border-subtle" data-alt="Folded corrugated cardboard shipping box cleanly stacked next to an optical inspection scanner. Daylight balanced neutral tones highlighting recycled fiber markings and barcode identification labels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeFMJs82vy93KOBhxSPlUl-XD_KmbB1dj5k9XrKFRIFWZXCO1NWrihxkRh6OQ6BbUfyfdsT1orxsje0YD0Pgnrf6NdC4hLQyFuBuNGiNgcQjPnlJexuybusYq8u5XfoExY-oNsveQ3qshEoj4yMkKKnV-6m_TXxJZ_hVg9g2pf4-DDlz2FYZpNM7GJYHhmhT4Bmo_tqv5lCZc8rb7cdEAcMXiqnkdHScrSVVHeehob"/>
+<div>
+<div class="font-semibold text-text-strong">Corrugated Carton</div>
+<div class="text-label-sm font-label-sm text-text-muted">Station 01 • 21m ago</div>
+</div>
+</td>
+<td class="py-3 px-3 font-medium text-text-strong">Uncoated Kraft Fiber</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-primary">99.2%</span>
+<div class="w-12 bg-surface-card-subtle h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 99%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-accent-amber-subtle text-tertiary font-semibold">
+                        Paper / Fiber
+                      </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 rounded text-text-muted hover:text-primary transition-colors" title="Review Scan">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between border-t border-border-subtle text-label-sm font-label-sm text-text-muted">
+<span>Showing 4 of 248 scans today</span>
+<a class="text-primary font-semibold hover:underline flex items-center gap-1" href="#reports">
+              Open Full Audit Log
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Quick Waste Classifier Dropzone Widget (4 Columns) -->
+<div class="lg:col-span-4 bg-surface-card p-6 rounded-2xl border border-border-subtle shadow-eco-subtle flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-headline-md font-headline-md text-text-strong">Manual AI Classifier</h2>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-brand-mint-subtle text-brand-forest font-semibold">Vision ML</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mb-4">
+              Upload an image or point camera to identify material grade &amp; compliance bin.
+            </p>
+<!-- Dropzone Area adhering to Clean Tech Design System -->
+<div class="border-2 border-dashed border-border-subtle hover:border-primary hover:bg-brand-mint-subtle/40 transition-all rounded-xl p-6 flex flex-col items-center justify-center text-center cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-brand-mint-subtle text-primary flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">upload_file</span>
+</div>
+<p class="text-label-md font-label-md text-text-strong font-semibold">
+                Drag photo here, or <span class="text-primary underline">browse</span>
+</p>
+<p class="text-label-sm font-label-sm text-text-muted mt-1">
+                Supports JPG, PNG, WEBP (Max 10MB)
+              </p>
+</div>
+<!-- Instant Camera Snapshot Action -->
+<div class="mt-4 flex items-center gap-2">
+<button class="flex-1 py-2 px-3 rounded-lg border border-border-subtle bg-surface-base hover:bg-surface-card-subtle text-text-strong text-label-sm font-label-sm font-medium flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+<span>Open Camera</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-lg border border-border-subtle bg-surface-base hover:bg-surface-card-subtle text-text-strong text-label-sm font-label-sm font-medium flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Scan Barcode</span>
+</button>
+</div>
+<!-- AI Rules Guidance snippet -->
+<div class="mt-4 p-3 rounded-xl bg-surface-base border border-border-subtle flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">lightbulb</span>
+<div class="text-body-sm font-body-sm text-text-muted">
+<strong class="text-text-strong">Pro-tip:</strong> Rinse containers before scanning to improve optical purity score by ~15%.
+              </div>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-border-subtle">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary font-semibold text-label-md transition-all shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+<span>Execute Diagnostic Scan</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>
