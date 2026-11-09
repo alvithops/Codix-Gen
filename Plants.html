@@ -168,92 +168,72 @@
 <!-- ========================================================================= -->
 <!-- SHARED COMPONENT: SideNavBar (Plant Disease active tab selected)        -->
 <!-- ========================================================================= -->
-<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm">
-<!-- Top Header & Brand -->
-<div>
-<div class="flex items-center gap-3 px-2 mb-8">
-<div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
-<span class="material-symbols-outlined text-primary text-2xl" data-icon="eco">eco</span>
-</div>
-<div>
-<h1 class="text-headline-md font-headline-md font-bold text-primary tracking-tight leading-none">SustainAI</h1>
-<p class="text-label-sm font-label-sm text-text-muted mt-0.5">Intelligence Platform</p>
-</div>
-</div>
-<!-- Navigation Links -->
-<nav aria-label="Main Navigation" class="space-y-1.5">
-<!-- Overview -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="text-label-md font-label-md">Overview</span>
-</a>
-<!-- Waste Classifier -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer" href="#">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-<span class="text-label-md font-label-md">Waste Classifier</span>
-</a>
-<!-- CV Analyzer -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer" href="#">
-<span class="material-symbols-outlined" data-icon="document_scanner">document_scanner</span>
-<span class="text-label-md font-label-md">CV Analyzer</span>
-</a>
-<!-- Plant Disease (ACTIVE MATCH) -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold transition-all duration-150 ease-in-out cursor-pointer shadow-xs border border-border-focus/30" href="#">
-<span class="material-symbols-outlined text-primary" data-icon="potted_plant" data-weight="fill" style="font-variation-settings: 'FILL' 1;">potted_plant</span>
-<span class="text-label-md font-label-md flex-1">Plant Disease</span>
-<span class="w-2 h-2 rounded-full bg-primary ring-2 ring-primary/20"></span>
-</a>
-<!-- Reports -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer" href="#">
-<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
-<span class="text-label-md font-label-md">Reports</span>
-</a>
-<!-- Settings -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150 ease-in-out cursor-pointer" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="text-label-md font-label-md">Settings</span>
-</a>
-</nav>
-<!-- SDG Impact Context Badge in Sidebar -->
-<div class="mt-8 p-3 rounded-xl bg-surface-base border border-border-subtle">
-<div class="flex items-center gap-2 mb-1.5">
-<span class="material-symbols-outlined text-primary text-base" data-icon="agriculture">agriculture</span>
-<span class="text-label-sm font-label-sm font-semibold text-text-strong">SDG 2 &amp; 15 Agriculture</span>
-</div>
-<p class="text-label-sm font-label-sm text-text-muted leading-tight">Supporting smallholders against foliar pathogen loss.</p>
-<div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between">
-<span class="text-label-sm font-label-sm text-text-muted">Pro Plan Active</span>
-<button class="text-label-sm font-label-sm text-primary font-semibold hover:text-brand-emerald-dark" type="button">Upgrade Pro</button>
-</div>
-</div>
-</div>
-<!-- Bottom Footer Meta & Profile -->
-<div class="pt-4 border-t border-border-subtle space-y-3">
-<!-- Language Switcher -->
-<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-base text-label-md font-label-md text-text-muted">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-lg" data-icon="translate">translate</span>
-<span>Language: EN</span>
-</div>
-<div class="flex items-center bg-surface-card rounded p-0.5 border border-border-subtle text-label-sm font-label-sm">
-<span class="px-1.5 py-0.5 bg-primary text-on-primary rounded font-semibold">EN</span>
-<span class="px-1.5 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</span>
-</div>
-</div>
-<!-- User Profile -->
-<div class="flex items-center gap-3 px-2 pt-1">
-<div class="relative w-9 h-9 rounded-full bg-brand-forest/10 border border-border-subtle flex items-center justify-center overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="Portrait of Budi Hartono, a senior Indonesian field agronomist wearing a field jacket and smiling warmly, set outdoors in an agricultural research station bathed in soft, natural morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdzwSmyaA8W7dvZllRAz6Sc7zcjK57LyCcIxIqZrULvtDIOkpVccExQA0Rxbxe_0ldKh6UR79h1wpFkdmCqDvwqySIjU7oXjxIEnrhkIQ3xDgmG_Su9zKo4YSlR1En69M8T8RePjmauX2NpaKX4xQA9DxtWvnYAzxaKBcCU8wA4suh42IYK_AHR1heLBV5Wlgqt9xmRzbCToNqUeBKujWqfmrHNf_9_eXaxIFznLc-"/>
-</div>
-<div class="flex-1 min-w-0">
-<p class="text-label-md font-label-md font-semibold text-text-strong truncate">Budi Hartono</p>
-<p class="text-label-sm font-label-sm text-text-muted truncate">Agronomist &amp; Specialist</p>
-</div>
-<button class="text-text-muted hover:text-text-strong" title="Account Settings" type="button">
-<span class="material-symbols-outlined text-lg" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</div>
+<!-- SHARED SIDEBAR (canonical) -->
+<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center gap-3 px-2">
+      <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+      </div>
+      <div>
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tight leading-none">SustainAI</div>
+        <div class="text-label-sm font-label-sm text-text-muted mt-0.5">Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+        <div>
+          <div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
+          <div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
+        </div>
+      </div>
+      <button id="upgradeBtn" type="button" class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm whitespace-nowrap">Upgrade Pro</button>
+    </div>
+    <nav aria-label="Main Navigation" class="flex flex-col gap-2">
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Dashboard.html">
+    <span class="material-symbols-outlined text-[20px]">dashboard</span>
+    <span class="text-label-md font-label-md">Overview</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Waste.html">
+    <span class="material-symbols-outlined text-[20px]">delete</span>
+    <span class="text-label-md font-label-md">Waste Classifier</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs border border-border-focus/30 cursor-pointer" href="Plants.html" aria-current="page">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">potted_plant</span>
+    <span class="text-label-md font-label-md">Plant Disease</span>
+<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Reports.html">
+    <span class="material-symbols-outlined text-[20px]">bar_chart</span>
+    <span class="text-label-md font-label-md">Reports</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Setting.html">
+    <span class="material-symbols-outlined text-[20px]">settings</span>
+    <span class="text-label-md font-label-md">Settings</span>
+  </a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+      <div class="flex items-center gap-2 text-text-muted">
+        <span class="material-symbols-outlined text-[18px]">translate</span>
+        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
+      </div>
+      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
+        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
+        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
+      <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
+      <div class="flex flex-col min-w-0">
+        <div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
+        <div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
+      </div>
+      <button id="profileMenu" type="button" class="material-symbols-outlined text-[18px] text-text-muted ml-auto hover:text-text-strong" title="Account menu">more_vert</button>
+    </div>
+  </div>
 </aside>
 <!-- ========================================================================= -->
 <!-- MAIN CONTENT CONTAINER                                                    -->
@@ -279,10 +259,10 @@
 </div>
 <!-- Center & Trailing Navigation / Actions -->
 <div class="flex items-center gap-6">
-<nav class="hidden md:flex items-center gap-5 text-label-md font-label-md">
-<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Live Diagnostics</a>
-<a class="text-text-muted hover:text-text-strong transition-colors pb-1" href="#">SDG Goals</a>
-<a class="text-text-muted hover:text-text-strong transition-colors pb-1" href="#">Documentation</a>
+<nav class="flex flex-col sm:flex-row items-center gap-5 text-label-md font-label-md">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="Dashboard.html" >Live Diagnostics</a>
+<a class="text-text-muted hover:text-text-strong transition-colors pb-1" href="Reports.html" >SDG Goals</a>
+<a class="text-text-muted hover:text-text-strong transition-colors pb-1" href="Dashboard.html" >Documentation</a>
 </nav>
 <div class="h-4 w-px bg-border-subtle hidden md:block"></div>
 <div class="flex items-center gap-2">
@@ -601,19 +581,19 @@
 <div class="space-y-2.5 py-3 border-y border-border-subtle text-body-sm font-body-sm">
 <div class="flex justify-between items-center">
 <span class="text-text-muted">Pathogen Classification:</span>
-<span class="font-semibold text-text-strong">Airborne Ascomycota Fungus</span>
+<span class="font-semibold text-text-strong text-right">Airborne Ascomycota Fungus</span>
 </div>
 <div class="flex justify-between items-center">
 <span class="text-text-muted">Transmission Vector:</span>
-<span class="font-semibold text-text-strong">Rain Splash &amp; Wind currents (&gt;80% RH)</span>
+<span class="font-semibold text-text-strong text-right">Rain Splash &amp; Wind currents (&gt;80% RH)</span>
 </div>
 <div class="flex justify-between items-center">
 <span class="text-text-muted">Vulnerable Foliar Zone:</span>
-<span class="font-semibold text-text-strong">Lower canopy &amp; Basal leaves</span>
+<span class="font-semibold text-text-strong text-right">Lower canopy &amp; Basal leaves</span>
 </div>
 <div class="flex justify-between items-center">
 <span class="text-text-muted">Secondary Symptoms:</span>
-<span class="font-semibold text-accent-amber">Chlorotic halos with bullseye rings</span>
+<span class="font-semibold text-accent-amber text-right">Chlorotic halos with bullseye rings</span>
 </div>
 </div>
 <p class="text-label-sm font-label-sm text-text-muted mt-3 leading-relaxed">
@@ -753,4 +733,1024 @@
 </div>
 </div>
 </div>
+<script>
+(function () {
+  'use strict';
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+
+  function leafSVG(o) {
+    var spots = (o.spots || []).map(function (p) {
+      return '<ellipse cx="' + p.x + '" cy="' + p.y + '" rx="' + p.r + '" ry="' + (p.r * 0.78) + '" fill="' + p.color + '" opacity=".85"/>' +
+        '<ellipse cx="' + p.x + '" cy="' + p.y + '" rx="' + (p.r * 0.55) + '" ry="' + (p.r * 0.42) + '" fill="' + (p.inner || '#4b2e13') + '" opacity=".6"/>';
+    }).join('');
+    var s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">' +
+      '<defs><radialGradient id="g" cx="50%" cy="38%" r="80%"><stop offset="0%" stop-color="' + o.c1 + '"/><stop offset="100%" stop-color="' + o.c2 + '"/></radialGradient>' +
+      '<linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="' + o.leaf + '"/><stop offset="100%" stop-color="' + o.leaf2 + '"/></linearGradient></defs>' +
+      '<rect width="1200" height="800" fill="#0b1220"/><rect width="1200" height="800" fill="url(#g)" opacity=".85"/>' +
+      '<path d="M600 70 C 900 190 1010 470 730 720 C 610 785 480 762 355 640 C 170 455 300 190 600 70 Z" fill="url(#lf)"/>' +
+      '<path d="M600 110 L600 705" stroke="' + o.vein + '" stroke-width="9" opacity=".45"/>' +
+      '<path d="M600 240 C 720 250 800 300 845 360" stroke="' + o.vein + '" stroke-width="5" fill="none" opacity=".35"/>' +
+      '<path d="M600 380 C 480 390 400 440 355 500" stroke="' + o.vein + '" stroke-width="5" fill="none" opacity=".35"/>' +
+      spots +
+      '<rect x="40" y="700" width="560" height="52" rx="10" fill="#0f172a" opacity=".72"/>' +
+      '<text x="62" y="734" font-family="Inter, Arial, sans-serif" font-size="22" fill="#e2e8f0">' + (o.label || 'Field Specimen') + '</text>' +
+      '</svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+  }
+
+  var IMG_TOMATO = document.querySelector('[class*="lg:col-span-7"] img').getAttribute('src');
+
+  var SPECIMENS = {
+    'tomato-early': {
+      crop: 'tomato', label: 'Tomato Early Blight',
+      disease: 'Early Blight', latin: 'Alternaria solani (Sorauer)', stage: 'Stage 2',
+      severity: 64, severityTone: 'amber', severityNote: 'Infection detected within last 48-72h', severityIcon: 'schedule',
+      conf: 97.6,
+      yieldRisk: 18, yieldSector: 'Plot Sector 3B', yieldTone: 'danger', yieldNote: 'Mitigatable to <3% with bio-fungicide',
+      urgency: 'Within 24h', urgencyTag: 'Immediate', urgencyPct: 85, urgencyTone: 'amber', urgencyBadge: 'Eco-Safe Certified', urgencyNote: 'Prevent systemic foliar spore migration',
+      meta: { name: 'IMG_Field_Sector3B_Tomato.jpg', dims: '2400x1600 • 3.2MB' },
+      img: IMG_TOMATO,
+      boxes: [
+        { label: 'Primary Lesion Focus (Alternaria solani) • 97.6% match', x: 34, y: 28, w: 38, h: 36, color: 'mint', conf: '97.6%', area: '4.2 cm²', detail: 'Concentric bullseye lesion with chlorotic halo. Active sporulation detected on the lower leaf surface; removal is advised before conidia disperse to flowering clusters.' },
+        { label: 'Secondary Chlorosis Halo • 91.2%', x: 58, y: 62, w: 24, h: 22, color: 'amber', conf: '91.2%', area: '1.8 cm²', detail: 'Diffuse yellowing surrounding the primary lesion indicates advancing chlorotic stress. Monitor for coalescence over the next 48 hours.' }
+      ],
+      profile: {
+        cls: 'Airborne Ascomycota Fungus', vector: 'Rain Splash & Wind currents (>80% RH)', zone: 'Lower canopy & Basal leaves',
+        secondary: 'Chlorotic halos with bullseye rings',
+        note: 'If left unmanaged under prevailing 84% humidity conditions, conidia will disperse vertically into flowering clusters within 4 to 6 days.'
+      },
+      organic: [
+        { title: 'Sanitation & Canopy Pruning', body: 'Prune lower infected leaves showing >30% chlorosis; sterilize shears with 70% alcohol and dispose of cuttings away from compost to prevent overwintering.' },
+        { title: 'Biological & Eco-Friendly Spray', body: 'Apply <span class="font-semibold">Bacillus subtilis</span> or Copper Octanoate liquid spray during early morning; repeat every 7 days until foliar spots desiccate.', rec: true },
+        { title: 'Irrigation & Moisture Management', body: 'Transition strictly to drip irrigation to keep leaf surfaces dry; increase plant row spacing to 60cm to optimize air circulation and drop canopy humidity.' }
+      ],
+      chemical: [
+        { title: 'Targeted Fungicide Rotation', body: 'Rotate chlorothalonil with azoxystrobin at label rates; never apply the same mode of action twice consecutively to avoid resistance.' },
+        { title: 'Precision Foliar Application', body: 'Use a calibrated boom sprayer at 20-30 PSI with coarse droplets to limit drift and off-target pollinator exposure.', rec: true },
+        { title: 'Resistance & Residue Monitoring', body: 'Scout 48h after application; respect the 7-day pre-harvest interval and record batch numbers for traceability.' }
+      ],
+      timeline: [
+        { phase: 'Day 1 - 3: Spore Halting Phase', detail: 'Target: Stop lesion expansion on mid-tier stems with bio-fungicide.', active: true },
+        { phase: 'Day 7: New Growth Inspection', detail: 'Perform second multispectral scan on terminal apical shoots.' },
+        { phase: 'Day 14: Defoliation Recovery', detail: 'Full foliar vigor restored; yield penalty lowered under 3% threshold.' }
+      ]
+    },
+
+    'corn-nlb': {
+      crop: 'corn', label: 'Corn Northern Leaf Blight',
+      disease: 'Northern Leaf Blight', latin: 'Exserohilum turcicum (Pass.)', stage: 'Stage 3',
+      severity: 71, severityTone: 'danger', severityNote: 'Rapid expansion observed in last 24h', severityIcon: 'trending_up',
+      conf: 96.4,
+      yieldRisk: 22, yieldSector: 'Plot Sector 1A', yieldTone: 'danger', yieldNote: 'Mitigatable to <5% with resistant hybrid + spray',
+      urgency: 'Within 48h', urgencyTag: 'Accelerating', urgencyPct: 78, urgencyTone: 'danger', urgencyBadge: 'Eco-Safe Certified', urgencyNote: 'Avoid further canopy wetting at dusk',
+      meta: { name: 'IMG_Sector1A_Corn_NLB.jpg', dims: '3000x2000 • 4.1MB' },
+      img: leafSVG({ c1: '#14532d', c2: '#052e16', leaf: '#4ade80', leaf2: '#15803d', vein: '#bbf7d0', label: 'Corn leaf - Northern Leaf Blight (Exserohilum turcicum)', spots: [{ x: 520, y: 300, r: 90, color: '#a3a30f', inner: '#57534e' }, { x: 640, y: 380, r: 70, color: '#a3a30f', inner: '#57534e' }, { x: 470, y: 470, r: 60, color: '#a3a30f', inner: '#57534e' }] }),
+      boxes: [
+        { label: 'Cigar-Shaped NLB Lesion • 96.4% match', x: 30, y: 22, w: 42, h: 30, color: 'mint', conf: '96.4%', area: '6.8 cm²', detail: 'Elongated gray-green lesion following the leaf vein. High sporulation potential under 80%+ humidity.' },
+        { label: 'Secondary Lesion Edge • 89.7%', x: 52, y: 60, w: 28, h: 24, color: 'danger', conf: '89.7%', area: '2.9 cm²', detail: 'Advancing necrotic margin; adjacent tissue shows early chlorosis. Recommend immediate triazole rotation.' }
+      ],
+      profile: {
+        cls: 'Airborne Ascomycota Fungus', vector: 'Wind-dispersed conidia (>75% RH)', zone: 'Mid-to-upper canopy leaves',
+        secondary: 'Long cigar-shaped gray-green lesions',
+        note: 'Under the current 84% RH micro-climate, conidial showers can spread one row per 24-36 hours; intervene before tasseling to protect ear fill.'
+      },
+      organic: [
+        { title: 'Residue & Debris Management', body: 'Bury or remove crop residue from the previous cycle; the fungus overwinters on stalk debris and reinfects new whorls.' },
+        { title: 'Trichoderma Bio-Fungicide', body: 'Apply <span class="font-semibold">Trichoderma harzianum</span> foliar suspension at 5 g/L weekly during humid spells to outcompete lesion sporulation.', rec: true },
+        { title: 'Canopy Airflow & Rotation', body: 'Maintain 70cm row spacing and rotate to soybean next cycle to break the pathogen host bridge.' }
+      ],
+      chemical: [
+        { title: 'Triazole / Strobilurin Rotation', body: 'Apply propiconazole at first lesion, then azoxystrobin 10-14 days later; alternate FRAC groups each season.' },
+        { title: 'Correct Nozzle Calibration', body: 'Use twin flat-fan nozzles directed into the whorl for improved coverage of the upper canopy.', rec: true },
+        { title: 'Pre-Harvest Interval Check', body: 'Stop applications 21 days before harvest and log batch numbers for the agronomic audit.' }
+      ],
+      timeline: [
+        { phase: 'Day 1 - 2: Lesion Containment', detail: 'Apply first bio-fungicide pass and remove heavily infected lower leaves.', active: true },
+        { phase: 'Day 6: Canopy Recheck', detail: 'Second multispectral scan focused on the mid-canopy and ear leaf.' },
+        { phase: 'Day 13: Ear-Fill Protection', detail: 'Confirm lesion arrest and protect photosynthesis during grain fill.' }
+      ]
+    },
+
+    'rice-blast': {
+      crop: 'rice', label: 'Rice Blast (Pyricularia)',
+      disease: 'Rice Blast', latin: 'Pyricularia oryzae (Cavara)', stage: 'Stage 2',
+      severity: 58, severityTone: 'amber', severityNote: 'Diamond lesions found on 12% of sampled blades', severityIcon: 'schedule',
+      conf: 98.1,
+      yieldRisk: 15, yieldSector: 'Plot Sector 2C', yieldTone: 'amber', yieldNote: 'Containable below 4% with silicon + bio-control',
+      urgency: 'Within 24h', urgencyTag: 'Immediate', urgencyPct: 88, urgencyTone: 'danger', urgencyBadge: 'Eco-Safe Certified', urgencyNote: 'Collapsing lesions threaten panicle necks',
+      meta: { name: 'IMG_Sector2C_Rice_Blast.jpg', dims: '2600x1700 • 3.6MB' },
+      img: leafSVG({ c1: '#1e3a2f', c2: '#0b1f16', leaf: '#86efac', leaf2: '#22c55e', vein: '#dcfce7', label: 'Rice blade - Blast (Pyricularia oryzae)', spots: [{ x: 560, y: 330, r: 55, color: '#e2e8f0', inner: '#64748b' }, { x: 660, y: 420, r: 48, color: '#e2e8f0', inner: '#64748b' }, { x: 500, y: 500, r: 40, color: '#e2e8f0', inner: '#64748b' }] }),
+      boxes: [
+        { label: 'Diamond Lesion Cluster • 98.1% match', x: 36, y: 26, w: 36, h: 32, color: 'mint', conf: '98.1%', area: '3.1 cm²', detail: 'Spindle/diamond lesions with gray centers and brown margins - classic blast signature. High risk to panicle neck.' },
+        { label: 'Leaf Tip Necrosis • 90.4%', x: 60, y: 60, w: 24, h: 20, color: 'amber', conf: '90.4%', area: '1.2 cm²', detail: 'Tip drying suggests nutrient stress combined with infection; review nitrogen timing.' }
+      ],
+      profile: {
+        cls: 'Airborne Ascomycota Fungus', vector: 'High humidity & prolonged leaf wetness', zone: 'Leaf blades & panicle necks',
+        secondary: 'Diamond-shaped lesions with gray centers',
+        note: 'With 84% RH and moderate UV, spore germination is favored; neck blast at heading can cause total panicle loss, so treat before booting.'
+      },
+      organic: [
+        { title: 'Silicon Amendment', body: 'Apply 100 kg/ha of silicate slag to strengthen the leaf cuticle and physically resist penetration.' },
+        { title: 'Pseudomonas fluorescens Spray', body: 'Foliar spray of <span class="font-semibold">Pseudomonas fluorescens</span> at 10 g/L at booting and 50% heading to suppress blast.', rec: true },
+        { title: 'Alternate Wetting & Drying', body: 'Replace continuous flooding with AWD to reduce canopy humidity and lesion expansion while saving water.' }
+      ],
+      chemical: [
+        { title: 'Tricyclazole at Boot Leaf', body: 'Apply tricyclazole 75 WP at 0.6 g/L at the boot-leaf stage; repeat at 50% heading if lesions persist.' },
+        { title: 'Isoprothiolane Rotation', body: 'Rotate with isoprothiolane to prevent resistance and broaden the preventive window.', rec: true },
+        { title: 'Nitrogen Split Application', body: 'Avoid excess urea; split nitrogen into three doses to prevent succulent tissue that favors blast.' }
+      ],
+      timeline: [
+        { phase: 'Day 1 - 3: Lesion Arrest', detail: 'Bio-spray plus silicon top-dress; drain excess standing water.', active: true },
+        { phase: 'Day 7: Booting Check', detail: 'Scan flag leaves and confirm no new diamond lesions.' },
+        { phase: 'Day 14: Heading Protection', detail: 'Inspect panicle necks; maintain low humidity until grain set.' }
+      ]
+    },
+
+    'chili-anthracnose': {
+      crop: 'chili', label: 'Chili Anthracnose',
+      disease: 'Anthracnose', latin: 'Colletotrichum gloeosporioides', stage: 'Stage 1',
+      severity: 46, severityTone: 'amber', severityNote: 'Early fruit infection on 6% of sampled pods', severityIcon: 'schedule',
+      conf: 95.2,
+      yieldRisk: 11, yieldSector: 'Plot Sector 4A', yieldTone: 'amber', yieldNote: 'Mitigatable to <2% with sanitation + bio-spray',
+      urgency: 'Within 72h', urgencyTag: 'Monitored', urgencyPct: 60, urgencyTone: 'amber', urgencyBadge: 'Eco-Safe Certified', urgencyNote: 'Prevent rain-splash spread to healthy pods',
+      meta: { name: 'IMG_Sector4A_Chili_Anthracnose.jpg', dims: '2200x1500 • 2.8MB' },
+      img: leafSVG({ c1: '#3b1d12', c2: '#1a0d08', leaf: '#f97316', leaf2: '#c2410c', vein: '#fed7aa', label: 'Chili pod - Anthracnose (Colletotrichum)', spots: [{ x: 520, y: 300, r: 70, color: '#7f1d1d', inner: '#fda4af' }, { x: 640, y: 400, r: 55, color: '#7f1d1d', inner: '#fda4af' }, { x: 580, y: 520, r: 45, color: '#7f1d1d', inner: '#fda4af' }] }),
+      boxes: [
+        { label: 'Sunken Fruit Lesion • 95.2% match', x: 33, y: 30, w: 34, h: 30, color: 'mint', conf: '95.2%', area: '2.4 cm²', detail: 'Circular sunken lesion with developing pink spore masses. Remove and destroy affected pods off-site.' },
+        { label: 'Spore Mass Margin • 88.9%', x: 58, y: 62, w: 22, h: 18, color: 'amber', conf: '88.9%', area: '0.9 cm²', detail: 'Pinkish acervuli indicate active sporulation; rain splash will spread conidia to adjacent pods.' }
+      ],
+      profile: {
+        cls: 'Airborne / Seed-borne Ascomycota Fungus', vector: 'Rain splash & contaminated seed', zone: 'Fruit surfaces & stems',
+        secondary: 'Sunken circular lesions with pink spore masses',
+        note: 'At 84% RH the acervuli release conidia readily; a single infected pod can seed an entire bed during irrigation splash.'
+      },
+      organic: [
+        { title: 'Sanitation & Pod Removal', body: 'Harvest and destroy all symptomatic pods in sealed bags; disinfect pruning tools between plants.' },
+        { title: 'Bacillus subtilis Foliar Spray', body: 'Apply <span class="font-semibold">Bacillus subtilis</span> at 5 g/L every 7 days, covering the underside of foliage and fruits.', rec: true },
+        { title: 'Drip Irrigation & Mulch', body: 'Switch to drip irrigation and straw mulch to eliminate rain-splash dispersal onto low-hanging pods.' }
+      ],
+      chemical: [
+        { title: 'Copper Oxychloride Protectant', body: 'Apply copper oxychloride 50 WP at 2.5 g/L before the rainy window as a protective film.' },
+        { title: 'Azoxystrobin Rotation', body: 'Rotate with azoxystrobin at 10-14 day intervals; alternate FRAC groups to slow resistance.', rec: true },
+        { title: 'Seed Lot Verification', body: 'Use certified, hot-water-treated seed and avoid saving seed from infected fields.' }
+      ],
+      timeline: [
+        { phase: 'Day 1 - 3: Sanitation Pass', detail: 'Remove infected pods and apply the first bio-spray.', active: true },
+        { phase: 'Day 7: New Pod Check', detail: 'Scan developing pods for new sunken lesions.' },
+        { phase: 'Day 14: Harvest Readiness', detail: 'Confirm clean pods and maintain drip-only irrigation.' }
+      ]
+    },
+
+    'coffee-rust': {
+      crop: 'coffee', label: 'Coffee Leaf Rust',
+      disease: 'Coffee Leaf Rust', latin: 'Hemileia vastatrix (Berkeley & Broome)', stage: 'Stage 3',
+      severity: 69, severityTone: 'danger', severityNote: 'Orange spore lesions on 18% of lower leaves', severityIcon: 'trending_up',
+      conf: 94.7,
+      yieldRisk: 20, yieldSector: 'Plot Sector 5B', yieldTone: 'danger', yieldNote: 'Mitigatable to <6% with shade + copper program',
+      urgency: 'Within 48h', urgencyTag: 'Accelerating', urgencyPct: 80, urgencyTone: 'danger', urgencyBadge: 'Eco-Safe Certified', urgencyNote: 'Urediniospores spread fast in humid shade',
+      meta: { name: 'IMG_Sector5B_Coffee_Rust.jpg', dims: '2800x1800 • 3.9MB' },
+      img: leafSVG({ c1: '#1f2d16', c2: '#0c1508', leaf: '#65a30d', leaf2: '#3f6212', vein: '#ecfccb', label: 'Coffee leaf - Rust (Hemileia vastatrix)', spots: [{ x: 530, y: 300, r: 75, color: '#f59e0b', inner: '#b45309' }, { x: 650, y: 390, r: 60, color: '#f59e0b', inner: '#b45309' }, { x: 560, y: 500, r: 50, color: '#f59e0b', inner: '#b45309' }] }),
+      boxes: [
+        { label: 'Orange Uredinial Lesion • 94.7% match', x: 32, y: 25, w: 38, h: 34, color: 'mint', conf: '94.7%', area: '5.1 cm²', detail: 'Powdery orange-yellow spore mass on the lower leaf surface - the signature of coffee leaf rust.' },
+        { label: 'Chlorotic Rust Margin • 87.3%', x: 56, y: 61, w: 26, h: 20, color: 'amber', conf: '87.3%', area: '1.6 cm²', detail: 'Yellowing margin indicates advancing infection; defoliation risk rises if untreated within two weeks.' }
+      ],
+      profile: {
+        cls: 'Obligate Biotrophic Basidiomycete', vector: 'Wind & rain-splashed urediniospores', zone: 'Lower leaf surface & canopy underside',
+        secondary: 'Orange-yellow powdery spore lesions',
+        note: 'Warm, humid shade under 84% RH accelerates the rust cycle; untreated defoliation can cut next-season yield by up to 30%.'
+      },
+      organic: [
+        { title: 'Canopy Pruning & Shade Tuning', body: 'Open the canopy to 40-50% shade and remove heavily rusted lower branches to improve airflow and sunlight penetration.' },
+        { title: 'Copper + Bio-Agent Program', body: 'Alternate Bordeaux mixture with <span class="font-semibold">Beauveria bassiana</span> applications every 14 days during the wet season.', rec: true },
+        { title: 'Balanced Nutrition', body: 'Apply potassium and boron to strengthen leaf tissue; avoid excess nitrogen that produces rust-susceptible growth.' }
+      ],
+      chemical: [
+        { title: 'Copper Hydroxide Protectant', body: 'Apply copper hydroxide at 2 g/L before the rainy period for residual protection on the lower leaf surface.' },
+        { title: 'Triazole / Strobilurin Rotation', body: 'Rotate a triazole with a strobilurin at 21-day intervals; alternate modes of action each season.', rec: true },
+        { title: 'Residue & Export Compliance', body: 'Observe the 14-day pre-harvest interval and log all treatments for export traceability.' }
+      ],
+      timeline: [
+        { phase: 'Day 1 - 3: Spore Suppression', detail: 'Apply copper protectant and prune the most affected lower branches.', active: true },
+        { phase: 'Day 7: Canopy Scan', detail: 'Re-scan lower leaf surfaces; check for new orange lesions.' },
+        { phase: 'Day 14: Defoliation Review', detail: 'Confirm leaf retention above 80% and schedule the next bio-spray.' }
+      ]
+    }
+  };
+
+  var CROP_KEYS = ['tomato', 'corn', 'rice', 'chili', 'coffee'];
+  var CROPS = {
+    tomato: ['tomato-early'],
+    corn: ['corn-nlb'],
+    rice: ['rice-blast'],
+    chili: ['chili-anthracnose'],
+    coffee: ['coffee-rust']
+  };
+
+  var kpiSection = $('section[aria-label="Key Performance Indicators"]');
+  var kpiCards = $$(':scope > div', kpiSection);
+  var kpiSeverityValue = kpiCards[0].querySelector('.text-metric-display');
+  var kpiSeverityBadge = kpiCards[0].querySelector('span.rounded-full');
+  var kpiSeverityStage = kpiCards[0].querySelectorAll('.flex.items-baseline span')[1];
+  var kpiSeverityBar = kpiCards[0].querySelector('[style*="width"]');
+  var kpiSeverityNote = kpiCards[0].querySelector('p');
+  var kpiConfValue = kpiCards[1].querySelector('.text-metric-display');
+  var kpiConfBar = kpiCards[1].querySelector('[style*="width"]');
+  var kpiYieldValue = kpiCards[2].querySelector('.text-metric-display');
+  var kpiYieldBadge = kpiCards[2].querySelector('span.rounded-full');
+  var kpiYieldStage = kpiCards[2].querySelectorAll('.flex.items-baseline span')[1];
+  var kpiYieldBar = kpiCards[2].querySelector('[style*="width"]');
+  var kpiYieldNote = kpiCards[2].querySelector('p');
+  var kpiUrgencyValue = kpiCards[3].querySelector('.text-headline-lg');
+  var kpiUrgencyBadge = kpiCards[3].querySelector('span.rounded-full');
+  var kpiUrgencyStage = kpiCards[3].querySelectorAll('.flex.items-baseline span')[1];
+  var kpiUrgencyBar = kpiCards[3].querySelector('[style*="width"]');
+  var kpiUrgencyNote = kpiCards[3].querySelector('p');
+
+  var leftCol = document.querySelector('[class*="lg:col-span-7"]');
+  var rightCol = document.querySelector('[class*="lg:col-span-5"]');
+  var viewerCard = leftCol.children[0];
+  var telemetryCard = leftCol.children[1];
+  var leafImg = viewerCard.querySelector('img');
+  var stage = leafImg.parentElement;
+  var tabs = $$('button', viewerCard).filter(function (b) { return /Upload Leaf Photo|Drone \/ Field Cam/.test(norm(b.textContent)); });
+  var zoomBtn = viewerCard.querySelector('[title="Zoom in"]');
+  var layerBtn = viewerCard.querySelector('[title="Toggle Overlays"]');
+  var rescanBtn = viewerCard.querySelector('[title="Re-scan"]');
+  var statusChip = viewerCard.querySelector('.absolute.top-3.right-3');
+  var metaCard = viewerCard.querySelector('.absolute.bottom-3.left-3');
+  var metaName = metaCard.querySelector('.font-mono');
+  var metaSpans = metaCard.querySelectorAll('span');
+  var metaDims = metaSpans[metaSpans.length - 1];
+  var presetWrap = viewerCard.querySelector('.flex.flex-wrap.items-center.gap-2');
+  var cropSelect = $('#cropSelect');
+
+  var profileCard = rightCol.children[0];
+  var treatmentCard = rightCol.children[1];
+  var timelineCard = rightCol.children[2];
+  var supportCard = rightCol.children[3];
+  var diseaseName = profileCard.querySelector('h3');
+  var diseaseLatin = profileCard.querySelector('p.italic');
+  var diseaseStage = profileCard.querySelector('span.rounded-full');
+  var profileNote = profileCard.querySelector('p.mt-3');
+  var detailRows = $$(':scope > div', profileCard.querySelector('[class*="space-y-2.5"]'));
+  var detailVals = detailRows.map(function (row) { return row.querySelector('span:last-child'); });
+  detailVals.forEach(function (v) { if (v) v.classList.add('text-right'); });
+  var planSubtitle = treatmentCard.querySelector('p');
+  var planSteps = treatmentCard.querySelector('.space-y-4');
+  var planButtons = $$('button', treatmentCard).filter(function (b) { return /^(Organic|Chemical)$/.test(norm(b.textContent)); });
+  var timelineList = timelineCard.querySelector('.relative');
+  var consultBtn = $$('button', supportCard).filter(function (b) { return /Consult Extension/.test(b.textContent); })[0];
+  var orderBtn = $$('button', supportCard).filter(function (b) { return /Order Bio-Fungicide/.test(b.textContent); })[0];
+
+  var stickyBar = document.querySelector('.fixed.bottom-0.right-0.left-64');
+  var shareBtn = stickyBar ? $$('button', stickyBar).filter(function (b) { return /Share with Field Team/.test(b.textContent); })[0] : null;
+  var printBtn = stickyBar ? $$('button', stickyBar).filter(function (b) { return /Print Treatment Protocol/.test(b.textContent); })[0] : null;
+  var exportBtn = stickyBar ? $$('button', stickyBar).filter(function (b) { return /Export Agronomic Audit/.test(b.textContent); })[0] : null;
+
+  var header = document.querySelector('header');
+  var notifBtn = header ? header.querySelector('[title="Notifications"]') : null;
+  var helpBtn = header ? header.querySelector('[title="Help & Guides"]') : null;
+  var newScanBtn = header ? $$('button', header).filter(function (b) { return /New Crop Scan/.test(b.textContent); })[0] : null;
+  var upgradeBtn = null;
+  var accountBtn = null;
+
+  var telTemps = telemetryCard.querySelectorAll('p.text-headline-md');
+  var telemetry = {
+    temp: telTemps[0], hum: telTemps[1], soil: telTemps[2], uv: telTemps[3],
+    humNote: telemetryCard.querySelectorAll('span.text-label-sm.font-semibold.text-tertiary')[0]
+  };
+
+  var inner = document.createElement('div');
+  inner.style.cssText = 'position:absolute;inset:0;transform-origin:center;transition:transform .35s ease;z-index:1';
+  stage.insertBefore(inner, stage.firstChild);
+  inner.appendChild(leafImg);
+  $$(':scope > div.border-2', stage).forEach(function (n) { n.remove(); });
+  var boxLayer = document.createElement('div');
+  boxLayer.style.cssText = 'position:absolute;inset:0';
+  inner.appendChild(boxLayer);
+
+  var scanline = document.createElement('div');
+  scanline.id = 'pScanline';
+  scanline.style.display = 'none';
+  stage.appendChild(scanline);
+
+  var drone = document.createElement('div');
+  drone.id = 'pDrone';
+  drone.style.cssText = 'position:absolute;inset:0;z-index:10;display:none;pointer-events:none;background:linear-gradient(rgba(6,78,59,.12),rgba(6,78,59,.28))';
+  drone.innerHTML = '<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(52,211,153,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(52,211,153,.22) 1px,transparent 1px);background-size:64px 64px"></div>' +
+    '<div style="position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:8px;background:rgba(15,23,42,.7);color:#fff;padding:5px 12px;border-radius:9999px;font-size:11px;font-weight:700;letter-spacing:.06em"><span style="width:8px;height:8px;border-radius:9999px;background:#ef4444;box-shadow:0 0 10px #ef4444"></span>DRONE FEED • LIVE • SECTOR 3B</div>' +
+    '<div style="position:absolute;left:12%;right:12%;top:18%;bottom:22%;border:1px dashed rgba(52,211,153,.5);border-radius:14px"></div>' +
+    '<div style="position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border:2px solid #34D399;border-radius:9999px"></div>' +
+    '<div style="position:absolute;left:50%;top:50%;width:2px;height:2px;background:#34D399"></div>';
+  stage.appendChild(drone);
+
+  var captureBtn = document.createElement('button');
+  captureBtn.type = 'button';
+  captureBtn.style.cssText = 'position:absolute;bottom:16px;right:16px;z-index:20;display:none;align-items:center;gap:6px;background:#006948;color:#fff;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;box-shadow:0 8px 20px rgba(0,105,72,.35)';
+  captureBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:18px">photo_camera</span>Capture Frame';
+  stage.appendChild(captureBtn);
+
+  if (metaCard) metaCard.style.zIndex = '20';
+  if (statusChip) statusChip.style.zIndex = '20';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = '@keyframes pScanMove{0%{top:0;opacity:1}50%{opacity:1}100%{top:100%;opacity:0}}' +
+    '#pScanline{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#34D399,transparent);box-shadow:0 0 14px #34D399;z-index:15;pointer-events:none;animation:pScanMove .8s linear infinite}' +
+    '.pbox{position:absolute;border-width:2px;border-style:solid;border-radius:10px;cursor:pointer;transition:transform .18s ease}' +
+    '.pbox:hover{transform:scale(1.02)}';
+  document.head.appendChild(styleEl);
+
+  function iconSpan(icon, cls) {
+    return '<span class="material-symbols-outlined text-sm ' + (cls || '') + '" data-icon="' + icon + '">' + icon + '</span>';
+  }
+  function chipHTML(icon, text) {
+    return '<span class="material-symbols-outlined text-sm text-brand-mint" data-icon="' + icon + '">' + icon + '</span>' + text;
+  }
+  function setNote(p, icon, cls, text) {
+    if (!p) return;
+    p.innerHTML = iconSpan(icon, cls) + text;
+  }
+  var TONE_CLASS = { amber: 'text-accent-amber', danger: 'text-danger-rose', mint: 'text-primary', sky: 'text-info-sky' };
+  var BADGE_TONE = {
+    amber: 'bg-accent-amber-subtle text-on-tertiary-fixed-variant',
+    danger: 'bg-danger-rose-subtle text-danger-rose',
+    mint: 'bg-brand-mint-subtle text-brand-forest',
+    sky: 'bg-info-sky-subtle text-info-sky'
+  };
+  var BAR_TONE = { amber: 'bg-accent-amber', danger: 'bg-danger-rose', mint: 'bg-primary', sky: 'bg-info-sky' };
+  var BOX_COLORS = {
+    mint: { border: '#34D399', bg: 'rgba(52,211,153,.15)', label: '#064E3B' },
+    amber: { border: '#F59E0B', bg: 'rgba(245,158,11,.18)', label: '#B45309' },
+    danger: { border: '#E11D48', bg: 'rgba(225,29,72,.16)', label: '#9F1239' }
+  };
+
+  function setBadge(el, text, tone) {
+    if (!el) return;
+    var dot = el.querySelector('span.w-1\\.5');
+    el.className = 'px-2 py-0.5 rounded-full text-label-sm font-label-sm font-semibold ' + (BADGE_TONE[tone] || BADGE_TONE.mint);
+    if (dot) {
+      el.classList.add('flex', 'items-center', 'gap-1');
+      el.textContent = '';
+      el.appendChild(dot);
+      el.appendChild(document.createTextNode(text));
+    } else {
+      el.textContent = text;
+    }
+  }
+  function setBar(el, pct, tone) {
+    if (!el) return;
+    el.style.width = Math.max(0, Math.min(100, pct)) + '%';
+    if (tone && BAR_TONE[tone]) el.className = 'h-full rounded-full ' + BAR_TONE[tone];
+  }
+
+  var toastWrap;
+  function toast(msg, tone) {
+    if (!toastWrap) {
+      toastWrap = document.createElement('div');
+      toastWrap.style.cssText = 'position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;width:320px;max-width:calc(100vw - 48px)';
+      document.body.appendChild(toastWrap);
+    }
+    var tones = {
+      info: 'bg-surface-card border-border-subtle text-text-strong',
+      success: 'bg-brand-mint-subtle border-border-focus/40 text-brand-forest',
+      warn: 'bg-accent-amber-subtle border-accent-amber/40 text-on-tertiary-fixed-variant',
+      danger: 'bg-danger-rose-subtle border-danger-rose/40 text-danger-rose'
+    };
+    var icons = { info: 'info', success: 'check_circle', warn: 'warning', danger: 'error' };
+    var t = tone || 'info';
+    var el = document.createElement('div');
+    el.className = 'flex items-start gap-2.5 p-3 rounded-xl border shadow-lg text-label-md font-label-md ' + tones[t];
+    el.innerHTML = iconSpan(icons[t], 'flex-shrink-0') + '<span class="flex-1">' + msg + '</span>';
+    toastWrap.appendChild(el);
+    setTimeout(function () {
+      el.style.transition = 'opacity .25s ease, transform .25s ease';
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(12px)';
+      setTimeout(function () { el.remove(); }, 260);
+    }, 3000);
+  }
+
+  var modal, modalTitle, modalBody;
+  function ensureModal() {
+    if (modal) return;
+    modal = document.createElement('div');
+    modal.id = 'pModal';
+    modal.className = 'fixed inset-0 z-[80] hidden items-center justify-center p-4';
+    modal.innerHTML = '<div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" data-pmclose></div>' +
+      '<div class="relative w-full max-w-lg bg-surface-card rounded-2xl border border-border-subtle shadow-2xl overflow-hidden">' +
+      '<div class="flex items-center justify-between px-5 py-4 border-b border-border-subtle">' +
+      '<h3 id="pModalTitle" class="text-headline-sm font-headline-sm font-bold text-text-strong">Details</h3>' +
+      '<button type="button" id="pModalClose" class="p-1.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-card-subtle transition-colors"><span class="material-symbols-outlined text-xl">close</span></button>' +
+      '</div><div id="pModalBody" class="p-5 max-h-[70vh] overflow-y-auto custom-scroll"></div></div>';
+    document.body.appendChild(modal);
+    modalTitle = $('#pModalTitle', modal);
+    modalBody = $('#pModalBody', modal);
+    $('#pModalClose', modal).addEventListener('click', closeModal);
+    modal.querySelector('[data-pmclose]').addEventListener('click', closeModal);
+  }
+  function openModal(title, html) {
+    ensureModal();
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+  function bindModalOk() {
+    var ok = modalBody.querySelector('[data-pmok]');
+    if (ok) ok.addEventListener('click', closeModal);
+  }
+
+  var notifPanel;
+  function ensureNotif() {
+    if (notifPanel) return;
+    notifPanel = document.createElement('div');
+    notifPanel.id = 'pNotif';
+    notifPanel.className = 'fixed top-16 right-8 z-[70] hidden w-80 bg-surface-card border border-border-subtle rounded-xl shadow-2xl overflow-hidden';
+    notifPanel.innerHTML = '<div class="flex items-center justify-between px-4 py-3 border-b border-border-subtle">' +
+      '<span class="text-label-md font-label-md font-semibold text-text-strong">Notifications</span>' +
+      '<button type="button" id="pNotifRead" class="text-label-sm font-label-sm text-primary font-semibold hover:text-brand-emerald-dark">Mark all read</button></div>' +
+      '<div class="divide-y divide-border-subtle">' +
+      '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-accent-amber">humidity_percentage</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">High humidity alert</p><p class="text-label-sm font-label-sm text-text-muted">Sector 3B at 84% RH - spore risk elevated.</p></div><span class="pnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+      '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-primary">coronavirus</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">Early Blight risk elevated</p><p class="text-label-sm font-label-sm text-text-muted">Tomato canopy scan matches Stage 2 lesions.</p></div><span class="pnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+      '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-info-sky">inventory_2</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">BPP advisory</p><p class="text-label-sm font-label-sm text-text-muted">Bio-fungicide stock restocked at the extension store.</p></div><span class="pnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+      '</div>';
+    document.body.appendChild(notifPanel);
+    $('#pNotifRead', notifPanel).addEventListener('click', function () {
+      $$('.pnotif-dot', notifPanel).forEach(function (d) { d.remove(); });
+      toast('All notifications marked as read', 'success');
+    });
+  }
+  function toggleNotif() {
+    ensureNotif();
+    notifPanel.classList.toggle('hidden');
+  }
+
+  var fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.style.display = 'none';
+  document.body.appendChild(fileInput);
+
+  var current = null;
+  var mode = 'organic';
+  var uploadedUrl = null;
+  var boxEls = [];
+  var zoomed = false;
+  var overlays = true;
+  var scanTimer = null;
+
+  function setChip(text, spin) {
+    statusChip.innerHTML = chipHTML(spin ? 'sync' : 'auto_awesome', text);
+    if (spin) {
+      var i = statusChip.querySelector('.material-symbols-outlined');
+      if (i) i.classList.add('animate-spin');
+    }
+  }
+
+  function renderBoxes(spec) {
+    boxLayer.innerHTML = '';
+    boxEls = [];
+    spec.boxes.forEach(function (b) {
+      var c = BOX_COLORS[b.color] || BOX_COLORS.mint;
+      var el = document.createElement('div');
+      el.className = 'pbox';
+      el.style.left = b.x + '%';
+      el.style.top = b.y + '%';
+      el.style.width = b.w + '%';
+      el.style.height = b.h + '%';
+      el.style.borderColor = c.border;
+      el.style.background = c.bg;
+      el.style.display = overlays ? '' : 'none';
+      var label = document.createElement('div');
+      label.style.cssText = 'position:absolute;top:-28px;left:0;background:' + c.label + ';color:#fff;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;white-space:nowrap;box-shadow:0 4px 10px rgba(0,0,0,.2)';
+      label.textContent = b.label;
+      el.appendChild(label);
+      el.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openModal('Lesion Analysis', '<div class="space-y-3">' +
+          '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm font-label-sm text-text-muted">Detection</p><p class="text-label-md font-label-md font-semibold text-text-strong mt-0.5">' + b.label + '</p></div>' +
+          '<div class="grid grid-cols-2 gap-3">' +
+          '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Confidence</p><p class="text-headline-sm font-bold text-primary">' + b.conf + '</p></div>' +
+          '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Lesion Area</p><p class="text-headline-sm font-bold text-text-strong">' + b.area + '</p></div>' +
+          '</div><p class="text-body-sm text-text-muted leading-relaxed">' + b.detail + '</p>' +
+          '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors" data-pmok>Close</button></div>');
+        bindModalOk();
+      });
+      boxLayer.appendChild(el);
+      boxEls.push(el);
+    });
+  }
+
+  function renderChips(activeId) {
+    presetWrap.innerHTML = '';
+    Object.keys(SPECIMENS).forEach(function (id) {
+      var s = SPECIMENS[id];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('data-specimen', id);
+      var active = id === activeId;
+      btn.className = 'px-3 py-1.5 rounded-lg text-label-sm font-label-sm border flex items-center gap-1.5 transition-colors ' +
+        (active ? 'bg-brand-mint-subtle text-primary font-semibold border-border-focus/30' : 'bg-surface-base hover:bg-surface-card text-text-strong border-border-subtle');
+      btn.innerHTML = '<span class="w-1.5 h-1.5 rounded-full ' + (active ? 'bg-primary' : 'bg-text-muted') + '"></span>' + s.label;
+      btn.addEventListener('click', function () { renderSpecimen(id, { analyze: true }); });
+      presetWrap.appendChild(btn);
+    });
+  }
+
+  function updateKPIs(s) {
+    kpiSeverityValue.textContent = s.severity + '%';
+    setBadge(kpiSeverityBadge, s.severityTone === 'danger' ? 'High Risk' : s.severityTone === 'amber' ? 'Moderate Risk' : 'Low Risk', s.severityTone);
+    kpiSeverityStage.textContent = s.stage + ' Lesion';
+    kpiSeverityStage.className = 'text-label-md font-label-md font-semibold ' + TONE_CLASS[s.severityTone];
+    setBar(kpiSeverityBar, s.severity, s.severityTone);
+    setNote(kpiSeverityNote, s.severityIcon || 'schedule', TONE_CLASS[s.severityTone], s.severityNote);
+
+    kpiConfValue.textContent = s.conf + '%';
+    setBar(kpiConfBar, s.conf, 'mint');
+
+    kpiYieldValue.textContent = s.yieldRisk + '%';
+    setBadge(kpiYieldBadge, s.yieldSector, s.yieldTone);
+    kpiYieldStage.textContent = 'Potential Loss';
+    kpiYieldStage.className = 'text-label-md font-label-md font-semibold ' + TONE_CLASS[s.yieldTone];
+    setBar(kpiYieldBar, s.yieldRisk, s.yieldTone);
+    setNote(kpiYieldNote, 'shield', 'text-primary', s.yieldNote);
+
+    kpiUrgencyValue.textContent = s.urgency;
+    setBadge(kpiUrgencyBadge, s.urgencyBadge, 'mint');
+    kpiUrgencyStage.textContent = s.urgencyTag;
+    kpiUrgencyStage.className = 'text-label-md font-label-md font-semibold ' + TONE_CLASS[s.urgencyTone];
+    setBar(kpiUrgencyBar, s.urgencyPct, s.urgencyTone);
+    setNote(kpiUrgencyNote, 'notification_important', TONE_CLASS[s.urgencyTone], s.urgencyNote);
+  }
+
+  function updateProfile(s) {
+    diseaseName.textContent = s.disease;
+    diseaseLatin.textContent = s.latin;
+    diseaseStage.textContent = s.stage;
+    if (detailVals[0]) detailVals[0].textContent = s.profile.cls;
+    if (detailVals[1]) detailVals[1].textContent = s.profile.vector;
+    if (detailVals[2]) detailVals[2].textContent = s.profile.zone;
+    if (detailVals[3]) {
+      detailVals[3].textContent = s.profile.secondary;
+      detailVals[3].className = 'font-semibold text-right ' + TONE_CLASS[s.severityTone];
+    }
+    if (profileNote) profileNote.textContent = s.profile.note;
+  }
+
+  function renderSteps() {
+    var steps = current[mode];
+    if (planSubtitle) planSubtitle.textContent = mode === 'organic'
+      ? 'Calibrated for minimal soil runoff & pollinator safety'
+      : 'Resistance-aware rotation with pre-harvest interval controls';
+    planButtons.forEach(function (b) {
+      var isOrganic = /^Organic$/.test(norm(b.textContent));
+      var on = (mode === 'organic') === isOrganic;
+      b.className = on
+        ? 'px-2.5 py-1 rounded-md bg-primary text-on-primary font-semibold shadow-xs'
+        : 'px-2.5 py-1 text-text-muted hover:text-text-strong';
+    });
+    planSteps.innerHTML = '';
+    steps.forEach(function (st, i) {
+      var div = document.createElement('div');
+      div.className = 'flex items-start gap-3.5 p-3 rounded-xl border ' + (st.rec ? 'bg-brand-mint-subtle border-border-focus/20' : 'bg-surface-base border-border-subtle');
+      div.innerHTML = '<div class="w-6 h-6 rounded-full bg-primary text-on-primary text-label-sm font-label-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">' + (i + 1) + '</div>' +
+        '<div><div class="flex items-center gap-2"><h4 class="text-label-md font-label-md font-bold ' + (st.rec ? 'text-primary' : 'text-text-strong') + '">' + st.title + '</h4>' +
+        (st.rec ? '<span class="px-1.5 py-0.2 rounded text-[10px] bg-brand-forest text-on-primary font-semibold">Recommended</span>' : '') +
+        '</div><p class="text-body-sm font-body-sm mt-0.5 ' + (st.rec ? 'text-brand-forest' : 'text-text-muted') + '">' + st.body + '</p></div>';
+      planSteps.appendChild(div);
+    });
+  }
+
+  function renderTimeline(s) {
+    timelineList.innerHTML = '';
+    s.timeline.forEach(function (m) {
+      var wrap = document.createElement('div');
+      wrap.className = 'relative cursor-pointer';
+      wrap.innerHTML = '<span class="absolute -left-[31px] top-0.5 w-3.5 h-3.5 rounded-full ' + (m.active ? 'bg-primary ring-4 ring-brand-mint-subtle' : 'bg-surface-card border-2 border-text-muted') + '"></span>' +
+        '<p class="text-label-sm font-label-sm font-bold ' + (m.active ? 'text-primary' : 'text-text-strong') + '">' + m.phase + '</p>' +
+        '<p class="text-label-sm font-label-sm text-text-muted">' + m.detail + '</p>';
+      wrap.addEventListener('click', function () {
+        openModal('Recovery Milestone', '<div class="space-y-3"><p class="text-headline-sm font-bold text-text-strong">' + m.phase + '</p>' +
+          '<p class="text-body-sm text-text-muted leading-relaxed">' + m.detail + '</p>' +
+          '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors" data-pmok>Got it</button></div>');
+        bindModalOk();
+      });
+      timelineList.appendChild(wrap);
+    });
+  }
+
+  function runAnalysis(s) {
+    if (!s) return;
+    setChip('Analyzing leaf sample…', true);
+    scanline.style.display = 'block';
+    clearTimeout(scanTimer);
+    scanTimer = setTimeout(function () {
+      scanline.style.display = 'none';
+      var val = (s.conf + (Math.random() * 0.6 - 0.3)).toFixed(1);
+      kpiConfValue.textContent = val + '%';
+      setBar(kpiConfBar, parseFloat(val), 'mint');
+      setChip('Multispectral AI Mask Active • ' + (280 + Math.floor(Math.random() * 80)) + 'ms');
+    }, 850);
+  }
+
+  function renderSpecimen(id, opts) {
+    var s = SPECIMENS[id];
+    if (!s) return;
+    current = s;
+    uploadedUrl = null;
+    leafImg.src = s.img;
+    metaName.textContent = s.meta.name;
+    metaDims.textContent = s.meta.dims;
+    setChip('Multispectral AI Mask Active');
+    renderBoxes(s);
+    updateKPIs(s);
+    updateProfile(s);
+    renderSteps();
+    renderTimeline(s);
+    renderChips(id);
+    cropSelect.selectedIndex = CROP_KEYS.indexOf(s.crop);
+    if (opts && opts.analyze) runAnalysis(s);
+  }
+
+  function setActiveTab(name) {
+    tabs.forEach(function (b) {
+      var isUpload = /Upload Leaf Photo/.test(norm(b.textContent));
+      var on = (name === 'upload') === isUpload;
+      b.className = on
+        ? 'px-3.5 py-1.5 rounded-lg bg-surface-card text-primary font-semibold text-label-md font-label-md border border-border-subtle shadow-xs'
+        : 'px-3.5 py-1.5 rounded-lg text-text-muted hover:text-text-strong text-label-md font-label-md transition-colors';
+    });
+    if (name === 'drone') {
+      drone.style.display = 'block';
+      captureBtn.style.display = 'flex';
+      setChip('Drone Feed • Live • Sector 3B');
+    } else {
+      drone.style.display = 'none';
+      captureBtn.style.display = 'none';
+      setChip('Multispectral AI Mask Active');
+    }
+  }
+
+  function handleFile(file) {
+    if (!file) return;
+    if (!/^image\//.test(file.type)) { toast('Please choose an image file (JPG/PNG).', 'warn'); return; }
+    if (file.size > 15 * 1024 * 1024) { toast('Image is larger than 15MB.', 'warn'); return; }
+    var url = URL.createObjectURL(file);
+    var probe = new Image();
+    probe.onload = function () {
+      if (uploadedUrl) URL.revokeObjectURL(uploadedUrl);
+      uploadedUrl = url;
+      leafImg.src = url;
+      metaName.textContent = file.name;
+      metaDims.textContent = probe.naturalWidth + 'x' + probe.naturalHeight + ' • ' + (file.size / 1048576).toFixed(1) + 'MB';
+      setActiveTab('upload');
+      toast('Leaf photo uploaded - running diagnosis.', 'info');
+      runAnalysis(current);
+    };
+    probe.onerror = function () { toast('Could not read that image.', 'danger'); URL.revokeObjectURL(url); };
+    probe.src = url;
+  }
+
+  function buildProtocol(s) {
+    var steps = s[mode].map(function (st, i) {
+      return '<li style="margin-bottom:14px"><strong>' + (i + 1) + '. ' + st.title + '</strong><br><span style="color:#475569">' + st.body.replace(/<[^>]+>/g, '') + '</span></li>';
+    }).join('');
+    return '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Treatment Protocol</title>' +
+      '<style>body{font-family:Inter,Arial,sans-serif;color:#0f172a;margin:40px;line-height:1.5}h1{color:#006948;margin:0 0 4px}p.meta{color:#64748b;margin:0 0 20px}table{border-collapse:collapse;width:100%;margin-bottom:22px}td{padding:6px 8px;border-bottom:1px solid #e2e8f0;font-size:13px}td:first-child{color:#64748b;width:38%}h2{font-size:16px;margin:24px 0 8px}li{font-size:13px}.badge{display:inline-block;background:#ecfdf5;color:#064e3b;border:1px solid #86efac;padding:2px 10px;border-radius:999px;font-size:11px;font-weight:700}</style>' +
+      '<body><span class="badge">ECOLOGICAL ACTION PLAN</span><h1>' + s.disease + ' - Treatment Protocol</h1>' +
+      '<p class="meta">' + s.latin + ' • ' + s.stage + ' • ' + s.profile.zone + ' • Generated ' + new Date().toLocaleString() + '</p>' +
+      '<table><tr><td>Pathogen class</td><td>' + s.profile.cls + '</td></tr><tr><td>Transmission vector</td><td>' + s.profile.vector + '</td></tr>' +
+      '<tr><td>Secondary symptoms</td><td>' + s.profile.secondary + '</td></tr><tr><td>Severity / confidence</td><td>' + s.severity + '% / ' + s.conf + '%</td></tr>' +
+      '<tr><td>Yield at risk</td><td>' + s.yieldRisk + '% (' + s.yieldSector + ')</td></tr><tr><td>Treatment urgency</td><td>' + s.urgency + '</td></tr></table>' +
+      '<h2>' + (mode === 'organic' ? 'Organic / Bio-Control Steps' : 'Chemical Rotation Steps') + '</h2><ol>' + steps + '</ol>' +
+      '<h2>14-Day Checkpoints</h2><ol>' + s.timeline.map(function (t) { return '<li><strong>' + t.phase + '</strong> - ' + t.detail + '</li>'; }).join('') + '</ol>' +
+      '<p style="margin-top:28px;font-size:11px;color:#94a3b8">SustainAI • SDG 2 &amp; 15 aligned • Verified by BPP extension guidelines</p>';
+  }
+
+  function printWindow(title, html) {
+    var w = window.open('', '_blank');
+    if (!w) { toast('Allow pop-ups to open the print view.', 'warn'); return null; }
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    try { w.print(); } catch (e) { }
+    return w;
+  }
+
+  function shareReport() {
+    var payload = { title: 'SustainAI Plant Diagnosis', text: current.disease + ' - ' + current.stage + ' (' + current.severity + '% severity)' };
+    if (navigator.share) {
+      navigator.share(payload).catch(function () { });
+      return;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(location.href + ' #' + current.crop).then(function () {
+        toast('Report link copied for the field team.', 'success');
+      }).catch(function () { toast('Report ready to share with the field team.', 'info'); });
+      return;
+    }
+    toast('Report ready to share with the field team.', 'info');
+  }
+
+  function openConsult() {
+    openModal('Consult Extension Field Agent', '<div class="space-y-4">' +
+      '<p class="text-body-sm text-text-muted">Connect with a BPP agronomist for on-site verification of the ' + current.disease + ' diagnosis.</p>' +
+      '<div><label class="text-label-sm font-label-sm font-semibold text-text-strong">Field agent</label>' +
+      '<select id="pConsultAgent" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md">' +
+      '<option>BPP Sector 3B - Dewi Lestari</option><option>BPP Sector 1A - Agus Santoso</option><option>BPP Sector 5B - Rina Marlina</option></select></div>' +
+      '<div><label class="text-label-sm font-label-sm font-semibold text-text-strong">Message</label>' +
+      '<textarea id="pConsultMsg" rows="3" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md" placeholder="Describe the field condition...">Please verify Stage ' + current.stage.replace(/[^0-9]/g, '') + ' ' + current.disease + ' on ' + current.crop + ' and advise on the bio-fungicide schedule.</textarea></div>' +
+      '<button type="button" id="pConsultSend" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors">Send to Field Agent</button></div>');
+    $('#pConsultSend', modalBody).addEventListener('click', function () {
+      closeModal();
+      toast('Message sent to the BPP field agent for verification.', 'success');
+    });
+  }
+
+  function openOrder() {
+    openModal('Order Bio-Fungicide', '<div class="space-y-4">' +
+      '<p class="text-body-sm text-text-muted">Certified eco-safe inputs calibrated for ' + current.disease + '. Delivered via the local BPP store.</p>' +
+      '<div><label class="text-label-sm font-label-sm font-semibold text-text-strong">Product</label>' +
+      '<select id="pOrderProduct" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md">' +
+      '<option value="185000">Bacillus subtilis WP 500 g - Rp 185.000</option>' +
+      '<option value="210000">Copper Octanoate 1 L - Rp 210.000</option>' +
+      '<option value="165000">Trichoderma harzianum 500 g - Rp 165.000</option></select></div>' +
+      '<div class="flex items-center justify-between p-3 rounded-xl bg-surface-base border border-border-subtle">' +
+      '<span class="text-label-md font-semibold text-text-strong">Quantity</span>' +
+      '<div class="flex items-center gap-2"><button type="button" id="pQtyMinus" class="w-7 h-7 rounded-md border border-border-subtle bg-surface-card">-</button>' +
+      '<span id="pQty" class="w-6 text-center font-semibold">1</span>' +
+      '<button type="button" id="pQtyPlus" class="w-7 h-7 rounded-md border border-border-subtle bg-surface-card">+</button></div></div>' +
+      '<div class="flex items-center justify-between"><span class="text-label-sm text-text-muted">Estimated total</span><span id="pOrderTotal" class="text-headline-sm font-bold text-primary">Rp 185.000</span></div>' +
+      '<button type="button" id="pOrderSubmit" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors">Place Order</button></div>');
+    var qty = 1;
+    var sel = $('#pOrderProduct', modalBody);
+    var qtyEl = $('#pQty', modalBody);
+    var totalEl = $('#pOrderTotal', modalBody);
+    function refresh() {
+      var price = parseInt(sel.value, 10);
+      qtyEl.textContent = qty;
+      totalEl.textContent = 'Rp ' + (price * qty).toLocaleString('id-ID');
+    }
+    $('#pQtyMinus', modalBody).addEventListener('click', function () { qty = Math.max(1, qty - 1); refresh(); });
+    $('#pQtyPlus', modalBody).addEventListener('click', function () { qty = Math.min(20, qty + 1); refresh(); });
+    sel.addEventListener('change', refresh);
+    refresh();
+    $('#pOrderSubmit', modalBody).addEventListener('click', function () {
+      closeModal();
+      toast('Order placed - ' + qty + ' unit(s) reserved at the BPP store.', 'success');
+    });
+  }
+
+  function openHelp() {
+    openModal('Help & Shortcuts', '<div class="space-y-3 text-body-sm text-text-muted">' +
+      '<p>Use the shortcuts below to move faster through the diagnostics workspace.</p>' +
+      '<ul class="space-y-2">' +
+      '<li><strong class="text-text-strong">U</strong> - Upload leaf photo</li>' +
+      '<li><strong class="text-text-strong">D</strong> - Switch to Drone / Field Cam feed</li>' +
+      '<li><strong class="text-text-strong">Z</strong> - Toggle zoom</li>' +
+      '<li><strong class="text-text-strong">O</strong> - Toggle lesion overlays</li>' +
+      '<li><strong class="text-text-strong">R</strong> - Re-scan specimen</li>' +
+      '<li><strong class="text-text-strong">Esc</strong> - Close dialogs</li></ul>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors" data-pmok>Got it</button></div>');
+    bindModalOk();
+  }
+
+  function openProfile() {
+    openModal('Account', '<div class="space-y-4"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-brand-forest/10 flex items-center justify-center text-primary"><span class="material-symbols-outlined">person</span></div>' +
+      '<div><p class="text-label-md font-semibold text-text-strong">Budi Hartono</p><p class="text-label-sm text-text-muted">Agronomist & Specialist</p></div></div>' +
+      '<div class="p-3 rounded-xl bg-brand-mint-subtle border border-border-focus/20 flex items-center justify-between"><span class="text-label-sm font-semibold text-brand-forest">Pro Plan - Active</span><span class="text-label-sm text-brand-forest">Renews in 21 days</span></div>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-surface-base border border-border-subtle text-label-md font-semibold text-text-strong" data-pmok>Close</button></div>');
+    bindModalOk();
+  }
+
+  function openUpgrade() {
+    openModal('Upgrade to Pro', '<div class="space-y-4"><p class="text-body-sm text-text-muted">Unlock unlimited multispectral scans, drone pipelines, and priority BPP verification.</p>' +
+      '<ul class="space-y-2 text-body-sm text-text-strong"><li>• Unlimited crop & waste scans</li><li>• Drone / field cam integration</li><li>• Priority agronomist verification</li><li>• Exportable SDG audit reports</li></ul>' +
+      '<button type="button" id="pUpgradeGo" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark transition-colors">Activate Pro Trial</button></div>');
+    $('#pUpgradeGo', modalBody).addEventListener('click', function () { closeModal(); toast('Pro trial activated for 14 days.', 'success'); });
+  }
+
+  function startTelemetry() {
+    var t = 29, h = 84, soil = 68, uv = 5.4;
+    setInterval(function () {
+      t = Math.min(34, Math.max(24, t + (Math.random() * 0.8 - 0.4)));
+      h = Math.min(95, Math.max(70, h + (Math.random() * 3 - 1.5)));
+      soil = Math.min(75, Math.max(55, soil + (Math.random() * 2 - 1)));
+      uv = Math.min(8, Math.max(3, uv + (Math.random() * 0.6 - 0.3)));
+      if (telemetry.temp) telemetry.temp.textContent = t.toFixed(0) + '°C';
+      if (telemetry.hum) telemetry.hum.textContent = h.toFixed(0) + '%';
+      if (telemetry.soil) telemetry.soil.textContent = soil.toFixed(0) + '%';
+      if (telemetry.uv) telemetry.uv.textContent = uv.toFixed(1) + ' UV';
+      if (telemetry.humNote) {
+        if (h >= 80) { telemetry.humNote.textContent = 'High Spore Risk'; telemetry.humNote.className = 'text-label-sm font-label-sm text-tertiary font-semibold'; }
+        else if (h >= 65) { telemetry.humNote.textContent = 'Elevated Humidity'; telemetry.humNote.className = 'text-label-sm font-label-sm text-accent-amber font-semibold'; }
+        else { telemetry.humNote.textContent = 'Stable Humidity'; telemetry.humNote.className = 'text-label-sm font-label-sm text-primary font-semibold'; }
+      }
+    }, 5000);
+  }
+
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () { setActiveTab(/Drone/.test(norm(b.textContent)) ? 'drone' : 'upload'); });
+  });
+  if (zoomBtn) zoomBtn.addEventListener('click', function () {
+    zoomed = !zoomed;
+    inner.style.transform = zoomed ? 'scale(1.55)' : 'scale(1)';
+    zoomBtn.setAttribute('title', zoomed ? 'Zoom out' : 'Zoom in');
+    var i = zoomBtn.querySelector('.material-symbols-outlined');
+    if (i) { i.textContent = zoomed ? 'zoom_out' : 'zoom_in'; i.setAttribute('data-icon', zoomed ? 'zoom_out' : 'zoom_in'); }
+  });
+  if (layerBtn) layerBtn.addEventListener('click', function () {
+    overlays = !overlays;
+    boxEls.forEach(function (b) { b.style.display = overlays ? '' : 'none'; });
+    layerBtn.classList.toggle('text-primary', !overlays);
+    toast(overlays ? 'Lesion overlays shown' : 'Lesion overlays hidden', 'info');
+  });
+  if (rescanBtn) rescanBtn.addEventListener('click', function () { runAnalysis(current); toast('Re-scanning with multispectral AI', 'info'); });
+  if (captureBtn) captureBtn.addEventListener('click', function (e) { e.stopPropagation(); runAnalysis(current); toast('Drone frame captured - analyzing', 'info'); });
+
+  stage.addEventListener('click', function () { if (activeTab === 'upload') fileInput.click(); });
+  stage.addEventListener('dragover', function (e) { e.preventDefault(); stage.style.outline = '2px dashed #34D399'; stage.style.outlineOffset = '-6px'; });
+  stage.addEventListener('dragleave', function () { stage.style.outline = 'none'; });
+  stage.addEventListener('drop', function (e) {
+    e.preventDefault();
+    stage.style.outline = 'none';
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', function () { if (fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]); fileInput.value = ''; });
+
+  if (cropSelect) cropSelect.addEventListener('change', function () {
+    var key = CROP_KEYS[cropSelect.selectedIndex];
+    if (!key || !CROPS[key]) return;
+    var id = CROPS[key][0];
+    renderSpecimen(id, { analyze: true });
+    toast('Loaded ' + SPECIMENS[id].label + ' model', 'info');
+  });
+
+  planButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      mode = /^Organic$/.test(norm(b.textContent)) ? 'organic' : 'chemical';
+      renderSteps();
+      toast(mode === 'organic' ? 'Organic plan selected' : 'Chemical rotation plan selected', 'info');
+    });
+  });
+
+  if (consultBtn) consultBtn.addEventListener('click', openConsult);
+  if (orderBtn) orderBtn.addEventListener('click', openOrder);
+  if (shareBtn) shareBtn.addEventListener('click', shareReport);
+  if (printBtn) printBtn.addEventListener('click', function () {
+    printWindow('Treatment Protocol', buildProtocol(current));
+    toast('Treatment protocol opened for printing', 'info');
+  });
+  if (exportBtn) exportBtn.addEventListener('click', function () {
+    printWindow('Agronomic Audit', buildProtocol(current));
+    toast('Agronomic audit prepared for export', 'success');
+  });
+
+  if (notifBtn) notifBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleNotif(); });
+  if (helpBtn) helpBtn.addEventListener('click', openHelp);
+  if (newScanBtn) newScanBtn.addEventListener('click', function () { fileInput.click(); });
+  if (upgradeBtn) upgradeBtn.addEventListener('click', openUpgrade);
+  if (accountBtn) accountBtn.addEventListener('click', openProfile);
+
+  document.addEventListener('click', function (e) {
+    if (notifPanel && !notifPanel.classList.contains('hidden') && !notifPanel.contains(e.target) && e.target !== notifBtn && (!notifBtn || !notifBtn.contains(e.target))) {
+      notifPanel.classList.add('hidden');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    var k = e.key.toLowerCase();
+    if (k === 'escape') { closeModal(); if (notifPanel) notifPanel.classList.add('hidden'); return; }
+    if (k === 'u') { setActiveTab('upload'); fileInput.click(); }
+    else if (k === 'd') { setActiveTab('drone'); }
+    else if (k === 'z' && zoomBtn) { zoomBtn.click(); }
+    else if (k === 'o' && layerBtn) { layerBtn.click(); }
+    else if (k === 'r') { runAnalysis(current); toast('Re-scanning with multispectral AI', 'info'); }
+  });
+
+  startTelemetry();
+  renderSpecimen('tomato-early');
+
+  window.__plantsTest = function () { return { current: current.label, crop: cropSelect.selectedIndex, steps: planSteps.children.length, boxes: boxEls.length }; };
+})();
+
+</script>
+<script>
+/* SIDEBAR-SHARED */
+(function () {
+  'use strict';
+  var LANG_KEY = 'sustainai.lang';
+  function $(s) { return document.querySelector(s); }
+  var upgradeBtn = $('#upgradeBtn');
+  var langEN = $('#langEN');
+  var langID = $('#langID');
+  var langLabel = $('#langLabel');
+  var profileMenu = $('#profileMenu');
+
+  var wrap = document.createElement('div');
+  wrap.className = 'fixed bottom-6 right-6 z-[60] flex flex-col gap-2 items-end';
+  document.body.appendChild(wrap);
+  function toast(msg, type) {
+    var tone = type === 'error' ? 'border-danger-rose/40 bg-danger-rose-subtle text-danger-rose' : type === 'warn' ? 'border-accent-amber/40 bg-accent-amber-subtle text-accent-amber' : 'border-brand-mint/50 bg-brand-mint-subtle text-brand-forest';
+    var icon = type === 'error' ? 'error' : type === 'warn' ? 'warning' : 'check_circle';
+    var el = document.createElement('div');
+    el.className = 'flex items-center gap-2 px-4 py-2.5 rounded-lg border shadow-md text-label-md font-label-md bg-surface-card ' + tone + ' transition-all duration-200 opacity-0 translate-y-2';
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + icon + '</span><span></span>';
+    el.lastElementChild.textContent = msg;
+    wrap.appendChild(el);
+    requestAnimationFrame(function () { el.classList.remove('opacity-0', 'translate-y-2'); });
+    setTimeout(function () {
+      el.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(function () { el.remove(); }, 220);
+    }, 3000);
+  }
+
+  var modal = document.createElement('div');
+  modal.id = 'sbModal';
+  modal.className = 'fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm';
+  modal.innerHTML = '<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col">' +
+    '<div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle shrink-0">' +
+      '<h3 id="sbModalTitle" class="text-headline-sm font-headline-sm text-text-strong">SustainAI</h3>' +
+      '<button id="sbModalClose" type="button" class="p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base" title="Close"><span class="material-symbols-outlined text-[20px]">close</span></button>' +
+    '</div>' +
+    '<div id="sbModalBody" class="p-6 space-y-4 overflow-y-auto text-body-md font-body-md text-text-strong"></div>' +
+    '<div id="sbModalFoot" class="px-6 py-4 border-t border-border-subtle flex flex-wrap items-center justify-end gap-2 shrink-0"></div>' +
+  '</div>';
+  document.body.appendChild(modal);
+  function openModal(title, body, buttons) {
+    $('#sbModalTitle').textContent = title;
+    $('#sbModalBody').innerHTML = body;
+    var foot = $('#sbModalFoot');
+    foot.innerHTML = '';
+    buttons.forEach(function (b) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = b.cls || 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold border border-border-subtle text-text-strong bg-surface-card hover:bg-surface-base';
+      btn.textContent = b.label;
+      btn.addEventListener('click', b.onClick);
+      foot.appendChild(btn);
+    });
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+  $('#sbModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  function applyLang(code, announce) {
+    if (code !== 'en' && code !== 'id') return;
+    if (langLabel) langLabel.textContent = 'Language: ' + code.toUpperCase();
+    var active = 'px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer';
+    var idle = 'px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer';
+    if (langEN) langEN.className = code === 'en' ? active : idle;
+    if (langID) langID.className = code === 'id' ? active : idle;
+    document.documentElement.lang = code;
+    try { localStorage.setItem(LANG_KEY, code); } catch (e) {}
+    if (announce) toast('Language: ' + (code === 'en' ? 'English (EN-US)' : 'Bahasa Indonesia (ID)'));
+  }
+  if (langEN) langEN.addEventListener('click', function () { applyLang('en', true); });
+  if (langID) langID.addEventListener('click', function () { applyLang('id', true); });
+  var saved = null;
+  try { saved = localStorage.getItem(LANG_KEY); } catch (e) { saved = null; }
+  if (saved) applyLang(saved, false);
+
+  if (upgradeBtn) upgradeBtn.addEventListener('click', function () {
+    openModal('Enterprise Pro Plans',
+      '<p class="text-body-sm font-body-sm text-text-muted">You are on <strong class="text-text-strong">Enterprise Pro</strong>. Scale edge inference and add unlimited workspace auditors.</p>' +
+      '<div class="space-y-2">' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-primary bg-brand-mint-subtle"><div><div class="font-semibold text-text-strong">Enterprise Pro</div><div class="text-body-sm text-text-muted">Current plan • 50 seats • 2M edge calls</div></div><span class="text-label-sm font-bold text-primary">Active</span></div>' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-border-subtle bg-surface-base"><div><div class="font-semibold text-text-strong">Enterprise Max</div><div class="text-body-sm text-text-muted">Unlimited seats • 10M edge calls • dedicated SLA</div></div><span class="text-label-sm font-bold text-text-muted">Custom</span></div>' +
+      '</div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Contact Sales', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); toast('Sales team will reach out shortly'); } }
+      ]);
+  });
+
+  if (profileMenu) profileMenu.addEventListener('click', function () {
+    openModal('Account',
+      '<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><div class="w-12 h-12 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center border border-accent-teal/30">AM</div><div><div class="font-semibold text-text-strong">Alex Mercer</div><div class="text-body-sm text-text-muted">alex.mercer@sustainai.io</div><div class="text-[11px] text-primary font-bold mt-0.5">Lead Sustainability Auditor • Owner</div></div></div>' +
+      '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Workspace</span><span class="text-text-strong font-semibold">SustainAI Enterprise</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Region</span><span class="text-text-strong font-semibold">ap-southeast-1 (Jakarta Edge)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">MFA</span><span class="text-primary font-semibold">Enabled</span></div></div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Open Settings', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { window.location.href = 'Setting.html'; } }
+      ]);
+  });
+})();
+</script>
 </body></html>

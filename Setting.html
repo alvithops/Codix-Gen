@@ -316,91 +316,72 @@
 <!-- ========================================================================= -->
 <!-- SIDE NAVIGATION BAR (MANDATED SHARED COMPONENT)                            -->
 <!-- ========================================================================= -->
-<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm">
-<div class="flex flex-col gap-6">
-<!-- Brand Header -->
-<div class="flex items-center gap-3 px-2">
-<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
-<span class="material-symbols-outlined text-[24px]">eco</span>
-</div>
-<div class="flex flex-col">
-<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</span>
-<span class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</span>
-</div>
-</div>
-<!-- Upgrade / Tier Capsule -->
-<div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
-<div>
-<div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
-<div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
-</div>
-</div>
-<button class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm">
-          Upgrade Pro
-        </button>
-</div>
-<!-- Navigation Tabs (Settings is ACTIVE) -->
-<nav aria-label="Primary Navigation" class="flex flex-col gap-1.5">
-<!-- Overview -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#overview">
-<span class="material-symbols-outlined text-[20px]">dashboard</span>
-<span class="text-label-md font-label-md">Overview</span>
-</a>
-<!-- Waste Classifier -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#waste">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-<span class="text-label-md font-label-md">Waste Classifier</span>
-</a>
-<!-- CV Analyzer -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#cv">
-<span class="material-symbols-outlined text-[20px]">document_scanner</span>
-<span class="text-label-md font-label-md">CV Analyzer</span>
-</a>
-<!-- Plant Disease -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#plant">
-<span class="material-symbols-outlined text-[20px]">potted_plant</span>
-<span class="text-label-md font-label-md">Plant Disease</span>
-</a>
-<!-- Reports -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" href="#reports">
-<span class="material-symbols-outlined text-[20px]">bar_chart</span>
-<span class="text-label-md font-label-md">Reports</span>
-</a>
-<!-- Settings (ACTIVE TAB) -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs" href="#settings">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span>
-<span class="text-label-md font-label-md">Settings</span>
-<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
-</a>
-</nav>
-</div>
-<!-- Footer Controls & User Profile -->
-<div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
-<!-- Interactive Language Switcher EN | ID -->
-<div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
-<div class="flex items-center gap-2 text-text-muted">
-<span class="material-symbols-outlined text-[18px]">translate</span>
-<span class="text-label-sm font-label-sm">Language: EN</span>
-</div>
-<div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
-<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs">EN</span>
-<span class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</span>
-</div>
-</div>
-<!-- User Profile Card -->
-<div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
-<div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">
-          AM
+<!-- SHARED SIDEBAR (canonical) -->
+<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center gap-3 px-2">
+      <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+      </div>
+      <div>
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tight leading-none">SustainAI</div>
+        <div class="text-label-sm font-label-sm text-text-muted mt-0.5">Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+        <div>
+          <div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
+          <div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
         </div>
-<div class="flex flex-col min-w-0">
-<div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
-<div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
-</div>
-<span class="material-symbols-outlined text-[18px] text-text-muted ml-auto cursor-pointer hover:text-text-strong">more_vert</span>
-</div>
-</div>
+      </div>
+      <button id="upgradeBtn" type="button" class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm whitespace-nowrap">Upgrade Pro</button>
+    </div>
+    <nav aria-label="Main Navigation" class="flex flex-col gap-2">
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Dashboard.html">
+    <span class="material-symbols-outlined text-[20px]">dashboard</span>
+    <span class="text-label-md font-label-md">Overview</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Waste.html">
+    <span class="material-symbols-outlined text-[20px]">delete</span>
+    <span class="text-label-md font-label-md">Waste Classifier</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Plants.html">
+    <span class="material-symbols-outlined text-[20px]">potted_plant</span>
+    <span class="text-label-md font-label-md">Plant Disease</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Reports.html">
+    <span class="material-symbols-outlined text-[20px]">bar_chart</span>
+    <span class="text-label-md font-label-md">Reports</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs border border-border-focus/30 cursor-pointer" href="Setting.html" aria-current="page">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+    <span class="text-label-md font-label-md">Settings</span>
+<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
+  </a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+      <div class="flex items-center gap-2 text-text-muted">
+        <span class="material-symbols-outlined text-[18px]">translate</span>
+        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
+      </div>
+      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
+        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
+        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
+      <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
+      <div class="flex flex-col min-w-0">
+        <div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
+        <div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
+      </div>
+      <button id="profileMenu" type="button" class="material-symbols-outlined text-[18px] text-text-muted ml-auto hover:text-text-strong" title="Account menu">more_vert</button>
+    </div>
+  </div>
 </aside>
 <!-- ========================================================================= -->
 <!-- MAIN WORKSPACE CONTENT CANVAS                                             -->
@@ -411,7 +392,7 @@
 <!-- Left: Breadcrumbs & System Status Pill -->
 <div class="flex items-center gap-4">
 <div class="flex items-center gap-2 text-label-md font-label-md">
-<span class="text-text-muted hover:text-primary cursor-pointer">SustainAI</span>
+<span id="crumbHome" class="text-text-muted hover:text-primary cursor-pointer">SustainAI</span>
 <span class="text-text-muted">/</span>
 <span class="text-text-muted">Apps</span>
 <span class="text-text-muted">/</span>
@@ -428,28 +409,28 @@
 </div>
 <!-- Right: Navigation Links, Notifications & Primary CTAs -->
 <div class="flex items-center gap-3">
-<nav class="hidden xl:flex items-center gap-5 mr-3 text-label-md font-label-md">
-<a class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#docs">
+<nav class="flex flex-col sm:flex-row items-center gap-5 mr-3 text-label-md font-label-md">
+<a id="docLink" class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#docs">
 <span class="material-symbols-outlined text-[18px]">help</span>
             Documentation
           </a>
-<a class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#audit">
+<a id="auditLink" class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#audit">
 <span class="material-symbols-outlined text-[18px]">history</span>
             Audit Logs
           </a>
 </nav>
 <!-- Notification Bell -->
-<button class="relative p-2 text-text-muted hover:text-text-strong hover:bg-surface-base rounded-md transition-colors" title="Notifications">
+<button id="notifBtn" class="relative p-2 text-text-muted hover:text-text-strong hover:bg-surface-base rounded-md transition-colors" title="Notifications">
 <span class="material-symbols-outlined text-[22px]">notifications</span>
-<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
+<span id="notifDot" class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
 <div class="h-5 w-px bg-border-subtle mx-1"></div>
 <!-- Secondary CTA: Reset to Defaults -->
-<button class="px-3.5 py-2 text-label-md font-label-md font-semibold text-text-strong bg-surface-card border border-border-subtle rounded-md hover:bg-surface-base hover:border-primary transition-all">
+<button id="resetBtn" class="px-3.5 py-2 text-label-md font-label-md font-semibold text-text-strong bg-surface-card border border-border-subtle rounded-md hover:bg-surface-base hover:border-primary transition-all whitespace-nowrap shrink-0">
           Reset to Defaults
         </button>
 <!-- Primary CTA: Save Changes -->
-<button class="flex items-center gap-2 px-4 py-2 text-label-md font-label-md font-semibold text-on-primary bg-primary rounded-md hover:bg-brand-emerald-dark shadow-sm hover:shadow-md transition-all active:scale-95">
+<button id="saveBtn" class="flex items-center gap-2 px-4 py-2 text-label-md font-label-md font-semibold text-on-primary bg-primary rounded-md hover:bg-brand-emerald-dark shadow-sm hover:shadow-md transition-all active:scale-95 whitespace-nowrap shrink-0">
 <span class="material-symbols-outlined text-[18px]">save</span>
           Save Changes
         </button>
@@ -482,24 +463,24 @@
 </div>
 </div>
 <!-- IN-PAGE TABS QUICK ANCHOR NAV -->
-<div class="flex items-center gap-2 border-b border-border-subtle">
-<button class="px-4 py-3 text-label-md font-label-md font-semibold text-primary border-b-2 border-primary flex items-center gap-2">
+<div id="settingsTabs" class="flex items-center gap-2 border-b border-border-subtle overflow-x-auto">
+<button data-tab="engine" class="tab-btn px-4 py-3 text-label-md font-label-md font-semibold text-primary border-b-2 border-primary flex items-center gap-2 whitespace-nowrap">
 <span class="material-symbols-outlined text-[18px]">memory</span>
           AI Engine &amp; API Keys
         </button>
-<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<button data-tab="localization" class="tab-btn px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2 whitespace-nowrap">
 <span class="material-symbols-outlined text-[18px]">language</span>
           Localization
         </button>
-<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<button data-tab="privacy" class="tab-btn px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2 whitespace-nowrap">
 <span class="material-symbols-outlined text-[18px]">tune</span>
           Inference &amp; Privacy
         </button>
-<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<button data-tab="sdg" class="tab-btn px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2 whitespace-nowrap">
 <span class="material-symbols-outlined text-[18px]">public</span>
           UN SDG Targets
         </button>
-<button class="px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2">
+<button data-tab="team" class="tab-btn px-4 py-3 text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors flex items-center gap-2 whitespace-nowrap">
 <span class="material-symbols-outlined text-[18px]">group</span>
           Team &amp; Access
         </button>
@@ -507,7 +488,7 @@
 <!-- ===================================================================== -->
 <!-- SECTION 1: AI MODEL & API KEY CONFIGURATION                           -->
 <!-- ===================================================================== -->
-<section class="space-y-6">
+<section id="sec-engine" class="space-y-6 scroll-mt-24">
 <div class="flex items-center justify-between">
 <div>
 <h2 class="text-headline-md font-headline-md text-text-strong flex items-center gap-2">
@@ -526,8 +507,8 @@
 <!-- Engine Selector Bento Row -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 <!-- Active Engine: Gemini 1.5 Flash -->
-<div class="relative bg-surface-card border-2 border-primary rounded-xl p-5 shadow-xs flex flex-col justify-between">
-<div class="absolute top-4 right-4 flex items-center gap-1 px-2 py-0.5 bg-brand-mint-subtle text-brand-forest rounded-full text-label-sm font-label-sm font-semibold">
+<div id="engineFlash" data-engine="flash" class="engine-card relative bg-surface-card border-2 border-primary rounded-xl p-5 shadow-xs flex flex-col justify-between cursor-pointer">
+<div id="engineBadge" data-badge="flash" class="absolute top-4 right-4 flex items-center gap-1 px-2 py-0.5 bg-brand-mint-subtle text-brand-forest rounded-full text-label-sm font-label-sm font-semibold">
 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
               Current Default
             </div>
@@ -546,7 +527,7 @@
 </div>
 </div>
 <!-- Secondary Option: Gemini 1.5 Pro -->
-<div class="bg-surface-card border border-border-subtle hover:border-primary/50 transition-colors rounded-xl p-5 shadow-xs flex flex-col justify-between cursor-pointer">
+<div id="enginePro" data-engine="pro" class="engine-card bg-surface-card border border-border-subtle hover:border-primary/50 transition-colors rounded-xl p-5 shadow-xs flex flex-col justify-between cursor-pointer">
 <div>
 <div class="w-9 h-9 rounded-lg bg-surface-card-subtle text-text-muted flex items-center justify-center mb-3">
 <span class="material-symbols-outlined text-[22px]">psychology</span>
@@ -558,11 +539,11 @@
 </div>
 <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
 <span class="text-text-muted">Latency: <strong class="text-text-strong">~820ms</strong></span>
-<button class="text-primary hover:text-brand-emerald-dark font-semibold">Switch Engine</button>
+<button data-engine="pro" class="switch-engine text-primary hover:text-brand-emerald-dark font-semibold">Switch Engine</button>
 </div>
 </div>
 <!-- Custom Fine-Tuned LoRA / Self-Hosted -->
-<div class="bg-surface-card border border-border-subtle rounded-xl p-5 shadow-xs flex flex-col justify-between opacity-80">
+<div id="engineLora" data-engine="lora" class="engine-card bg-surface-card border border-border-subtle rounded-xl p-5 shadow-xs flex flex-col justify-between">
 <div>
 <div class="w-9 h-9 rounded-lg bg-surface-card-subtle text-text-muted flex items-center justify-center mb-3">
 <span class="material-symbols-outlined text-[22px]">hub</span>
@@ -576,8 +557,8 @@
               </p>
 </div>
 <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
-<span class="text-text-muted">Status: Ready to link</span>
-<button class="text-text-muted hover:text-text-strong font-semibold">Configure</button>
+<span class="text-text-muted">Status: <span id="loraStatus" class="font-semibold text-text-strong">Ready to link</span></span>
+<button id="configLoraBtn" data-engine="lora" class="text-text-muted hover:text-text-strong font-semibold">Configure</button>
 </div>
 </div>
 </div>
@@ -589,17 +570,17 @@
 <p class="text-body-sm font-body-sm text-text-muted">Isolated keys guarantee zero cascading downtime across micro-analyzers.</p>
 </div>
 <div class="flex items-center gap-2">
-<button class="px-3 py-1.5 bg-surface-base text-text-strong text-label-sm font-label-sm rounded-md border border-border-subtle hover:bg-surface-card flex items-center gap-1.5">
+<button id="pingBtn" class="px-3 py-1.5 bg-surface-base text-text-strong text-label-sm font-label-sm rounded-md border border-border-subtle hover:bg-surface-card flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]">sync</span>
                 Ping All Endpoints
               </button>
-<button class="px-3 py-1.5 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark flex items-center gap-1.5 shadow-xs">
+<button id="addKeyBtn" class="px-3 py-1.5 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark flex items-center gap-1.5 shadow-xs">
 <span class="material-symbols-outlined text-[16px]">add</span>
                 Add Key
               </button>
 </div>
 </div>
-<div class="space-y-3">
+<div id="keyList" class="space-y-3">
 <!-- Key 1: CV Analyzer -->
 <div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
 <div class="flex items-start gap-3 min-w-[280px]">
@@ -719,7 +700,7 @@
 <!-- ===================================================================== -->
 <!-- SECTION 2: LOCALIZATION & BILINGUAL ENGINE                           -->
 <!-- ===================================================================== -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<section id="sec-localization" class="grid grid-cols-1 lg:grid-cols-2 gap-6 scroll-mt-24">
 <div class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[22px]">translate</span>
@@ -733,15 +714,15 @@
 <div>
 <label class="block text-label-md font-label-md font-semibold text-text-strong mb-2">Default Operational Language</label>
 <div class="grid grid-cols-2 gap-3">
-<label class="flex items-center gap-3 p-3 rounded-lg border-2 border-primary bg-brand-mint-subtle cursor-pointer">
-<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
+<label data-lang="en" class="lang-option flex items-center gap-3 p-3 rounded-lg border-2 border-primary bg-brand-mint-subtle cursor-pointer">
+<input checked="" value="en" class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
 <div>
 <div class="text-label-md font-label-md font-bold text-text-strong">English (EN-US)</div>
 <div class="text-[12px] text-text-muted">International ESG &amp; UN SDG Taxonomy</div>
 </div>
 </label>
-<label class="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-surface-card hover:bg-surface-base cursor-pointer">
-<input class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
+<label data-lang="id" class="lang-option flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-surface-card hover:bg-surface-base cursor-pointer">
+<input value="id" class="text-primary focus:ring-primary h-4 w-4" name="lang_select" type="radio"/>
 <div>
 <div class="text-label-md font-label-md font-bold text-text-strong">Bahasa Indonesia (ID)</div>
 <div class="text-[12px] text-text-muted">Istilah Pertanian &amp; Standar Bank Sampah</div>
@@ -752,7 +733,7 @@
 <!-- Taxonomy Framework Selector -->
 <div>
 <label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">SDG &amp; Waste Taxonomy Mapping</label>
-<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<select id="taxonomySelect" class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
 <option selected="">Dual Framework: UN SDG 12 + KLHK Indonesia Waste Index</option>
 <option>Strict International: UN Global Compact SDG Indicators</option>
 <option>Localized: Balai Penyuluhan Pertanian (BPP) &amp; Bank Sampah Regional</option>
@@ -762,14 +743,14 @@
 <div class="grid grid-cols-2 gap-4">
 <div>
 <label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">Measurement Metric</label>
-<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<select id="metricSelect" class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
 <option selected="">Metric (Kilograms / Tonnes CO₂e)</option>
 <option>Imperial (lbs / Carbon Credit Equiv)</option>
 </select>
 </div>
 <div>
 <label class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">Carbon Offset Valuation</label>
-<select class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
+<select id="currencySelect" class="w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle">
 <option selected="">EcoCredits (EC) + IDR (Rp)</option>
 <option>USD ($) + Verra VCS Equivalents</option>
 </select>
@@ -780,7 +761,7 @@
 <!-- ===================================================================== -->
 <!-- SECTION 3: INFERENCE THRESHOLDS & PRIVACY COMPLIANCE                 -->
 <!-- ===================================================================== -->
-<div class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
+<div id="sec-privacy" class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5 scroll-mt-24">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[22px]">tune</span>
 <h2 class="text-headline-md font-headline-md text-text-strong">Inference Tuning &amp; Data Privacy</h2>
@@ -792,9 +773,9 @@
 <div class="space-y-2">
 <div class="flex justify-between items-center text-label-md font-label-md">
 <span class="font-semibold text-text-strong">Waste Classification Confidence Cutoff</span>
-<span class="font-bold text-primary font-code-mono">85%</span>
+<span id="wasteCutoffVal" class="font-bold text-primary font-code-mono">85%</span>
 </div>
-<input class="w-full accent-primary h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="98" min="60" type="range" value="85"/>
+<input id="wasteCutoff" aria-label="Waste classification confidence cutoff" class="w-full accent-primary h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="98" min="60" type="range" value="85"/>
 <div class="flex justify-between text-[11px] text-text-muted">
 <span>60% (High Recall)</span>
 <span>85% (Balanced Recommended)</span>
@@ -805,9 +786,9 @@
 <div class="space-y-2 pt-2 border-t border-border-subtle">
 <div class="flex justify-between items-center text-label-md font-label-md">
 <span class="font-semibold text-text-strong">Crop Infection Early Warning Sensitivity</span>
-<span class="font-bold text-accent-teal font-code-mono">Stage 1 (Sub-clinical)</span>
+<span id="cropSensVal" class="font-bold text-accent-teal font-code-mono">Stage 1 (Sub-clinical)</span>
 </div>
-<input class="w-full accent-accent-teal h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="3" min="1" type="range" value="1"/>
+<input id="cropSensitivity" aria-label="Crop infection early warning sensitivity" class="w-full accent-accent-teal h-2 bg-surface-card-subtle rounded-lg cursor-pointer" max="3" min="1" type="range" value="1"/>
 <div class="flex justify-between text-[11px] text-text-muted">
 <span>Stage 1: Early Foliar Spores</span>
 <span>Stage 2: Visible Blight</span>
@@ -821,6 +802,7 @@
 <div>
 <div class="text-label-md font-label-md font-semibold text-text-strong flex items-center gap-1.5">
 <span>Automatic Temporary File Purge</span>
+<span id="purgeState" class="text-[11px] font-bold text-primary">Enabled</span>
 <span class="px-2 py-0.5 rounded text-[11px] bg-brand-mint-subtle text-primary font-bold">GDPR Ready</span>
 </div>
 <p class="text-body-sm font-body-sm text-text-muted">
@@ -828,20 +810,20 @@
                 </p>
 </div>
 <label class="relative inline-flex items-center cursor-pointer shrink-0">
-<input checked="" class="sr-only peer" type="checkbox"/>
+<input id="purgeToggle" checked="" class="sr-only peer" type="checkbox"/>
 <div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
 <!-- Toggle 2: Vercel ISR Edge Caching -->
 <div class="flex items-start justify-between gap-4">
 <div>
-<div class="text-label-md font-label-md font-semibold text-text-strong">Edge Caching &amp; ISR Revalidation (3600s)</div>
+<div class="text-label-md font-label-md font-semibold text-text-strong">Edge Caching &amp; ISR Revalidation (3600s) <span id="cacheState" class="text-[11px] font-bold text-primary">Enabled</span></div>
 <p class="text-body-sm font-body-sm text-text-muted">
                   Cache aggregated SDG telemetry queries on Vercel Edge nodes to minimize duplicate API charges.
                 </p>
 </div>
 <label class="relative inline-flex items-center cursor-pointer shrink-0">
-<input checked="" class="sr-only peer" type="checkbox"/>
+<input id="cacheToggle" checked="" class="sr-only peer" type="checkbox"/>
 <div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
@@ -851,7 +833,7 @@
 <!-- ===================================================================== -->
 <!-- SECTION 4: UN SUSTAINABLE DEVELOPMENT GOALS (SDG) THRESHOLDS         -->
 <!-- ===================================================================== -->
-<section class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-6">
+<section id="sec-sdg" class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-6 scroll-mt-24">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 <div>
 <div class="flex items-center gap-2">
@@ -868,7 +850,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
 <!-- SDG 12 Card -->
-<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div id="sdg12" data-sdg="12" data-target="85" data-current="88" data-unit="%" class="sdg-card p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between cursor-pointer">
 <div>
 <div class="flex items-center justify-between mb-2">
 <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-accent-amber-subtle text-accent-amber border border-accent-amber/20">
@@ -882,15 +864,15 @@
 <div class="mt-4 pt-3 border-t border-border-subtle">
 <div class="flex justify-between items-center text-label-sm font-label-sm">
 <span class="text-text-muted">Target Diversion</span>
-<span class="font-bold text-text-strong">85% Min</span>
+<span class="sdg-target font-bold text-text-strong">85% Min</span>
 </div>
 <div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+<div class="sdg-bar bg-primary h-full rounded-full" style="width: 88%;"></div>
 </div>
 </div>
 </div>
 <!-- SDG 2 Card -->
-<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div id="sdg2" data-sdg="2" data-target="4.5" data-current="92" data-unit="% yield" class="sdg-card p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between cursor-pointer">
 <div>
 <div class="flex items-center justify-between mb-2">
 <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-accent-teal-subtle text-accent-teal border border-accent-teal/20">
@@ -904,15 +886,15 @@
 <div class="mt-4 pt-3 border-t border-border-subtle">
 <div class="flex justify-between items-center text-label-sm font-label-sm">
 <span class="text-text-muted">Loss Tolerance</span>
-<span class="font-bold text-text-strong">&lt; 4.5% Yield</span>
+<span class="sdg-target font-bold text-text-strong">&lt; 4.5% Yield</span>
 </div>
 <div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
-<div class="bg-accent-teal h-full rounded-full" style="width: 92%;"></div>
+<div class="sdg-bar bg-accent-teal h-full rounded-full" style="width: 92%;"></div>
 </div>
 </div>
 </div>
 <!-- SDG 8 & 4 Card -->
-<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div id="sdg8" data-sdg="8" data-target="75" data-current="82" data-unit="+ Index" class="sdg-card p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between cursor-pointer">
 <div>
 <div class="flex items-center justify-between mb-2">
 <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-info-sky-subtle text-info-sky border border-info-sky/20">
@@ -926,15 +908,15 @@
 <div class="mt-4 pt-3 border-t border-border-subtle">
 <div class="flex justify-between items-center text-label-sm font-label-sm">
 <span class="text-text-muted">ATS Quality Bar</span>
-<span class="font-bold text-text-strong">75+ Index</span>
+<span class="sdg-target font-bold text-text-strong">75+ Index</span>
 </div>
 <div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
-<div class="bg-info-sky h-full rounded-full" style="width: 82%;"></div>
+<div class="sdg-bar bg-info-sky h-full rounded-full" style="width: 82%;"></div>
 </div>
 </div>
 </div>
 <!-- SDG 11 & 15 Card -->
-<div class="p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between">
+<div id="sdg11" data-sdg="11" data-target="94" data-current="94" data-unit="% Certified" class="sdg-card p-4 rounded-xl bg-surface-base border border-border-subtle hover:border-primary/40 transition-colors flex flex-col justify-between cursor-pointer">
 <div>
 <div class="flex items-center justify-between mb-2">
 <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-mint-subtle text-primary border border-brand-mint/20">
@@ -948,10 +930,10 @@
 <div class="mt-4 pt-3 border-t border-border-subtle">
 <div class="flex justify-between items-center text-label-sm font-label-sm">
 <span class="text-text-muted">Soil Health Factor</span>
-<span class="font-bold text-text-strong">94% Certified</span>
+<span class="sdg-target font-bold text-text-strong">94% Certified</span>
 </div>
 <div class="w-full bg-surface-card-subtle h-1.5 rounded-full mt-1.5 overflow-hidden">
-<div class="bg-brand-mint h-full rounded-full" style="width: 94%;"></div>
+<div class="sdg-bar bg-brand-mint h-full rounded-full" style="width: 94%;"></div>
 </div>
 </div>
 </div>
@@ -960,7 +942,7 @@
 <!-- ===================================================================== -->
 <!-- SECTION 5: TEAM & WORKSPACE MEMBERS                                   -->
 <!-- ===================================================================== -->
-<section class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5">
+<section id="sec-team" class="bg-surface-card rounded-xl border border-border-subtle p-6 shadow-xs space-y-5 scroll-mt-24">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 <div>
 <div class="flex items-center gap-2">
@@ -971,7 +953,7 @@
               Manage enterprise auditors, field agronomists, and developers according to PRD Section 2.3 roles.
             </p>
 </div>
-<button class="flex items-center gap-2 px-3.5 py-2 bg-primary text-on-primary text-label-md font-label-md font-semibold rounded-md hover:bg-brand-emerald-dark transition-all self-start sm:self-auto shadow-xs">
+<button id="inviteBtn" class="flex items-center gap-2 px-3.5 py-2 bg-primary text-on-primary text-label-md font-label-md font-semibold rounded-md hover:bg-brand-emerald-dark transition-all self-start sm:self-auto shadow-xs">
 <span class="material-symbols-outlined text-[18px]">person_add</span>
             Invite Team Member
           </button>
@@ -988,7 +970,7 @@
 <th class="py-3 px-4 text-right">Actions</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-border-subtle">
+<tbody id="teamBody" class="divide-y divide-border-subtle">
 <!-- Member 1: Alex Mercer (Owner) -->
 <tr class="hover:bg-surface-base/50 transition-colors">
 <td class="py-3.5 px-4">
@@ -1096,16 +1078,1284 @@
 <footer class="pt-4 pb-12 flex flex-col md:flex-row items-center justify-between text-label-sm font-label-sm text-text-muted border-t border-border-subtle gap-4">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
-<span>Configuration Version: 2.4.0-prod • Last synced by Alex Mercer 14 minutes ago via Vercel Edge</span>
+<span id="syncInfo">Configuration Version: 2.4.0-prod • Last synced by Alex Mercer 14 minutes ago via Vercel Edge</span>
 </div>
 <div class="flex items-center gap-4">
-<a class="hover:text-primary transition-colors" href="#privacy">Privacy Governance</a>
+<a id="privacyLink" class="hover:text-primary transition-colors" href="#privacy">Privacy Governance</a>
 <span>•</span>
-<a class="hover:text-primary transition-colors" href="#compliance">SDG ISO 14001 Matrix</a>
+<a id="complianceLink" class="hover:text-primary transition-colors" href="#compliance">SDG ISO 14001 Matrix</a>
 <span>•</span>
-<a class="hover:text-primary transition-colors" href="#support">Enterprise SLA Helpdesk</a>
+<a id="supportLink" class="hover:text-primary transition-colors" href="#support">Enterprise SLA Helpdesk</a>
 </div>
 </footer>
 </main>
 </div>
+<script>
+(function () {
+  'use strict';
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var STORAGE_KEY = 'sustainai.settings.v2';
+  var dirty = false;
+
+  var state = {
+    engine: 'flash',
+    lora: { linked: false, name: '', endpoint: '', notes: '' },
+    lang: 'en',
+    metric: 'metric',
+    cutoff: 85,
+    sens: 1,
+    purge: true,
+    cache: true
+  };
+  var auditLog = [];
+  var notifications = [
+    { title: 'SDG 12 diversion target reached 88% of goal', time: '12 min ago', read: false },
+    { title: 'GEMINI_API_KEY_WASTE_ANALYZER rotated successfully', time: '1 hour ago', read: false },
+    { title: 'Budi Hartono joined the workspace', time: 'Yesterday', read: true }
+  ];
+
+  var ROLES = [
+    'Lead Sustainability Auditor (Owner)',
+    'Agronomist & Field Specialist (Editor)',
+    'ESG & Talent Auditor (Member)',
+    'Field Technician (Member)',
+    'Developer (Editor)'
+  ];
+  var PERMS = [
+    'Full Administrative & API Vault Control',
+    'Plant Disease Diagnostic Models + Treatment Engine',
+    'Waste Classifier & Material Segmentation',
+    'Reports, SDG Analytics & Exports',
+    'Read-only Dashboards',
+    'CV Analyzer Rubrics & SDG 8 Benchmarking'
+  ];
+  var STATUSES = ['Active Now', 'Seen 2h ago', 'Invited', 'Suspended'];
+
+  var ENGINE_META = {
+    flash: { label: 'Gemini 1.5 Flash', latency: 290 },
+    pro: { label: 'Gemini 1.5 Pro', latency: 820 },
+    lora: { label: 'Custom LoRA Adapter', latency: 240 }
+  };
+  var SENS_LABEL = { 1: 'Stage 1 (Sub-clinical)', 2: 'Stage 2 (Visible Blight)', 3: 'Stage 3 (Advanced Lesions)' };
+  var TAX_SHORT = ['SDG 12 + KLHK', 'UN Global Compact', 'BPP / Bank Sampah'];
+  var MET_SHORT = ['Metric (kg / t CO2e)', 'Imperial (lbs)'];
+  var CUR_SHORT = ['EcoCredits + IDR', 'USD + Verra VCS'];
+  var SDG_META = {
+    '12': { fmt: function (t) { return t + '% Min'; } },
+    '2': { fmt: function (t) { return '< ' + t + '% Yield'; } },
+    '8': { fmt: function (t) { return t + '+ Index'; } },
+    '11': { fmt: function (t) { return t + '% Certified'; } }
+  };
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function randomHex(n) {
+    var out = '';
+    for (var i = 0; i < n; i++) out += '0123456789abcdef'.charAt(Math.floor(Math.random() * 16));
+    return out;
+  }
+  function nowLabel() {
+    var d = new Date();
+    return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  }
+  function logAction(text) {
+    auditLog.unshift({ t: nowLabel(), text: text });
+    if (auditLog.length > 40) auditLog.pop();
+  }
+  function initials(name) {
+    var parts = String(name || '?').trim().split(/\s+/);
+    return (parts[0].charAt(0) + (parts[1] ? parts[1].charAt(0) : '')).toUpperCase();
+  }
+
+  var toastWrap = document.createElement('div');
+  toastWrap.className = 'fixed bottom-6 right-6 z-[60] flex flex-col gap-2 items-end';
+  document.body.appendChild(toastWrap);
+  function toast(msg, type) {
+    var tone = type === 'error'
+      ? 'border-danger-rose/40 bg-danger-rose-subtle text-danger-rose'
+      : type === 'warn'
+        ? 'border-accent-amber/40 bg-accent-amber-subtle text-accent-amber'
+        : 'border-brand-mint/50 bg-brand-mint-subtle text-brand-forest';
+    var icon = type === 'error' ? 'error' : type === 'warn' ? 'warning' : 'check_circle';
+    var el = document.createElement('div');
+    el.className = 'flex items-center gap-2 px-4 py-2.5 rounded-lg border shadow-md text-label-md font-label-md bg-surface-card ' + tone + ' transition-all duration-200 opacity-0 translate-y-2';
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + icon + '</span><span>' + esc(msg) + '</span>';
+    toastWrap.appendChild(el);
+    requestAnimationFrame(function () { el.classList.remove('opacity-0', 'translate-y-2'); });
+    setTimeout(function () {
+      el.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(function () { el.remove(); }, 220);
+    }, 3200);
+  }
+
+  var modal = document.createElement('div');
+  modal.id = 'settingsModal';
+  modal.className = 'fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm';
+  modal.innerHTML =
+    '<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col">' +
+      '<div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle shrink-0">' +
+        '<h3 id="settingsModalTitle" class="text-headline-sm font-headline-sm text-text-strong">Settings</h3>' +
+        '<button id="settingsModalClose" class="p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base" title="Close"><span class="material-symbols-outlined text-[20px]">close</span></button>' +
+      '</div>' +
+      '<div id="settingsModalBody" class="p-6 space-y-4 overflow-y-auto text-body-md font-body-md text-text-strong"></div>' +
+      '<div id="settingsModalFoot" class="px-6 py-4 border-t border-border-subtle flex flex-wrap items-center justify-end gap-2 shrink-0"></div>' +
+    '</div>';
+  document.body.appendChild(modal);
+
+  function openModal(opts) {
+    $('#settingsModalTitle').textContent = opts.title || '';
+    var body = $('#settingsModalBody');
+    body.innerHTML = opts.body || '';
+    var foot = $('#settingsModalFoot');
+    foot.innerHTML = '';
+    (opts.buttons || []).forEach(function (b) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = b.className || 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold border border-border-subtle text-text-strong bg-surface-card hover:bg-surface-base';
+      btn.textContent = b.label;
+      btn.addEventListener('click', function () { if (b.onClick) b.onClick(body, btn); });
+      foot.appendChild(btn);
+    });
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+    if (opts.onOpen) opts.onOpen(body);
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+  document.getElementById('settingsModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+  var inputCls = 'w-full h-11 bg-surface-card border border-border-subtle rounded-lg px-3 text-body-md font-body-md text-text-strong focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle';
+  function field(label, control) {
+    return '<label class="block"><span class="block text-label-md font-label-md font-semibold text-text-strong mb-1.5">' + label + '</span>' + control + '</label>';
+  }
+  function confirmDialog(title, message, confirmLabel, onYes, danger) {
+    openModal({
+      title: title,
+      body: '<p class="text-body-md font-body-md text-text-strong">' + message + '</p>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: confirmLabel,
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary ' + (danger ? 'bg-danger-rose hover:bg-danger-rose/90' : 'bg-primary hover:bg-brand-emerald-dark'),
+          onClick: function () { closeModal(); if (onYes) onYes(); }
+        }
+      ]
+    });
+  }
+
+  function markDirty() {
+    if (dirty) return;
+    dirty = true;
+    var pill = $('#dirtyPill');
+    if (!pill) {
+      pill = document.createElement('span');
+      pill.id = 'dirtyPill';
+      var save = $('#saveBtn');
+      if (save && save.parentNode) save.parentNode.insertBefore(pill, save);
+    }
+    pill.className = 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-accent-amber-subtle text-accent-amber border border-accent-amber/30';
+    pill.textContent = 'Unsaved changes';
+  }
+  function clearDirty() {
+    dirty = false;
+    var pill = $('#dirtyPill');
+    if (pill) pill.remove();
+  }
+
+  function setActiveTab(name, noScroll) {
+    $$('.tab-btn').forEach(function (b) {
+      var on = b.getAttribute('data-tab') === name;
+      b.classList.toggle('text-primary', on);
+      b.classList.toggle('border-b-2', on);
+      b.classList.toggle('border-primary', on);
+      b.classList.toggle('font-semibold', on);
+      b.classList.toggle('text-text-muted', !on);
+    });
+    if (!noScroll) {
+      var el = name === 'privacy' ? $('#sec-privacy') : $('#sec-' + name);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  $$('.tab-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setActiveTab(btn.getAttribute('data-tab')); });
+  });
+  var spyTargets = [['engine', '#sec-engine'], ['localization', '#sec-localization'], ['privacy', '#sec-privacy'], ['sdg', '#sec-sdg'], ['team', '#sec-team']];
+  function spy() {
+    var current = 'engine';
+    spyTargets.forEach(function (p) {
+      var el = $(p[1]);
+      if (el && el.getBoundingClientRect().top <= 150) current = p[0];
+    });
+    setActiveTab(current, true);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; spy(); });
+  }, { passive: true });
+
+  var engineCards = $$('.engine-card');
+  var engineBadge = $('#engineBadge');
+  function setEngine(name, opts) {
+    if (!ENGINE_META[name]) return;
+    if (name === 'lora' && !state.lora.linked) { openLoraModal(); return; }
+    var optsObj = opts || {};
+    if (state.engine === name && !optsObj.silent) {
+      toast(ENGINE_META[name].label + ' is already the default engine', 'warn');
+      return;
+    }
+    state.engine = name;
+    engineCards.forEach(function (card) {
+      var key = card.getAttribute('data-engine');
+      var active = key === name;
+      card.classList.toggle('border-2', active);
+      card.classList.toggle('border-primary', active);
+      card.classList.toggle('shadow-sm', active);
+      card.classList.toggle('border', !active);
+      card.classList.toggle('border-border-subtle', !active);
+      if (active) card.classList.add('relative');
+      if (key === 'lora' && !state.lora.linked) card.classList.add('opacity-80');
+      else card.classList.remove('opacity-80');
+    });
+    var activeCard = $('.engine-card[data-engine="' + name + '"]');
+    if (engineBadge && activeCard) {
+      engineBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Current Default';
+      activeCard.appendChild(engineBadge);
+    }
+    var proBtn = $('.switch-engine[data-engine="pro"]');
+    if (proBtn) proBtn.textContent = name === 'pro' ? 'Current Engine' : 'Switch Engine';
+    var telemetry = $$('header span').filter(function (s) {
+      return /Active/.test(s.textContent) && /(Gemini 1\.5|LoRA)/.test(s.textContent);
+    })[0];
+    if (telemetry) {
+      var engineLabel = name === 'lora' && state.lora.name ? state.lora.name : ENGINE_META[name].label;
+      telemetry.textContent = 'System Operational • Edge Latency ' + ENGINE_META[name].latency + 'ms • ' + engineLabel + ' Active';
+    }
+    if (!optsObj.silent) {
+      markDirty();
+      logAction('Default engine set to ' + ENGINE_META[name].label);
+      toast('Default engine: ' + ENGINE_META[name].label);
+    }
+  }
+  engineCards.forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('#configLoraBtn')) return;
+      setEngine(card.getAttribute('data-engine'));
+    });
+  });
+  var loraBtn = $('#configLoraBtn');
+  if (loraBtn) loraBtn.addEventListener('click', function (e) { e.stopPropagation(); openLoraModal(); });
+  function openLoraModal() {
+    openModal({
+      title: 'Configure Custom LoRA Adapter',
+      body:
+        field('Adapter Name', '<input id="loraName" class="' + inputCls + '" value="' + esc(state.lora.name || 'BPP-WestJava-LoRA-v2') + '"/>') +
+        field('Inference Endpoint', '<input id="loraEndpoint" class="' + inputCls + '" placeholder="https://edge.sustainai.io/lora/v2" value="' + esc(state.lora.endpoint) + '"/>') +
+        field('Adapter Notes', '<textarea id="loraNotes" rows="3" class="' + inputCls + ' h-auto py-2" placeholder="Tropical crop pathology weights trained on 14,000 field samples">' + esc(state.lora.notes) + '</textarea>') +
+        '<p class="text-body-sm font-body-sm text-text-muted">Weights are served from the zero-knowledge edge vault. Linking enables the adapter as a selectable default engine.</p>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: state.lora.linked ? 'Update Adapter' : 'Link Adapter',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark',
+          onClick: function (body) {
+            var nm = $('#loraName', body).value.trim() || 'Custom LoRA Adapter';
+            var ep = $('#loraEndpoint', body).value.trim();
+            if (!ep) { toast('Inference endpoint is required', 'error'); $('#loraEndpoint', body).focus(); return; }
+            state.lora.linked = true;
+            state.lora.name = nm;
+            state.lora.endpoint = ep;
+            state.lora.notes = $('#loraNotes', body).value.trim();
+            var st = $('#loraStatus');
+            if (st) st.textContent = 'Linked • 240ms';
+            var h3 = $('#engineLora h3');
+            if (h3) h3.textContent = nm;
+            var card = $('#engineLora');
+            if (card) card.classList.remove('opacity-80');
+            closeModal();
+            markDirty();
+            logAction('Linked LoRA adapter ' + nm);
+            toast('LoRA adapter linked');
+            setEngine('lora', { silent: true });
+          }
+        }
+      ]
+    });
+  }
+  var keyList = $('#keyList');
+  function keyName(row) {
+    var el = row.querySelector('span.font-code-mono.font-semibold');
+    return el ? el.textContent.trim() : 'API_KEY';
+  }
+  function setChip(chip, text, tone) {
+    if (!chip) return;
+    var cls = 'key-status px-2 py-0.5 rounded-full text-label-sm font-label-sm border ';
+    if (tone === 'green') cls += 'bg-brand-mint-subtle text-brand-forest border-brand-mint/30';
+    else if (tone === 'amber') cls += 'bg-accent-amber-subtle text-accent-amber border-accent-amber/30';
+    else if (tone === 'red') cls += 'bg-danger-rose-subtle text-danger-rose border-danger-rose/30';
+    else cls += 'bg-surface-card-subtle text-text-muted border-border-subtle';
+    chip.className = cls;
+    chip.textContent = text;
+  }
+  function normalizeKeys() {
+    $$('#keyList > div').forEach(function (row) {
+      var maskSpan = row.querySelector('span.tracking-wider');
+      if (!row.dataset.fullKey) {
+        var suffix = maskSpan ? maskSpan.textContent.replace(/[^a-zA-Z0-9]/g, '').slice(-4) : randomHex(4);
+        if (!suffix) suffix = randomHex(4);
+        row.dataset.fullKey = 'sk-gemini-' + randomHex(24) + suffix;
+      }
+      if (maskSpan && !row.dataset.mask && row.dataset.showing !== '1') row.dataset.mask = maskSpan.textContent;
+      var chip = row.querySelector('span.rounded-full');
+      if (chip) chip.classList.add('key-status');
+      var latDiv = $$('.text-label-sm', row).filter(function (d) {
+        return d.querySelector('.material-symbols-outlined') && !d.querySelector('.key-status');
+      })[0];
+      if (latDiv && !latDiv.querySelector('.key-latency')) {
+        var match = latDiv.textContent.match(/(\d+)\s*ms/);
+        var ms = match ? match[1] : '';
+        latDiv.innerHTML = '<span class="material-symbols-outlined text-[16px] text-primary">speed</span><span class="key-latency">' + (ms ? ms + 'ms avg' : '—') + '</span>';
+      }
+    });
+  }
+  function toggleKey(row) {
+    var span = row.querySelector('span.tracking-wider');
+    if (!span) return;
+    if (!row.dataset.mask) row.dataset.mask = span.textContent;
+    var showing = row.dataset.showing === '1';
+    var icon = row.querySelector('button[title="Toggle visibility"] span');
+    if (showing) {
+      span.textContent = row.dataset.mask;
+      row.dataset.showing = '0';
+      if (icon) icon.textContent = 'visibility';
+    } else {
+      span.textContent = row.dataset.fullKey;
+      row.dataset.showing = '1';
+      if (icon) icon.textContent = 'visibility_off';
+    }
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+  }
+  function copyKey(row) {
+    var text = row.dataset.fullKey || '';
+    var done = function () {
+      toast('API key copied to clipboard');
+      logAction('Copied ' + keyName(row) + ' to clipboard');
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  }
+  function rotateKey(row) {
+    var name = keyName(row);
+    openModal({
+      title: 'Rotate API Key',
+      body:
+        '<p class="text-body-md font-body-md text-text-strong">Rotate <span class="font-code-mono font-semibold">' + esc(name) + '</span>? The current secret is revoked immediately and downstream micro-analyzers reconnect automatically.</p>' +
+        '<div class="p-3 rounded-lg bg-accent-amber-subtle border border-accent-amber/30 text-body-sm font-body-sm text-accent-amber">Zero-downtime rotation uses a dual-key overlap window of 60 seconds.</div>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: 'Rotate Key',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-danger-rose hover:bg-danger-rose/90',
+          onClick: function () {
+            closeModal();
+            row.dataset.fullKey = 'sk-gemini-' + randomHex(24) + randomHex(4);
+            row.dataset.mask = '••••••••••••••••' + row.dataset.fullKey.slice(-4);
+            var span = row.querySelector('span.tracking-wider');
+            if (span) span.textContent = row.dataset.showing === '1' ? row.dataset.fullKey : row.dataset.mask;
+            var chip = row.querySelector('.key-status');
+            setChip(chip, 'Rotated • Verifying…', 'amber');
+            var lat = row.querySelector('.key-latency');
+            if (lat) lat.textContent = '—';
+            markDirty();
+            logAction('Rotated key ' + name);
+            toast('Rotating ' + name + '…');
+            setTimeout(function () {
+              setChip(chip, 'Connected • 99.' + (Math.floor(Math.random() * 8) + 1) + '% Uptime', 'green');
+              if (lat) lat.textContent = (275 + Math.floor(Math.random() * 45)) + 'ms avg';
+              toast(name + ' rotated successfully');
+            }, 1200);
+          }
+        }
+      ]
+    });
+  }
+  keyList.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    var row = btn.closest('#keyList > div');
+    if (!row) return;
+    var title = btn.getAttribute('title') || '';
+    if (/visibility/i.test(title)) toggleKey(row);
+    else if (/copy/i.test(title)) copyKey(row);
+    else if (/Rotate Key/i.test(btn.textContent)) rotateKey(row);
+  });
+  var pingBtn = $('#pingBtn');
+  if (pingBtn) pingBtn.addEventListener('click', function () {
+    if (pingBtn.dataset.busy === '1') return;
+    var rows = $$('#keyList > div');
+    if (!rows.length) return;
+    pingBtn.dataset.busy = '1';
+    pingBtn.classList.add('opacity-70');
+    logAction('Ping all endpoints initiated');
+    var total = 0;
+    rows.forEach(function (row, i) {
+      var chip = row.querySelector('.key-status');
+      setChip(chip, 'Pinging…', 'amber');
+      setTimeout(function () {
+        var ms = 260 + Math.floor(Math.random() * 80);
+        total += ms;
+        setChip(chip, 'Connected • 99.' + (Math.floor(Math.random() * 8) + 1) + '% Uptime', 'green');
+        var lat = row.querySelector('.key-latency');
+        if (lat) lat.textContent = ms + 'ms avg';
+        if (i === rows.length - 1) {
+          pingBtn.dataset.busy = '0';
+          pingBtn.classList.remove('opacity-70');
+          var avg = (total / rows.length).toFixed(1);
+          logAction('Pinged ' + rows.length + ' endpoints • avg ' + avg + 'ms');
+          toast(rows.length + ' endpoints responded • avg ' + avg + 'ms');
+        }
+      }, 400 + i * 240);
+    });
+  });
+  var addKeyBtn = $('#addKeyBtn');
+  if (addKeyBtn) addKeyBtn.addEventListener('click', function () {
+    openModal({
+      title: 'Add Engine API Key',
+      body:
+        field('Environment Variable Name', '<input id="newKeyName" class="' + inputCls + '" placeholder="GEMINI_API_KEY_NEW_SUBSYSTEM" />') +
+        field('Subsystem Purpose', '<select id="newKeySubsystem" class="' + inputCls + '"><option>Waste Classifier</option><option>Plant Disease</option><option>Reports &amp; SDG</option><option>General Edge Runtime</option></select>') +
+        field('Secret Value', '<input id="newKeySecret" class="' + inputCls + '" placeholder="Leave blank to auto-generate" />') +
+        '<p class="text-body-sm font-body-sm text-text-muted">Secrets are wrapped with envelope KMS encryption; only the last 4 characters stay visible after creation.</p>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: 'Add Key',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark',
+          onClick: function (body) {
+            var name = $('#newKeyName', body).value.trim().toUpperCase().replace(/[^A-Z0-9_]/g, '_');
+            if (!name) { toast('Key name is required', 'error'); $('#newKeyName', body).focus(); return; }
+            if (name.indexOf('GEMINI_API_KEY_') !== 0) name = 'GEMINI_API_KEY_' + name;
+            var exists = $$('#keyList span.font-code-mono.font-semibold').some(function (s) { return s.textContent.trim() === name; });
+            if (exists) { toast('That key already exists', 'error'); return; }
+            var secret = $('#newKeySecret', body).value.trim() || ('sk-gemini-' + randomHex(28));
+            addKeyRow(name, $('#newKeySubsystem', body).value, secret);
+            closeModal();
+            markDirty();
+            logAction('Added API key ' + name);
+            toast('API key added • verifying');
+          }
+        }
+      ]
+    });
+  });
+  function addKeyRow(name, subsystem, secret) {
+    var suffix = secret.slice(-4);
+    var icon = subsystem.indexOf('Waste') >= 0 ? 'recycling' : subsystem.indexOf('Plant') >= 0 ? 'potted_plant' : subsystem.indexOf('Reports') >= 0 ? 'bar_chart' : 'vpn_key';
+    var row = document.createElement('div');
+    row.className = 'p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4';
+    row.dataset.fullKey = secret;
+    row.innerHTML =
+      '<div class="flex items-start gap-3 min-w-[280px]">' +
+        '<div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[22px]">' + icon + '</span></div>' +
+        '<div><div class="flex items-center gap-2"><span class="font-code-mono text-code-mono font-semibold text-text-strong">' + esc(name) + '</span><span class="key-status px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-amber-subtle text-accent-amber border border-accent-amber/30">Pending verification</span></div>' +
+        '<p class="text-body-sm font-body-sm text-text-muted mt-0.5">' + esc('Model tuning: ' + subsystem + ' micro-analyzer.') + '</p></div>' +
+      '</div>' +
+      '<div class="flex items-center gap-3 flex-wrap">' +
+        '<div class="flex items-center gap-2 bg-surface-card px-3 py-1.5 rounded-lg border border-border-subtle font-code-mono text-body-sm text-text-muted"><span class="tracking-wider">••••••••••••••••' + esc(suffix) + '</span>' +
+        '<button class="text-text-muted hover:text-text-strong" title="Toggle visibility"><span class="material-symbols-outlined text-[18px]">visibility</span></button>' +
+        '<button class="text-text-muted hover:text-text-strong" title="Copy to clipboard"><span class="material-symbols-outlined text-[18px]">content_copy</span></button></div>' +
+        '<div class="text-label-sm font-label-sm text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">speed</span><span class="key-latency">—</span></div>' +
+        '<button class="px-2.5 py-1 text-label-sm font-label-sm text-text-strong hover:text-primary bg-surface-card border border-border-subtle rounded-md">Rotate Key</button>' +
+      '</div>';
+    keyList.appendChild(row);
+    row.dataset.mask = '••••••••••••••••' + suffix;
+    setTimeout(function () {
+      setChip(row.querySelector('.key-status'), 'Connected • 99.9% Uptime', 'green');
+      var lat = row.querySelector('.key-latency');
+      if (lat) lat.textContent = (260 + Math.floor(Math.random() * 70)) + 'ms avg';
+      toast(name + ' verified');
+    }, 1600);
+  }
+  var LANG_LABEL = { en: 'English (EN-US)', id: 'Bahasa Indonesia (ID)' };
+  function setLang(code, opts) {
+    if (code !== 'en' && code !== 'id') return;
+    var optsObj = opts || {};
+    if (state.lang === code && !optsObj.silent) {
+      toast('Language is already ' + LANG_LABEL[code], 'warn');
+      return;
+    }
+    state.lang = code;
+    $$('input[name="lang_select"]').forEach(function (r) { r.checked = r.value === code; });
+    $$('.lang-option').forEach(function (lbl) {
+      var on = lbl.getAttribute('data-lang') === code;
+      lbl.classList.toggle('border-2', on);
+      lbl.classList.toggle('border-primary', on);
+      lbl.classList.toggle('bg-brand-mint-subtle', on);
+      lbl.classList.toggle('border', !on);
+      lbl.classList.toggle('border-border-subtle', !on);
+      lbl.classList.toggle('bg-surface-card', !on);
+      lbl.classList.toggle('hover:bg-surface-base', !on);
+    });
+    var ll = $('#langLabel');
+    if (ll) ll.textContent = 'Language: ' + code.toUpperCase();
+    var en = $('#langEN');
+    var id = $('#langID');
+    if (en && id) {
+      en.className = code === 'en'
+        ? 'px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer'
+        : 'px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer';
+      id.className = code === 'id'
+        ? 'px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer'
+        : 'px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer';
+    }
+    document.documentElement.lang = code;
+    try { localStorage.setItem('sustainai.lang', code); } catch (e) {}
+    renderLocalePreview();
+    if (!optsObj.silent) {
+      markDirty();
+      logAction('Operational language set to ' + LANG_LABEL[code]);
+      toast('Operational language: ' + LANG_LABEL[code]);
+    }
+  }
+  $$('input[name="lang_select"]').forEach(function (r) {
+    r.addEventListener('change', function () { if (r.checked) setLang(r.value); });
+  });
+  var langEN = $('#langEN');
+  var langID = $('#langID');
+  if (langEN) langEN.addEventListener('click', function () { setLang('en'); });
+  if (langID) langID.addEventListener('click', function () { setLang('id'); });
+
+  function renderLocalePreview() {
+    var host = $('#sec-localization .space-y-4');
+    if (!host) return;
+    var el = $('#localePreview');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'localePreview';
+      el.className = 'p-3 rounded-lg bg-surface-base border border-border-subtle text-body-sm font-body-sm text-text-muted flex items-start gap-2';
+      host.appendChild(el);
+    }
+    var tax = $('#taxonomySelect');
+    var met = $('#metricSelect');
+    var cur = $('#currencySelect');
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px] text-primary">translate</span><span><strong class="text-text-strong">' +
+      state.lang.toUpperCase() + '</strong> • ' + esc(TAX_SHORT[tax.selectedIndex] || '') + ' • ' +
+      esc(MET_SHORT[met.selectedIndex] || '') + ' • ' + esc(CUR_SHORT[cur.selectedIndex] || '') + '</span>';
+  }
+  ['taxonomySelect', 'metricSelect', 'currencySelect'].forEach(function (id) {
+    var el = $('#' + id);
+    if (!el) return;
+    el.addEventListener('change', function () {
+      state.metric = $('#metricSelect').selectedIndex === 1 ? 'imperial' : 'metric';
+      renderLocalePreview();
+      markDirty();
+      var label = id === 'taxonomySelect' ? 'Taxonomy mapping' : id === 'metricSelect' ? 'Measurement system' : 'Carbon valuation';
+      logAction(label + ' updated to ' + el.options[el.selectedIndex].text);
+      toast(label + ': ' + el.options[el.selectedIndex].text);
+    });
+  });
+
+  var cutoff = $('#wasteCutoff');
+  var cutoffVal = $('#wasteCutoffVal');
+  function cutoffMode(v) { return v < 75 ? 'High Recall' : v <= 90 ? 'Balanced Recommended' : 'Ultra Strict'; }
+  function updateCutoff() {
+    var v = parseInt(cutoff.value, 10);
+    state.cutoff = v;
+    cutoffVal.textContent = v + '%';
+    cutoffVal.className = 'font-bold font-code-mono ' + (v < 75 ? 'text-accent-amber' : v <= 90 ? 'text-primary' : 'text-danger-rose');
+    var mode = $('#cutoffMode');
+    if (!mode) {
+      mode = document.createElement('span');
+      mode.id = 'cutoffMode';
+      cutoffVal.parentNode.appendChild(mode);
+    }
+    mode.textContent = cutoffMode(v);
+    mode.className = 'ml-2 px-2 py-0.5 rounded text-[11px] font-bold ' + (v < 75 ? 'bg-accent-amber-subtle text-accent-amber' : v <= 90 ? 'bg-brand-mint-subtle text-primary' : 'bg-danger-rose-subtle text-danger-rose');
+  }
+  if (cutoff) {
+    updateCutoff();
+    cutoff.addEventListener('input', updateCutoff);
+    cutoff.addEventListener('change', function () {
+      markDirty();
+      logAction('Waste confidence cutoff set to ' + state.cutoff + '%');
+      toast('Waste cutoff: ' + state.cutoff + '% (' + cutoffMode(state.cutoff) + ')');
+    });
+  }
+  var sens = $('#cropSensitivity');
+  var sensVal = $('#cropSensVal');
+  function updateSens() {
+    var v = parseInt(sens.value, 10);
+    state.sens = v;
+    sensVal.textContent = SENS_LABEL[v];
+    sensVal.className = 'font-bold font-code-mono ' + (v === 1 ? 'text-accent-teal' : v === 2 ? 'text-accent-amber' : 'text-danger-rose');
+  }
+  if (sens) {
+    updateSens();
+    sens.addEventListener('input', updateSens);
+    sens.addEventListener('change', function () {
+      markDirty();
+      logAction('Crop sensitivity set to ' + SENS_LABEL[state.sens]);
+      toast('Crop sensitivity: ' + SENS_LABEL[state.sens]);
+    });
+  }
+  function bindToggle(input, key, labelEl) {
+    if (!input) return;
+    input.addEventListener('change', function () {
+      state[key] = input.checked;
+      if (labelEl) {
+        labelEl.textContent = input.checked ? 'Enabled' : 'Disabled';
+        labelEl.className = 'text-[11px] font-bold ' + (input.checked ? 'text-primary' : 'text-text-muted');
+      }
+      if (key === 'purge') {
+        var gdpr = $$('#sec-privacy span').filter(function (s) { return /GDPR Ready/.test(s.textContent); })[0];
+        if (gdpr) gdpr.classList.toggle('opacity-50', !input.checked);
+      }
+      markDirty();
+      var name = key === 'purge' ? 'Automatic temporary file purge' : 'Edge caching';
+      logAction(name + (input.checked ? ' enabled' : ' disabled'));
+      toast(name + (input.checked ? ' enabled' : ' disabled'), input.checked ? null : 'warn');
+    });
+  }
+  bindToggle($('#purgeToggle'), 'purge', $('#purgeState'));
+  bindToggle($('#cacheToggle'), 'cache', $('#cacheState'));
+  function sdgWarning(card) {
+    var n = card.getAttribute('data-sdg');
+    var target = parseFloat(card.getAttribute('data-target'));
+    var current = parseFloat(card.getAttribute('data-current'));
+    var warn = card.querySelector('.sdg-warn');
+    var below = n !== '2' && current < target;
+    if (below) {
+      if (!warn) {
+        warn = document.createElement('div');
+        warn.className = 'sdg-warn mt-2 text-[11px] font-bold text-danger-rose flex items-center gap-1';
+        warn.innerHTML = '<span class="material-symbols-outlined text-[14px]">warning</span>Below target threshold';
+        var foot = card.querySelector('.mt-4.pt-3');
+        if (foot) foot.appendChild(warn);
+      }
+    } else if (warn) {
+      warn.remove();
+    }
+  }
+  function openSdgModal(card) {
+    var n = card.getAttribute('data-sdg');
+    var meta = SDG_META[n];
+    var target = parseFloat(card.getAttribute('data-target'));
+    var current = parseFloat(card.getAttribute('data-current'));
+    var title = card.querySelector('h3').textContent.trim();
+    var currentLabel = n === '2' ? current + '% health score' : current + '%';
+    openModal({
+      title: 'SDG ' + n + ' — ' + title,
+      body:
+        '<div class="flex items-center justify-between p-3 rounded-lg bg-surface-base border border-border-subtle"><div><div class="text-label-sm font-label-sm text-text-muted">Current performance</div><div class="text-headline-sm font-headline-sm font-bold text-text-strong">' + currentLabel + '</div></div><div class="text-right"><div class="text-label-sm font-label-sm text-text-muted">Active target</div><div class="text-headline-sm font-headline-sm font-bold text-primary">' + esc(meta.fmt(target)) + '</div></div></div>' +
+        field('Target threshold', '<input id="sdgTargetInput" type="number" step="0.1" min="0" class="' + inputCls + '" value="' + target + '" />') +
+        field('Breach alert behaviour', '<select id="sdgAlertLevel" class="' + inputCls + '"><option>Notify workspace admins</option><option selected>Warn + auto-tag reports</option><option>Critical escalation (email + webhook)</option></select>') +
+        '<label class="flex items-center justify-between gap-4 p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="text-body-sm font-body-sm text-text-strong">Auto-pause downstream automation on breach</span><input id="sdgPause" type="checkbox" class="rounded border-border-subtle text-primary focus:ring-primary" /></label>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: 'Save Threshold',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark',
+          onClick: function (body) {
+            var v = parseFloat($('#sdgTargetInput', body).value);
+            if (isNaN(v) || v < 0) { toast('Enter a valid threshold value', 'error'); return; }
+            card.setAttribute('data-target', v);
+            var span = card.querySelector('.sdg-target');
+            if (span) span.textContent = meta.fmt(v);
+            sdgWarning(card);
+            closeModal();
+            markDirty();
+            logAction('SDG ' + n + ' target set to ' + meta.fmt(v));
+            toast('SDG ' + n + ' threshold saved');
+          }
+        }
+      ]
+    });
+  }
+  $$('.sdg-card').forEach(function (card) {
+    card.addEventListener('click', function () { openSdgModal(card); });
+    sdgWarning(card);
+  });
+
+  var teamBody = $('#teamBody');
+  function updateTeamCount() {
+    var el = $('#teamCount');
+    if (!el) {
+      el = document.createElement('span');
+      el.id = 'teamCount';
+      el.className = 'px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-base border border-border-subtle text-text-muted';
+      var h2 = $('#sec-team h2');
+      if (h2 && h2.parentNode) h2.parentNode.appendChild(el);
+    }
+    el.textContent = $$('#teamBody tr').length + ' members';
+  }
+  function statusMarkup(label) {
+    var tone = label === 'Active Now' ? 'primary' : label === 'Invited' ? 'amber' : label === 'Suspended' ? 'danger' : 'muted';
+    var dot = tone === 'primary' ? 'bg-primary' : tone === 'amber' ? 'bg-accent-amber' : tone === 'danger' ? 'bg-danger-rose' : 'bg-text-muted';
+    var txt = tone === 'primary' ? 'text-primary font-semibold' : tone === 'danger' ? 'text-danger-rose font-semibold' : 'text-text-muted';
+    return '<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm ' + txt + '"><span class="w-2 h-2 rounded-full ' + dot + '"></span>' + esc(label) + '</span>';
+  }
+  var AVATAR_TONES = [
+    'bg-brand-mint-subtle text-primary border-brand-mint/40',
+    'bg-accent-amber-subtle text-accent-amber border-accent-amber/40',
+    'bg-accent-teal-subtle text-accent-teal border-accent-teal/40',
+    'bg-info-sky-subtle text-info-sky border-info-sky/40',
+    'bg-danger-rose-subtle text-danger-rose border-danger-rose/40'
+  ];
+  function addMember(name, email, role, perm, statusLabel) {
+    var tr = document.createElement('tr');
+    tr.className = 'hover:bg-surface-base/50 transition-colors';
+    var tone = AVATAR_TONES[$$('#teamBody tr').length % AVATAR_TONES.length];
+    tr.innerHTML =
+      '<td class="py-3.5 px-4"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full font-bold flex items-center justify-center text-sm border ' + tone + '">' + esc(initials(name)) + '</div>' +
+        '<div><div class="font-semibold text-text-strong">' + esc(name) + '</div><div class="text-[12px] text-text-muted">' + esc(email) + '</div></div></div></td>' +
+      '<td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-surface-card-subtle text-text-strong border border-border-subtle">' + esc(role) + '</span></td>' +
+      '<td class="py-3.5 px-4 text-text-muted text-body-sm">' + esc(perm) + '</td>' +
+      '<td class="py-3.5 px-4">' + statusMarkup(statusLabel || 'Invited') + '</td>' +
+      '<td class="py-3.5 px-4 text-right"><button class="p-1 text-text-muted hover:text-text-strong" title="Edit Permissions"><span class="material-symbols-outlined text-[20px]">tune</span></button></td>';
+    teamBody.appendChild(tr);
+    updateTeamCount();
+  }
+  function roleOptions(includeOwner) {
+    return ROLES.filter(function (r) { return includeOwner || r.indexOf('Owner') < 0; }).map(function (r) {
+      return '<option>' + esc(r) + '</option>';
+    }).join('');
+  }
+  function permOptions() {
+    return PERMS.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('');
+  }
+  function statusOptions(selected) {
+    return STATUSES.map(function (s) {
+      return '<option' + (s === selected ? ' selected' : '') + '>' + esc(s) + '</option>';
+    }).join('');
+  }
+  function openInvite() {
+    openModal({
+      title: 'Invite Team Member',
+      body:
+        field('Full Name', '<input id="invName" class="' + inputCls + '" placeholder="e.g. Siti Rahmawati" />') +
+        field('Work Email', '<input id="invEmail" type="email" class="' + inputCls + '" placeholder="name@company.id" />') +
+        field('Workspace Role', '<select id="invRole" class="' + inputCls + '">' + roleOptions(false) + '</select>') +
+        field('Module Permission', '<select id="invPerm" class="' + inputCls + '">' + permOptions() + '</select>') +
+        '<label class="flex items-center justify-between gap-4 p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="text-body-sm font-body-sm text-text-strong">Send invitation email immediately</span><input id="invSend" type="checkbox" checked class="rounded border-border-subtle text-primary focus:ring-primary" /></label>',
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: 'Send Invite',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark',
+          onClick: function (body) {
+            var name = $('#invName', body).value.trim();
+            var email = $('#invEmail', body).value.trim();
+            if (name.length < 2) { toast('Enter the member name', 'error'); $('#invName', body).focus(); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { toast('Enter a valid email address', 'error'); $('#invEmail', body).focus(); return; }
+            addMember(name, email, $('#invRole', body).value, $('#invPerm', body).value, 'Invited');
+            closeModal();
+            markDirty();
+            logAction('Invited ' + name + ' (' + email + ')');
+            toast('Invitation sent to ' + email);
+          }
+        }
+      ]
+    });
+  }
+  var inviteBtn = $('#inviteBtn');
+  if (inviteBtn) inviteBtn.addEventListener('click', openInvite);
+
+  function openMemberModal(tr) {
+    var nameEl = tr.querySelector('.font-semibold.text-text-strong');
+    var emailEl = tr.querySelector('.text-\\[12px\\]');
+    var cells = tr.children;
+    var roleChip = cells[1].querySelector('span');
+    var permCell = cells[2];
+    var statusCell = cells[3];
+    var name = nameEl ? nameEl.textContent.trim() : 'Member';
+    var email = emailEl ? emailEl.textContent.trim() : '';
+    var role = roleChip ? roleChip.textContent.trim() : ROLES[1];
+    var perm = permCell ? permCell.textContent.trim() : PERMS[1];
+    var isOwner = role.indexOf('Owner') >= 0;
+    var currentStatus = 'Seen 2h ago';
+    var statusText = statusCell ? statusCell.textContent.trim() : currentStatus;
+    STATUSES.forEach(function (s) { if (statusText.indexOf(s) >= 0) currentStatus = s; });
+    var roleSelect = '<select id="memRole" class="' + inputCls + '"' + (isOwner ? ' disabled' : '') + '>' +
+      ROLES.map(function (r) { return '<option' + (r === role ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select>';
+    var permSelect = '<select id="memPerm" class="' + inputCls + '"' + (isOwner ? ' disabled' : '') + '>' +
+      PERMS.map(function (p) { return '<option' + (p === perm ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('') + '</select>';
+    openModal({
+      title: 'Edit Permissions',
+      body:
+        '<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><div class="w-10 h-10 rounded-full bg-brand-mint-subtle text-primary font-bold flex items-center justify-center border border-brand-mint/40">' + esc(initials(name)) + '</div><div><div class="font-semibold text-text-strong">' + esc(name) + '</div><div class="text-body-sm font-body-sm text-text-muted">' + esc(email) + '</div></div></div>' +
+        field('Workspace Role', roleSelect) +
+        field('Module Permission', permSelect) +
+        field('Status', '<select id="memStatus" class="' + inputCls + '">' + statusOptions(currentStatus) + '</select>') +
+        (isOwner ? '<p class="text-body-sm font-body-sm text-accent-amber">Owner permissions are locked. Transfer workspace ownership to change this role.</p>' : ''),
+      buttons: [
+        { label: 'Cancel', onClick: closeModal },
+        {
+          label: 'Remove Member',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold border border-danger-rose/40 text-danger-rose bg-danger-rose-subtle hover:bg-danger-rose/10',
+          onClick: function () {
+            if (isOwner) { toast('The workspace owner cannot be removed', 'error'); return; }
+            closeModal();
+            confirmDialog(
+              'Remove Team Member',
+              'Remove <strong>' + esc(name) + '</strong> from the workspace? Their module access is revoked immediately.',
+              'Remove Member',
+              function () {
+                tr.remove();
+                updateTeamCount();
+                markDirty();
+                logAction('Removed team member ' + name);
+                toast(name + ' removed from workspace');
+              },
+              true
+            );
+          }
+        },
+        {
+          label: 'Save Changes',
+          className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark',
+          onClick: function (body) {
+            var newRole = $('#memRole', body).value;
+            var newPerm = $('#memPerm', body).value;
+            var newStatus = $('#memStatus', body).value;
+            if (roleChip) roleChip.textContent = newRole;
+            if (permCell) permCell.textContent = newPerm;
+            if (statusCell) statusCell.innerHTML = statusMarkup(newStatus);
+            closeModal();
+            markDirty();
+            logAction('Updated permissions for ' + name + ' • ' + newRole);
+            toast(name + ' updated');
+          }
+        }
+      ]
+    });
+  }
+  teamBody.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[title="Edit Permissions"]');
+    if (!btn) return;
+    var tr = btn.closest('tr');
+    if (tr) openMemberModal(tr);
+  });
+  var snapshot = { keys: '', team: '' };
+  var sdgDefaults = {};
+
+  var notifBtn = $('#notifBtn');
+  var notifPanel = document.createElement('div');
+  notifPanel.className = 'fixed right-6 top-16 z-50 w-80 bg-surface-card border border-border-subtle rounded-xl shadow-xl hidden flex-col overflow-hidden';
+  notifPanel.innerHTML =
+    '<div class="flex items-center justify-between px-4 py-3 border-b border-border-subtle">' +
+      '<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-primary">notifications</span><span class="text-label-md font-label-md font-semibold text-text-strong">Notifications</span></div>' +
+      '<button id="notifReadAll" class="text-[11px] font-bold text-primary hover:text-brand-emerald-dark">Mark all read</button>' +
+    '</div>' +
+    '<div id="notifList" class="max-h-80 overflow-y-auto divide-y divide-border-subtle"></div>' +
+    '<div class="px-4 py-2 border-t border-border-subtle text-[11px] text-text-muted">Enterprise activity stream • Vercel Edge</div>';
+  document.body.appendChild(notifPanel);
+  function renderNotifList() {
+    var list = $('#notifList');
+    if (!list) return;
+    list.innerHTML = notifications.map(function (n, i) {
+      return '<button data-notif="' + i + '" class="w-full text-left px-4 py-3 hover:bg-surface-base transition-colors flex items-start gap-2">' +
+        '<span class="mt-1 w-2 h-2 rounded-full ' + (n.read ? 'bg-border-subtle' : 'bg-primary') + ' shrink-0"></span>' +
+        '<span class="flex-1"><span class="block text-body-sm font-body-sm ' + (n.read ? 'text-text-muted' : 'text-text-strong font-semibold') + '">' + esc(n.title) + '</span>' +
+        '<span class="block text-[11px] text-text-muted mt-0.5">' + esc(n.time) + '</span></span>' +
+        '</button>';
+    }).join('');
+    var unread = notifications.some(function (n) { return !n.read; });
+    var dot = $('#notifDot');
+    if (dot) dot.classList.toggle('hidden', !unread);
+  }
+  function toggleNotifPanel(show) {
+    var open = show != null ? show : notifPanel.classList.contains('hidden');
+    notifPanel.classList.toggle('hidden', !open);
+    notifPanel.classList.toggle('flex', open);
+    if (open) renderNotifList();
+  }
+  if (notifBtn) notifBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleNotifPanel(); });
+  notifPanel.addEventListener('click', function (e) {
+    var item = e.target.closest('[data-notif]');
+    if (item) {
+      var idx = parseInt(item.getAttribute('data-notif'), 10);
+      if (notifications[idx]) { notifications[idx].read = true; renderNotifList(); }
+      return;
+    }
+    if (e.target.closest('#notifReadAll')) {
+      notifications.forEach(function (n) { n.read = true; });
+      renderNotifList();
+      toast('All notifications marked as read');
+      logAction('Notifications marked as read');
+    }
+  });
+  document.addEventListener('click', function (e) {
+    if (notifPanel.classList.contains('hidden')) return;
+    if (notifPanel.contains(e.target) || (notifBtn && notifBtn.contains(e.target))) return;
+    toggleNotifPanel(false);
+  });
+  renderNotifList();
+
+  function openAudit() {
+    var body = '<p class="text-body-sm font-body-sm text-text-muted">Immutable session activity for this configuration console.</p><div class="rounded-lg border border-border-subtle divide-y divide-border-subtle">';
+    if (!auditLog.length) body += '<div class="p-4 text-body-sm text-text-muted">No actions logged yet.</div>';
+    auditLog.forEach(function (e) {
+      body += '<div class="flex items-start gap-3 p-3"><span class="font-code-mono text-label-sm text-text-muted shrink-0">' + esc(e.t) + '</span><span class="text-body-sm font-body-sm text-text-strong">' + esc(e.text) + '</span></div>';
+    });
+    body += '</div>';
+    openModal({ title: 'Audit Log', body: body, buttons: [{ label: 'Close', onClick: closeModal }] });
+  }
+  function openDocs() {
+    var sections = [
+      ['memory', 'AI Engine & API Keys', 'Switch between Gemini 1.5 Flash, Pro, or a linked LoRA adapter. Ping endpoints, reveal/copy secrets, rotate keys, and add new subsystem keys.'],
+      ['language', 'Localization', 'Pick the operational language, SDG taxonomy, measurement metric, and carbon valuation. The live preview reflects the active combination.'],
+      ['tune', 'Inference & Privacy', 'Tune the waste confidence cutoff and crop infection sensitivity, then toggle temporary-file purge and edge ISR caching.'],
+      ['public', 'UN SDG Targets', 'Click any SDG card to edit its target threshold and breach alert behaviour. Below-target cards show a warning automatically.'],
+      ['group', 'Team & Access', 'Invite members, edit role/permission/status, or remove non-owner members. Changes are staged until saved.']
+    ];
+    var body = sections.map(function (s) {
+      return '<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="material-symbols-outlined text-primary text-[20px]">' + s[0] + '</span><div><div class="text-label-md font-label-md font-semibold text-text-strong">' + s[1] + '</div><p class="text-body-sm font-body-sm text-text-muted mt-0.5">' + s[2] + '</p></div></div>';
+    }).join('');
+    body += '<div class="p-3 rounded-lg bg-brand-mint-subtle border border-brand-mint/30 text-body-sm font-body-sm text-brand-forest"><strong>Shortcuts:</strong> Ctrl/Cmd + S to save, Esc to close dialogs.</div>';
+    openModal({ title: 'Settings Documentation', body: body, buttons: [{ label: 'Got it', onClick: closeModal }] });
+  }
+
+  function collectState() {
+    return {
+      engine: state.engine,
+      lora: state.lora,
+      lang: state.lang,
+      tax: $('#taxonomySelect').selectedIndex,
+      met: $('#metricSelect').selectedIndex,
+      cur: $('#currencySelect').selectedIndex,
+      cutoff: state.cutoff,
+      sens: state.sens,
+      purge: state.purge,
+      cache: state.cache,
+      sdg: $$('.sdg-card').reduce(function (acc, c) { acc[c.getAttribute('data-sdg')] = c.getAttribute('data-target'); return acc; }, {}),
+      keys: keyList.innerHTML,
+      team: teamBody.innerHTML
+    };
+  }
+  function applyStored(s) {
+    if (!s) return;
+    if (s.keys) keyList.innerHTML = s.keys;
+    if (s.team) teamBody.innerHTML = s.team;
+    normalizeKeys();
+    updateTeamCount();
+    if (s.sdg) {
+      $$('.sdg-card').forEach(function (card) {
+        var n = card.getAttribute('data-sdg');
+        if (s.sdg[n] != null) {
+          card.setAttribute('data-target', s.sdg[n]);
+          var span = card.querySelector('.sdg-target');
+          if (span) span.textContent = SDG_META[n].fmt(s.sdg[n]);
+        }
+      });
+    }
+    if (s.tax != null) $('#taxonomySelect').selectedIndex = s.tax;
+    if (s.met != null) $('#metricSelect').selectedIndex = s.met;
+    if (s.cur != null) $('#currencySelect').selectedIndex = s.cur;
+    if (s.cutoff != null) cutoff.value = s.cutoff;
+    updateCutoff();
+    if (s.sens != null) sens.value = s.sens;
+    updateSens();
+    var pt = $('#purgeToggle');
+    var ct = $('#cacheToggle');
+    if (pt) { pt.checked = s.purge !== false; state.purge = pt.checked; }
+    if (ct) { ct.checked = s.cache !== false; state.cache = ct.checked; }
+    var ps = $('#purgeState');
+    var cs = $('#cacheState');
+    if (ps) ps.textContent = state.purge ? 'Enabled' : 'Disabled';
+    if (cs) cs.textContent = state.cache ? 'Enabled' : 'Disabled';
+    if (s.lora && s.lora.linked) {
+      state.lora = s.lora;
+      var h3 = $('#engineLora h3');
+      if (h3) h3.textContent = s.lora.name || 'Custom LoRA Adapter';
+      var lst = $('#loraStatus');
+      if (lst) lst.textContent = 'Linked • 240ms';
+      var lc = $('#engineLora');
+      if (lc) lc.classList.remove('opacity-80');
+    }
+    if (s.engine) setEngine(s.engine, { silent: true });
+    if (s.lang) setLang(s.lang, { silent: true });
+    $$('.sdg-card').forEach(sdgWarning);
+    renderLocalePreview();
+  }
+  function doReset() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    keyList.innerHTML = snapshot.keys;
+    teamBody.innerHTML = snapshot.team;
+    normalizeKeys();
+    updateTeamCount();
+    state.engine = 'flash';
+    state.lora = { linked: false, name: '', endpoint: '', notes: '' };
+    state.lang = 'en';
+    state.metric = 'metric';
+    state.cutoff = 85;
+    state.sens = 1;
+    state.purge = true;
+    state.cache = true;
+    $('#taxonomySelect').selectedIndex = 0;
+    $('#metricSelect').selectedIndex = 0;
+    $('#currencySelect').selectedIndex = 0;
+    cutoff.value = 85;
+    updateCutoff();
+    sens.value = 1;
+    updateSens();
+    var pt = $('#purgeToggle');
+    var ct = $('#cacheToggle');
+    if (pt) pt.checked = true;
+    if (ct) ct.checked = true;
+    var ps = $('#purgeState');
+    var cs = $('#cacheState');
+    if (ps) { ps.textContent = 'Enabled'; ps.className = 'text-[11px] font-bold text-primary'; }
+    if (cs) { cs.textContent = 'Enabled'; cs.className = 'text-[11px] font-bold text-primary'; }
+    var gdpr = $$('#sec-privacy span').filter(function (sp) { return /GDPR Ready/.test(sp.textContent); })[0];
+    if (gdpr) gdpr.classList.remove('opacity-50');
+    $$('.sdg-card').forEach(function (card) {
+      var n = card.getAttribute('data-sdg');
+      var t = sdgDefaults[n];
+      card.setAttribute('data-target', t);
+      var span = card.querySelector('.sdg-target');
+      if (span) span.textContent = SDG_META[n].fmt(parseFloat(t));
+      sdgWarning(card);
+    });
+    var h3 = $('#engineLora h3');
+    if (h3) h3.textContent = 'Custom LoRA Adapter';
+    var lst = $('#loraStatus');
+    if (lst) lst.textContent = 'Ready to link';
+    var lc = $('#engineLora');
+    if (lc) lc.classList.add('opacity-80');
+    setEngine('flash', { silent: true });
+    setLang('en', { silent: true });
+    renderLocalePreview();
+    clearDirty();
+    logAction('Configuration reset to factory defaults');
+    toast('Settings restored to defaults');
+  }
+
+  var saveBtn = $('#saveBtn');
+  if (saveBtn) saveBtn.addEventListener('click', function () {
+    if (!dirty) { toast('No unsaved changes', 'warn'); return; }
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(collectState())); } catch (e) {}
+    var original = saveBtn.innerHTML;
+    saveBtn.classList.add('opacity-70');
+    saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Saving…';
+    logAction('Save changes requested');
+    setTimeout(function () {
+      saveBtn.classList.remove('opacity-70');
+      saveBtn.innerHTML = original;
+      var info = $('#syncInfo');
+      if (info) info.textContent = 'Configuration Version: 2.4.0-prod • Last synced just now via Vercel Edge';
+      clearDirty();
+      logAction('Configuration saved to Vercel Edge');
+      toast('Configuration saved successfully');
+    }, 700);
+  });
+  var resetBtn = $('#resetBtn');
+  if (resetBtn) resetBtn.addEventListener('click', function () {
+    confirmDialog(
+      'Reset to Defaults',
+      'Restore the AI engine, all API keys, localization, inference thresholds, SDG targets, and the team roster to factory defaults?',
+      'Reset Everything',
+      doReset,
+      true
+    );
+  });
+
+  var docLink = $('#docLink');
+  if (docLink) docLink.addEventListener('click', function (e) { e.preventDefault(); openDocs(); });
+  var auditLink = $('#auditLink');
+  if (auditLink) auditLink.addEventListener('click', function (e) { e.preventDefault(); openAudit(); });
+  var crumb = $('#crumbHome');
+  if (crumb) crumb.addEventListener('click', function () { window.location.href = 'Dashboard.html'; });
+
+  var upgradeBtn = $('#upgradeBtn');
+  if (upgradeBtn) upgradeBtn.addEventListener('click', function () {
+    openModal({
+      title: 'Enterprise Pro Plans',
+      body:
+        '<p class="text-body-sm font-body-sm text-text-muted">You are on <strong class="text-text-strong">Enterprise Pro</strong>. Scale edge inference and add unlimited workspace auditors.</p>' +
+        '<div class="space-y-2">' +
+          '<div class="flex items-center justify-between p-3 rounded-lg border border-primary bg-brand-mint-subtle"><div><div class="font-semibold text-text-strong">Enterprise Pro</div><div class="text-body-sm text-text-muted">Current plan • 50 seats • 2M edge calls</div></div><span class="text-label-sm font-bold text-primary">Active</span></div>' +
+          '<div class="flex items-center justify-between p-3 rounded-lg border border-border-subtle bg-surface-base"><div><div class="font-semibold text-text-strong">Enterprise Max</div><div class="text-body-sm text-text-muted">Unlimited seats • 10M edge calls • dedicated SLA</div></div><span class="text-label-sm font-bold text-text-muted">Custom</span></div>' +
+        '</div>',
+      buttons: [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Contact Sales', className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); toast('Sales team will reach out shortly'); logAction('Requested Enterprise Max contact'); } }
+      ]
+    });
+  });
+  var profileMenu = $('#profileMenu');
+  if (profileMenu) profileMenu.addEventListener('click', function () {
+    openModal({
+      title: 'Account',
+      body:
+        '<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><div class="w-12 h-12 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center border border-accent-teal/30">AM</div><div><div class="font-semibold text-text-strong">Alex Mercer</div><div class="text-body-sm text-text-muted">alex.mercer@sustainai.io</div><div class="text-[11px] text-primary font-bold mt-0.5">Lead Sustainability Auditor • Owner</div></div></div>' +
+        '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Workspace</span><span class="text-text-strong font-semibold">SustainAI Enterprise</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Region</span><span class="text-text-strong font-semibold">ap-southeast-1 (Jakarta Edge)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">MFA</span><span class="text-primary font-semibold">Enabled</span></div></div>',
+      buttons: [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Manage API Keys', className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); setActiveTab('engine'); logAction('Opened API key management from account menu'); } }
+      ]
+    });
+  });
+
+  var privacyLink = $('#privacyLink');
+  if (privacyLink) privacyLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    openModal({
+      title: 'Privacy Governance',
+      body:
+        '<p class="text-body-sm font-body-sm text-text-muted">All candidate and crop imagery is processed in-memory and purged immediately after inference. Raw secrets never reach the client bundle.</p>' +
+        '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Encryption at rest</span><span class="text-text-strong font-semibold">AES-256 + envelope KMS</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Retention</span><span class="text-text-strong font-semibold">0s temp • 30d audit</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Compliance</span><span class="text-text-strong font-semibold">GDPR • UU PDP</span></div></div>',
+      buttons: [{ label: 'Close', onClick: closeModal }]
+    });
+  });
+  var complianceLink = $('#complianceLink');
+  if (complianceLink) complianceLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    openModal({
+      title: 'SDG ISO 14001 Matrix',
+      body:
+        '<div class="space-y-2 text-body-sm font-body-sm">' +
+          '<div class="flex items-center justify-between p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="font-semibold text-text-strong">SDG 12 • Responsible Consumption</span><span class="text-primary font-bold">ISO 14001:2015 §8.1</span></div>' +
+          '<div class="flex items-center justify-between p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="font-semibold text-text-strong">SDG 2 • Zero Hunger</span><span class="text-primary font-bold">ISO 14001 §6.1.2</span></div>' +
+          '<div class="flex items-center justify-between p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="font-semibold text-text-strong">SDG 8 &amp; 4 • Decent Work</span><span class="text-primary font-bold">ISO 14001 §7.2</span></div>' +
+          '<div class="flex items-center justify-between p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="font-semibold text-text-strong">SDG 11 &amp; 15 • Life on Land</span><span class="text-primary font-bold">ISO 14001 §9.1</span></div>' +
+        '</div>',
+      buttons: [{ label: 'Close', onClick: closeModal }]
+    });
+  });
+  var supportLink = $('#supportLink');
+  if (supportLink) supportLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    openModal({
+      title: 'Enterprise SLA Helpdesk',
+      body:
+        '<div class="p-3 rounded-lg bg-brand-mint-subtle border border-brand-mint/30 text-body-sm font-body-sm text-brand-forest"><strong>Priority 1:</strong> 15-minute response • 99.95% uptime • 24/7 coverage</div>' +
+        '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Support email</span><span class="text-text-strong font-semibold">sla@sustainai.io</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Hotline</span><span class="text-text-strong font-semibold">+62 21 5000 9911</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Dedicated TAM</span><span class="text-text-strong font-semibold">Rina Kusuma</span></div></div>',
+      buttons: [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Open Ticket', className: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); toast('Priority ticket created • TAM notified'); logAction('Opened enterprise SLA ticket'); } }
+      ]
+    });
+  });
+
+  $$('main span, header span').forEach(function (span) {
+    if (/Environment: Production/.test(span.textContent)) {
+      span.classList.add('cursor-pointer');
+      span.title = 'View deployment details';
+      span.addEventListener('click', function () {
+        openModal({
+          title: 'Deployment Environment',
+          body: '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Environment</span><span class="text-text-strong font-semibold">Production</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Runtime</span><span class="text-text-strong font-semibold">Vercel Edge • fra1 + sin1</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Build</span><span class="text-text-strong font-semibold">2.4.0-prod (stable)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Last deploy</span><span class="text-text-strong font-semibold">14 minutes ago</span></div></div>',
+          buttons: [{ label: 'Close', onClick: closeModal }]
+        });
+      });
+    }
+    if (/API Security: Server-side Vault Active/.test(span.textContent)) {
+      span.classList.add('cursor-pointer');
+      span.title = 'View vault security posture';
+      span.addEventListener('click', function () {
+        openModal({
+          title: 'API Vault Security',
+          body: '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Cipher</span><span class="text-text-strong font-semibold">AES-256-GCM</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Key management</span><span class="text-text-strong font-semibold">Envelope KMS (rotating)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Client exposure</span><span class="text-primary font-semibold">Zero raw credentials</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Last rotation</span><span class="text-text-strong font-semibold">2026-11-02 09:14 UTC</span></div></div>',
+          buttons: [{ label: 'Close', onClick: closeModal }]
+        });
+      });
+    }
+    if (/4 Active Framework Monitors/.test(span.textContent)) {
+      span.classList.add('cursor-pointer');
+      span.title = 'View active SDG monitors';
+      span.addEventListener('click', function () {
+        openModal({
+          title: 'Active SDG Framework Monitors',
+          body: '<div class="space-y-2">' +
+            ['12 • Responsible Consumption', '2 • Zero Hunger & Farming', '8 & 4 • Decent Work & Education', '11 & 15 • Cities & Life on Land'].map(function (t) {
+              return '<div class="flex items-center gap-2 p-3 rounded-lg bg-surface-base border border-border-subtle"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-body-sm font-body-sm text-text-strong">' + t + '</span><span class="ml-auto text-[11px] font-bold text-primary">Monitoring</span></div>';
+            }).join('') + '</div>',
+          buttons: [{ label: 'Close', onClick: closeModal }]
+        });
+      });
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (!modal.classList.contains('hidden')) { closeModal(); return; }
+      if (!notifPanel.classList.contains('hidden')) toggleNotifPanel(false);
+    }
+    if ((e.metaKey || e.ctrlKey) && String(e.key).toLowerCase() === 's') {
+      e.preventDefault();
+      if (saveBtn) saveBtn.click();
+    }
+  });
+
+  normalizeKeys();
+  snapshot.keys = keyList.innerHTML;
+  snapshot.team = teamBody.innerHTML;
+  $$('.sdg-card').forEach(function (c) { sdgDefaults[c.getAttribute('data-sdg')] = c.getAttribute('data-target'); });
+  updateTeamCount();
+  updateCutoff();
+  updateSens();
+  renderLocalePreview();
+  $$('.sdg-card').forEach(sdgWarning);
+  logAction('Signed in as Alex Mercer');
+  logAction('Configuration console loaded • v2.4.0-prod');
+  var stored = null;
+  try { stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (e) { stored = null; }
+  if (stored) {
+    applyStored(stored);
+  } else {
+    try {
+      var sharedLang = localStorage.getItem('sustainai.lang');
+      if (sharedLang) setLang(sharedLang, { silent: true });
+    } catch (e) {}
+  }
+  clearDirty();
+  spy();
+
+  window.__settingsTest = {
+    getState: function () {
+      return {
+        engine: state.engine,
+        lang: state.lang,
+        cutoff: state.cutoff,
+        sens: state.sens,
+        purge: state.purge,
+        cache: state.cache,
+        dirty: dirty,
+        keys: $$('#keyList > div').length,
+        members: $$('#teamBody tr').length,
+        audit: auditLog.length,
+        loraLinked: state.lora.linked
+      };
+    },
+    setEngine: setEngine,
+    setLang: setLang,
+    audit: function () { return auditLog.slice(); },
+    reset: doReset
+  };
+})();
+
+</script>
 </body></html>

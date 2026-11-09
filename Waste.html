@@ -146,88 +146,72 @@
 </head>
 <body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint-subtle selection:text-brand-forest">
 <!-- ================= PERSISTENT SIDE NAVIGATION (SHARED COMPONENT) ================= -->
-<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm">
-<!-- Brand Header -->
-<div>
-<div class="flex items-center gap-3 px-2 mb-6">
-<div class="w-10 h-10 rounded-xl bg-brand-mint-subtle text-primary flex items-center justify-center border border-border-focus">
-<span class="material-symbols-outlined text-primary" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
-</div>
-<div>
-<span class="text-headline-md font-headline-md font-bold text-primary block leading-tight">SustainAI</span>
-<span class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</span>
-</div>
-</div>
-<!-- SDG Micro Badge -->
-<div class="mx-2 mb-5 px-3 py-1.5 rounded-lg bg-accent-teal-subtle text-accent-teal flex items-center justify-between border border-secondary-container">
-<span class="text-label-sm font-label-sm font-semibold">SDG 12 Target</span>
-<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-card font-bold">12.5 Recycled</span>
-</div>
-<!-- Main Navigation Menu -->
-<nav class="space-y-1">
-<!-- Overview -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
-<span class="text-label-md font-label-md">Overview</span>
-</a>
-<!-- Waste Classifier (Active Item) -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold transition-all duration-150 ease-in-out cursor-pointer active:scale-98" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="delete" style="font-variation-settings: 'FILL' 1;">delete</span>
-<span class="text-label-md font-label-md">Waste Classifier</span>
-</a>
-<!-- CV Analyzer -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="document_scanner">document_scanner</span>
-<span class="text-label-md font-label-md">CV Analyzer</span>
-</a>
-<!-- Plant Disease -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="potted_plant">potted_plant</span>
-<span class="text-label-md font-label-md">Plant Disease</span>
-</a>
-<!-- Reports -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
-<span class="text-label-md font-label-md">Reports</span>
-</a>
-<!-- Settings -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors duration-150" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
-<span class="text-label-md font-label-md">Settings</span>
-</a>
-</nav>
-</div>
-<!-- Sidebar Footer / Utility -->
-<div class="space-y-3 pt-4 border-t border-border-subtle">
-<!-- Upgrade Promo CTA -->
-<div class="p-3 bg-surface-card-subtle rounded-xl border border-border-subtle">
-<div class="flex items-center gap-2 mb-1.5 text-primary">
-<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
-<span class="text-label-sm font-label-sm font-bold">Edge Inference</span>
-</div>
-<p class="text-body-sm font-body-sm text-text-muted leading-tight mb-2">99.8% precision with offline vision pack.</p>
-<button class="w-full py-1.5 px-3 bg-primary hover:bg-brand-emerald-dark text-on-primary text-label-sm font-label-sm rounded-lg transition-colors shadow-sm">Upgrade Pro</button>
-</div>
-<!-- Language Pill -->
-<div class="flex items-center justify-between px-3 py-2 text-text-muted hover:text-text-strong rounded-lg hover:bg-surface-base cursor-pointer">
-<div class="flex items-center gap-2.5">
-<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
-<span class="text-label-md font-label-md">Language: EN</span>
-</div>
-<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-card border border-border-subtle text-text-muted font-bold">EN / ID</span>
-</div>
-<!-- Profile Tab -->
-<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-card hover:bg-surface-card-subtle transition cursor-pointer border border-border-subtle">
-<div class="w-8 h-8 rounded-full bg-brand-mint text-brand-forest flex items-center justify-center font-bold text-label-md">
-          AR
+<!-- SHARED SIDEBAR (canonical) -->
+<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center gap-3 px-2">
+      <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+      </div>
+      <div>
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tight leading-none">SustainAI</div>
+        <div class="text-label-sm font-label-sm text-text-muted mt-0.5">Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+        <div>
+          <div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
+          <div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
         </div>
-<div class="flex-1 min-w-0">
-<p class="text-label-md font-label-md text-text-strong truncate">Arya Pratama</p>
-<p class="text-label-sm font-label-sm text-text-muted truncate">Sustainability Auditor</p>
-</div>
-<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="unfold_more">unfold_more</span>
-</div>
-</div>
+      </div>
+      <button id="upgradeBtn" type="button" class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm whitespace-nowrap">Upgrade Pro</button>
+    </div>
+    <nav aria-label="Main Navigation" class="flex flex-col gap-2">
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Dashboard.html">
+    <span class="material-symbols-outlined text-[20px]">dashboard</span>
+    <span class="text-label-md font-label-md">Overview</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs border border-border-focus/30 cursor-pointer" href="Waste.html" aria-current="page">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">delete</span>
+    <span class="text-label-md font-label-md">Waste Classifier</span>
+<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Plants.html">
+    <span class="material-symbols-outlined text-[20px]">potted_plant</span>
+    <span class="text-label-md font-label-md">Plant Disease</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Reports.html">
+    <span class="material-symbols-outlined text-[20px]">bar_chart</span>
+    <span class="text-label-md font-label-md">Reports</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Setting.html">
+    <span class="material-symbols-outlined text-[20px]">settings</span>
+    <span class="text-label-md font-label-md">Settings</span>
+  </a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+      <div class="flex items-center gap-2 text-text-muted">
+        <span class="material-symbols-outlined text-[18px]">translate</span>
+        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
+      </div>
+      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
+        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
+        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
+      <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
+      <div class="flex flex-col min-w-0">
+        <div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
+        <div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
+      </div>
+      <button id="profileMenu" type="button" class="material-symbols-outlined text-[18px] text-text-muted ml-auto hover:text-text-strong" title="Account menu">more_vert</button>
+    </div>
+  </div>
 </aside>
 <!-- ================= MAIN CONTENT WRAPPER ================= -->
 <div class="ml-64 flex-1 flex flex-col min-w-0">
@@ -242,10 +226,10 @@
 <span class="text-label-lg font-label-lg text-text-strong font-semibold">Waste Classifier</span>
 </div>
 <!-- Navigation links (from JSON) -->
-<div class="hidden md:flex items-center gap-6">
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#">Live Diagnostics</a>
-<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#">SDG Goals</a>
-<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="#">Documentation</a>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="Dashboard.html" >Live Diagnostics</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="Reports.html" >SDG Goals</a>
+<a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="Dashboard.html" >Documentation</a>
 </div>
 <!-- Trailing Action Cluster -->
 <div class="flex items-center gap-3">
@@ -255,14 +239,37 @@
 <span class="text-label-sm font-label-sm font-semibold">System Operational • 320ms</span>
 </div>
 <!-- Trailing Icon Buttons -->
-<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Notifications">
+<div class="relative">
+<button id="notifBtn" class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Notifications">
 <span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
-<button class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Help">
+<div id="notifPanel" class="hidden absolute right-0 mt-2 w-80 bg-surface-card border border-border-subtle rounded-xl shadow-lg p-3 z-50">
+<div class="flex items-center justify-between px-2 pb-2 border-b border-border-subtle">
+<span class="text-label-md font-label-md text-text-strong font-semibold">Notifications</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-danger-rose-subtle text-danger-rose font-semibold">1 new</span>
+</div>
+<div class="mt-2 space-y-1">
+<button class="w-full text-left px-2 py-2 rounded-lg hover:bg-surface-base transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-amber text-[20px]">warning</span>
+<div><p class="text-body-sm font-body-sm text-text-strong font-medium">Battery specimen flagged as hazardous</p><p class="text-label-sm font-label-sm text-text-muted">Requires safe lockbox disposal · just now</p></div>
+</div>
+</button>
+<button class="w-full text-left px-2 py-2 rounded-lg hover:bg-surface-base transition-colors">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">recycling</span>
+<div><p class="text-body-sm font-body-sm text-text-strong font-medium">Vision engine v2.4 online</p><p class="text-label-sm font-label-sm text-text-muted">320ms latency · stable</p></div>
+</div>
+</button>
+</div>
+</div>
+</div>
+<button id="helpBtn" class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Help">
 <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
 </button>
 <!-- New Scan CTA Button -->
-<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md transition shadow-sm active:scale-95">
+<button id="newScanBtn" class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md transition shadow-sm active:scale-95">
 <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
 <span>New Scan</span>
 </button>
@@ -272,7 +279,7 @@
 <main class="flex-1 p-8 overflow-y-auto">
 <div class="max-w-[1280px] mx-auto space-y-6">
 <!-- Top Title & Subtitle Banner -->
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div class="flex flex-col sm:flex-row md:items-center justify-between gap-4 pb-2">
 <div>
 <h1 class="text-headline-lg font-headline-lg text-text-strong tracking-tight">Classify Your Waste</h1>
 <p class="text-body-md font-body-md text-text-muted mt-1">Upload or capture an image to identify recyclability, material composition, and optimal disposal recommendations.</p>
@@ -283,61 +290,62 @@
 <span class="material-symbols-outlined text-primary text-[24px]" data-icon="recycling">recycling</span>
 <div>
 <p class="text-label-sm font-label-sm text-text-muted">Total Diverted</p>
-<p class="text-label-lg font-label-lg font-bold text-text-strong">42.8 kg CO2e</p>
+<p id="statDiverted" class="text-label-lg font-label-lg font-bold text-text-strong">42.8 kg CO2e</p>
 </div>
 </div>
 <div class="px-4 py-2 bg-surface-card rounded-xl border border-border-subtle shadow-sm flex items-center gap-3">
 <span class="material-symbols-outlined text-accent-teal text-[24px]" data-icon="token">token</span>
 <div>
 <p class="text-label-sm font-label-sm text-text-muted">EcoCredits</p>
-<p class="text-label-lg font-label-lg font-bold text-text-strong">1,240 Pts</p>
+<p id="statCredits" class="text-label-lg font-label-lg font-bold text-text-strong">1,240 Pts</p>
 </div>
 </div>
 </div>
 </div>
 <!-- 2-COLUMN SPLIT INTERFACE -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 <!-- LEFT PANEL: INPUT & CAPTURE AREA (Span 5) -->
-<div class="lg:col-span-5 bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm flex flex-col gap-5">
+<div class="w-full lg:col-span-5 bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm flex flex-col gap-5">
 <!-- Header & Mode Switcher -->
 <div class="flex items-center justify-between">
 <h2 class="text-headline-sm font-headline-sm text-text-strong">Capture or Upload</h2>
 <span class="text-label-sm font-label-sm text-text-muted font-medium">Vision Engine v2.4</span>
 </div>
 <!-- Segmented Pill Mode Switcher -->
-<div class="grid grid-cols-2 p-1 bg-surface-card-subtle rounded-xl border border-border-subtle text-center">
-<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle transition text-label-md font-label-md">
+<div id="modeSwitch" class="grid grid-cols-2 p-1 bg-surface-card-subtle rounded-xl border border-border-subtle text-center">
+<button id="modeUpload" data-mode="upload" class="mode-btn flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle transition text-label-md font-label-md">
 <span class="material-symbols-outlined text-[18px]" data-icon="upload">upload</span>
                 Upload Image
               </button>
-<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-text-muted hover:text-text-strong transition text-label-md font-label-md">
+<button id="modeCamera" data-mode="camera" class="mode-btn flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-text-muted hover:text-text-strong transition text-label-md font-label-md">
 <span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
                 Live Camera
               </button>
 </div>
 <!-- Dropzone / Active Analyzed Preview Box -->
-<div class="relative rounded-xl border-2 border-dashed border-border-focus bg-brand-mint-subtle/30 p-5 flex flex-col items-center justify-center text-center transition group hover:bg-brand-mint-subtle/50">
+<div id="captureBox" role="button" tabindex="0" aria-label="Upload or capture waste image" class="relative rounded-xl border-2 border-dashed border-border-focus bg-brand-mint-subtle/30 p-5 flex flex-col items-center justify-center text-center transition group hover:bg-brand-mint-subtle/50 cursor-pointer focus:outline-none focus:ring-2 focus:ring-border-focus">
+<input id="wasteFileInput" type="file" accept="image/*" class="hidden"/>
 <!-- Analyzed Image Preview Frame -->
 <div class="w-full relative rounded-lg overflow-hidden border border-border-subtle bg-surface-card shadow-xs mb-4">
 <div class="relative h-60 w-full overflow-hidden bg-surface-base">
-<img class="w-full h-full object-cover" data-alt="A clean, studio-photographed single transparent PET plastic beverage bottle with a bright blue screw cap and paper label, centered on a neutral crisp slate surface with soft soft natural daylight lighting in a clean tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQdu8G8fj7MjCIEy6kwdolw_P4zdqrfCfhTjEpk5yflPOEISmboSjlQlwIFffcEH4ZFQBd0hJDWwwB88J2d9h15LAJcVLeMn2eXJBrtQgJGOcGJNpV8RxDWQnYn6ZioPF9n9YGswAm225GBf3lIhEPjEXz6nF24nh4Mop_yO2D2-zbaO9G9jld9rvYc8V7DYsAeoZGVcBlYTBGVpSOdaNiD1-g32wtcKEO3ZW0BHn"/>
+<img id="specimenImage" class="w-full h-full object-cover" data-alt="A clean, studio-photographed single transparent PET plastic beverage bottle with a bright blue screw cap and paper label, centered on a neutral crisp slate surface with soft soft natural daylight lighting in a clean tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQdu8G8fj7MjCIEy6kwdolw_P4zdqrfCfhTjEpk5yflPOEISmboSjlQlwIFffcEH4ZFQBd0hJDWwwB88J2d9h15LAJcVLeMn2eXJBrtQgJGOcGJNpV8RxDWQnYn6ZioPF9n9YGswAm225GBf3lIhEPjEXz6nF24nh4Mop_yO2D2-zbaO9G9jld9rvYc8V7DYsAeoZGVcBlYTBGVpSOdaNiD1-g32wtcKEO3ZW0BHn"/>
 <!-- Computer Vision Bounding Box Overlays -->
 <div class="absolute inset-0 p-4 pointer-events-none">
 <!-- Bounding Box 1: Bottle Body -->
 <div class="absolute top-12 left-1/4 right-1/4 bottom-8 border-2 border-primary rounded-lg bg-primary/10 flex items-start justify-end p-1">
-<span class="text-label-sm font-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded font-mono font-bold shadow-xs">PET: 98%</span>
+<span id="bbox1" class="text-label-sm font-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded font-mono font-bold shadow-xs">PET: 98%</span>
 </div>
 <!-- Bounding Box 2: Cap -->
 <div class="absolute top-4 left-[38%] right-[38%] h-8 border-2 border-accent-teal rounded bg-accent-teal/20 flex items-start justify-end p-0.5">
-<span class="text-label-sm font-label-sm bg-accent-teal text-surface-card px-1 py-0.2 rounded font-mono font-bold text-[9px]">PP Cap</span>
+<span id="bbox2" class="text-label-sm font-label-sm bg-accent-teal text-surface-card px-1 py-0.2 rounded font-mono font-bold text-[9px]">PP Cap</span>
 </div>
 </div>
 <!-- Overlay Status Tag -->
 <div class="absolute top-3 left-3 bg-surface-card/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-border-subtle shadow-xs flex items-center gap-1.5">
 <span class="material-symbols-outlined text-primary text-[16px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-label-sm font-label-sm text-text-strong font-semibold">Active Frame Detected</span>
+<span id="frameStatus" class="text-label-sm font-label-sm text-text-strong font-semibold">Active Frame Detected</span>
 </div>
-<div class="absolute bottom-3 right-3 bg-text-strong/80 backdrop-blur-sm text-surface-card px-2 py-0.5 rounded text-label-sm font-label-sm">
+<div id="imageMeta" class="absolute bottom-3 right-3 bg-text-strong/80 backdrop-blur-sm text-surface-card px-2 py-0.5 rounded text-label-sm font-label-sm">
                     1080 x 1440 • 1.4 MB
                   </div>
 </div>
@@ -345,10 +353,10 @@
 <!-- Drag and Drop Actions Area -->
 <div class="flex items-center justify-between w-full pt-1">
 <div class="text-left">
-<p class="text-label-md font-label-md text-text-strong">sample_drink_bottle_pet.png</p>
+<p id="fileName" class="text-label-md font-label-md text-text-strong">sample_drink_bottle_pet.png</p>
 <p class="text-body-sm font-body-sm text-text-muted">Supports JPG, PNG, WebP up to 10MB</p>
 </div>
-<button class="px-3.5 py-1.5 bg-surface-card border border-border-subtle hover:border-primary text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-medium transition shadow-xs flex items-center gap-1.5">
+<button id="replaceBtn" class="px-3.5 py-1.5 bg-surface-card border border-border-subtle hover:border-primary text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-medium transition shadow-xs flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]" data-icon="cached">cached</span>
                   Replace
                 </button>
@@ -358,19 +366,10 @@
 <div>
 <p class="text-label-sm font-label-sm text-text-muted mb-2 font-medium">Try quick test specimens:</p>
 <div class="flex flex-wrap gap-2">
-<button class="px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-primary border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-xs">
-<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
-                  Plastic Bottle
-                </button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
-                  Banana Peel
-                </button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
-                  Cardboard Box
-                </button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">
-                  Lithium Battery
-                </button>
+<button data-sample="bottle" data-label="Plastic Bottle" class="sample-btn px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-primary border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-xs"><span class="material-symbols-outlined text-[16px]">check</span>Plastic Bottle</button>
+<button data-sample="banana" data-label="Banana Peel" class="sample-btn px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">Banana Peel</button>
+<button data-sample="cardboard" data-label="Cardboard Box" class="sample-btn px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">Cardboard Box</button>
+<button data-sample="battery" data-label="Lithium Battery" class="sample-btn px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition">Lithium Battery</button>
 </div>
 </div>
 <!-- AI Engine Metadata Specs -->
@@ -379,11 +378,11 @@
 <span class="material-symbols-outlined text-[16px]" data-icon="memory">memory</span>
                 Gemini 1.5 Flash Vision
               </span>
-<span class="font-mono">Inference: 0.32s</span>
+<span id="inferenceTime" class="font-mono">Inference: 0.32s</span>
 </div>
 </div>
 <!-- RIGHT PANEL: AI ANALYSIS & RECOMMENDATIONS RESULTS (Span 7) -->
-<div class="lg:col-span-7 space-y-6">
+<div class="w-full lg:col-span-7 space-y-6">
 <!-- Primary Classification Card -->
 <div class="bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-sm">
 <!-- Result Header -->
@@ -393,7 +392,7 @@
 <h2 class="text-headline-sm font-headline-sm text-text-strong">Analysis Results</h2>
 <span class="px-2.5 py-0.5 rounded-full bg-brand-mint-subtle text-brand-forest border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1">
 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                      Scan Complete • 98.4% Confidence
+<span id="confidenceText">Scan Complete • 98.4% Confidence</span>
                     </span>
 </div>
 <p class="text-body-sm font-body-sm text-text-muted mt-0.5">Automated visual segmentation processed in 320ms</p>
@@ -409,29 +408,27 @@
 <div class="py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
 <div class="flex items-start gap-4">
 <div class="w-12 h-12 rounded-xl bg-brand-mint-subtle text-primary flex items-center justify-center shrink-0 border border-brand-mint">
-<span class="material-symbols-outlined text-[28px]" data-icon="water_bottle" style="font-variation-settings: 'FILL' 1;">water_bottle</span>
+<span id="objectIcon" class="material-symbols-outlined text-[28px]" data-icon="water_bottle" style="font-variation-settings: 'FILL' 1;">water_bottle</span>
 </div>
 <div>
 <div class="flex items-center gap-2">
-<h3 class="text-headline-md font-headline-md font-bold text-text-strong">PET Beverage Bottle</h3>
-<span class="px-2 py-0.5 rounded bg-surface-card-subtle text-text-muted font-mono text-label-sm font-label-sm">#1 PETE</span>
+<h3 id="objectName" class="text-headline-md font-headline-md font-bold text-text-strong">PET Beverage Bottle</h3>
+<span id="resinTag" class="px-2 py-0.5 rounded bg-surface-card-subtle text-text-muted font-mono text-label-sm font-label-sm">#1 PETE</span>
 </div>
-<p class="text-body-sm font-body-sm text-text-muted">Polyethylene Terephthalate polymer with separate cap assembly</p>
+<p id="objectDesc" class="text-body-sm font-body-sm text-text-muted">Polyethylene Terephthalate polymer with separate cap assembly</p>
 </div>
 </div>
 <!-- Recyclability Tag Verdict -->
 <div class="flex md:flex-col items-end justify-between md:justify-center">
-<span class="px-3 py-1 rounded-full bg-brand-mint-subtle text-brand-forest text-label-md font-label-md font-bold border border-border-focus">
-                    Highly Recyclable
-                  </span>
-<span class="text-label-sm font-label-sm text-text-muted mt-1">Category 1 Plastic</span>
+<span id="verdictText" class="px-3 py-1 rounded-full bg-brand-mint-subtle text-brand-forest text-label-md font-label-md font-bold border border-border-focus">Highly Recyclable</span>
+<span id="categoryText" class="text-label-sm font-label-sm text-text-muted mt-1">Category 1 Plastic</span>
 </div>
 </div>
 <!-- Multi-Part Breakdown (Card Segments) -->
-<div class="mt-2 space-y-3">
+<div id="partsList" class="mt-2 space-y-3">
 <div class="flex items-center justify-between">
 <h4 class="text-label-md font-label-md text-text-muted tracking-wider">SORTING GUIDE BY PART</h4>
-<span class="text-label-sm font-label-sm text-text-muted">3 Components Detected</span>
+<span id="partsCount" class="text-label-sm font-label-sm text-text-muted">3 Components Detected</span>
 </div>
 <!-- Part 1: Bottle Body -->
 <div class="p-4 rounded-xl bg-surface-card border border-border-subtle hover:border-border-focus transition shadow-xs flex items-center justify-between gap-4">
@@ -495,7 +492,7 @@
 <span class="material-symbols-outlined text-primary text-[22px]" data-icon="task_alt">task_alt</span>
 <h3 class="text-headline-sm font-headline-sm text-text-strong">Step-by-Step Disposal Action Plan</h3>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div id="stepsList" class="grid grid-cols-1 md:grid-cols-3 gap-4">
 <!-- Step 1 -->
 <div class="p-4 rounded-xl bg-surface-base border border-border-subtle relative flex flex-col justify-between">
 <div>
@@ -543,10 +540,10 @@
 <div>
 <div class="flex items-center gap-2">
 <p class="text-label-lg font-label-lg font-bold text-brand-forest">Verified Ecological Impact</p>
-<span class="px-2 py-0.5 rounded bg-brand-forest text-on-primary text-[10px] font-bold">+15 EcoCredits</span>
+<span id="impactCredits" class="px-2 py-0.5 rounded bg-brand-forest text-on-primary text-[10px] font-bold">+15 EcoCredits</span>
 </div>
 <p class="text-body-sm font-body-sm text-text-strong mt-0.5">
-                    Prevented <strong class="text-brand-forest">0.04 kg CO2e</strong> in atmospheric lifecycle emissions. Logged into circular economy ledger.
+                    Prevented <strong id="impactCo2" class="text-brand-forest">0.04 kg CO2e</strong> in atmospheric lifecycle emissions. Logged into circular economy ledger.
                   </p>
 </div>
 </div>
@@ -560,18 +557,18 @@
 </div>
 </div>
 <!-- Bottom Action Footer -->
-<div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+<div class="flex flex-col sm:flex-wrap items-center justify-between gap-4 pt-2">
 <div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md font-semibold transition shadow-sm active:scale-95">
+<button id="saveLogBtn" class="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md font-semibold transition shadow-sm active:scale-95">
 <span class="material-symbols-outlined text-[18px]" data-icon="bookmark">bookmark</span>
                   Save to Log
                 </button>
-<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-card border border-border-subtle hover:bg-surface-base text-text-strong rounded-lg text-label-md font-label-md font-semibold transition shadow-xs">
+<button id="printLabelBtn" class="flex items-center gap-2 px-4 py-2.5 bg-surface-card border border-border-subtle hover:bg-surface-base text-text-strong rounded-lg text-label-md font-label-md font-semibold transition shadow-xs">
 <span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
                   Print Waste Label
                 </button>
 </div>
-<button class="flex items-center gap-2 px-4 py-2.5 text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-semibold transition">
+<button id="scanAnotherBtn" class="flex items-center gap-2 px-4 py-2.5 text-primary hover:bg-brand-mint-subtle rounded-lg text-label-md font-label-md font-semibold transition">
 <span class="material-symbols-outlined text-[18px]" data-icon="qr_code_scanner">qr_code_scanner</span>
                 Scan Another Item
               </button>
@@ -581,4 +578,505 @@
 </div>
 </main>
 </div>
+<!-- Interaction Layer: Modal, Toasts, and Waste Classifier Logic -->
+<div id="appModal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4">
+<div id="modalBackdrop" class="absolute inset-0 bg-black/40"></div>
+<div class="relative w-full max-w-lg bg-surface-card rounded-2xl border border-border-subtle shadow-xl max-h-[85vh] flex flex-col">
+<div class="flex items-center justify-between px-5 py-4 border-b border-border-subtle">
+<h3 id="modalTitle" class="text-headline-sm font-headline-sm text-text-strong">Title</h3>
+<button id="modalCloseBtn" class="p-1 rounded text-text-muted hover:text-text-strong transition-colors" title="Close"><span class="material-symbols-outlined text-[20px]">close</span></button>
+</div>
+<div id="modalBody" class="p-5 overflow-y-auto text-body-sm font-body-sm text-text-muted"></div>
+<div id="modalFooter" class="px-5 py-4 border-t border-border-subtle flex justify-end gap-2"></div>
+</div>
+</div>
+<div id="toastContainer" class="fixed bottom-5 right-5 z-[110] flex flex-col gap-2 items-end max-w-xs"></div>
+<style>
+  #captureBox { scroll-margin-top: 5rem; }
+  @keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .toast-item { animation: toast-in .2s ease-out; }
+  #appModal.flex { display: flex; }
+</style>
+<script>
+(function () {
+  "use strict";
+  const $ = (sel, root) => (root || document).querySelector(sel);
+  const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
+
+  /* ---------------- Toast ---------------- */
+  const TOAST_STYLES = {
+    success: "bg-brand-mint-subtle text-brand-forest border-brand-mint",
+    error: "bg-danger-rose-subtle text-danger-rose border-danger-rose",
+    info: "bg-surface-card text-text-strong border-border-subtle"
+  };
+  const TOAST_ICONS = { success: "check_circle", error: "error", info: "info" };
+  function toast(message, type) {
+    const container = $("#toastContainer");
+    if (!container) return;
+    const t = type || "info";
+    const el = document.createElement("div");
+    el.className = "toast-item flex items-start gap-2 px-3.5 py-2.5 rounded-xl border shadow-lg text-label-md font-label-md " + (TOAST_STYLES[t] || TOAST_STYLES.info);
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + (TOAST_ICONS[t] || "info") + '</span><span class="leading-snug">' + message + "</span>";
+    container.appendChild(el);
+    setTimeout(function () {
+      el.style.transition = "all .2s ease";
+      el.style.opacity = "0";
+      el.style.transform = "translateY(8px)";
+      setTimeout(function () { el.remove(); }, 220);
+    }, 3200);
+  }
+
+  /* ---------------- Modal ---------------- */
+  let activeStream = null;
+  function stopStream() {
+    if (activeStream) { activeStream.getTracks().forEach(function (t) { t.stop(); }); activeStream = null; }
+  }
+  function bindModalCloseButtons() {
+    $$("#appModal [data-modal-close]").forEach(function (b) { b.addEventListener("click", closeModal); });
+  }
+  function openModal(title, bodyHTML, footerHTML) {
+    $("#modalTitle").textContent = title;
+    $("#modalBody").innerHTML = bodyHTML || "";
+    $("#modalFooter").innerHTML = footerHTML || "";
+    const m = $("#appModal");
+    m.classList.remove("hidden");
+    m.classList.add("flex");
+  }
+  function closeModal() {
+    const m = $("#appModal");
+    m.classList.add("hidden");
+    m.classList.remove("flex");
+    stopStream();
+    $("#modalBody").innerHTML = "";
+    $("#modalFooter").innerHTML = "";
+  }
+  $("#modalCloseBtn").addEventListener("click", closeModal);
+  $("#modalBackdrop").addEventListener("click", closeModal);
+
+  /* ---------------- Specimen data ---------------- */
+  const BOTTLE_IMG = "https://lh3.googleusercontent.com/aida-public/AB6AXuASQdu8G8fj7MjCIEy6kwdolw_P4zdqrfCfhTjEpk5yflPOEISmboSjlQlwIFffcEH4ZFQBd0hJDWwwB88J2d9h15LAJcVLeMn2eXJBrtQgJGOcGJNpV8RxDWQnYn6ZioPF9n9YGswAm225GBf3lIhEPjEXz6nF24nh4Mop_yO2D2-zbaO9G9jld9rvYc8V7DYsAeoZGVcBlYTBGVpSOdaNiD1-g32wtcKEO3ZW0BHn";
+  function makeSVG(label, c1, c2) {
+    const svg = "<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'>" +
+      "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='" + c1 + "'/><stop offset='1' stop-color='" + c2 + "'/></linearGradient></defs>" +
+      "<rect width='800' height='600' fill='url(#g)'/>" +
+      "<circle cx='400' cy='268' r='120' fill='rgba(255,255,255,0.22)'/>" +
+      "<text x='400' y='285' font-family='Inter,Arial' font-size='54' font-weight='700' fill='#ffffff' text-anchor='middle'>" + label + "</text>" +
+      "<text x='400' y='470' font-family='Inter,Arial' font-size='24' fill='rgba(255,255,255,0.9)' text-anchor='middle'>SustainAI Vision Specimen</text></svg>";
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+  }
+  const SPECIMENS = {
+    bottle: {
+      name: "PET Beverage Bottle", resin: "#1 PETE", icon: "water_bottle",
+      desc: "Polyethylene Terephthalate polymer with separate cap assembly",
+      verdict: "Highly Recyclable", verdictColor: "mint", category: "Category 1 Plastic",
+      confidence: 98.4, bbox1: "PET: 98%", bbox2: "PP Cap",
+      file: "sample_drink_bottle_pet.png", meta: "1080 x 1440 • 1.4 MB",
+      co2: 0.04, credits: 15, image: BOTTLE_IMG,
+      parts: [
+        { title: "PET Bottle Body", material: "Material: Clear PET plastic (Resin Code 1)", action: "Recyclable (Blue Bin)", color: "mint", icon: "local_drink", note: "check_circle" },
+        { title: "Plastic Screw Cap", material: "Material: Polypropylene (PP or HDPE)", action: "Separate & Recycle", color: "teal", icon: "circle", note: "check_circle" },
+        { title: "Product Wrap Label", material: "Material: Paper/BOPP film with adhesive", action: "Peel Off (General Waste)", color: "amber", icon: "label", note: "remove_circle_outline" }
+      ],
+      steps: [
+        { title: "Rinse Contents", desc: "Empty all liquid remnants and quickly rinse with water to avoid cross-bin odor contamination.", note: "Cleaned", icon: "water_drop" },
+        { title: "Peel and Flatten", desc: "Remove product label along perforated seam. Crush bottle body flat to optimize compact storage.", note: "Volume Reduced 70%", icon: "compress" },
+        { title: "Sort into Blue Bin", desc: "Deposit body in designated recyclable blue plastics receptacle or local Waste Bank deposit box.", note: "Ready for Collection", icon: "delete_sweep" }
+      ]
+    },
+    banana: {
+      name: "Banana Peel & Organic Scrap", resin: "ORGANIC", icon: "compost",
+      desc: "Nitrogen-rich fruit biomass suitable for aerobic composting",
+      verdict: "Compostable", verdictColor: "teal", category: "Organic Waste",
+      confidence: 96.1, bbox1: "Organic: 96%", bbox2: "Sticker",
+      file: "banana_peel_organic.jpg", meta: "1024 x 1024 • 860 KB",
+      co2: 0.06, credits: 20, image: makeSVG("Banana Peel", "#34D399", "#0F766E"),
+      parts: [
+        { title: "Peel Biomass", material: "Material: Fruit skin, cellulose-rich", action: "Compost (Green Bin)", color: "teal", icon: "compost", note: "check_circle" },
+        { title: "Adhesive Sticker", material: "Material: Plastic film residue", action: "Remove (General Waste)", color: "amber", icon: "label", note: "remove_circle_outline" },
+        { title: "Moisture Content", material: "Approx. 75% water by weight", action: "Drain Before Bin", color: "mint", icon: "water_drop", note: "check_circle" }
+      ],
+      steps: [
+        { title: "Remove Stickers", desc: "Peel off produce stickers or plastic tags so only organic matter enters the compost stream.", note: "Contaminant Free", icon: "label_off" },
+        { title: "Chop Smaller", desc: "Cut peel into smaller pieces to accelerate microbial breakdown in the compost caddy.", note: "Faster Breakdown", icon: "content_cut" },
+        { title: "Add to Compost", desc: "Deposit into the green organic caddy or campus composting station.", note: "Ready for Compost", icon: "eco" }
+      ]
+    },
+    cardboard: {
+      name: "Corrugated Cardboard Box", resin: "#2 PAPER", icon: "inventory_2",
+      desc: "Uncoated kraft fiber container with minor tape residue",
+      verdict: "Highly Recyclable", verdictColor: "mint", category: "Category 2 Paper",
+      confidence: 99.2, bbox1: "Paper: 99%", bbox2: "Tape",
+      file: "cardboard_box_corrugated.jpg", meta: "1200 x 900 • 1.1 MB",
+      co2: 0.09, credits: 18, image: makeSVG("Cardboard", "#F59E0B", "#92400E"),
+      parts: [
+        { title: "Kraft Fiber Body", material: "Material: Corrugated uncoated paper", action: "Recyclable (Paper Bin)", color: "mint", icon: "inventory_2", note: "check_circle" },
+        { title: "Packing Tape", material: "Material: BOPP adhesive tape", action: "Remove (General Waste)", color: "amber", icon: "label", note: "remove_circle_outline" },
+        { title: "Printed Ink", material: "Material: Soy-based ink layer", action: "Recycle With Fiber", color: "teal", icon: "palette", note: "check_circle" }
+      ],
+      steps: [
+        { title: "Remove Tape & Staples", desc: "Strip all packing tape, labels, and metal staples from the box flaps.", note: "Debris Removed", icon: "content_cut" },
+        { title: "Flatten the Box", desc: "Collapse the box along existing creases to reduce transport volume.", note: "Volume Reduced 60%", icon: "compress" },
+        { title: "Bundle for Pickup", desc: "Stack flattened boxes and deposit in the paper recycling container.", note: "Ready for Collection", icon: "inventory" }
+      ]
+    },
+    battery: {
+      name: "Lithium AA Battery", resin: "E-WASTE", icon: "battery_alert",
+      desc: "Heavy-metal electrochemical cell requiring special handling",
+      verdict: "Hazardous — Special Handling", verdictColor: "danger", category: "E-Waste / Battery",
+      confidence: 94.8, bbox1: "Li: 95%", bbox2: "Terminal", hazard: true,
+      file: "aa_lithium_battery.jpg", meta: "900 x 900 • 540 KB",
+      co2: 0.21, credits: 35, image: makeSVG("Li-ion Battery", "#E11D48", "#7F1D1D"),
+      parts: [
+        { title: "Battery Cell", material: "Material: Lithium / alkaline chemistry", action: "Safe Lockbox (E-Waste)", color: "danger", icon: "battery_alert", note: "warning" },
+        { title: "Metal Casing", material: "Material: Steel / nickel-plated shell", action: "Recycle at E-Waste Point", color: "teal", icon: "circle", note: "check_circle" },
+        { title: "Exposed Terminals", material: "Material: Conductive contact points", action: "Tape to Prevent Short", color: "amber", icon: "bolt", note: "remove_circle_outline" }
+      ],
+      steps: [
+        { title: "Tape the Terminals", desc: "Cover both terminals with clear tape to prevent short circuits and sparks.", note: "Short-Circuit Safe", icon: "shield" },
+        { title: "Do Not Puncture", desc: "Never crush, puncture, or expose the cell to heat or water.", note: "Handling Safe", icon: "block" },
+        { title: "Drop at E-Waste Point", desc: "Place in the designated hazardous e-waste lockbox for certified disposal.", note: "Special Handling", icon: "recycling" }
+      ]
+    }
+  };
+  const TAG = {
+    mint: "bg-brand-mint-subtle text-brand-forest border-brand-mint",
+    teal: "bg-accent-teal-subtle text-accent-teal border-secondary-container",
+    amber: "bg-accent-amber-subtle text-text-strong border-accent-amber/30",
+    danger: "bg-danger-rose-subtle text-danger-rose border-danger-rose/30"
+  };
+  const ICONBG = {
+    mint: "bg-brand-mint-subtle text-primary",
+    teal: "bg-accent-teal-subtle text-accent-teal",
+    amber: "bg-accent-amber-subtle text-accent-amber",
+    danger: "bg-danger-rose-subtle text-danger-rose"
+  };
+
+  const state = { mode: "upload", specimenKey: "bottle", specimen: SPECIMENS.bottle, imageURL: null, diverted: 42.8, credits: 1240 };
+
+  /* ---------------- Render ---------------- */
+  const SAMPLE_ACTIVE = "sample-btn px-3 py-1.5 rounded-lg bg-brand-mint-subtle text-primary border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-xs";
+  const SAMPLE_IDLE = "sample-btn px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-card border border-border-subtle text-text-muted hover:text-text-strong text-label-sm font-label-sm transition";
+  function renderSpecimen(key, opts) {
+    opts = opts || {};
+    const s = SPECIMENS[key] || SPECIMENS.bottle;
+    state.specimenKey = key in SPECIMENS ? key : "bottle";
+    state.specimen = s;
+    if (opts.image) {
+      if (state.imageURL && state.imageURL.indexOf("blob:") === 0) URL.revokeObjectURL(state.imageURL);
+      state.imageURL = opts.image;
+    }
+    $("#specimenImage").src = opts.image || s.image;
+    $("#fileName").textContent = opts.name || s.file;
+    $("#imageMeta").textContent = opts.meta || s.meta;
+    $("#objectName").textContent = s.name;
+    $("#objectDesc").textContent = s.desc;
+    $("#resinTag").textContent = s.resin;
+    const iconEl = $("#objectIcon");
+    iconEl.textContent = s.icon;
+    iconEl.setAttribute("data-icon", s.icon);
+    $("#verdictText").textContent = s.verdict;
+    $("#verdictText").className = "px-3 py-1 rounded-full text-label-md font-label-md font-bold border " + (TAG[s.verdictColor] || TAG.mint);
+    $("#categoryText").textContent = s.category;
+    $("#confidenceText").textContent = "Scan Complete • " + s.confidence + "% Confidence";
+    $("#bbox1").textContent = s.bbox1;
+    $("#bbox2").textContent = s.bbox2;
+    $("#frameStatus").textContent = opts.status || "Active Frame Detected";
+    $("#inferenceTime").textContent = "Inference: " + (0.28 + Math.random() * 0.12).toFixed(2) + "s";
+    $("#impactCo2").textContent = s.co2.toFixed(2) + " kg CO2e";
+    $("#impactCredits").textContent = "+" + s.credits + " EcoCredits";
+    /* parts (rebuild header + cards) */
+    const header = '<div class="flex items-center justify-between"><h4 class="text-label-md font-label-md text-text-muted tracking-wider">SORTING GUIDE BY PART</h4><span id="partsCount" class="text-label-sm font-label-sm text-text-muted">' + s.parts.length + " Components Detected</span></div>";
+    $("#partsList").innerHTML = header + s.parts.map(function (p) {
+      return '<div class="p-4 rounded-xl bg-surface-card border border-border-subtle hover:border-border-focus transition shadow-xs flex items-center justify-between gap-4">' +
+        '<div class="flex items-center gap-3.5">' +
+        '<div class="w-10 h-10 rounded-lg ' + (ICONBG[p.color] || ICONBG.mint) + ' flex items-center justify-center font-bold"><span class="material-symbols-outlined text-[20px]" data-icon="' + p.icon + '">' + p.icon + "</span></div>" +
+        '<div><p class="text-label-lg font-label-lg text-text-strong font-semibold">' + p.title + '</p><p class="text-body-sm font-body-sm text-text-muted">' + p.material + "</p></div></div>" +
+        '<div class="flex items-center gap-3"><span class="px-3 py-1 rounded-lg text-label-sm font-label-sm font-semibold border ' + (TAG[p.color] || TAG.mint) + '">' + p.action + '</span>' +
+        '<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="' + p.note + '">' + p.note + "</span></div></div>";
+    }).join("");
+    /* steps */
+    const circle = s.hazard ? "bg-danger-rose" : "bg-primary";
+    const noteColor = s.hazard ? "text-danger-rose" : "text-primary";
+    $("#stepsList").innerHTML = s.steps.map(function (st, i) {
+      return '<div class="p-4 rounded-xl bg-surface-base border border-border-subtle relative flex flex-col justify-between">' +
+        '<div><span class="w-6 h-6 rounded-full ' + circle + ' text-on-primary font-bold text-label-sm font-label-sm flex items-center justify-center mb-2">' + (i + 1) + "</span>" +
+        '<h4 class="text-label-lg font-label-lg text-text-strong mb-1">' + st.title + '</h4>' +
+        '<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">' + st.desc + "</p></div>" +
+        '<span class="text-label-sm font-label-sm ' + noteColor + ' font-semibold mt-3 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="' + st.icon + '">' + st.icon + "</span>" + st.note + "</span></div>";
+    }).join("");
+    /* sample pills */
+    $$(".sample-btn").forEach(function (b) {
+      const on = b.dataset.sample === state.specimenKey;
+      b.className = on ? SAMPLE_ACTIVE : SAMPLE_IDLE;
+      b.innerHTML = (on ? '<span class="material-symbols-outlined text-[16px]">check</span>' : "") + (b.dataset.label || "");
+    });
+    if (!opts.silent) toast("Classified: " + s.name + " (" + s.confidence + "%)", s.hazard ? "error" : "success");
+  }
+
+  /* ---------------- Mode switch ---------------- */
+  function setMode(mode) {
+    state.mode = mode;
+    const up = $("#modeUpload"), cam = $("#modeCamera");
+    up.className = "mode-btn flex items-center justify-center gap-2 py-2 px-3 rounded-lg transition text-label-md font-label-md " + (mode === "upload" ? "bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle" : "text-text-muted hover:text-text-strong");
+    cam.className = "mode-btn flex items-center justify-center gap-2 py-2 px-3 rounded-lg transition text-label-md font-label-md " + (mode === "camera" ? "bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle" : "text-text-muted hover:text-text-strong");
+  }
+  $("#modeUpload").addEventListener("click", function () { setMode("upload"); });
+  $("#modeCamera").addEventListener("click", function () { setMode("camera"); captureCamera(); });
+
+  /* ---------------- Upload / camera ---------------- */
+  const fileInput = $("#wasteFileInput");
+  const captureBox = $("#captureBox");
+  function classifyByName(name) {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    const keys = ["bottle", "banana", "cardboard", "battery"];
+    return keys[h % keys.length];
+  }
+  function handleFile(file) {
+    if (!file) return;
+    if ((file.type || "").indexOf("image/") !== 0) { toast("Please choose an image file", "error"); return; }
+    if (file.size > 10 * 1024 * 1024) { toast("Image must be under 10MB", "error"); return; }
+    const url = URL.createObjectURL(file);
+    const key = classifyByName(file.name || "upload");
+    renderSpecimen(key, {
+      image: url,
+      name: file.name,
+      meta: (file.type.split("/")[1] || "image").toUpperCase() + " · " + (file.size / 1024).toFixed(0) + " KB · just uploaded",
+      status: "Uploaded Frame Analyzed"
+    });
+  }
+  fileInput.addEventListener("click", function (e) { e.stopPropagation(); });
+  fileInput.addEventListener("change", function () { handleFile(fileInput.files[0]); fileInput.value = ""; });
+  function triggerUpload() { fileInput.click(); }
+  function triggerCapture() { if (state.mode === "camera") captureCamera(); else triggerUpload(); }
+  captureBox.addEventListener("click", function (e) { if (e.target === fileInput) return; triggerCapture(); });
+  captureBox.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerCapture(); } });
+  $("#replaceBtn").addEventListener("click", function (e) { e.stopPropagation(); triggerUpload(); });
+  ["dragenter", "dragover"].forEach(function (evt) {
+    captureBox.addEventListener(evt, function (e) { e.preventDefault(); captureBox.classList.add("bg-brand-mint-subtle/70"); });
+  });
+  ["dragleave", "dragend"].forEach(function (evt) {
+    captureBox.addEventListener(evt, function (e) { e.preventDefault(); captureBox.classList.remove("bg-brand-mint-subtle/70"); });
+  });
+  captureBox.addEventListener("drop", function (e) {
+    e.preventDefault();
+    captureBox.classList.remove("bg-brand-mint-subtle/70");
+    handleFile(e.dataTransfer.files[0]);
+  });
+  async function captureCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
+      activeStream = stream;
+      openModal("Live Camera",
+        '<div class="rounded-lg overflow-hidden bg-black"><video id="wasteCam" autoplay playsinline class="w-full max-h-[50vh] object-contain"></video></div>',
+        '<button id="wasteCaptureBtn" class="px-4 py-2 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary text-label-md font-label-md font-semibold">Capture Photo</button>' +
+        '<button class="px-4 py-2 rounded-lg border border-border-subtle text-text-strong text-label-md font-label-md hover:bg-surface-base" data-modal-close>Cancel</button>');
+      bindModalCloseButtons();
+      const video = $("#wasteCam");
+      video.srcObject = stream;
+      $("#wasteCaptureBtn").addEventListener("click", function () {
+        if (!video.videoWidth) { toast("Camera is still starting — try again in a moment", "error"); return; }
+        const c = document.createElement("canvas");
+        c.width = video.videoWidth; c.height = video.videoHeight;
+        c.getContext("2d").drawImage(video, 0, 0);
+        const url = c.toDataURL("image/png");
+        const name = "camera-capture-" + Date.now() + ".png";
+        const key = classifyByName(name);
+        stopStream();
+        closeModal();
+        renderSpecimen(key, { image: url, name: name, meta: "CAMERA · captured just now", status: "Camera Frame Analyzed" });
+      });
+    } catch (err) {
+      stopStream();
+      toast("Camera unavailable — choose an image instead", "error");
+      triggerUpload();
+    }
+  }
+
+  /* ---------------- Sample specimens ---------------- */
+  $$(".sample-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      renderSpecimen(b.dataset.sample, { status: "Specimen Loaded" });
+    });
+  });
+
+  /* ---------------- Save log / print / rescan ---------------- */
+  $("#saveLogBtn").addEventListener("click", function () {
+    const s = state.specimen;
+    state.credits += s.credits;
+    state.diverted += s.co2;
+    $("#statCredits").textContent = state.credits.toLocaleString() + " Pts";
+    $("#statDiverted").textContent = state.diverted.toFixed(1) + " kg CO2e";
+    toast("Saved to log · +" + s.credits + " EcoCredits", "success");
+  });
+  $("#printLabelBtn").addEventListener("click", function () {
+    const s = state.specimen;
+    const w = window.open("", "_blank", "width=440,height=640");
+    if (!w) { toast("Allow pop-ups to print the waste label", "error"); return; }
+    w.document.write('<html><head><title>SustainAI Waste Label</title></head><body style="font-family:Inter,Arial,sans-serif;padding:24px;color:#0F172A">' +
+      '<h2 style="margin:0 0 4px">SustainAI Waste Label</h2>' +
+      '<p style="margin:0 0 16px;color:#64748B">Bank Sampah Bersih · Circular Ledger</p>' +
+      '<div style="border:2px dashed #10B981;border-radius:12px;padding:16px">' +
+      '<h3 style="margin:0 0 8px">' + s.name + "</h3>" +
+      '<p style="margin:0 0 4px"><b>Resin:</b> ' + s.resin + "</p>" +
+      '<p style="margin:0 0 4px"><b>Verdict:</b> ' + s.verdict + "</p>" +
+      '<p style="margin:0 0 4px"><b>Category:</b> ' + s.category + "</p>" +
+      '<p style="margin:8px 0 0"><b>Impact:</b> ' + s.co2.toFixed(2) + " kg CO2e prevented</p></div>" +
+      '<p style="margin-top:16px;font-size:12px;color:#64748B">Generated ' + new Date().toLocaleString() + "</p>");
+    w.document.close(); w.focus();
+    setTimeout(function () { try { w.print(); } catch (e) {} }, 300);
+    toast("Waste label opened for printing", "success");
+  });
+  function scanAnother() {
+    captureBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (state.mode === "camera") captureCamera();
+    else triggerUpload();
+    toast("Ready for a new item", "info");
+  }
+  $("#scanAnotherBtn").addEventListener("click", scanAnother);
+  $("#newScanBtn").addEventListener("click", scanAnother);
+
+  /* ---------------- Header panels ---------------- */
+  const notifBtn = $("#notifBtn");
+  const notifPanel = $("#notifPanel");
+  notifBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    notifPanel.classList.toggle("hidden");
+  });
+  document.addEventListener("click", function (e) {
+    if (!notifPanel.contains(e.target) && !notifBtn.contains(e.target)) notifPanel.classList.add("hidden");
+  });
+  $$("#notifPanel button").forEach(function (b) {
+    b.addEventListener("click", function () { notifPanel.classList.add("hidden"); });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeModal(); notifPanel.classList.add("hidden"); }
+  });
+  $("#helpBtn").addEventListener("click", function () {
+    openModal("Help & Shortcuts",
+      '<p class="mb-3">How to use the Waste Classifier.</p>' +
+      '<ul class="space-y-2 list-disc pl-5">' +
+      "<li>Upload, drag & drop, or capture an image to classify an item.</li>" +
+      "<li>Use the quick test specimens to preview classification results.</li>" +
+      "<li>Follow the per-part sorting guide and step-by-step disposal plan.</li>" +
+      "<li>Save to log to earn EcoCredits, or print a waste label.</li>" +
+      "</ul>",
+      '<button class="px-4 py-2 rounded-lg bg-primary text-on-primary text-label-md font-label-md font-semibold" data-modal-close>Got it</button>');
+    bindModalCloseButtons();
+  });
+
+  /* ---------------- Init ---------------- */
+  setMode("upload");
+  renderSpecimen("bottle", { silent: true });
+})();
+</script>
+<script>
+/* SIDEBAR-SHARED */
+(function () {
+  'use strict';
+  var LANG_KEY = 'sustainai.lang';
+  function $(s) { return document.querySelector(s); }
+  var upgradeBtn = $('#upgradeBtn');
+  var langEN = $('#langEN');
+  var langID = $('#langID');
+  var langLabel = $('#langLabel');
+  var profileMenu = $('#profileMenu');
+
+  var wrap = document.createElement('div');
+  wrap.className = 'fixed bottom-6 right-6 z-[60] flex flex-col gap-2 items-end';
+  document.body.appendChild(wrap);
+  function toast(msg, type) {
+    var tone = type === 'error' ? 'border-danger-rose/40 bg-danger-rose-subtle text-danger-rose' : type === 'warn' ? 'border-accent-amber/40 bg-accent-amber-subtle text-accent-amber' : 'border-brand-mint/50 bg-brand-mint-subtle text-brand-forest';
+    var icon = type === 'error' ? 'error' : type === 'warn' ? 'warning' : 'check_circle';
+    var el = document.createElement('div');
+    el.className = 'flex items-center gap-2 px-4 py-2.5 rounded-lg border shadow-md text-label-md font-label-md bg-surface-card ' + tone + ' transition-all duration-200 opacity-0 translate-y-2';
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + icon + '</span><span></span>';
+    el.lastElementChild.textContent = msg;
+    wrap.appendChild(el);
+    requestAnimationFrame(function () { el.classList.remove('opacity-0', 'translate-y-2'); });
+    setTimeout(function () {
+      el.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(function () { el.remove(); }, 220);
+    }, 3000);
+  }
+
+  var modal = document.createElement('div');
+  modal.id = 'sbModal';
+  modal.className = 'fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm';
+  modal.innerHTML = '<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col">' +
+    '<div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle shrink-0">' +
+      '<h3 id="sbModalTitle" class="text-headline-sm font-headline-sm text-text-strong">SustainAI</h3>' +
+      '<button id="sbModalClose" type="button" class="p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base" title="Close"><span class="material-symbols-outlined text-[20px]">close</span></button>' +
+    '</div>' +
+    '<div id="sbModalBody" class="p-6 space-y-4 overflow-y-auto text-body-md font-body-md text-text-strong"></div>' +
+    '<div id="sbModalFoot" class="px-6 py-4 border-t border-border-subtle flex flex-wrap items-center justify-end gap-2 shrink-0"></div>' +
+  '</div>';
+  document.body.appendChild(modal);
+  function openModal(title, body, buttons) {
+    $('#sbModalTitle').textContent = title;
+    $('#sbModalBody').innerHTML = body;
+    var foot = $('#sbModalFoot');
+    foot.innerHTML = '';
+    buttons.forEach(function (b) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = b.cls || 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold border border-border-subtle text-text-strong bg-surface-card hover:bg-surface-base';
+      btn.textContent = b.label;
+      btn.addEventListener('click', b.onClick);
+      foot.appendChild(btn);
+    });
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+  $('#sbModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  function applyLang(code, announce) {
+    if (code !== 'en' && code !== 'id') return;
+    if (langLabel) langLabel.textContent = 'Language: ' + code.toUpperCase();
+    var active = 'px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer';
+    var idle = 'px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer';
+    if (langEN) langEN.className = code === 'en' ? active : idle;
+    if (langID) langID.className = code === 'id' ? active : idle;
+    document.documentElement.lang = code;
+    try { localStorage.setItem(LANG_KEY, code); } catch (e) {}
+    if (announce) toast('Language: ' + (code === 'en' ? 'English (EN-US)' : 'Bahasa Indonesia (ID)'));
+  }
+  if (langEN) langEN.addEventListener('click', function () { applyLang('en', true); });
+  if (langID) langID.addEventListener('click', function () { applyLang('id', true); });
+  var saved = null;
+  try { saved = localStorage.getItem(LANG_KEY); } catch (e) { saved = null; }
+  if (saved) applyLang(saved, false);
+
+  if (upgradeBtn) upgradeBtn.addEventListener('click', function () {
+    openModal('Enterprise Pro Plans',
+      '<p class="text-body-sm font-body-sm text-text-muted">You are on <strong class="text-text-strong">Enterprise Pro</strong>. Scale edge inference and add unlimited workspace auditors.</p>' +
+      '<div class="space-y-2">' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-primary bg-brand-mint-subtle"><div><div class="font-semibold text-text-strong">Enterprise Pro</div><div class="text-body-sm text-text-muted">Current plan • 50 seats • 2M edge calls</div></div><span class="text-label-sm font-bold text-primary">Active</span></div>' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-border-subtle bg-surface-base"><div><div class="font-semibold text-text-strong">Enterprise Max</div><div class="text-body-sm text-text-muted">Unlimited seats • 10M edge calls • dedicated SLA</div></div><span class="text-label-sm font-bold text-text-muted">Custom</span></div>' +
+      '</div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Contact Sales', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); toast('Sales team will reach out shortly'); } }
+      ]);
+  });
+
+  if (profileMenu) profileMenu.addEventListener('click', function () {
+    openModal('Account',
+      '<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><div class="w-12 h-12 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center border border-accent-teal/30">AM</div><div><div class="font-semibold text-text-strong">Alex Mercer</div><div class="text-body-sm text-text-muted">alex.mercer@sustainai.io</div><div class="text-[11px] text-primary font-bold mt-0.5">Lead Sustainability Auditor • Owner</div></div></div>' +
+      '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Workspace</span><span class="text-text-strong font-semibold">SustainAI Enterprise</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Region</span><span class="text-text-strong font-semibold">ap-southeast-1 (Jakarta Edge)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">MFA</span><span class="text-primary font-semibold">Enabled</span></div></div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Open Settings', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { window.location.href = 'Setting.html'; } }
+      ]);
+  });
+})();
+</script>
 </body></html>

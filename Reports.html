@@ -299,94 +299,72 @@
 </head>
 <body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex">
 <!-- Left Side Navigation Bar (SideNavBar) -->
-<aside class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm select-none">
-<div class="flex flex-col gap-6">
-<!-- Brand Header -->
-<div class="flex items-center gap-3 px-2">
-<div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center text-on-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="eco">eco</span>
-</div>
-<div>
-<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">SustainAI</div>
-<div class="text-label-sm font-label-sm text-text-muted">Intelligence Platform</div>
-</div>
-</div>
-<!-- Navigation Links -->
-<nav aria-label="Main Navigation" class="flex flex-col gap-1.5">
-<!-- Overview -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
-<span class="material-symbols-outlined text-text-muted" data-icon="dashboard">dashboard</span>
-<span>Overview</span>
-</a>
-<!-- Waste Classifier -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
-<span class="material-symbols-outlined text-text-muted" data-icon="delete">delete</span>
-<span>Waste Classifier</span>
-</a>
-<!-- CV Analyzer -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
-<span class="material-symbols-outlined text-text-muted" data-icon="document_scanner">document_scanner</span>
-<span>CV Analyzer</span>
-</a>
-<!-- Plant Disease -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
-<span class="material-symbols-outlined text-text-muted" data-icon="potted_plant">potted_plant</span>
-<span>Plant Disease</span>
-</a>
-<!-- Reports (ACTIVE TAB) -->
-<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold text-label-md font-label-md shadow-sm border border-emerald-100" href="#">
-<span class="material-symbols-outlined text-primary" data-icon="bar_chart" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
-<span>Reports</span>
-</a>
-<!-- Settings -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors text-label-md font-label-md" href="#">
-<span class="material-symbols-outlined text-text-muted" data-icon="settings">settings</span>
-<span>Settings</span>
-</a>
-</nav>
-</div>
-<!-- Bottom Sidebar Section -->
-<div class="flex flex-col gap-4">
-<!-- SDG Compliance Badge -->
-<div class="p-3 bg-brand-mint-subtle/80 border border-emerald-200/60 rounded-lg">
-<div class="flex items-center justify-between mb-1.5">
-<span class="text-label-sm font-label-sm font-bold text-brand-forest uppercase tracking-wider">SDG Audit Level</span>
-<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary">Tier 1</span>
-</div>
-<div class="text-label-sm font-label-sm text-text-muted leading-tight mb-2">9 Targets Verified on Blockchain &amp; ESG Standards</div>
-<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[94%]"></div>
-</div>
-</div>
-<!-- Upgrade Pro CTA Button -->
-<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-lg text-label-md font-label-md shadow-sm hover:opacity-95 transition-opacity">
-<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
-<span>Upgrade Pro</span>
-</button>
-<!-- Language & User Profile Section -->
-<div class="pt-3 border-t border-border-subtle flex flex-col gap-2">
-<div class="flex items-center justify-between text-text-muted px-1 text-label-md font-label-md">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
-<span>Language: EN</span>
-</div>
-<div class="inline-flex bg-surface-card-subtle p-0.5 rounded border border-border-subtle text-[11px] font-semibold">
-<span class="px-1.5 py-0.5 rounded bg-surface-card text-text-strong shadow-xs">EN</span>
-<span class="px-1.5 py-0.5 text-text-muted cursor-pointer hover:text-text-strong">ID</span>
-</div>
-</div>
-<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-base border border-border-subtle mt-1">
-<div class="w-8 h-8 rounded-full bg-primary-fixed-dim text-brand-forest flex items-center justify-center font-bold text-label-md">
-            AM
-          </div>
-<div class="flex flex-col flex-1 min-w-0">
-<div class="text-label-md font-label-md text-text-strong truncate">Alex Mercer</div>
-<div class="text-label-sm font-label-sm text-text-muted truncate">Lead Sustainability Auditor</div>
-</div>
-<span class="material-symbols-outlined text-text-muted cursor-pointer hover:text-text-strong" data-icon="account_circle">account_circle</span>
-</div>
-</div>
-</div>
+<!-- SHARED SIDEBAR (canonical) -->
+<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center gap-3 px-2">
+      <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+      </div>
+      <div>
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tight leading-none">SustainAI</div>
+        <div class="text-label-sm font-label-sm text-text-muted mt-0.5">Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="bg-brand-mint-subtle rounded-xl p-3.5 border border-brand-mint/30 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+        <div>
+          <div class="text-label-md font-label-md font-bold text-primary">Enterprise Pro</div>
+          <div class="text-[11px] text-brand-emerald-dark">Unlimited Gemini 1.5 Edge</div>
+        </div>
+      </div>
+      <button id="upgradeBtn" type="button" class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-md hover:bg-brand-emerald-dark transition-colors shadow-sm whitespace-nowrap">Upgrade Pro</button>
+    </div>
+    <nav aria-label="Main Navigation" class="flex flex-col gap-2">
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Dashboard.html">
+    <span class="material-symbols-outlined text-[20px]">dashboard</span>
+    <span class="text-label-md font-label-md">Overview</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Waste.html">
+    <span class="material-symbols-outlined text-[20px]">delete</span>
+    <span class="text-label-md font-label-md">Waste Classifier</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Plants.html">
+    <span class="material-symbols-outlined text-[20px]">potted_plant</span>
+    <span class="text-label-md font-label-md">Plant Disease</span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-mint-subtle text-primary font-semibold shadow-xs border border-border-focus/30 cursor-pointer" href="Reports.html" aria-current="page">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+    <span class="text-label-md font-label-md">Reports</span>
+<span class="ml-auto w-1.5 h-4 rounded-full bg-primary"></span>
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors cursor-pointer" href="Setting.html">
+    <span class="material-symbols-outlined text-[20px]">settings</span>
+    <span class="text-label-md font-label-md">Settings</span>
+  </a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
+    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
+      <div class="flex items-center gap-2 text-text-muted">
+        <span class="material-symbols-outlined text-[18px]">translate</span>
+        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
+      </div>
+      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
+        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
+        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
+      <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
+      <div class="flex flex-col min-w-0">
+        <div class="text-label-md font-label-md font-semibold text-text-strong truncate">Alex Mercer</div>
+        <div class="text-[11px] text-text-muted truncate">Lead Sustainability Auditor</div>
+      </div>
+      <button id="profileMenu" type="button" class="material-symbols-outlined text-[18px] text-text-muted ml-auto hover:text-text-strong" title="Account menu">more_vert</button>
+    </div>
+  </div>
 </aside>
 <!-- Main Content Wrapper with Left Margin for Fixed Sidebar -->
 <div class="flex-1 ml-64 flex flex-col min-w-0">
@@ -413,10 +391,10 @@
 </div>
 <!-- Navigation Links & Trailing Actions -->
 <div class="flex items-center gap-4">
-<div class="hidden md:flex items-center gap-5 mr-2">
-<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">Live Diagnostics</a>
-<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">SDG Goals</a>
-<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="#">Documentation</a>
+<div class="flex flex-col sm:flex-row items-center gap-5 mr-2">
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="Dashboard.html" >Live Diagnostics</a>
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="Reports.html" >SDG Goals</a>
+<a class="text-label-md font-label-md text-text-muted hover:text-text-strong transition-colors" href="Dashboard.html" >Documentation</a>
 </div>
 <!-- Quick Filter Period -->
 <div class="relative inline-flex items-center">
@@ -1004,4 +982,853 @@
 </div>
 </footer>
 </div>
+<script>
+(function () {
+  'use strict';
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+  var fmt = function (n) { return Math.round(n).toLocaleString('en-US'); };
+
+  var TF = [
+    { label: 'This Month (Nov 2026)', short: 'Nov 2026', waste: 14850, co2: 4120, precision: 97.6, crops: 482, yieldRisk: 18.2, talent: 88.4, resumes: 142, align: 92, credits: 14820, compliance: 99.4, mom: '+14.2%', audits: 28, w: [6.2, 7.1, 8.4, 10.9, 12.3, 14.8], p: [52, 60, 70, 76, 96, 128], t: [74.1, 76.8, 80.3, 82.0, 85.6, 88.4] },
+    { label: 'Last 30 Days', short: 'last 30 days', waste: 13920, co2: 3860, precision: 97.4, crops: 451, yieldRisk: 17.6, talent: 87.6, resumes: 128, align: 91, credits: 13940, compliance: 99.2, mom: '+11.8%', audits: 24, w: [5.8, 6.6, 7.9, 10.1, 11.6, 13.9], p: [48, 56, 66, 72, 90, 120], t: [73.0, 75.5, 79.0, 81.0, 84.8, 87.6] },
+    { label: 'Quarterly Q4 2026', short: 'Q4 2026', waste: 42100, co2: 12400, precision: 97.1, crops: 1386, yieldRisk: 19.4, talent: 88.1, resumes: 402, align: 92, credits: 41980, compliance: 99.1, mom: '+32.6%', audits: 86, w: [7.8, 8.9, 10.5, 13.6, 15.4, 18.5], p: [66, 76, 88, 96, 122, 162], t: [73.4, 76.1, 79.8, 81.6, 85.1, 88.1] },
+    { label: 'Year-to-Date (2026)', short: 'YTD 2026', waste: 168400, co2: 48600, precision: 96.8, crops: 5420, yieldRisk: 21.0, talent: 86.9, resumes: 1640, align: 90, credits: 167300, compliance: 98.7, mom: '+41.3%', audits: 312, w: [9.4, 10.8, 12.6, 16.3, 18.5, 22.2], p: [78, 90, 105, 114, 144, 192], t: [72.0, 74.6, 78.2, 80.0, 84.0, 86.9] }
+  ];
+
+  var FAC = [
+    { name: 'All Operations', scope: 'Global Campus', f: 1 },
+    { name: 'Sector 3B', scope: 'Agritech & Hydroponics', f: 0.34 },
+    { name: 'Sorting Alpha', scope: 'East Logistics Hub', f: 0.41 },
+    { name: 'APAC HR Hub', scope: 'Regional Talent HR', f: 0.18 }
+  ];
+
+  var MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'];
+  var X = [35, 135, 235, 335, 435, 535];
+
+  var state = { tf: 0, fac: 0, customFactor: 1, customLabel: '', zoomSeries: [true, true, true] };
+
+  var header = $('header');
+  var tfSelect = header.querySelector('select[aria-label="Select report timeframe"]');
+  var facilitySelect = $('main select[aria-label="Select facility or campus branch"]');
+  var main = $('main');
+  var sections = $$(':scope > section', main);
+
+  var kpiSection = $('section[aria-label="Cross-Module Key Performance Indicators"]');
+  var kpiCards = $$(':scope > article', kpiSection);
+
+  var chartCard = sections[2].querySelector('.lg\\:col-span-7') || $('[class*="lg:col-span-7"]');
+  var svg = chartCard.querySelector('svg[aria-label="Monthly Integrated Impact Chart"]');
+  var polylines = $$('polyline', svg);
+  var circles = $$('circle', svg);
+  var areaPoly = svg.querySelector('polygon');
+  var legendSpans = $$('span', chartCard).filter(function (s) { return /Waste \(Tons\)|Pathology|Talent Index/.test(s.textContent); });
+  var monthTexts = $$('text', svg).filter(function (t) { return /^(Jun|Jul|Aug|Sep|Oct|Nov)/.test(norm(t.textContent)); });
+  var peakText = $$('text', svg).filter(function (t) { return /Peak Verified/.test(t.textContent); })[0];
+
+  var docsCard = $('[class*="lg:col-span-5"]').children[0];
+  var docsList = docsCard.querySelector('.divide-y');
+  var docItems = $$(':scope > div', docsList);
+  var filterTabs = $$('button', docsCard).filter(function (b) { return /All Modules|Waste Stream|Agronomy|Talent & CV/.test(norm(b.textContent)); });
+  var viewAllBtn = $$('button', docsCard).filter(function (b) { return /^View All/.test(norm(b.textContent)); })[0];
+  var signatureBox = docsCard.querySelector('[class*="mt-4"]');
+
+  var sdgCard = sections[2].querySelector('[class*="lg:col-span-7"] > div:nth-child(2)') || $('[class*="lg:col-span-7"] > div:nth-child(2)');
+  var sdgRows = sdgCard ? $$(':scope > div', sdgCard.querySelector('.space-y-3\\.5') || sdgCard.querySelector('[class*="space-y-3.5"]')) : [];
+  var sdgPill = $$('span', sdgCard || document.createElement('div')).filter(function (s) { return /Goals Targeted/.test(s.textContent); })[0];
+
+  var exportSection = sections[sections.length - 1];
+  var exportChecks = $$('input[type="checkbox"]', exportSection);
+  var exportRadios = $$('input[type="radio"]', exportSection);
+  var exportEstimate = $$('span', exportSection).filter(function (s) { return /Estimated Package Size/.test(s.textContent); })[0];
+  var presetSpan = $$('span', exportSection).filter(function (s) { return /Package/.test(norm(s.textContent)); })[0];
+  var resetBtn = $$('button', exportSection).filter(function (b) { return /Reset Options/.test(norm(b.textContent)); })[0];
+  var packageBtn = $$('button', exportSection).filter(function (b) { return /Download Consolidated/.test(norm(b.textContent)); })[0];
+
+  var iconSpan = function (icon, cls) {
+    return '<span class="material-symbols-outlined text-sm ' + (cls || '') + '" data-icon="' + icon + '">' + icon + '</span>';
+  };
+
+  var toastWrap;
+  function toast(msg, tone) {
+    if (!toastWrap) {
+      toastWrap = document.createElement('div');
+      toastWrap.style.cssText = 'position:fixed;right:24px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:8px;width:340px;max-width:calc(100vw - 32px)';
+      document.body.appendChild(toastWrap);
+    }
+    var tones = {
+      info: 'bg-surface-card border-border-subtle text-text-strong',
+      success: 'bg-brand-mint-subtle border-border-focus/40 text-brand-forest',
+      warn: 'bg-accent-amber-subtle border-accent-amber/40 text-on-tertiary-fixed-variant',
+      danger: 'bg-danger-rose-subtle border-danger-rose/40 text-danger-rose'
+    };
+    var icons = { info: 'info', success: 'check_circle', warn: 'warning', danger: 'error' };
+    var t = tone || 'info';
+    var el = document.createElement('div');
+    el.className = 'flex items-start gap-2.5 p-3 rounded-xl border shadow-lg text-label-md font-label-md ' + tones[t];
+    el.innerHTML = iconSpan(icons[t], 'flex-shrink-0') + '<span class="flex-1">' + msg + '</span>';
+    toastWrap.appendChild(el);
+    setTimeout(function () {
+      el.style.transition = 'opacity .25s ease, transform .25s ease';
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(12px)';
+      setTimeout(function () { el.remove(); }, 260);
+    }, 3200);
+  }
+
+  var modal, modalTitle, modalBody;
+  function ensureModal() {
+    if (modal) return;
+    modal = document.createElement('div');
+    modal.id = 'rpModal';
+    modal.className = 'fixed inset-0 z-[80] hidden items-center justify-center p-4';
+    modal.innerHTML = '<div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" data-rmclose></div>' +
+      '<div class="relative w-full max-w-lg bg-surface-card rounded-2xl border border-border-subtle shadow-2xl overflow-hidden">' +
+      '<div class="flex items-center justify-between px-5 py-4 border-b border-border-subtle">' +
+      '<h3 id="rpModalTitle" class="text-headline-sm font-headline-sm font-bold text-text-strong">Details</h3>' +
+      '<button type="button" id="rpModalClose" class="p-1.5 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-card-subtle transition-colors"><span class="material-symbols-outlined text-xl">close</span></button>' +
+      '</div><div id="rpModalBody" class="p-5 max-h-[72vh] overflow-y-auto"></div></div>';
+    document.body.appendChild(modal);
+    modalTitle = $('#rpModalTitle', modal);
+    modalBody = $('#rpModalBody', modal);
+    $('#rpModalClose', modal).addEventListener('click', closeModal);
+    modal.querySelector('[data-rmclose]').addEventListener('click', closeModal);
+  }
+  function openModal(title, html) {
+    ensureModal();
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+  function bindOk() {
+    var ok = modalBody.querySelector('[data-rmok]');
+    if (ok) ok.addEventListener('click', closeModal);
+  }
+
+  var notifPanel;
+  function toggleNotif() {
+    if (!notifPanel) {
+      notifPanel = document.createElement('div');
+      notifPanel.id = 'rpNotif';
+      notifPanel.className = 'fixed top-16 right-8 z-[70] hidden w-80 bg-surface-card border border-border-subtle rounded-xl shadow-2xl overflow-hidden';
+      notifPanel.innerHTML = '<div class="flex items-center justify-between px-4 py-3 border-b border-border-subtle">' +
+        '<span class="text-label-md font-label-md font-semibold text-text-strong">Notifications</span>' +
+        '<button type="button" id="rpNotifRead" class="text-label-sm font-label-sm text-primary font-semibold hover:text-brand-emerald-dark">Mark all read</button></div>' +
+        '<div class="divide-y divide-border-subtle">' +
+        '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-primary">description</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">Q4 audit package ready</p><p class="text-label-sm font-label-sm text-text-muted">Waste Stream &amp; Circular Economy audit is certified.</p></div><span class="rnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+        '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-accent-teal">potted_plant</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">Yield risk plan dispatched</p><p class="text-label-sm font-label-sm text-text-muted">Tomato Sector 3B plan sent to the field team.</p></div><span class="rnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+        '<div class="px-4 py-3 flex gap-3"><span class="material-symbols-outlined text-info-sky">badge</span><div><p class="text-label-md font-label-md font-semibold text-text-strong">Talent ESG index updated</p><p class="text-label-sm font-label-sm text-text-muted">Green readiness averaged 88.4 / 100.</p></div><span class="rnotif-dot w-2 h-2 rounded-full bg-danger-rose mt-1"></span></div>' +
+        '</div>';
+      document.body.appendChild(notifPanel);
+      $('#rpNotifRead', notifPanel).addEventListener('click', function () {
+        $$('.rnotif-dot', notifPanel).forEach(function (d) { d.remove(); });
+        toast('All notifications marked as read', 'success');
+      });
+    }
+    notifPanel.classList.toggle('hidden');
+  }
+
+  function currentTF() {
+    var base = TF[state.tf > 3 ? 0 : state.tf];
+    if (state.tf === 4) {
+      var m = JSON.parse(JSON.stringify(base));
+      m.waste *= state.customFactor; m.co2 *= state.customFactor; m.credits *= state.customFactor;
+      m.crops = Math.round(m.crops * state.customFactor); m.resumes = Math.round(m.resumes * state.customFactor);
+      m.audits = Math.round(m.audits * state.customFactor);
+      m.w = base.w.map(function (v) { return v * state.customFactor; });
+      m.p = base.p.map(function (v) { return v * state.customFactor; });
+      m.label = state.customLabel || 'Custom Range';
+      return m;
+    }
+    return base;
+  }
+
+  function renderKPIs() {
+    var m = currentTF();
+    var f = FAC[state.fac].f;
+    var scope = state.fac === 0 ? '' : ' • ' + FAC[state.fac].scope;
+    var waste = m.waste * f, co2 = m.co2 * f, crops = m.crops * f, resumes = m.resumes * f, credits = m.credits * f;
+
+    function parts(card) {
+      var value = card.querySelector('.text-metric-display');
+      var sub = card.querySelector('.mt-0\\.5') || card.querySelector('[class*="mt-0.5"]');
+      var footer = card.querySelector('.mt-4');
+      return { value: value, sub: sub, left: footer.children[0], right: footer.children[1] };
+    }
+    var c1 = parts(kpiCards[0]);
+    c1.value.textContent = fmt(waste) + ' kg';
+    c1.sub.textContent = 'Diverted from Landfill' + scope;
+    c1.left.innerHTML = iconSpan('trending_up') + m.mom + ' MoM';
+    c1.right.textContent = fmt(co2) + ' kg CO2e abated';
+
+    var c2 = parts(kpiCards[1]);
+    c2.value.textContent = m.precision.toFixed(1) + '%';
+    c2.sub.textContent = 'Diagnostic Precision (CV)' + scope;
+    c2.left.innerHTML = iconSpan('check_circle') + fmt(crops) + ' Crops Audited';
+    c2.right.textContent = m.yieldRisk.toFixed(1) + '% Yield Loss Averted';
+
+    var c3 = parts(kpiCards[2]);
+    c3.value.innerHTML = m.talent.toFixed(1) + ' <span class="text-body-md font-body-md text-text-muted">/ 100</span>';
+    c3.sub.textContent = 'Avg ATS Green Readiness' + scope;
+    c3.left.innerHTML = iconSpan('group') + fmt(resumes) + ' Resumes Scored';
+    c3.right.textContent = Math.round(m.align) + '% Green Alignment';
+
+    var c4 = parts(kpiCards[3]);
+    c4.value.textContent = fmt(credits);
+    c4.sub.textContent = 'EcoCredits Certified' + scope;
+    c4.left.innerHTML = iconSpan('verified_user') + m.compliance.toFixed(1) + '% Compliance';
+    c4.right.textContent = '0 Infractions';
+
+    if (viewAllBtn) viewAllBtn.innerHTML = 'View All (' + fmt(m.audits) + ')<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>';
+  }
+
+  function yFor(v, max) {
+    var y = 175 - (v / max) * 140;
+    return Math.max(28, Math.min(175, y));
+  }
+
+  function renderChart() {
+    var m = currentTF();
+    var f = FAC[state.fac].f;
+    var w = m.w.map(function (v) { return v * f; });
+    var p = m.p.map(function (v) { return v * f; });
+    var t = m.t.slice();
+    var maxW = Math.max.apply(null, w) * 1.05;
+    var maxP = Math.max.apply(null, p) * 1.05;
+    var yW = w.map(function (v) { return yFor(v, maxW); });
+    var yP = p.map(function (v) { return yFor(v, maxP); });
+    var yT = t.map(function (v) { return yFor(v, 100); });
+
+    function pts(arr) {
+      return arr.map(function (y, i) { return X[i] + ',' + y.toFixed(1); }).join(' ');
+    }
+    polylines[0].setAttribute('points', pts(yW));
+    polylines[1].setAttribute('points', pts(yP));
+    polylines[2].setAttribute('points', pts(yT));
+    circles[0].setAttribute('cx', X[5]); circles[0].setAttribute('cy', yW[5]);
+    circles[1].setAttribute('cx', X[5]); circles[1].setAttribute('cy', yP[5]);
+    circles[2].setAttribute('cx', X[5]); circles[2].setAttribute('cy', yT[5]);
+    if (areaPoly) areaPoly.setAttribute('points', pts(yW).replace(/ /g, ' ') + ' 535,180 35,180');
+    if (peakText) peakText.textContent = w[5].toFixed(1) + 't Peak Verified';
+
+    state.zoomSeries.forEach(function (on, i) {
+      polylines[i].style.display = on ? '' : 'none';
+      circles[i].style.display = on ? '' : 'none';
+      if (legendSpans[i]) legendSpans[i].style.opacity = on ? '1' : '.35';
+    });
+    chartCard.__data = { w: w, p: p, t: t, yW: yW, yP: yP, yT: yT };
+    if (sdgPill) sdgPill.textContent = '9 Goals Targeted';
+  }
+
+  var DOC_META = [
+    { icon: 'picture_as_pdf', color: 'danger', module: 'Waste Stream', desc: 'Comprehensive campus waste-stream composition, diversion tonnage, and circular-economy recovery audit with ISO 14001 sign-off.' },
+    { icon: 'potted_plant', color: 'primary', module: 'Agronomy', desc: 'Foliar pathology scan, yield-risk projection, and organic treatment plan for Tomato Sector 3B with bounding-box evidence.' },
+    { icon: 'badge', color: 'sky', module: 'Talent & CV', desc: 'Green-collar workforce competency assessment, ATS readiness index, and SDG 4/8 skills alignment evidence.' },
+    { icon: 'table_chart', color: 'amber', module: 'Waste Stream', desc: 'Carbon offset ledger with EcoCredits certification, abatement factors, and audited chain-of-custody records.' }
+  ];
+
+  function classify(title) {
+    if (/Waste|Carbon|Circular|Ledger/i.test(title)) return 'waste';
+    if (/Pathology|Yield|Agro|Foliar|Tomato/i.test(title)) return 'agronomy';
+    if (/Talent|Workforce|Green Collar|ESG/i.test(title)) return 'talent';
+    return 'waste';
+  }
+
+  function setupDocs() {
+    docItems.forEach(function (item, i) {
+      var titleEl = item.querySelector('.text-label-md');
+      var title = norm(titleEl ? titleEl.textContent : 'Document');
+      item.dataset.module = classify(title);
+      item.dataset.title = title;
+      item.dataset.icon = DOC_META[i] ? DOC_META[i].icon : 'description';
+      var text = norm(item.textContent);
+      var hashMatch = text.match(/Hash:\s*#[a-z0-9]+/i);
+      item.dataset.hash = hashMatch ? hashMatch[0].replace(/^Hash:\s*/i, '') : '#audit';
+      item.dataset.size = (text.match(/[\d.]+ MB[^•]*/) || ['2.0 MB'])[0].trim();
+      item.dataset.when = (text.match(/Generated [^H]+/) || ['Generated recently'])[0].trim();
+      item.dataset.status = (/Certified Ready/.test(text) ? 'Certified Ready' : /Sent to Field Team/.test(text) ? 'Sent to Field Team' : /Archived/.test(text) ? 'Archived' : 'Audited Chain');
+      item.style.cursor = 'default';
+      var buttons = $$('button', item);
+      var qrBtn = buttons.filter(function (b) { return /QR Verification/.test(b.getAttribute('aria-label') || ''); })[0];
+      var prevBtn = buttons.filter(function (b) { return /Preview/.test(b.getAttribute('aria-label') || ''); })[0];
+      var dlBtn = buttons.filter(function (b) { return /Download/.test(b.getAttribute('aria-label') || ''); })[0];
+      if (titleEl) titleEl.addEventListener('click', function () { previewDoc(item, i); });
+      if (prevBtn) prevBtn.addEventListener('click', function () { previewDoc(item, i); });
+      if (qrBtn) qrBtn.addEventListener('click', function () { qrDoc(item, i); });
+      if (dlBtn) dlBtn.addEventListener('click', function () { downloadDoc(item, i); });
+    });
+  }
+
+  function emptyState() {
+    var el = docsList.querySelector('.rp-empty');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'rp-empty hidden py-8 text-center text-label-sm font-label-sm text-text-muted';
+      el.textContent = 'No documents match this module filter.';
+      docsList.appendChild(el);
+    }
+    return el;
+  }
+
+  function filterDocs(key) {
+    var visible = 0;
+    docItems.forEach(function (item) {
+      var on = key === 'all' || item.dataset.module === key;
+      item.style.display = on ? '' : 'none';
+      if (on) visible++;
+    });
+    var empty = emptyState();
+    empty.classList.toggle('hidden', visible > 0);
+  }
+
+  function setTabs(active) {
+    filterTabs.forEach(function (b) {
+      var on = norm(b.textContent) === active;
+      b.className = on
+        ? 'px-3 py-1.5 text-label-sm font-label-sm font-semibold rounded bg-surface-card text-primary shadow-xs whitespace-nowrap'
+        : 'px-3 py-1.5 text-label-sm font-label-sm text-text-muted hover:text-text-strong rounded transition-colors whitespace-nowrap';
+    });
+  }
+
+  function qrSVG(seed) {
+    var n = 21, cell = 8, size = n * cell;
+    var s = 5381;
+    for (var k = 0; k < seed.length; k++) s = ((s * 33) ^ seed.charCodeAt(k)) >>> 0;
+    var rects = '';
+    function rnd() { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+      var corner = (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+      var on;
+      if (corner) {
+        var cx = x < 7 ? x : x - 14, cy = y < 7 ? y : y - 14;
+        on = (cx === 0 || cx === 6 || cy === 0 || cy === 6) || (cx >= 2 && cx <= 4 && cy >= 2 && cy <= 4);
+      } else on = rnd() > 0.52;
+      if (on) rects += '<rect x="' + (x * cell) + '" y="' + (y * cell) + '" width="' + cell + '" height="' + cell + '"/>';
+    }
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + ' ' + size + '"><rect width="' + size + '" height="' + size + '" fill="#fff"/><g fill="#0f172a">' + rects + '</g></svg>';
+  }
+
+  function previewDoc(item, i) {
+    var meta = DOC_META[i] || DOC_META[0];
+    openModal('Document Preview', '<div class="space-y-4">' +
+      '<div class="flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-brand-mint-subtle text-primary flex items-center justify-center"><span class="material-symbols-outlined">' + item.dataset.icon + '</span></div>' +
+      '<div><p class="text-label-md font-label-md font-bold text-text-strong leading-snug">' + item.dataset.title + '</p><p class="text-label-sm text-text-muted mt-1">' + meta.module + ' • ' + item.dataset.size + '</p></div></div>' +
+      '<p class="text-body-sm text-text-muted leading-relaxed">' + meta.desc + '</p>' +
+      '<div class="grid grid-cols-2 gap-3 text-label-sm">' +
+      '<div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-text-muted">Status</p><p class="font-semibold text-brand-forest">' + item.dataset.status + '</p></div>' +
+      '<div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-text-muted">Generated</p><p class="font-semibold text-text-strong">' + item.dataset.when.replace('Generated ', '') + '</p></div></div>' +
+      '<div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted mb-1">Digital signature</p><p class="font-code-mono text-label-sm text-text-strong break-all">' + item.dataset.hash + ' • SHA256 verified</p></div>' +
+      '<div class="flex gap-2"><button type="button" class="flex-1 py-2.5 rounded-lg bg-surface-base border border-border-subtle text-label-md font-semibold text-text-strong" data-rmok>Close</button>' +
+      '<button type="button" class="flex-1 py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmdl>Download</button></div></div>');
+    bindOk();
+    var dl = modalBody.querySelector('[data-rmdl]');
+    if (dl) dl.addEventListener('click', function () { closeModal(); downloadDoc(item, i); });
+  }
+
+  function qrDoc(item) {
+    openModal('QR Verification', '<div class="space-y-4 text-center">' +
+      '<div class="mx-auto w-44 h-44 p-2 bg-white rounded-xl border border-border-subtle flex items-center justify-center">' + qrSVG(item.dataset.hash) + '</div>' +
+      '<div><p class="text-label-md font-label-md font-semibold text-text-strong">' + item.dataset.title + '</p>' +
+      '<p class="text-label-sm font-label-sm text-text-muted mt-1">Scan to verify the cryptographic hash on the audit ledger.</p></div>' +
+      '<div class="p-3 rounded-lg bg-brand-mint-subtle border border-border-focus/20 text-label-sm text-brand-forest font-code-mono break-all">' + item.dataset.hash + '</div>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Verified</button></div>');
+    bindOk();
+  }
+
+  function downloadBlob(filename, mime, content) {
+    var blob = new Blob([content], { type: mime });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+  }
+
+  function downloadDoc(item) {
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + item.dataset.title + '</title>' +
+      '<style>body{font-family:Inter,Arial,sans-serif;margin:40px;color:#0f172a}h1{color:#006948;font-size:22px}table{border-collapse:collapse;width:100%;margin-top:18px}td{padding:6px 8px;border-bottom:1px solid #e2e8f0;font-size:13px}td:first-child{color:#64748b;width:40%}</style></head><body>' +
+      '<h1>' + item.dataset.title + '</h1><p style="color:#64748b;font-size:13px">SustainAI • Reports &amp; Export Center • ' + item.dataset.status + '</p>' +
+      '<table><tr><td>Module</td><td>' + (DOC_META[docItems.indexOf(item)] || DOC_META[0]).module + '</td></tr>' +
+      '<tr><td>Package size</td><td>' + item.dataset.size + '</td></tr><tr><td>Generated</td><td>' + item.dataset.when.replace('Generated ', '') + '</td></tr>' +
+      '<tr><td>Digital signature</td><td>' + item.dataset.hash + '</td></tr></table>' +
+      '<p style="font-size:11px;color:#94a3b8;margin-top:28px">ISO 14001 validated • SDG audit ledger verified</p>';
+    var name = item.dataset.title.replace(/[^a-z0-9]+/gi, '_').slice(0, 60) + '.html';
+    downloadBlob(name, 'text/html', html);
+    toast('Document exported: ' + name, 'success');
+  }
+
+  function renderDocCount() {
+    if (viewAllBtn) viewAllBtn.innerHTML = 'View All (' + fmt(currentTF().audits) + ')<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>';
+  }
+
+  function showAllDocs() {
+    var m = currentTF();
+    var names = docItems.map(function (it) { return it.dataset.title; });
+    var rows = '';
+    for (var i = 0; i < Math.min(12, m.audits); i++) {
+      var base = docItems[i % docItems.length];
+      var suffix = i < docItems.length ? '' : ' - Cycle ' + (Math.floor(i / docItems.length) + 1);
+      rows += '<div class="py-2.5 border-b border-border-subtle last:border-0 flex items-start justify-between gap-3">' +
+        '<div><p class="text-label-sm font-label-sm font-semibold text-text-strong leading-snug">' + base.dataset.title + suffix + '</p>' +
+        '<p class="text-[11px] text-text-muted mt-1">' + base.dataset.module + ' • ' + base.dataset.size + ' • ' + base.dataset.hash + '</p></div>' +
+        '<span class="text-[10px] font-semibold text-brand-forest bg-brand-mint-subtle border border-emerald-200 rounded px-2 py-0.5 whitespace-nowrap">' + base.dataset.status + '</span></div>';
+    }
+    openModal('All Audit Documents (' + fmt(m.audits) + ')', '<div class="space-y-1"><p class="text-body-sm text-text-muted mb-2">Showing 12 of ' + fmt(m.audits) + ' verified packages.</p>' + rows +
+      '<button type="button" class="w-full mt-3 py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Close</button></div>');
+    bindOk();
+  }
+
+  function openSDG(row) {
+    var text = norm(row.textContent);
+    var match = text.match(/(\d+)%/);
+    var pct = match ? parseInt(match[1], 10) : 0;
+    var title = text.replace(/^\d+% Met/, '').replace(/\s*\d+% Met\s*$/, '').trim();
+    openModal('SDG Target Detail', '<div class="space-y-4">' +
+      '<p class="text-label-md font-label-md font-semibold text-text-strong leading-snug">' + title + '</p>' +
+      '<div class="flex items-center gap-3"><div class="flex-1 bg-slate-100 h-2.5 rounded-full overflow-hidden"><div class="bg-primary h-full rounded-full" style="width:' + pct + '%"></div></div><span class="text-headline-sm font-bold text-primary">' + pct + '%</span></div>' +
+      '<p class="text-body-sm text-text-muted leading-relaxed">Contribution is calculated from verified operational telemetry, audit documents, and third-party ESG disclosures for the ' + currentTF().short + ' period across ' + FAC[state.fac].scope + '.</p>' +
+      '<div class="grid grid-cols-2 gap-3 text-label-sm"><div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-text-muted">Verification</p><p class="font-semibold text-brand-forest">Blockchain anchored</p></div>' +
+      '<div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-text-muted">Framework</p><p class="font-semibold text-text-strong">UN Habitat &amp; ESG</p></div></div>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Got it</button></div>');
+    bindOk();
+  }
+
+  function openKPIDetail(i) {
+    var m = currentTF();
+    var defs = [
+      { title: 'Waste & Circularity', value: fmt(m.waste * FAC[state.fac].f) + ' kg', note: 'Total material diverted from landfill this period, verified against sorting-facility weighbridge logs.', link: 'Waste.html' },
+      { title: 'Plant Pathology & Ag Health', value: m.precision.toFixed(1) + '%', note: 'Cross-validated diagnostic precision on multispectral crop scans across audited plots.', link: 'Plants.html' },
+      { title: 'Talent & Green Jobs', value: m.talent.toFixed(1) + ' / 100', note: 'Average ATS green-readiness score across scored resumes and workforce assessments.', link: 'Reports.html' },
+      { title: 'EcoCredits & ESG Status', value: fmt(m.credits * FAC[state.fac].f), note: 'Certified EcoCredits balance with zero compliance infractions and ISO 14001 validation.', link: 'Reports.html' }
+    ];
+    var d = defs[i];
+    openModal(d.title, '<div class="space-y-4"><div class="p-4 rounded-xl bg-brand-mint-subtle border border-border-focus/20"><p class="text-label-sm text-brand-forest">' + m.label + ' • ' + FAC[state.fac].scope + '</p><p class="text-headline-lg font-bold text-primary mt-1">' + d.value + '</p></div>' +
+      '<p class="text-body-sm text-text-muted leading-relaxed">' + d.note + '</p>' +
+      '<a href="' + d.link + '" class="block text-center w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark">Open module workspace</a>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-surface-base border border-border-subtle text-label-md font-semibold text-text-strong" data-rmok>Close</button></div>');
+    bindOk();
+  }
+
+  function renderChartSummary() {
+    var m = currentTF();
+    var footer = chartCard.querySelectorAll('.grid.grid-cols-3 .text-headline-sm');
+    if (footer[0]) footer[0].textContent = m.mom;
+  }
+
+  function renderAll() {
+    renderKPIs();
+    renderChart();
+    renderChartSummary();
+    renderDocCount();
+  }
+
+  function openCustomRange() {
+    var today = new Date().toISOString().slice(0, 10);
+    var start = new Date(Date.now() - 8 * 86400000).toISOString().slice(0, 10);
+    openModal('Custom Date Range', '<div class="space-y-4">' +
+      '<div class="grid grid-cols-2 gap-3"><div><label class="text-label-sm font-semibold text-text-strong">From</label><input id="rpFrom" type="date" value="' + start + '" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"/></div>' +
+      '<div><label class="text-label-sm font-semibold text-text-strong">To</label><input id="rpTo" type="date" value="' + today + '" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"/></div></div>' +
+      '<p class="text-label-sm text-text-muted">Aggregates are recomputed from the selected window (minimum 1 day).</p>' +
+      '<button type="button" id="rpApplyRange" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark">Apply Range</button></div>');
+    $('#rpApplyRange', modalBody).addEventListener('click', function () {
+      var from = $('#rpFrom', modalBody).value;
+      var to = $('#rpTo', modalBody).value;
+      if (!from || !to) { toast('Select both start and end dates.', 'warn'); return; }
+      var days = Math.max(1, Math.round((new Date(to) - new Date(from)) / 86400000) + 1);
+      state.tf = 4;
+      state.customFactor = Math.max(0.15, Math.min(2.2, days / 30));
+      state.customLabel = 'Custom (' + from + ' → ' + to + ')';
+      tfSelect.selectedIndex = 4;
+      closeModal();
+      renderAll();
+      toast('Custom range applied: ' + days + ' day(s)', 'success');
+    });
+  }
+
+  function printReport() {
+    var m = currentTF();
+    var modules = exportChecks.map(function (c, i) { return c.checked ? (c.parentElement.textContent || '').trim() : null; }).filter(Boolean);
+    var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Executive Sustainability Report</title>' +
+      '<style>body{font-family:Inter,Arial,sans-serif;margin:40px;color:#0f172a;line-height:1.5}h1{color:#006948;font-size:24px;margin:0 0 4px}p.meta{color:#64748b;font-size:13px}table{border-collapse:collapse;width:100%;margin:16px 0}td{padding:6px 8px;border-bottom:1px solid #e2e8f0;font-size:13px}td:first-child{color:#64748b;width:45%}h2{font-size:15px;margin:20px 0 8px}ul{font-size:13px;color:#334155}</style></head><body>' +
+      '<h1>Executive Sustainability &amp; Diagnostics Report</h1>' +
+      '<p class="meta">' + m.label + ' • ' + FAC[state.fac].scope + ' • Generated ' + new Date().toLocaleString() + '</p>' +
+      '<table><tr><td>Waste diverted</td><td>' + fmt(m.waste * FAC[state.fac].f) + ' kg</td></tr>' +
+      '<tr><td>CO2e abated</td><td>' + fmt(m.co2 * FAC[state.fac].f) + ' kg</td></tr>' +
+      '<tr><td>Diagnostic precision</td><td>' + m.precision.toFixed(1) + '%</td></tr>' +
+      '<tr><td>Crops audited</td><td>' + fmt(m.crops * FAC[state.fac].f) + '</td></tr>' +
+      '<tr><td>Avg ATS green readiness</td><td>' + m.talent.toFixed(1) + ' / 100</td></tr>' +
+      '<tr><td>EcoCredits certified</td><td>' + fmt(m.credits * FAC[state.fac].f) + '</td></tr>' +
+      '<tr><td>Compliance</td><td>' + m.compliance.toFixed(1) + '% • 0 infractions</td></tr></table>' +
+      '<h2>SDG Contribution</h2><ul><li>SDG 12.5 Responsible Consumption - 92%</li><li>SDG 2 Zero Hunger - 88%</li><li>SDG 8 &amp; 4 Decent Work &amp; Education - 84%</li><li>SDG 11 &amp; 15 Sustainable Cities &amp; Life on Land - 79%</li></ul>' +
+      '<h2>Included Modules</h2><ul>' + modules.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+      '<p style="font-size:11px;color:#94a3b8;margin-top:24px">Signed SHA256:88fb..091a • SustainAI Reports &amp; Export Center</p>';
+    var w = window.open('', '_blank');
+    if (!w) { toast('Allow pop-ups to export the PDF.', 'warn'); return; }
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    try { w.print(); } catch (e) { }
+    toast('Master PDF prepared for print/save.', 'success');
+  }
+
+  function buildCsv() {
+    var m = currentTF();
+    var rows = [['Metric', 'Value', 'Scope', 'Period']];
+    rows.push(['Waste diverted (kg)', Math.round(m.waste * FAC[state.fac].f), FAC[state.fac].scope, m.label]);
+    rows.push(['CO2e abated (kg)', Math.round(m.co2 * FAC[state.fac].f), FAC[state.fac].scope, m.label]);
+    rows.push(['Diagnostic precision (%)', m.precision, FAC[state.fac].scope, m.label]);
+    rows.push(['Crops audited', Math.round(m.crops * FAC[state.fac].f), FAC[state.fac].scope, m.label]);
+    rows.push(['ATS green readiness', m.talent, FAC[state.fac].scope, m.label]);
+    rows.push(['EcoCredits certified', Math.round(m.credits * FAC[state.fac].f), FAC[state.fac].scope, m.label]);
+    rows.push(['Compliance (%)', m.compliance, FAC[state.fac].scope, m.label]);
+    return rows.map(function (r) { return r.join(','); }).join('\n');
+  }
+
+  function selectedFormat() {
+    var idx = exportRadios.findIndex ? exportRadios.findIndex(function (r) { return r.checked; }) : 0;
+    if (idx < 0) idx = 0;
+    return idx;
+  }
+
+  var WEIGHTS = [1.5, 2.4, 1.8, 1.0, 0.6, 0.4];
+  var FORMAT_FACTOR = [1, 0.65, 1.4];
+  function updateEstimate() {
+    if (!exportEstimate) return;
+    var sum = 0.4;
+    exportChecks.forEach(function (c, i) { if (c.checked) sum += WEIGHTS[i] || 0.5; });
+    var size = sum * (FORMAT_FACTOR[selectedFormat()] || 1);
+    var proc = Math.max(0.8, size / 3).toFixed(1);
+    exportEstimate.textContent = 'Estimated Package Size: ~' + size.toFixed(1) + ' MB • Processing Time: ~' + proc + ' seconds via Edge Node';
+  }
+
+  var PRESETS = [
+    { label: 'Board Executive Package (Default)', checks: [1, 1, 1, 1, 1, 0], format: 0 },
+    { label: 'ISO Compliance Package', checks: [1, 0, 0, 1, 1, 1], format: 0 },
+    { label: 'Full Data Archive', checks: [1, 1, 1, 1, 1, 1], format: 2 }
+  ];
+  var presetIndex = 0;
+  function applyPreset(idx, silent) {
+    presetIndex = idx % PRESETS.length;
+    var p = PRESETS[presetIndex];
+    exportChecks.forEach(function (c, i) { c.checked = !!p.checks[i]; });
+    exportRadios.forEach(function (r, i) { r.checked = i === p.format; });
+    if (presetSpan) presetSpan.textContent = p.label;
+    updateEstimate();
+    if (!silent) toast('Preset applied: ' + p.label, 'info');
+  }
+
+  function runPackage() {
+    var m = currentTF();
+    var names = exportChecks.map(function (c, i) { return c.checked ? norm(c.parentElement.textContent) : null; }).filter(Boolean);
+    var format = selectedFormat();
+    if (format === 0) { printReport(); return; }
+    if (format === 1) {
+      var pin = String(Math.floor(1000 + Math.random() * 9000));
+      var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Interactive Web Digest</title>' +
+        '<style>body{font-family:Inter,Arial,sans-serif;margin:40px;color:#0f172a}h1{color:#006948}table{border-collapse:collapse;width:100%}td{padding:8px;border-bottom:1px solid #e2e8f0;font-size:14px}td:first-child{color:#64748b}</style></head><body>' +
+        '<h1>Interactive Sustainability Digest</h1><p>PIN: <strong>' + pin + '</strong> • ' + m.label + ' • ' + FAC[state.fac].scope + '</p>' +
+        '<table><tr><td>Waste diverted</td><td>' + fmt(m.waste * FAC[state.fac].f) + ' kg</td></tr>' +
+        '<tr><td>CO2e abated</td><td>' + fmt(m.co2 * FAC[state.fac].f) + ' kg</td></tr>' +
+        '<tr><td>Diagnostic precision</td><td>' + m.precision.toFixed(1) + '%</td></tr>' +
+        '<tr><td>ATS green readiness</td><td>' + m.talent.toFixed(1) + ' / 100</td></tr></table>' +
+        '<h2>Modules</h2><ul>' + names.map(function (n) { return '<li>' + n + '</li>'; }).join('') + '</ul>';
+      downloadBlob('sustainai_web_digest.html', 'text/html', html);
+      toast('Web digest downloaded • access PIN ' + pin, 'success');
+      return;
+    }
+    downloadBlob('sustainai_audit_dataset.csv', 'text/csv', buildCsv());
+    toast('CSV & GeoJSON dataset archive downloaded.', 'success');
+  }
+
+  function scheduleDigest() {
+    openModal('Schedule Audit Digest', '<div class="space-y-4">' +
+      '<div><label class="text-label-sm font-semibold text-text-strong">Frequency</label><select id="rpFreq" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"><option>Weekly (Monday)</option><option>Daily</option><option>Monthly (1st)</option><option>Quarterly</option></select></div>' +
+      '<div class="grid grid-cols-2 gap-3"><div><label class="text-label-sm font-semibold text-text-strong">Delivery time</label><input id="rpTime" type="time" value="08:00" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"/></div>' +
+      '<div><label class="text-label-sm font-semibold text-text-strong">Format</label><select id="rpDigestFmt" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"><option>PDF</option><option>Web digest</option><option>CSV</option></select></div></div>' +
+      '<div><label class="text-label-sm font-semibold text-text-strong">Recipients</label><input id="rpEmail" type="email" value="alex.mercer@sustainai.io" class="mt-1 w-full rounded-lg border border-border-subtle bg-surface-base px-3 py-2 text-label-md"/></div>' +
+      '<p class="text-label-sm text-text-muted">The digest includes all currently selected modules and the ' + currentTF().short + ' filters.</p>' +
+      '<button type="button" id="rpScheduleGo" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark">Schedule Digest</button></div>');
+    $('#rpScheduleGo', modalBody).addEventListener('click', function () {
+      var f = $('#rpFreq', modalBody).value, t = $('#rpTime', modalBody).value, em = $('#rpEmail', modalBody).value;
+      closeModal();
+      toast('Digest scheduled: ' + f + ' at ' + t + ' → ' + em, 'success');
+    });
+  }
+
+  function shareLink() {
+    var payload = { title: 'SustainAI Executive Report', text: 'Verified sustainability audit - ' + currentTF().label, url: location.href };
+    if (navigator.share) { navigator.share(payload).catch(function () { }); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(location.href).then(function () { toast('Share link copied to clipboard.', 'success'); })
+        .catch(function () { toast('Share link ready: ' + location.href, 'info'); });
+      return;
+    }
+    toast('Share link ready: ' + location.href, 'info');
+  }
+
+  function newScan() {
+    openModal('Start a New Scan', '<div class="space-y-3">' +
+      '<a href="Waste.html" class="flex items-center gap-3 p-3 rounded-xl bg-surface-base border border-border-subtle hover:border-border-focus transition-colors"><span class="material-symbols-outlined text-primary">delete</span><div><p class="text-label-md font-semibold text-text-strong">Waste Classifier</p><p class="text-label-sm text-text-muted">Scan and sort a waste specimen.</p></div></a>' +
+      '<a href="Plants.html" class="flex items-center gap-3 p-3 rounded-xl bg-surface-base border border-border-subtle hover:border-border-focus transition-colors"><span class="material-symbols-outlined text-primary">potted_plant</span><div><p class="text-label-md font-semibold text-text-strong">Plant Disease</p><p class="text-label-sm text-text-muted">Diagnose crop pathology with AI.</p></div></a>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-surface-base border border-border-subtle text-label-md font-semibold text-text-strong" data-rmok>Cancel</button></div>');
+    bindOk();
+  }
+
+  function helpModal() {
+    openModal('Help & Documentation', '<div class="space-y-3 text-body-sm text-text-muted">' +
+      '<p>Everything in the Reports workspace is interactive:</p>' +
+      '<ul class="space-y-1.5"><li>• Change the timeframe or facility to recompute KPIs and charts.</li><li>• Click legend items to toggle chart series; click a month for details.</li><li>• Filter audit documents, verify QR hashes, preview or download files.</li><li>• Click an SDG bar or a KPI card for a drill-down.</li><li>• Use the export builder to package a custom audit deliverable.</li></ul>' +
+      '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Got it</button></div>');
+    bindOk();
+  }
+
+  tfSelect.addEventListener('change', function () {
+    var idx = tfSelect.selectedIndex;
+    if (idx === 4) {
+      tfSelect.selectedIndex = state.tf > 3 ? 0 : state.tf;
+      openCustomRange();
+      return;
+    }
+    state.tf = idx;
+    state.customFactor = 1;
+    state.customLabel = '';
+    renderAll();
+    toast('Timeframe updated: ' + TF[idx].label, 'info');
+  });
+
+  facilitySelect.addEventListener('change', function () {
+    state.fac = facilitySelect.selectedIndex;
+    renderAll();
+    toast('Scope updated: ' + FAC[state.fac].name + ' (' + FAC[state.fac].scope + ')', 'info');
+  });
+
+  var notifBtn = header.querySelector('[aria-label="Notifications"]');
+  var helpBtn = header.querySelector('[aria-label="Help & Documentation"]');
+  var newScanBtn = $$('button', header).filter(function (b) { return /New Scan/.test(norm(b.textContent)); })[0];
+  if (notifBtn) notifBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleNotif(); });
+  if (helpBtn) helpBtn.addEventListener('click', helpModal);
+  if (newScanBtn) newScanBtn.addEventListener('click', newScan);
+
+  var scheduleBtn = $$('button', sections[0]).filter(function (b) { return /Schedule Digest/.test(norm(b.textContent)); })[0];
+  var shareBtn = $$('button', sections[0]).filter(function (b) { return /Share Link/.test(norm(b.textContent)); })[0];
+  var masterBtn = $$('button', sections[0]).filter(function (b) { return /Export Master PDF/.test(norm(b.textContent)); })[0];
+  if (scheduleBtn) scheduleBtn.addEventListener('click', scheduleDigest);
+  if (shareBtn) shareBtn.addEventListener('click', shareLink);
+  if (masterBtn) masterBtn.addEventListener('click', printReport);
+
+  kpiCards.forEach(function (card, i) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function () { openKPIDetail(i); });
+  });
+
+  legendSpans.forEach(function (span, i) {
+    span.style.cursor = 'pointer';
+    span.title = 'Toggle ' + norm(span.textContent) + ' series';
+    span.addEventListener('click', function () {
+      state.zoomSeries[i] = !state.zoomSeries[i];
+      renderChart();
+      toast(norm(span.textContent) + (state.zoomSeries[i] ? ' shown' : ' hidden'), 'info');
+    });
+  });
+
+  monthTexts.forEach(function (t, i) {
+    t.style.cursor = 'pointer';
+    t.addEventListener('click', function () {
+      var d = chartCard.__data;
+      if (!d) return;
+      openModal('Monthly Detail - ' + MONTHS[i], '<div class="space-y-3">' +
+        '<p class="text-label-sm text-text-muted">' + currentTF().label + ' • ' + FAC[state.fac].scope + '</p>' +
+        '<div class="grid grid-cols-3 gap-3 text-center">' +
+        '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Waste</p><p class="text-headline-sm font-bold text-primary">' + d.w[i].toFixed(1) + ' t</p></div>' +
+        '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Pathology</p><p class="text-headline-sm font-bold text-info-sky">' + Math.round(d.p[i]) + '</p></div>' +
+        '<div class="p-3 rounded-xl bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Talent</p><p class="text-headline-sm font-bold text-accent-amber">' + d.t[i].toFixed(1) + '</p></div></div>' +
+        '<p class="text-body-sm text-text-muted leading-relaxed">Verified telemetry for ' + MONTHS[i] + ' across ' + FAC[state.fac].scope + '. Values are aggregated from sorting logs, CV scan records, and the ATS green index.</p>' +
+        '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Close</button></div>');
+      bindOk();
+    });
+  });
+
+  filterTabs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var label = norm(b.textContent);
+      setTabs(label);
+      var key = label === 'All Modules' ? 'all' : label === 'Waste Stream' ? 'waste' : label === 'Agronomy' ? 'agronomy' : 'talent';
+      filterDocs(key);
+      toast('Showing: ' + label, 'info');
+    });
+  });
+
+  if (viewAllBtn) viewAllBtn.addEventListener('click', showAllDocs);
+  if (signatureBox) {
+    signatureBox.style.cursor = 'pointer';
+    signatureBox.title = 'View audit signature details';
+    signatureBox.addEventListener('click', function () {
+      openModal('Audit Signature', '<div class="space-y-3"><div class="p-3 rounded-lg bg-surface-base border border-border-subtle"><p class="text-label-sm text-text-muted">Digital Key ID</p><p class="font-code-mono text-label-sm text-text-strong break-all mt-1">SHA256:88fb..091a</p></div>' +
+        '<p class="text-body-sm text-text-muted">This signature anchors all ' + fmt(currentTF().audits) + ' audit documents to the immutable verification ledger for ' + currentTF().label + '.</p>' +
+        '<div class="flex items-center gap-2 text-label-sm text-brand-forest font-semibold"><span class="material-symbols-outlined text-base">verified</span>Signature valid • 0 tamper events</div>' +
+        '<button type="button" class="w-full py-2.5 rounded-lg bg-primary text-on-primary text-label-md font-semibold hover:bg-brand-emerald-dark" data-rmok>Close</button></div>');
+      bindOk();
+    });
+  }
+
+  sdgRows.forEach(function (row) {
+    row.style.cursor = 'pointer';
+    row.addEventListener('click', function () { openSDG(row); });
+  });
+
+  exportChecks.forEach(function (c) { c.addEventListener('change', updateEstimate); });
+  exportRadios.forEach(function (r) { r.addEventListener('change', updateEstimate); });
+  if (presetSpan) {
+    presetSpan.style.cursor = 'pointer';
+    presetSpan.title = 'Click to cycle export presets';
+    presetSpan.addEventListener('click', function () { applyPreset(presetIndex + 1); });
+  }
+  if (resetBtn) resetBtn.addEventListener('click', function () { applyPreset(0); toast('Export options reset to defaults.', 'success'); });
+  if (packageBtn) packageBtn.addEventListener('click', runPackage);
+
+  document.addEventListener('click', function (e) {
+    if (notifPanel && !notifPanel.classList.contains('hidden') && !notifPanel.contains(e.target) && (!notifBtn || !notifBtn.contains(e.target))) {
+      notifPanel.classList.add('hidden');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeModal(); if (notifPanel) notifPanel.classList.add('hidden'); }
+  });
+
+  setupDocs();
+  setTabs('All Modules');
+  applyPreset(0, true);
+  renderAll();
+
+  window.__reportsTest = function () {
+    return {
+      waste: kpiCards[0].querySelector('.text-metric-display').textContent,
+      docs: viewAllBtn ? viewAllBtn.textContent.replace(/\s+/g, ' ').trim() : '',
+      peak: peakText ? peakText.textContent : '',
+      visibleDocs: docItems.filter(function (d) { return d.style.display !== 'none'; }).length
+    };
+  };
+})();
+
+</script>
+<script>
+/* SIDEBAR-SHARED */
+(function () {
+  'use strict';
+  var LANG_KEY = 'sustainai.lang';
+  function $(s) { return document.querySelector(s); }
+  var upgradeBtn = $('#upgradeBtn');
+  var langEN = $('#langEN');
+  var langID = $('#langID');
+  var langLabel = $('#langLabel');
+  var profileMenu = $('#profileMenu');
+
+  var wrap = document.createElement('div');
+  wrap.className = 'fixed bottom-6 right-6 z-[60] flex flex-col gap-2 items-end';
+  document.body.appendChild(wrap);
+  function toast(msg, type) {
+    var tone = type === 'error' ? 'border-danger-rose/40 bg-danger-rose-subtle text-danger-rose' : type === 'warn' ? 'border-accent-amber/40 bg-accent-amber-subtle text-accent-amber' : 'border-brand-mint/50 bg-brand-mint-subtle text-brand-forest';
+    var icon = type === 'error' ? 'error' : type === 'warn' ? 'warning' : 'check_circle';
+    var el = document.createElement('div');
+    el.className = 'flex items-center gap-2 px-4 py-2.5 rounded-lg border shadow-md text-label-md font-label-md bg-surface-card ' + tone + ' transition-all duration-200 opacity-0 translate-y-2';
+    el.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + icon + '</span><span></span>';
+    el.lastElementChild.textContent = msg;
+    wrap.appendChild(el);
+    requestAnimationFrame(function () { el.classList.remove('opacity-0', 'translate-y-2'); });
+    setTimeout(function () {
+      el.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(function () { el.remove(); }, 220);
+    }, 3000);
+  }
+
+  var modal = document.createElement('div');
+  modal.id = 'sbModal';
+  modal.className = 'fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm';
+  modal.innerHTML = '<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col">' +
+    '<div class="flex items-center justify-between px-6 py-4 border-b border-border-subtle shrink-0">' +
+      '<h3 id="sbModalTitle" class="text-headline-sm font-headline-sm text-text-strong">SustainAI</h3>' +
+      '<button id="sbModalClose" type="button" class="p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base" title="Close"><span class="material-symbols-outlined text-[20px]">close</span></button>' +
+    '</div>' +
+    '<div id="sbModalBody" class="p-6 space-y-4 overflow-y-auto text-body-md font-body-md text-text-strong"></div>' +
+    '<div id="sbModalFoot" class="px-6 py-4 border-t border-border-subtle flex flex-wrap items-center justify-end gap-2 shrink-0"></div>' +
+  '</div>';
+  document.body.appendChild(modal);
+  function openModal(title, body, buttons) {
+    $('#sbModalTitle').textContent = title;
+    $('#sbModalBody').innerHTML = body;
+    var foot = $('#sbModalFoot');
+    foot.innerHTML = '';
+    buttons.forEach(function (b) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = b.cls || 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold border border-border-subtle text-text-strong bg-surface-card hover:bg-surface-base';
+      btn.textContent = b.label;
+      btn.addEventListener('click', b.onClick);
+      foot.appendChild(btn);
+    });
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+  $('#sbModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  function applyLang(code, announce) {
+    if (code !== 'en' && code !== 'id') return;
+    if (langLabel) langLabel.textContent = 'Language: ' + code.toUpperCase();
+    var active = 'px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer';
+    var idle = 'px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer';
+    if (langEN) langEN.className = code === 'en' ? active : idle;
+    if (langID) langID.className = code === 'id' ? active : idle;
+    document.documentElement.lang = code;
+    try { localStorage.setItem(LANG_KEY, code); } catch (e) {}
+    if (announce) toast('Language: ' + (code === 'en' ? 'English (EN-US)' : 'Bahasa Indonesia (ID)'));
+  }
+  if (langEN) langEN.addEventListener('click', function () { applyLang('en', true); });
+  if (langID) langID.addEventListener('click', function () { applyLang('id', true); });
+  var saved = null;
+  try { saved = localStorage.getItem(LANG_KEY); } catch (e) { saved = null; }
+  if (saved) applyLang(saved, false);
+
+  if (upgradeBtn) upgradeBtn.addEventListener('click', function () {
+    openModal('Enterprise Pro Plans',
+      '<p class="text-body-sm font-body-sm text-text-muted">You are on <strong class="text-text-strong">Enterprise Pro</strong>. Scale edge inference and add unlimited workspace auditors.</p>' +
+      '<div class="space-y-2">' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-primary bg-brand-mint-subtle"><div><div class="font-semibold text-text-strong">Enterprise Pro</div><div class="text-body-sm text-text-muted">Current plan • 50 seats • 2M edge calls</div></div><span class="text-label-sm font-bold text-primary">Active</span></div>' +
+        '<div class="flex items-center justify-between p-3 rounded-lg border border-border-subtle bg-surface-base"><div><div class="font-semibold text-text-strong">Enterprise Max</div><div class="text-body-sm text-text-muted">Unlimited seats • 10M edge calls • dedicated SLA</div></div><span class="text-label-sm font-bold text-text-muted">Custom</span></div>' +
+      '</div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Contact Sales', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { closeModal(); toast('Sales team will reach out shortly'); } }
+      ]);
+  });
+
+  if (profileMenu) profileMenu.addEventListener('click', function () {
+    openModal('Account',
+      '<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-base border border-border-subtle"><div class="w-12 h-12 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center border border-accent-teal/30">AM</div><div><div class="font-semibold text-text-strong">Alex Mercer</div><div class="text-body-sm text-text-muted">alex.mercer@sustainai.io</div><div class="text-[11px] text-primary font-bold mt-0.5">Lead Sustainability Auditor • Owner</div></div></div>' +
+      '<div class="rounded-lg border border-border-subtle divide-y divide-border-subtle text-body-sm font-body-sm"><div class="flex items-center justify-between p-3"><span class="text-text-muted">Workspace</span><span class="text-text-strong font-semibold">SustainAI Enterprise</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">Region</span><span class="text-text-strong font-semibold">ap-southeast-1 (Jakarta Edge)</span></div><div class="flex items-center justify-between p-3"><span class="text-text-muted">MFA</span><span class="text-primary font-semibold">Enabled</span></div></div>', [
+        { label: 'Close', onClick: closeModal },
+        { label: 'Open Settings', cls: 'px-4 py-2 rounded-md text-label-md font-label-md font-semibold text-on-primary bg-primary hover:bg-brand-emerald-dark', onClick: function () { window.location.href = 'Setting.html'; } }
+      ]);
+  });
+})();
+</script>
 </body></html>
