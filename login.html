@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In - SustainAI Intelligence Platform</title>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Container Queries and Forms -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006a61",
+            "on-surface-variant": "#3d4a42",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-primary": "#68dba9",
+            "info-sky-subtle": "#E0F2FE",
+            "brand-emerald-dark": "#047857",
+            "outline-variant": "#bccac0",
+            "on-error": "#ffffff",
+            "surface-tint": "#006c4a",
+            "on-secondary-fixed": "#00201d",
+            "primary-fixed": "#85f8c4",
+            "border-subtle": "#E2E8F0",
+            "background": "#f8f9ff",
+            "on-secondary-container": "#006f66",
+            "danger-rose-subtle": "#FFE4E6",
+            "danger-rose": "#E11D48",
+            "on-surface": "#0b1c30",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "brand-forest": "#064E3B",
+            "border-focus": "#10B981",
+            "secondary-fixed": "#89f5e7",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-secondary": "#ffffff",
+            "surface-card-subtle": "#F1F5F9",
+            "tertiary-fixed": "#ffdcc3",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#68dba9",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-card": "#FFFFFF",
+            "on-primary-fixed-variant": "#005137",
+            "accent-teal": "#0F766E",
+            "surface-bright": "#f8f9ff",
+            "accent-teal-subtle": "#CCFBF1",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "info-sky": "#0284C7",
+            "on-tertiary-container": "#fffbff",
+            "brand-mint": "#34D399",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-base": "#F8FAFC",
+            "secondary-container": "#86f2e4",
+            "on-background": "#0b1c30",
+            "tertiary-container": "#b15f00",
+            "inverse-surface": "#213145",
+            "on-secondary-fixed-variant": "#005049",
+            "surface-dim": "#cbdbf5",
+            "surface": "#f8f9ff",
+            "on-primary-fixed": "#002114",
+            "secondary-fixed-dim": "#6bd8cb",
+            "text-strong": "#0F172A",
+            "outline": "#6d7a72",
+            "brand-mint-subtle": "#ECFDF5",
+            "primary-container": "#00855d",
+            "surface-variant": "#d3e4fe",
+            "tertiary": "#8d4b00",
+            "primary": "#006948",
+            "accent-amber": "#F59E0B",
+            "text-muted": "#64748B",
+            "accent-amber-subtle": "#FEF3C7",
+            "on-tertiary-fixed": "#2f1500",
+            "on-primary-container": "#f5fff7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem"
+          },
+          "fontFamily": {
+            "code-mono": ["monospace"],
+            "body-sm": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "metric-display": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-display": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-card {
+      box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+    .grid-backdrop {
+      background-image: radial-gradient(rgba(5, 150, 105, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-brand-mint-subtle selection:text-brand-forest">
+<!-- Top Global Floating Header Bar -->
+<header class="w-full bg-surface-card border-b border-border-subtle py-3 px-4 lg:px-10 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<!-- Brand & Platform Identity -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-brand-forest flex items-center justify-center text-primary-fixed shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="eco">eco</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-strong tracking-tight font-extrabold">SustainAI</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">Enterprise v2.4</span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted">Intelligence Platform • UN SDG Aligned</p>
+</div>
+</div>
+<!-- Engine Status & Language Toggle -->
+<div class="flex items-center gap-3">
+<!-- Live AI Telemetry Badge (Desktop) -->
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-base border border-border-subtle">
+<span class="w-2 h-2 rounded-full bg-brand-emerald-dark animate-pulse"></span>
+<span class="font-code-mono text-code-mono text-text-muted">Gemini 1.5 Flash Vision Engine</span>
+<span class="text-border-subtle">|</span>
+<span class="font-code-mono text-code-mono text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="lock">lock</span>
+            AES-256 Vault
+          </span>
+</div>
+<!-- Language Selector Pill Toggle -->
+<div aria-label="Language selector" class="flex items-center bg-surface-base p-1 rounded-lg border border-border-subtle" role="radiogroup">
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors" id="lang-en">
+            EN
+          </button>
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors" id="lang-id">
+            ID
+          </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas Content: Asymmetric Split Screen Presentation -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 lg:py-12 flex items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 w-full items-stretch">
+<!-- LEFT COLUMN: Mission Vision, Interactive SDG Modules & Live Telemetry -->
+<section class="lg:col-span-7 flex flex-col justify-between space-y-6">
+<!-- Hero Introduction -->
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint-subtle border border-primary/20 text-brand-forest">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md">Verified Environmental Telemetry &amp; ML Auditing</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-strong font-extrabold tracking-tight">
+            AI-Powered Solutions for <span class="text-primary underline decoration-brand-mint decoration-wavy decoration-2">Global Sustainable</span> Development
+          </h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl leading-relaxed">
+            Multi-modal vision architectures tailored for circular economy management, precision agritech diagnostics, and ESG green workforce mobilization across Southeast Asia and global clusters.
+          </p>
+</div>
+<!-- Bento Grid: The 3 Core Analyzers from PRD -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<!-- Card 1: CV Analyzer -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-5 hover:border-primary transition-all duration-200 group flex flex-col justify-between custom-shadow-card">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="document_scanner">document_scanner</span>
+</div>
+<div class="inline-block px-2 py-0.5 rounded text-label-sm font-label-sm bg-accent-teal-subtle text-accent-teal font-medium">
+                SDG 8 &amp; 4 Decent Work
+              </div>
+<h3 class="font-headline-sm text-headline-sm text-text-strong">CV Analyzer</h3>
+<p class="font-body-sm text-body-sm text-text-muted">
+                ATS scoring and competency mapping for verified ESG, green tech, and renewable careers.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-card-subtle flex items-center justify-between text-label-sm font-label-sm text-primary">
+<span class="font-code-mono text-code-mono text-text-muted">98.4% Match Rate</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Plant Disease Diagnostics -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-5 hover:border-primary transition-all duration-200 group flex flex-col justify-between custom-shadow-card">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-brand-mint-subtle flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="potted_plant">potted_plant</span>
+</div>
+<div class="inline-block px-2 py-0.5 rounded text-label-sm font-label-sm bg-accent-amber-subtle text-tertiary-container font-medium">
+                SDG 2 Zero Hunger
+              </div>
+<h3 class="font-headline-sm text-headline-sm text-text-strong">Plant Diagnostics</h3>
+<p class="font-body-sm text-body-sm text-text-muted">
+                Instant pathogen, pest &amp; chlorosis detection in crops via edge-based neural vision sensors.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-card-subtle flex items-center justify-between text-label-sm font-label-sm text-primary">
+<span class="font-code-mono text-code-mono text-text-muted">97.6% Precision</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Waste Classifier (Bang Salam inspired) -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-5 hover:border-primary transition-all duration-200 group flex flex-col justify-between custom-shadow-card">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-info-sky-subtle flex items-center justify-center text-info-sky group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="recycling">recycling</span>
+</div>
+<div class="inline-block px-2 py-0.5 rounded text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest font-medium">
+                SDG 12 &amp; 11 Circular
+              </div>
+<h3 class="font-headline-sm text-headline-sm text-text-strong">Waste Classifier</h3>
+<p class="font-body-sm text-body-sm text-text-muted">
+                Bang Salam-aligned Bank Sampah real-time sorting for organic, recyclable, and hazardous resins.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-card-subtle flex items-center justify-between text-label-sm font-label-sm text-primary">
+<span class="font-code-mono text-code-mono text-text-muted">14,850+ kg Diverted</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Operational Telemetry Bar -->
+<div class="bg-surface-card rounded-xl border border-border-subtle p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-base border border-border-subtle flex items-center justify-center text-text-strong">
+<span class="material-symbols-outlined text-lg" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Live Global Impact Telemetry</p>
+<p class="font-headline-sm text-headline-sm text-text-strong font-bold">14,850+ kg diverted • 97.6% precision • 140+ ESG resumes</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest font-medium border border-brand-mint/20">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-emerald-dark"></span>
+              All 9 SDGs Monitored
+            </span>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Authentication & Portal Login Section -->
+<section class="lg:col-span-5 flex flex-col justify-center">
+<div class="bg-surface-card rounded-2xl border border-border-subtle p-6 sm:p-8 custom-shadow-card relative">
+<!-- Subtle Top Indicator Accent -->
+<div class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-primary via-brand-mint to-accent-teal rounded-t-full"></div>
+<!-- Header Titles -->
+<div class="mb-6 space-y-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-strong tracking-tight" id="login-title">
+                Welcome back
+              </h2>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-base border border-border-subtle text-text-muted">
+                SSO Enabled
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted" id="login-subtitle">
+              Enter your credentials to access your telemetry and AI analyzer workspace.
+            </p>
+</div>
+<!-- Auth Mode Toggle (Sign In / Create Account) -->
+<div class="mb-5">
+<div class="grid grid-cols-2 p-1 bg-surface-base rounded-lg border border-border-subtle text-center" role="tablist">
+<button id="mode-login" type="button" class="py-2 px-3 rounded-md bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle transition text-label-md font-label-md flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">login</span>
+<span>Sign In</span>
+</button>
+<button id="mode-register" type="button" class="py-2 px-3 rounded-md text-text-muted hover:text-text-strong transition text-label-md font-label-md flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Create Account</span>
+</button>
+</div>
+</div>
+<!-- Auth Feedback Message -->
+<div id="auth-message" class="hidden mb-4 px-3.5 py-2.5 rounded-lg text-label-sm font-label-sm border"></div>
+<!-- Persona / Role Selector Chips -->
+<div class="mb-6">
+<label class="block font-label-sm text-label-sm text-text-muted mb-2">Select Active Workspace Persona</label>
+<div class="grid grid-cols-3 gap-2" role="radiogroup">
+<button class="persona-btn active border-2 border-primary bg-brand-mint-subtle text-brand-forest text-center py-2 px-1 rounded-lg transition-all text-label-sm font-label-sm font-semibold flex flex-col items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="shield_person">shield_person</span>
+<span class="truncate w-full">Auditor</span>
+</button>
+<button class="persona-btn border border-border-subtle bg-surface-card text-text-muted hover:border-primary/50 text-center py-2 px-1 rounded-lg transition-all text-label-sm font-label-sm flex flex-col items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="agriculture">agriculture</span>
+<span class="truncate w-full">Agronomist</span>
+</button>
+<button class="persona-btn border border-border-subtle bg-surface-card text-text-muted hover:border-primary/50 text-center py-2 px-1 rounded-lg transition-all text-label-sm font-label-sm flex flex-col items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base" data-icon="nature_people">nature_people</span>
+<span class="truncate w-full">ESG Talent</span>
+</button>
+</div>
+</div>
+<!-- Login Form -->
+<div id="login-form-wrap">
+<form class="space-y-4" id="login-form">
+<!-- Email / ID Input -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="email">
+                Enterprise Email / User ID
+              </label>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="email" name="email" placeholder="alex.mercer@sustainai.io" required="" type="email" value="alex.mercer@sustainai.io"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="password">
+                  Password
+                </label>
+<a class="font-label-sm text-label-sm text-primary hover:text-brand-emerald-dark font-medium transition-colors cursor-pointer" id="forgot-link">
+                  Forgot password?
+                </a>
+</div>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="password" name="password" placeholder="••••••••••••" required="" type="password" value="SustainAI2025!"/>
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-text-muted hover:text-text-strong transition-colors" id="toggle-pwd" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility" id="pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me & Trust Checkbox -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-border-subtle transition cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-text-muted select-none">
+                  Remember this device for 30 days
+                </span>
+</label>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full h-11 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary font-headline-sm text-headline-sm font-semibold shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 active:scale-98 cursor-pointer mt-2" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="login">login</span>
+<span id="btn-submit-text">Sign In to Workspace</span>
+</button>
+</form>
+</div>
+<!-- Register Form -->
+<div id="register-form-wrap" class="hidden">
+<form class="space-y-4" id="register-form">
+<!-- Full Name Input -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="reg-name">
+                Full Name
+              </label>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="badge">badge</span>
+</div>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="reg-name" name="name" placeholder="Alex Mercer" required="" type="text"/>
+</div>
+</div>
+<!-- Email / ID Input -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="reg-email">
+                Enterprise Email / User ID
+              </label>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="reg-email" name="email" placeholder="you@sustainai.io" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="reg-password">
+                Password
+              </label>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="reg-password" name="password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-text-muted hover:text-text-strong transition-colors" id="toggle-reg-pwd" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility" id="reg-pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password Input -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm font-semibold text-text-strong" for="reg-confirm">
+                Confirm Password
+              </label>
+<div class="relative rounded-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</div>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none" id="reg-confirm" name="confirm" placeholder="••••••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Register Action Button -->
+<button class="w-full h-11 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary font-headline-sm text-headline-sm font-semibold shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 active:scale-98 cursor-pointer mt-2" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="person_add">person_add</span>
+<span id="reg-submit-text">Create Account</span>
+</button>
+</form>
+</div>
+<!-- Divider -->
+<div id="sso-block">
+<div class="relative my-6 text-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-subtle"></div>
+</div>
+<span class="relative px-3 bg-surface-card font-label-sm text-label-sm text-text-muted">
+              Or authenticate using enterprise directory
+            </span>
+</div>
+<!-- Enterprise SSO Buttons -->
+<div class="space-y-2.5">
+<button class="w-full h-10 px-4 rounded-lg border border-border-subtle bg-surface-card hover:bg-surface-base text-text-strong font-label-md text-label-md font-medium transition flex items-center justify-center gap-3 active:scale-98" id="sso-google" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.14z" fill="#4285F4"></path>
+<path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" fill="#34A853"></path>
+<path d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" fill="#FBBC05"></path>
+<path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" fill="#EA4335"></path>
+</svg>
+<span>Continue with Google Workspace</span>
+</button>
+<button class="w-full h-10 px-4 rounded-lg border border-border-subtle bg-surface-card hover:bg-surface-base text-text-strong font-label-md text-label-md font-medium transition flex items-center justify-center gap-2 active:scale-98" id="sso-saml" type="button">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="domain">domain</span>
+<span>Single Sign-On (SSO / SAML 2.0)</span>
+</button>
+</div>
+<!-- Demo Quick Credentials Autofill Bar -->
+<div class="mt-6 pt-5 border-t border-border-subtle">
+<span class="block font-label-sm text-label-sm text-text-muted mb-2">Quick Demo Access (Click to load):</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-md text-label-sm font-label-sm bg-surface-base hover:bg-brand-mint-subtle hover:text-brand-forest text-text-muted border border-border-subtle transition flex items-center gap-1" onclick="fillCredentials('alex.mercer@sustainai.io', 'Alex Mercer (Lead Auditor)')" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="badge">badge</span>
+                Alex Mercer (Auditor)
+              </button>
+<button class="px-2.5 py-1 rounded-md text-label-sm font-label-sm bg-surface-base hover:bg-brand-mint-subtle hover:text-brand-forest text-text-muted border border-border-subtle transition flex items-center gap-1" onclick="fillCredentials('budi.hartono@agri-sustain.id', 'Budi Hartono (Agronomist)')" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="eco">eco</span>
+                Budi Hartono (Agronomist)
+              </button>
+<button class="px-2.5 py-1 rounded-md text-label-sm font-label-sm bg-surface-base hover:bg-brand-mint-subtle hover:text-brand-forest text-text-muted border border-border-subtle transition flex items-center gap-1" onclick="fillCredentials('arya.pratama@circular-cv.id', 'Arya Pratama (Talent ESG)')" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="person_search">person_search</span>
+                Arya Pratama (Talent ESG)
+              </button>
+</div>
+</div>
+</div>
+<!-- Bottom Help / Registration Link -->
+<div class="mt-5 text-center">
+<p class="font-body-sm text-body-sm text-text-muted">
+              <span id="help-prompt">Don't have an enterprise account?</span>
+              <a class="text-primary hover:text-brand-emerald-dark font-semibold transition-colors cursor-pointer" id="switch-to-register">
+                Create one now
+              </a>
+            </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Enterprise Trust, Regulatory & Security Footer -->
+<footer class="w-full bg-surface-card border-t border-border-subtle py-5 px-4 lg:px-10 mt-auto">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<!-- Regulatory & Standards Badges -->
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-base text-primary" data-icon="verified_user">verified_user</span>
+<span>SOC2 Type II Certified</span>
+</div>
+<span class="text-border-subtle hidden sm:inline">•</span>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-base text-primary" data-icon="privacy_tip">privacy_tip</span>
+<span>GDPR Compliant</span>
+</div>
+<span class="text-border-subtle hidden sm:inline">•</span>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-base text-primary" data-icon="security">security</span>
+<span>Server-side API Key Vault</span>
+</div>
+</div>
+<!-- Legal Links & Edge Cluster Status -->
+<div class="flex flex-wrap items-center justify-center md:justify-end gap-5">
+<a class="font-label-sm text-label-sm text-text-muted hover:text-text-strong transition-colors" href="#privacy">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-text-muted hover:text-text-strong transition-colors" href="#terms">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-text-muted hover:text-text-strong transition-colors" href="#sdg-2030">UN SDG 2030 Framework</a>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-base text-label-sm font-label-sm text-text-muted border border-border-subtle">
+<span class="w-2 h-2 rounded-full bg-brand-mint"></span>
+<span>Jakarta &amp; Global Edge Active</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script: Registration, Login, Language Switch & Quick Autofill -->
+<script>
+  (function () {
+    'use strict';
+
+    var STORAGE_KEY = 'sustainai_accounts';
+    var SESSION_KEY = 'sustainai_session';
+    var state = { lang: 'en', mode: 'login' };
+
+    var loginWrap = document.getElementById('login-form-wrap');
+    var registerWrap = document.getElementById('register-form-wrap');
+    var ssoBlock = document.getElementById('sso-block');
+    var loginForm = document.getElementById('login-form');
+    var registerForm = document.getElementById('register-form');
+    var authMessage = document.getElementById('auth-message');
+    var modeLoginBtn = document.getElementById('mode-login');
+    var modeRegisterBtn = document.getElementById('mode-register');
+    var switchLink = document.getElementById('switch-to-register');
+
+    var MODE_ACTIVE = 'py-2 px-3 rounded-md bg-surface-card text-primary font-semibold shadow-xs border border-border-subtle transition text-label-md font-label-md flex items-center justify-center gap-1.5';
+    var MODE_IDLE = 'py-2 px-3 rounded-md text-text-muted hover:text-text-strong transition text-label-md font-label-md flex items-center justify-center gap-1.5';
+
+    function getAccounts() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+      catch (e) { return []; }
+    }
+    function saveAccounts(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function showMessage(text, type) {
+      if (!authMessage) return;
+      authMessage.classList.remove('hidden', 'bg-brand-mint-subtle', 'text-brand-forest', 'border-brand-mint', 'bg-danger-rose-subtle', 'text-danger-rose', 'border-danger-rose', 'bg-surface-base', 'text-text-strong', 'border-border-subtle');
+      if (type === 'success') {
+        authMessage.classList.add('bg-brand-mint-subtle', 'text-brand-forest', 'border-brand-mint');
+      } else if (type === 'info') {
+        authMessage.classList.add('bg-surface-base', 'text-text-strong', 'border-border-subtle');
+      } else {
+        authMessage.classList.add('bg-danger-rose-subtle', 'text-danger-rose', 'border-danger-rose');
+      }
+      authMessage.textContent = text;
+      authMessage.classList.remove('hidden');
+    }
+    function clearMessage() {
+      if (!authMessage) return;
+      authMessage.classList.add('hidden');
+      authMessage.textContent = '';
+    }
+    function escapeHtml(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function (ch) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+      });
+    }
+    function showEmailNotification(account) {
+      if (!authMessage) return;
+      authMessage.classList.remove('hidden', 'bg-brand-mint-subtle', 'text-brand-forest', 'border-brand-mint', 'bg-danger-rose-subtle', 'text-danger-rose', 'border-danger-rose', 'bg-surface-base', 'text-text-strong', 'border-border-subtle');
+      authMessage.classList.add('bg-brand-mint-subtle', 'text-brand-forest', 'border-brand-mint');
+      var title = state.lang === 'id' ? 'Notifikasi Email Terkirim' : 'Email Notification Sent';
+      var toLabel = state.lang === 'id' ? 'Kepada' : 'To';
+      var passLabel = state.lang === 'id' ? 'Password akun Anda' : 'Account password';
+      authMessage.innerHTML =
+        '<div class="flex items-start gap-2">' +
+          '<span class="material-symbols-outlined text-base">mark_email_read</span>' +
+          '<div class="space-y-0.5">' +
+            '<div class="font-semibold">' + title + '</div>' +
+            '<div>' + toLabel + ': <span class="font-semibold">' + escapeHtml(account.email) + '</span></div>' +
+            '<div>' + passLabel + ': <span class="font-semibold">' + escapeHtml(account.password) + '</span></div>' +
+          '</div>' +
+        '</div>';
+      authMessage.classList.remove('hidden');
+    }
+
+    function updateTexts() {
+      var title = document.getElementById('login-title');
+      var sub = document.getElementById('login-subtitle');
+      var loginBtn = document.getElementById('btn-submit-text');
+      var regBtn = document.getElementById('reg-submit-text');
+      var helpPrompt = document.getElementById('help-prompt');
+
+      if (state.lang === 'id') {
+        if (state.mode === 'register') {
+          if (title) title.textContent = 'Buat Akun Baru';
+          if (sub) sub.textContent = 'Daftarkan akun Anda terlebih dahulu untuk mengakses ruang kerja.';
+        } else {
+          if (title) title.textContent = 'Masuk ke Portal SustainAI';
+          if (sub) sub.textContent = 'Masukkan kredensial Anda untuk mengakses telemetri dan ruang kerja analisis AI.';
+        }
+        if (loginBtn) loginBtn.textContent = 'Masuk ke Ruang Kerja';
+        if (regBtn) regBtn.textContent = 'Daftar Akun';
+        if (helpPrompt) helpPrompt.textContent = state.mode === 'register' ? 'Sudah punya akun?' : 'Belum punya akun?';
+        if (switchLink) switchLink.textContent = state.mode === 'register' ? 'Masuk di sini' : 'Daftar sekarang';
+      } else {
+        if (state.mode === 'register') {
+          if (title) title.textContent = 'Create your account';
+          if (sub) sub.textContent = 'Register your account first to access your telemetry and AI analyzer workspace.';
+        } else {
+          if (title) title.textContent = 'Welcome back';
+          if (sub) sub.textContent = 'Enter your credentials to access your telemetry and AI analyzer workspace.';
+        }
+        if (loginBtn) loginBtn.textContent = 'Sign In to Workspace';
+        if (regBtn) regBtn.textContent = 'Create Account';
+        if (helpPrompt) helpPrompt.textContent = state.mode === 'register' ? 'Already have an account?' : "Don't have an enterprise account?";
+        if (switchLink) switchLink.textContent = state.mode === 'register' ? 'Sign in' : 'Create one now';
+      }
+    }
+
+    function switchMode(mode) {
+      state.mode = mode === 'register' ? 'register' : 'login';
+      var isRegister = state.mode === 'register';
+      if (registerWrap) registerWrap.classList.toggle('hidden', !isRegister);
+      if (loginWrap) loginWrap.classList.toggle('hidden', isRegister);
+      if (ssoBlock) ssoBlock.classList.toggle('hidden', isRegister);
+      if (modeLoginBtn) modeLoginBtn.className = isRegister ? MODE_IDLE : MODE_ACTIVE;
+      if (modeRegisterBtn) modeRegisterBtn.className = isRegister ? MODE_ACTIVE : MODE_IDLE;
+      clearMessage();
+      updateTexts();
+    }
+
+    // Password visibility toggles
+    function bindPasswordToggle(btnId, inputId, iconId) {
+      var btn = document.getElementById(btnId);
+      var input = document.getElementById(inputId);
+      var icon = document.getElementById(iconId);
+      if (!btn || !input || !icon) return;
+      btn.addEventListener('click', function () {
+        var isPwd = input.type === 'password';
+        input.type = isPwd ? 'text' : 'password';
+        icon.textContent = isPwd ? 'visibility_off' : 'visibility';
+      });
+    }
+    bindPasswordToggle('toggle-pwd', 'password', 'pwd-icon');
+    bindPasswordToggle('toggle-reg-pwd', 'reg-password', 'reg-pwd-icon');
+
+    // Registration handler
+    if (registerForm) {
+      registerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = (document.getElementById('reg-name').value || '').trim();
+        var email = (document.getElementById('reg-email').value || '').trim().toLowerCase();
+        var pass = document.getElementById('reg-password').value || '';
+        var confirm = document.getElementById('reg-confirm').value || '';
+
+        if (!name || !email || !pass) {
+          showMessage(state.lang === 'id' ? 'Mohon lengkapi semua data.' : 'Please complete all fields.', 'error');
+          return;
+        }
+        if (pass.length < 6) {
+          showMessage(state.lang === 'id' ? 'Password minimal 6 karakter.' : 'Password must be at least 6 characters.', 'error');
+          return;
+        }
+        if (pass !== confirm) {
+          showMessage(state.lang === 'id' ? 'Konfirmasi password tidak cocok.' : 'Password confirmation does not match.', 'error');
+          return;
+        }
+        var accounts = getAccounts();
+        var exists = accounts.some(function (a) { return a.email === email; });
+        if (exists) {
+          showMessage(state.lang === 'id' ? 'Email sudah terdaftar. Silakan masuk.' : 'Email is already registered. Please sign in.', 'error');
+          return;
+        }
+        accounts.push({ name: name, email: email, password: pass, createdAt: Date.now() });
+        saveAccounts(accounts);
+        registerForm.reset();
+        switchMode('login');
+        var emailField = document.getElementById('email');
+        if (emailField) emailField.value = email;
+        showMessage(state.lang === 'id' ? 'Pendaftaran berhasil. Silakan masuk.' : 'Registration successful. Please sign in.', 'success');
+      });
+    }
+
+    // Login handler
+    if (loginForm) {
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (document.getElementById('email').value || '').trim().toLowerCase();
+        var pass = document.getElementById('password').value || '';
+        var accounts = getAccounts();
+
+        if (accounts.length === 0) {
+          showMessage(state.lang === 'id' ? 'Belum ada akun terdaftar. Silakan daftar terlebih dahulu.' : 'No registered account found. Please register first.', 'error');
+          return;
+        }
+        var found = accounts.filter(function (a) { return a.email === email; })[0];
+        if (!found) {
+          showMessage(state.lang === 'id' ? 'Akun tidak ditemukan. Silakan daftar terlebih dahulu.' : 'Account not found. Please register first.', 'error');
+          return;
+        }
+        if (found.password !== pass) {
+          showMessage(state.lang === 'id' ? 'Password salah. Silakan coba lagi.' : 'Incorrect password. Please try again.', 'error');
+          return;
+        }
+        localStorage.setItem(SESSION_KEY, JSON.stringify({ name: found.name, email: found.email, ts: Date.now() }));
+        showMessage(state.lang === 'id' ? 'Login berhasil. Mengalihkan ke dashboard...' : 'Login successful. Redirecting to dashboard...', 'success');
+        setTimeout(function () { window.location.href = 'Dashboard.html'; }, 700);
+      });
+    }
+
+    // Interactive Demo autofill (fills active form)
+    window.fillCredentials = function (email) {
+      if (state.mode === 'register') {
+        var re = document.getElementById('reg-email');
+        var rp = document.getElementById('reg-password');
+        var rc = document.getElementById('reg-confirm');
+        if (re) re.value = email;
+        if (rp) rp.value = 'SustainAI2025!';
+        if (rc) rc.value = 'SustainAI2025!';
+      } else {
+        var emailField = document.getElementById('email');
+        var pwdField = document.getElementById('password');
+        if (emailField) {
+          emailField.value = email;
+          emailField.classList.add('ring-2', 'ring-brand-mint');
+          setTimeout(function () { emailField.classList.remove('ring-2', 'ring-brand-mint'); }, 800);
+        }
+        if (pwdField) pwdField.value = 'SustainAI2025!';
+      }
+    };
+
+    // Mode toggle listeners
+    if (modeLoginBtn) modeLoginBtn.addEventListener('click', function () { switchMode('login'); });
+    if (modeRegisterBtn) modeRegisterBtn.addEventListener('click', function () { switchMode('register'); });
+    if (switchLink) switchLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      switchMode(state.mode === 'login' ? 'register' : 'login');
+    });
+
+    // Forgot password handler: sends a mock email notification with the registered password
+    var forgotLink = document.getElementById('forgot-link');
+    if (forgotLink) forgotLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      var emailField = document.getElementById('email');
+      var typed = (emailField && emailField.value || '').trim().toLowerCase();
+      var accounts = getAccounts();
+
+      if (!accounts.length) {
+        showMessage(state.lang === 'id' ? 'Belum ada akun terdaftar. Silakan daftar terlebih dahulu.' : 'No registered account found. Please register first.', 'error');
+        return;
+      }
+
+      var account = null;
+      if (typed) {
+        account = accounts.filter(function (a) { return a.email === typed; })[0];
+      }
+      if (!account) {
+        try {
+          var session = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null');
+          if (session && session.email) {
+            var sessionEmail = String(session.email).toLowerCase();
+            account = accounts.filter(function (a) { return a.email === sessionEmail; })[0];
+          }
+        } catch (err) {}
+      }
+      if (!account) account = accounts[accounts.length - 1];
+
+      if (emailField) emailField.value = account.email;
+      showEmailNotification(account);
+    });
+
+    // Enterprise SSO handlers
+    var ssoGoogle = document.getElementById('sso-google');
+    var ssoSaml = document.getElementById('sso-saml');
+    function handleSso() {
+      showMessage(state.lang === 'id' ? 'SSO perusahaan belum dikonfigurasi pada demo ini. Silakan daftar atau masuk dengan email.' : 'Enterprise SSO is not configured in this demo. Please register or sign in with email.', 'info');
+    }
+    if (ssoGoogle) ssoGoogle.addEventListener('click', handleSso);
+    if (ssoSaml) ssoSaml.addEventListener('click', handleSso);
+
+    // Language Toggle logic (EN / ID)
+    var btnEn = document.getElementById('lang-en');
+    var btnId = document.getElementById('lang-id');
+    if (btnEn && btnId) {
+      btnEn.addEventListener('click', function () {
+        state.lang = 'en';
+        btnEn.className = 'px-2.5 py-1 rounded text-label-sm font-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors';
+        btnId.className = 'px-2.5 py-1 rounded text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors';
+        updateTexts();
+      });
+      btnId.addEventListener('click', function () {
+        state.lang = 'id';
+        btnId.className = 'px-2.5 py-1 rounded text-label-sm font-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors';
+        btnEn.className = 'px-2.5 py-1 rounded text-label-sm font-label-sm text-text-muted hover:text-text-strong transition-colors';
+        updateTexts();
+      });
+    }
+
+    // Role Persona buttons selection
+    var personaBtns = document.querySelectorAll('.persona-btn');
+    personaBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        personaBtns.forEach(function (b) {
+          b.className = 'persona-btn border border-border-subtle bg-surface-card text-text-muted hover:border-primary/50 text-center py-2 px-1 rounded-lg transition-all text-label-sm font-label-sm flex flex-col items-center gap-1';
+        });
+        btn.className = 'persona-btn active border-2 border-primary bg-brand-mint-subtle text-brand-forest text-center py-2 px-1 rounded-lg transition-all text-label-sm font-label-sm font-semibold flex flex-col items-center gap-1';
+      });
+    });
+
+    // Initialize
+    switchMode('login');
+  })();
+</script>
+</body></html>

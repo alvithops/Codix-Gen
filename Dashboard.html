@@ -1572,4 +1572,93 @@
   });
 })();
 </script>
+<script>
+/* Sync registered account name across the workspace UI */
+(function () {
+  'use strict';
+  var DEFAULT_NAME = 'Alex Mercer';
+  var DEFAULT_INITIALS = 'AM';
+  function getName() {
+    try {
+      var s = JSON.parse(localStorage.getItem('sustainai_session') || 'null');
+      if (s && s.name && s.name.trim()) return s.name.trim();
+      var a = JSON.parse(localStorage.getItem('sustainai_accounts') || '[]');
+      if (a && a.length) {
+        var last = a[a.length - 1];
+        if (last && last.name && last.name.trim()) return last.name.trim();
+      }
+    } catch (e) {}
+    return '';
+  }
+  var userName = getName();
+  if (!userName) return;
+  var parts = userName.split(/\s+/).filter(Boolean);
+  var initials = parts.length > 1
+    ? (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase()
+    : (parts[0] ? parts[0].slice(0, 2).toUpperCase() : DEFAULT_INITIALS);
+
+  function inSkipped(node) {
+    for (var p = node.parentNode; p && p.nodeType === 1; p = p.parentNode) {
+      if (p.tagName === 'SCRIPT' || p.tagName === 'STYLE' || p.tagName === 'NOSCRIPT' || p.tagName === 'TEMPLATE') return true;
+    }
+    return false;
+  }
+  function fixText(node) {
+    if (!node || node.nodeType !== 3 || inSkipped(node)) return;
+    var value = node.nodeValue;
+    var next = value;
+    if (value.indexOf(DEFAULT_NAME) !== -1) next = value.split(DEFAULT_NAME).join(userName);
+    else if (value.indexOf('Welcome back, Alex') !== -1) next = value.replace('Welcome back, Alex', 'Welcome back, ' + userName);
+    if (next !== value) node.nodeValue = next;
+  }
+  function fixAvatar(el) {
+    if (el && el.nodeType === 1 && String(el.className || '').indexOf('rounded-full') !== -1 && el.textContent.trim() === DEFAULT_INITIALS && el.textContent.trim() !== initials) {
+      el.textContent = initials;
+    }
+  }
+  function fixAvatars(root) {
+    var list = root.querySelectorAll ? root.querySelectorAll('[class*="rounded-full"]') : [];
+    for (var i = 0; i < list.length; i++) fixAvatar(list[i]);
+    fixAvatar(root);
+  }
+  function apply(root) {
+    root = root || document.body;
+    if (!root || !root.nodeType) return;
+    if (root.nodeType === 3) { fixText(root); return; }
+    var titled = root.querySelectorAll ? root.querySelectorAll('[title="' + DEFAULT_NAME + '"]') : [];
+    for (var i = 0; i < titled.length; i++) {
+      if (titled[i].getAttribute('title') !== userName) titled[i].setAttribute('title', userName);
+    }
+    if (root.nodeType === 1 && root.getAttribute && root.getAttribute('title') === DEFAULT_NAME) {
+      root.setAttribute('title', userName);
+    }
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var n;
+    while ((n = walker.nextNode())) fixText(n);
+    fixAvatars(root);
+  }
+
+  apply(document.body);
+
+  var queued = false;
+  var pending = [];
+  new MutationObserver(function (mutations) {
+    pending = pending.concat(Array.prototype.slice.call(mutations));
+    if (queued) return;
+    queued = true;
+    setTimeout(function () {
+      queued = false;
+      var batch = pending;
+      pending = [];
+      for (var i = 0; i < batch.length; i++) {
+        var m = batch[i];
+        if (m.type === 'characterData') fixText(m.target);
+        else {
+          for (var j = 0; j < m.addedNodes.length; j++) apply(m.addedNodes[j]);
+        }
+      }
+    }, 0);
+  }).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+</script>
 </body></html>
