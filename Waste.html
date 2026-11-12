@@ -143,11 +143,14 @@
       },
     }
   </script>
+<!-- Leaflet Map CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 <body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint-subtle selection:text-brand-forest">
 <!-- ================= PERSISTENT SIDE NAVIGATION (SHARED COMPONENT) ================= -->
 <!-- SHARED SIDEBAR (canonical) -->
-<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+<aside id="appSidebar" aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-50 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+<button id="sidebarClose" type="button" aria-label="Close navigation" class="lg:hidden absolute top-4 right-3 p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button>
   <div class="flex flex-col gap-6">
     <div class="flex items-center gap-3 px-2">
       <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
@@ -193,16 +196,6 @@
     </nav>
   </div>
   <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
-    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
-      <div class="flex items-center gap-2 text-text-muted">
-        <span class="material-symbols-outlined text-[18px]">translate</span>
-        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
-      </div>
-      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
-        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
-        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
-      </div>
-    </div>
     <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
       <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
       <div class="flex flex-col min-w-0">
@@ -213,28 +206,30 @@
     </div>
   </div>
 </aside>
+<div id="sidebarBackdrop" class="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm hidden lg:hidden"></div>
 <!-- ================= MAIN CONTENT WRAPPER ================= -->
-<div class="ml-64 flex-1 flex flex-col min-w-0">
+<div class="flex-1 flex flex-col min-w-0 lg:ml-64">
 <!-- TOP APP BAR (SHARED COMPONENT) -->
-<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm">
+<header class="sticky top-0 z-30 flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 min-h-[4rem] py-2 lg:py-0 lg:h-16 lg:flex-nowrap w-full bg-surface-card border-b border-border-subtle shadow-sm">
 <!-- Breadcrumbs & Identity -->
-<div class="flex items-center gap-3">
-<span class="text-headline-md font-headline-md font-extrabold text-primary">SustainAI</span>
-<span class="text-text-muted">/</span>
-<span class="text-label-lg font-label-lg text-text-muted">Apps</span>
-<span class="text-text-muted">/</span>
-<span class="text-label-lg font-label-lg text-text-strong font-semibold">Waste Classifier</span>
+<div class="flex items-center gap-2 sm:gap-3 min-w-0">
+<button id="sidebarToggle" type="button" class="lg:hidden p-2 -ml-1 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" aria-label="Open navigation" aria-controls="appSidebar" aria-expanded="false"><span class="material-symbols-outlined text-[24px]">menu</span></button>
+<span class="hidden sm:inline text-headline-md font-headline-md font-extrabold text-primary">SustainAI</span>
+<span class="hidden sm:inline text-text-muted">/</span>
+<span class="hidden sm:inline text-label-lg font-label-lg text-text-muted">Apps</span>
+<span class="hidden sm:inline text-text-muted">/</span>
+<span class="truncate text-label-lg font-label-lg text-text-strong font-semibold">Waste Classifier</span>
 </div>
 <!-- Navigation links (from JSON) -->
-<div class="flex flex-col sm:flex-row items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
 <a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="Dashboard.html" >Live Diagnostics</a>
 <a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="Reports.html" >SDG Goals</a>
 <a class="text-text-muted hover:text-text-strong transition-colors text-label-md font-label-md" href="Dashboard.html" >Documentation</a>
 </div>
 <!-- Trailing Action Cluster -->
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 sm:gap-3">
 <!-- Model Latency Pill Indicator -->
-<div class="flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle border border-brand-mint rounded-full text-brand-forest">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle border border-brand-mint rounded-full text-brand-forest">
 <span class="w-2 h-2 rounded-full bg-border-focus animate-pulse"></span>
 <span class="text-label-sm font-label-sm font-semibold">System Operational • 320ms</span>
 </div>
@@ -244,7 +239,7 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
 <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
-<div id="notifPanel" class="hidden absolute right-0 mt-2 w-80 bg-surface-card border border-border-subtle rounded-xl shadow-lg p-3 z-50">
+<div id="notifPanel" class="hidden absolute right-0 mt-2 w-80 max-w-[85vw] bg-surface-card border border-border-subtle rounded-xl shadow-lg p-3 z-50">
 <div class="flex items-center justify-between px-2 pb-2 border-b border-border-subtle">
 <span class="text-label-md font-label-md text-text-strong font-semibold">Notifications</span>
 <span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-danger-rose-subtle text-danger-rose font-semibold">1 new</span>
@@ -265,18 +260,18 @@
 </div>
 </div>
 </div>
-<button id="helpBtn" class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Help">
+<button id="helpBtn" class="hidden lg:inline-flex p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition" title="Help">
 <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
 </button>
 <!-- New Scan CTA Button -->
 <button id="newScanBtn" class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-brand-emerald-dark text-on-primary rounded-lg text-label-md font-label-md transition shadow-sm active:scale-95">
 <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
-<span>New Scan</span>
+<span class="hidden sm:inline">New Scan</span>
 </button>
 </div>
 </header>
 <!-- WORKSPACE CANVAS -->
-<main class="flex-1 p-8 overflow-y-auto">
+<main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
 <div class="max-w-[1280px] mx-auto space-y-6">
 <!-- Top Title & Subtitle Banner -->
 <div class="flex flex-col sm:flex-row md:items-center justify-between gap-4 pb-2">
@@ -575,6 +570,97 @@
 </div>
 </div>
 </div>
+<!-- INTERACTIVE WASTE DROP-OFF MAP -->
+<section id="sec-waste-map" class="bg-surface-card rounded-2xl border border-border-subtle shadow-sm overflow-hidden">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-5 border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<h2 class="text-headline-sm font-headline-sm text-text-strong">Waste Drop-off Map</h2>
+<span class="px-2 py-0.5 rounded-full bg-brand-mint-subtle text-brand-forest border border-border-focus text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Live routing
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-1">Find verified bank sampah drop-off points and preview the fastest route.</p>
+</div>
+<button id="mapFitBtn" type="button" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-surface-card border border-border-subtle hover:bg-surface-base text-text-strong text-label-md font-label-md font-semibold transition shadow-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="route">route</span>
+                Fit route
+              </button>
+</div>
+<!-- Split Screen: Sidebar + Map -->
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Sidebar -->
+<div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-border-subtle bg-surface-base/60 p-5 space-y-5">
+<!-- Search -->
+<div>
+<label for="mapSearch" class="block text-label-md font-label-md font-semibold text-text-strong mb-2">Search location</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</span>
+<input id="mapSearch" type="search" autocomplete="off" placeholder="Search bank sampah, district, or material..." class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-border-subtle bg-surface-card text-text-strong font-body-sm focus:border-primary focus:ring-2 focus:ring-brand-mint-subtle transition-all outline-none"/>
+</div>
+<p class="text-[11px] text-text-muted mt-1.5">Try “Menteng”, “Tebet”, or “E-waste”.</p>
+</div>
+<!-- Results -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-text-muted font-medium">Nearby drop-off points</span>
+<span id="mapResultCount" class="text-label-sm font-label-sm text-primary font-semibold">0 found</span>
+</div>
+<div id="mapLocationList" class="map-loc-list max-h-56 overflow-y-auto pr-1"></div>
+</div>
+<!-- Route Card -->
+<div id="routeCard" class="rounded-xl border border-border-subtle bg-surface-card p-4 shadow-sm">
+<div class="flex items-start justify-between gap-3">
+<div>
+<p class="text-label-sm font-label-sm text-text-muted">Route to</p>
+<h3 id="routeDestination" class="text-label-lg font-label-lg font-bold text-text-strong mt-0.5">Select a drop-off point</h3>
+<p id="routeAddress" class="text-[11px] text-text-muted mt-0.5">Choose a location from the list or map.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="directions">directions</span>
+</div>
+<div class="mt-3 flex items-end gap-2">
+<span id="routeTime" class="text-metric-display font-metric-display font-extrabold text-text-strong leading-none">-- min</span>
+<span id="routeDistance" class="text-body-sm font-body-sm text-text-muted mb-0.5">(-- km)</span>
+</div>
+<div class="mt-3 h-1.5 rounded-full bg-surface-base overflow-hidden">
+<div id="routeProgress" class="h-full bg-primary rounded-full transition-all duration-500" style="width: 0%"></div>
+</div>
+<p id="routeGuide" class="text-body-sm font-body-sm text-text-muted mt-3 leading-relaxed">Route guidance will appear here.</p>
+<div class="mt-3 grid grid-cols-2 gap-2">
+<div class="rounded-lg bg-surface-base border border-border-subtle p-2">
+<div class="text-label-sm font-label-sm text-text-muted">Start</div>
+<div id="routeStartLabel" class="text-label-sm font-label-sm font-semibold text-text-strong mt-0.5 truncate">Your location</div>
+</div>
+<div class="rounded-lg bg-surface-base border border-border-subtle p-2">
+<div class="text-label-sm font-label-sm text-text-muted">ETA</div>
+<div id="routeEta" class="text-label-sm font-label-sm font-semibold text-text-strong mt-0.5">--:--</div>
+</div>
+</div>
+<p id="routeMaterial" class="mt-2 text-[11px] text-text-muted"></p>
+</div>
+</div>
+<!-- Map Area -->
+<div class="lg:col-span-8 relative">
+<div id="wasteMap" class="w-full" aria-label="Interactive map of waste drop-off locations"></div>
+<!-- Legend -->
+<div class="absolute left-4 bottom-4 z-[800] bg-surface-card/95 backdrop-blur-md rounded-xl border border-border-subtle shadow-lg p-3 text-label-sm font-label-sm text-text-strong">
+<div class="font-semibold mb-1.5">Legend</div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary border-2 border-white shadow"></span>Drop-off point</div>
+<div class="flex items-center gap-2 mt-1"><span class="w-3 h-3 rounded-full bg-info-sky border-2 border-white shadow"></span>Selected route</div>
+<div class="flex items-center gap-2 mt-1"><span class="w-3 h-3 rounded-full bg-brand-forest border-2 border-white shadow"></span>Start location</div>
+</div>
+<!-- Map hint -->
+<div class="absolute right-4 bottom-4 z-[800] bg-surface-card/95 backdrop-blur-md rounded-lg border border-border-subtle shadow-md px-3 py-2 text-[11px] text-text-muted hidden sm:block">
+              Click a marker or list item to preview the route.
+            </div>
+</div>
+</div>
+</section>
 </div>
 </main>
 </div>
@@ -596,6 +682,31 @@
   @keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .toast-item { animation: toast-in .2s ease-out; }
   #appModal.flex { display: flex; }
+  /* Waste drop-off map */
+  #wasteMap { height: 420px; min-height: 320px; z-index: 0; }
+  @media (min-width: 1024px) { #wasteMap { height: 560px; } }
+  .leaflet-container { font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #E2E8F0; }
+  .map-pin { width: 38px; height: 38px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--pin, #006948); border: 3px solid #fff; box-shadow: 0 6px 16px rgba(15,23,42,.25); display: flex; align-items: center; justify-content: center; transition: all .2s ease; }
+  .map-pin span { transform: rotate(45deg); color: #fff; font-size: 20px; line-height: 1; }
+  .map-pin.is-start { --pin: #064E3B; }
+  .map-pin.is-selected { --pin: #0284C7; box-shadow: 0 0 0 6px rgba(2,132,199,.18), 0 8px 20px rgba(2,132,199,.35); }
+  .map-popup { min-width: 210px; font-family: Inter, sans-serif; }
+  .map-popup-title { font-size: 13px; font-weight: 700; color: #0F172A; }
+  .map-popup-address { font-size: 11px; color: #64748B; margin-top: 2px; line-height: 1.4; }
+  .map-popup-meta { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .map-popup-chip { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: #ECFDF5; color: #064E3B; border: 1px solid #34D399; }
+  .map-popup-btn { margin-top: 10px; width: 100%; padding: 7px 10px; border-radius: 8px; background: #006948; color: #fff; font-size: 11px; font-weight: 700; border: 0; cursor: pointer; font-family: Inter, sans-serif; }
+  .map-popup-btn:hover { background: #047857; }
+  .map-loc-list { display: flex; flex-direction: column; gap: 8px; }
+  .map-loc-item { width: 100%; text-align: left; padding: 10px 11px; border-radius: 10px; border: 1px solid #E2E8F0; background: #fff; cursor: pointer; transition: all .15s ease; font-family: Inter, sans-serif; }
+  .map-loc-item:hover { border-color: #10B981; background: #F8FAFC; }
+  .map-loc-item.is-active { border-color: #006948; background: #ECFDF5; box-shadow: 0 0 0 1px #006948 inset; }
+  .map-loc-name { font-size: 12px; font-weight: 700; color: #0F172A; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .map-loc-sub { font-size: 11px; color: #64748B; margin-top: 2px; line-height: 1.35; }
+  .map-loc-dist { font-size: 10px; font-weight: 700; color: #006948; white-space: nowrap; }
+  .map-loc-empty { font-size: 11px; color: #64748B; padding: 12px; text-align: center; border: 1px dashed #E2E8F0; border-radius: 10px; }
+  .leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: 0 10px 30px rgba(15,23,42,.18); }
+  .leaflet-popup-content { margin: 12px 14px; }
 </style>
 <script>
 (function () {
@@ -1079,6 +1190,286 @@
   });
 })();
 </script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* Interactive waste drop-off map */
+(function () {
+  "use strict";
+  var mapEl = document.getElementById("wasteMap");
+  if (!mapEl) return;
+
+  if (!window.L) {
+    mapEl.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:13px;color:#64748B;">Interactive map library could not be loaded. Please check your internet connection.</div>';
+    return;
+  }
+
+  var START = { lat: -6.2088, lng: 106.8456, label: "SustainAI Campus · Jakarta Pusat" };
+  var LOCATIONS = [
+    { id: "menteng", name: "Bank Sampah Menteng", address: "Jl. Cikini Raya No. 12, Menteng", area: "Jakarta Pusat", type: "Plastic & Paper", hours: "08:00 - 17:00", lat: -6.1950, lng: 106.8310, guide: "Head north-west on Jl. M.H. Thamrin, continue onto Jl. Cikini Raya, then turn right into the bank sampah courtyard." },
+    { id: "tebet", name: "Bank Sampah Bersih Tebet", address: "Jl. Tebet Barat Dalam No. 8, Tebet", area: "Jakarta Selatan", type: "Multi-material", hours: "07:30 - 16:30", lat: -6.2260, lng: 106.8580, guide: "Take Jl. Dr. Saharjo south, turn left onto Jl. Tebet Barat Dalam, and look for the green collection gate on your right." },
+    { id: "cempaka", name: "Bank Sampah Cempaka Putih", address: "Jl. Cempaka Putih Tengah No. 21", area: "Jakarta Pusat", type: "E-waste & Plastic", hours: "09:00 - 18:00", lat: -6.1850, lng: 106.8700, guide: "Head east on Jl. Cempaka Putih Tengah, pass the fresh market, then enter the community recycling center beside the mosque." },
+    { id: "kemang", name: "Bank Sampah Kemang", address: "Jl. Kemang Selatan No. 5, Kemang", area: "Jakarta Selatan", type: "Organic & Paper", hours: "08:00 - 16:00", lat: -6.2600, lng: 106.8130, guide: "Follow Jl. Kemang Raya south, turn right onto Jl. Kemang Selatan, and park at the drop-off bay in front of the bank sampah." },
+    { id: "grogol", name: "Bank Sampah Grogol", address: "Jl. Kyai Tapa No. 20, Grogol", area: "Jakarta Barat", type: "Plastic & Metal", hours: "08:30 - 17:30", lat: -6.1650, lng: 106.7900, guide: "Take Jl. Kyai Tapa toward Grogol, continue past the university gate, and the collection point is on the left after the bridge." }
+  ];
+
+  var map = L.map("wasteMap", { zoomControl: true, scrollWheelZoom: true }).setView([START.lat, START.lng], 13);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+  }).addTo(map);
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  function markerIcon(kind, selected) {
+    var cls = "map-pin" + (kind === "start" ? " is-start" : "") + (selected ? " is-selected" : "");
+    var icon = kind === "start" ? "my_location" : "recycling";
+    return L.divIcon({
+      className: "",
+      html: '<div class="' + cls + '"><span class="material-symbols-outlined">' + icon + '</span></div>',
+      iconSize: [38, 46],
+      iconAnchor: [19, 44],
+      popupAnchor: [0, -38]
+    });
+  }
+
+  function toRad(value) { return value * Math.PI / 180; }
+
+  function haversine(a, b) {
+    var R = 6371000;
+    var dLat = toRad(b.lat - a.lat);
+    var dLng = toRad(b.lng - a.lng);
+    var lat1 = toRad(a.lat);
+    var lat2 = toRad(b.lat);
+    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+
+  function getMetrics(loc) {
+    var km = (haversine(START, loc) * 1.28) / 1000;
+    return { km: km, minutes: Math.max(1, Math.round((km / 22) * 60)) };
+  }
+
+  function buildRoute(a, b) {
+    var dLat = b.lat - a.lat;
+    var dLng = b.lng - a.lng;
+    var cLat = (a.lat + b.lat) / 2 + dLng * 0.18;
+    var cLng = (a.lng + b.lng) / 2 - dLat * 0.18;
+    var points = [];
+    for (var i = 0; i <= 24; i++) {
+      var t = i / 24;
+      var mt = 1 - t;
+      points.push([
+        mt * mt * a.lat + 2 * mt * t * cLat + t * t * b.lat,
+        mt * mt * a.lng + 2 * mt * t * cLng + t * t * b.lng
+      ]);
+    }
+    return points;
+  }
+
+  function formatEta(minutes) {
+    var d = new Date(Date.now() + minutes * 60000);
+    return ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+  }
+
+  function popupHtml(loc) {
+    return '<div class="map-popup">' +
+      '<div class="map-popup-title">' + escapeHtml(loc.name) + '</div>' +
+      '<div class="map-popup-address">' + escapeHtml(loc.address) + '</div>' +
+      '<div class="map-popup-meta">' +
+        '<span class="map-popup-chip">' + escapeHtml(loc.type) + '</span>' +
+        '<span class="map-popup-chip">' + escapeHtml(loc.hours) + '</span>' +
+      '</div>' +
+      '<button type="button" class="map-popup-btn" onclick="window.__wasteRouteTo(\'' + loc.id + '\')">Route here</button>' +
+    '</div>';
+  }
+
+  var markers = {};
+  LOCATIONS.forEach(function (loc) {
+    var marker = L.marker([loc.lat, loc.lng], { icon: markerIcon("dropoff", false) }).addTo(map);
+    marker.bindPopup(popupHtml(loc));
+    markers[loc.id] = marker;
+  });
+
+  L.marker([START.lat, START.lng], { icon: markerIcon("start", false), zIndexOffset: 500 }).addTo(map)
+    .bindPopup('<div class="map-popup"><div class="map-popup-title">Start location</div><div class="map-popup-address">' + escapeHtml(START.label) + '</div></div>');
+
+  var searchInput = document.getElementById("mapSearch");
+  var listEl = document.getElementById("mapLocationList");
+  var countEl = document.getElementById("mapResultCount");
+  var routeDestinationEl = document.getElementById("routeDestination");
+  var routeAddressEl = document.getElementById("routeAddress");
+  var routeTimeEl = document.getElementById("routeTime");
+  var routeDistanceEl = document.getElementById("routeDistance");
+  var routeGuideEl = document.getElementById("routeGuide");
+  var routeStartLabelEl = document.getElementById("routeStartLabel");
+  var routeEtaEl = document.getElementById("routeEta");
+  var routeMaterialEl = document.getElementById("routeMaterial");
+  var routeProgressEl = document.getElementById("routeProgress");
+  var routeCasing = null;
+  var routeLine = null;
+  var selectedId = null;
+  var currentRouteCoords = null;
+  var routeRequestToken = 0;
+
+  function getLocation(id) {
+    for (var i = 0; i < LOCATIONS.length; i++) {
+      if (LOCATIONS[i].id === id) return LOCATIONS[i];
+    }
+    return null;
+  }
+
+  function matches(loc, query) {
+    var haystack = [loc.name, loc.address, loc.area, loc.type].join(" ").toLowerCase();
+    return haystack.indexOf(query) !== -1;
+  }
+
+  function renderList(query) {
+    var q = (query || "").trim().toLowerCase();
+    var items = LOCATIONS.filter(function (loc) { return !q || matches(loc, q); });
+    if (countEl) countEl.textContent = items.length + " found";
+    if (!listEl) return;
+    listEl.innerHTML = "";
+    if (!items.length) {
+      listEl.innerHTML = '<div class="map-loc-empty">No drop-off points match your search.</div>';
+      return;
+    }
+    items.forEach(function (loc) {
+      var dist = getMetrics(loc);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "map-loc-item" + (loc.id === selectedId ? " is-active" : "");
+      btn.innerHTML = '<div class="map-loc-name"><span>' + escapeHtml(loc.name) + '</span><span class="map-loc-dist">' + dist.km.toFixed(1) + ' km</span></div>' +
+        '<div class="map-loc-sub">' + escapeHtml(loc.address) + '</div>' +
+        '<div class="map-popup-meta"><span class="map-popup-chip">' + escapeHtml(loc.type) + '</span><span class="map-popup-chip">' + escapeHtml(loc.area) + '</span></div>';
+      btn.addEventListener("click", function () { selectLocation(loc.id); });
+      listEl.appendChild(btn);
+    });
+  }
+
+  function fitRoute() {
+    var loc = getLocation(selectedId);
+    if (!loc) {
+      var all = [[START.lat, START.lng]];
+      LOCATIONS.forEach(function (item) { all.push([item.lat, item.lng]); });
+      map.fitBounds(L.latLngBounds(all).pad(0.15), { maxZoom: 14 });
+      return;
+    }
+    var coords = currentRouteCoords || buildRoute(START, loc);
+    map.fitBounds(L.latLngBounds(coords).pad(0.18), { maxZoom: 15 });
+  }
+
+  function updateRouteCard(loc, metrics) {
+    if (routeDestinationEl) routeDestinationEl.textContent = loc.name;
+    if (routeAddressEl) routeAddressEl.textContent = loc.address;
+    if (routeTimeEl) routeTimeEl.textContent = metrics.minutes + " min";
+    if (routeDistanceEl) routeDistanceEl.textContent = "(" + metrics.km.toFixed(1) + " km)";
+    if (routeGuideEl) routeGuideEl.textContent = loc.guide;
+    if (routeStartLabelEl) {
+      routeStartLabelEl.textContent = "SustainAI Campus";
+      routeStartLabelEl.title = START.label;
+    }
+    if (routeEtaEl) routeEtaEl.textContent = formatEta(metrics.minutes);
+    if (routeMaterialEl) routeMaterialEl.textContent = loc.type + " • Open " + loc.hours;
+  }
+
+  function drawRoute(coords) {
+    if (routeCasing) map.removeLayer(routeCasing);
+    if (routeLine) map.removeLayer(routeLine);
+    routeCasing = L.polyline(coords, { color: "#ffffff", weight: 10, opacity: 0.85, lineCap: "round", lineJoin: "round" }).addTo(map);
+    routeLine = L.polyline(coords, { color: "#2563EB", weight: 6, opacity: 0.95, lineCap: "round", lineJoin: "round" }).addTo(map);
+  }
+
+  function fetchRoadRoute(loc, token, opts) {
+    if (!window.fetch) return;
+    var url = "https://router.project-osrm.org/route/v1/driving/" + START.lng + "," + START.lat + ";" + loc.lng + "," + loc.lat + "?overview=full&geometries=geojson";
+    fetch(url).then(function (response) {
+      if (!response.ok) throw new Error("Route request failed");
+      return response.json();
+    }).then(function (data) {
+      if (token !== routeRequestToken) return;
+      var route = data && data.routes && data.routes[0];
+      if (!route || !route.geometry || !route.geometry.coordinates) return;
+      var coords = route.geometry.coordinates.map(function (point) { return [point[1], point[0]]; });
+      if (!coords.length) return;
+      currentRouteCoords = coords;
+      drawRoute(coords);
+      updateRouteCard(loc, {
+        km: route.distance / 1000,
+        minutes: Math.max(1, Math.round(route.duration / 60))
+      });
+      if (!opts || opts.fit !== false) fitRoute();
+    }).catch(function () {
+      /* Keep the local estimate when the routing service is unavailable. */
+    });
+  }
+
+  function selectLocation(id, opts) {
+    var loc = getLocation(id);
+    if (!loc) return;
+    selectedId = id;
+    routeRequestToken++;
+    var token = routeRequestToken;
+
+    Object.keys(markers).forEach(function (key) {
+      markers[key].setIcon(markerIcon("dropoff", key === id));
+    });
+
+    currentRouteCoords = buildRoute(START, loc);
+    drawRoute(currentRouteCoords);
+    updateRouteCard(loc, getMetrics(loc));
+
+    if (routeProgressEl) {
+      routeProgressEl.style.width = "0%";
+      setTimeout(function () { routeProgressEl.style.width = "100%"; }, 60);
+    }
+
+    renderList(searchInput ? searchInput.value : "");
+
+    if (!opts || opts.fit !== false) fitRoute();
+    fetchRoadRoute(loc, token, opts);
+  }
+
+  function updateSearch() {
+    var q = (searchInput.value || "").trim().toLowerCase();
+    renderList(q);
+    LOCATIONS.forEach(function (loc) {
+      var marker = markers[loc.id];
+      if (marker) marker.setOpacity(!q || matches(loc, q) ? 1 : 0.25);
+    });
+  }
+
+  window.__wasteRouteTo = function (id) {
+    selectLocation(id);
+    map.closePopup();
+  };
+
+  if (searchInput) {
+    searchInput.addEventListener("input", updateSearch);
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter") return;
+      var q = (searchInput.value || "").trim().toLowerCase();
+      if (!q) return;
+      var first = LOCATIONS.filter(function (loc) { return matches(loc, q); })[0];
+      if (first) {
+        e.preventDefault();
+        selectLocation(first.id);
+      }
+    });
+  }
+
+  var fitBtn = document.getElementById("mapFitBtn");
+  if (fitBtn) fitBtn.addEventListener("click", fitRoute);
+
+  window.addEventListener("resize", function () { map.invalidateSize(); });
+
+  renderList("");
+  selectLocation(LOCATIONS[0].id, { fit: true });
+})();
+</script>
 <script>
 /* Sync registered account name across the workspace UI */
 (function () {
@@ -1166,6 +1557,49 @@
       }
     }, 0);
   }).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+</script>
+<script>
+/* Responsive sidebar drawer (mobile/tablet) */
+(function () {
+  'use strict';
+  var sidebar = document.getElementById('appSidebar');
+  var toggle = document.getElementById('sidebarToggle');
+  var closeBtn = document.getElementById('sidebarClose');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar || !toggle) return;
+  function isMobile() { return window.innerWidth < 1024; }
+  function openNav() {
+    sidebar.classList.remove('-translate-x-full');
+    if (backdrop) backdrop.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (isMobile()) document.body.classList.add('overflow-hidden');
+  }
+  function closeNav() {
+    sidebar.classList.add('-translate-x-full');
+    if (backdrop) backdrop.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('-translate-x-full')) openNav(); else closeNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isMobile()) closeNav(); });
+  sidebar.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { if (isMobile()) closeNav(); });
+  });
+  window.addEventListener('resize', function () {
+    if (!isMobile()) {
+      sidebar.classList.remove('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      closeNav();
+    }
+  });
 })();
 </script>
 </body></html>

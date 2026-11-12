@@ -317,7 +317,8 @@
 <!-- SIDE NAVIGATION BAR (MANDATED SHARED COMPONENT)                            -->
 <!-- ========================================================================= -->
 <!-- SHARED SIDEBAR (canonical) -->
-<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+<aside id="appSidebar" aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-50 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+<button id="sidebarClose" type="button" aria-label="Close navigation" class="lg:hidden absolute top-4 right-3 p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button>
   <div class="flex flex-col gap-6">
     <div class="flex items-center gap-3 px-2">
       <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
@@ -383,24 +384,26 @@
     </div>
   </div>
 </aside>
+<div id="sidebarBackdrop" class="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm hidden lg:hidden"></div>
 <!-- ========================================================================= -->
 <!-- MAIN WORKSPACE CONTENT CANVAS                                             -->
 <!-- ========================================================================= -->
-<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<div class="flex-1 flex flex-col min-w-0 min-h-screen lg:ml-64">
 <!-- TOP NAVIGATION BAR (MANDATED SHARED COMPONENT) -->
-<header class="sticky top-0 z-30 flex items-center justify-between px-8 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm backdrop-blur-md">
+<header class="sticky top-0 z-30 flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 min-h-[4rem] py-2 lg:py-0 lg:h-16 lg:flex-nowrap w-full bg-surface-card border-b border-border-subtle shadow-sm backdrop-blur-md">
 <!-- Left: Breadcrumbs & System Status Pill -->
-<div class="flex items-center gap-4">
-<div class="flex items-center gap-2 text-label-md font-label-md">
-<span id="crumbHome" class="text-text-muted hover:text-primary cursor-pointer">SustainAI</span>
-<span class="text-text-muted">/</span>
-<span class="text-text-muted">Apps</span>
-<span class="text-text-muted">/</span>
-<span class="text-text-strong font-semibold">Settings &amp; Configuration</span>
+<div class="flex items-center gap-2 sm:gap-4 min-w-0">
+<button id="sidebarToggle" type="button" class="lg:hidden p-2 -ml-1 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" aria-label="Open navigation" aria-controls="appSidebar" aria-expanded="false"><span class="material-symbols-outlined text-[24px]">menu</span></button>
+<div class="flex items-center gap-2 text-label-md font-label-md min-w-0">
+<span id="crumbHome" class="hidden sm:inline text-text-muted hover:text-primary cursor-pointer">SustainAI</span>
+<span class="hidden sm:inline text-text-muted">/</span>
+<span class="hidden sm:inline text-text-muted">Apps</span>
+<span class="hidden sm:inline text-text-muted">/</span>
+<span class="truncate min-w-0 text-text-strong font-semibold sm:hidden">Settings</span><span class="hidden sm:inline truncate min-w-0 text-text-strong font-semibold">Settings &amp; Configuration</span>
 </div>
-<div class="h-4 w-px bg-border-subtle"></div>
+<div class="hidden xl:block h-4 w-px bg-border-subtle"></div>
 <!-- Live Telemetry Badge -->
-<div class="flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle rounded-full border border-brand-mint/40">
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 bg-brand-mint-subtle rounded-full border border-brand-mint/40">
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 <span class="text-label-sm font-label-sm font-semibold text-brand-forest">
             System Operational • Edge Latency 310ms • Gemini 1.5 Flash Active
@@ -408,8 +411,8 @@
 </div>
 </div>
 <!-- Right: Navigation Links, Notifications & Primary CTAs -->
-<div class="flex items-center gap-3">
-<nav class="flex flex-col sm:flex-row items-center gap-5 mr-3 text-label-md font-label-md">
+<div class="flex items-center gap-2 sm:gap-3">
+<nav class="hidden lg:flex items-center gap-5 mr-3 text-label-md font-label-md">
 <a id="docLink" class="text-text-muted hover:text-text-strong transition-colors flex items-center gap-1.5" href="#docs">
 <span class="material-symbols-outlined text-[18px]">help</span>
             Documentation
@@ -424,9 +427,9 @@
 <span class="material-symbols-outlined text-[22px]">notifications</span>
 <span id="notifDot" class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
-<div class="h-5 w-px bg-border-subtle mx-1"></div>
+<div class="hidden sm:block h-5 w-px bg-border-subtle mx-1"></div>
 <!-- Secondary CTA: Reset to Defaults -->
-<button id="resetBtn" class="px-3.5 py-2 text-label-md font-label-md font-semibold text-text-strong bg-surface-card border border-border-subtle rounded-md hover:bg-surface-base hover:border-primary transition-all whitespace-nowrap shrink-0">
+<button id="resetBtn" class="hidden sm:inline-flex px-3.5 py-2 text-label-md font-label-md font-semibold text-text-strong bg-surface-card border border-border-subtle rounded-md hover:bg-surface-base hover:border-primary transition-all whitespace-nowrap shrink-0">
           Reset to Defaults
         </button>
 <!-- Primary CTA: Save Changes -->
@@ -437,7 +440,7 @@
 </div>
 </header>
 <!-- MAIN SCROLLABLE CONTENT -->
-<main class="flex-1 p-8 max-w-[1400px] w-full mx-auto space-y-8">
+<main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1400px] w-full mx-auto space-y-8">
 <!-- PAGE HEADER -->
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-border-subtle">
 <div>
@@ -583,13 +586,13 @@
 <div id="keyList" class="space-y-3">
 <!-- Key 1: CV Analyzer -->
 <div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-<div class="flex items-start gap-3 min-w-[280px]">
+<div class="flex items-start gap-3 min-w-0 sm:min-w-[280px]">
 <div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined text-[22px]">description</span>
 </div>
 <div>
 <div class="flex items-center gap-2">
-<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_CV_ANALYZER</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-strong break-all min-w-0">GEMINI_API_KEY_CV_ANALYZER</span>
 <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
                       Connected • 99.8% Uptime
                     </span>
@@ -619,13 +622,13 @@
 </div>
 <!-- Key 2: Plant Disease -->
 <div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-<div class="flex items-start gap-3 min-w-[280px]">
+<div class="flex items-start gap-3 min-w-0 sm:min-w-[280px]">
 <div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined text-[22px]">potted_plant</span>
 </div>
 <div>
 <div class="flex items-center gap-2">
-<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_PLANT_ANALYZER</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-strong break-all min-w-0">GEMINI_API_KEY_PLANT_ANALYZER</span>
 <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
                       Connected • 99.8% Uptime
                     </span>
@@ -655,13 +658,13 @@
 </div>
 <!-- Key 3: Waste Classifier -->
 <div class="p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-<div class="flex items-start gap-3 min-w-[280px]">
+<div class="flex items-start gap-3 min-w-0 sm:min-w-[280px]">
 <div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined text-[22px]">recycling</span>
 </div>
 <div>
 <div class="flex items-center gap-2">
-<span class="font-code-mono text-code-mono font-semibold text-text-strong">GEMINI_API_KEY_WASTE_ANALYZER</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-strong break-all min-w-0">GEMINI_API_KEY_WASTE_ANALYZER</span>
 <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-brand-mint-subtle text-brand-forest border border-brand-mint/30">
                       Connected • 99.9% Uptime
                     </span>
@@ -1578,9 +1581,9 @@
     row.className = 'p-4 rounded-xl bg-surface-base border border-border-subtle flex flex-col lg:flex-row lg:items-center justify-between gap-4';
     row.dataset.fullKey = secret;
     row.innerHTML =
-      '<div class="flex items-start gap-3 min-w-[280px]">' +
+      '<div class="flex items-start gap-3 min-w-0 sm:min-w-[280px]">' +
         '<div class="w-10 h-10 rounded-lg bg-surface-card border border-border-subtle text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[22px]">' + icon + '</span></div>' +
-        '<div><div class="flex items-center gap-2"><span class="font-code-mono text-code-mono font-semibold text-text-strong">' + esc(name) + '</span><span class="key-status px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-amber-subtle text-accent-amber border border-accent-amber/30">Pending verification</span></div>' +
+        '<div><div class="flex items-center gap-2"><span class="font-code-mono text-code-mono font-semibold text-text-strong break-all min-w-0">' + esc(name) + '</span><span class="key-status px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-amber-subtle text-accent-amber border border-accent-amber/30">Pending verification</span></div>' +
         '<p class="text-body-sm font-body-sm text-text-muted mt-0.5">' + esc('Model tuning: ' + subsystem + ' micro-analyzer.') + '</p></div>' +
       '</div>' +
       '<div class="flex items-center gap-3 flex-wrap">' +
@@ -2359,25 +2362,28 @@
 
 </script>
 <script>
-/* Sync registered account name across the workspace UI */
+/* Sync registered account name and email across the workspace UI */
 (function () {
   'use strict';
   var DEFAULT_NAME = 'Alex Mercer';
   var DEFAULT_INITIALS = 'AM';
-  function getName() {
+  var DEFAULT_EMAIL = 'alex.mercer@sustainai.io';
+  function getAccount() {
     try {
       var s = JSON.parse(localStorage.getItem('sustainai_session') || 'null');
-      if (s && s.name && s.name.trim()) return s.name.trim();
+      if (s && (s.name || s.email)) return s;
       var a = JSON.parse(localStorage.getItem('sustainai_accounts') || '[]');
       if (a && a.length) {
         var last = a[a.length - 1];
-        if (last && last.name && last.name.trim()) return last.name.trim();
+        if (last) return last;
       }
     } catch (e) {}
-    return '';
+    return null;
   }
-  var userName = getName();
+  var account = getAccount() || {};
+  var userName = (account.name || '').trim();
   if (!userName) return;
+  var userEmail = (account.email || '').trim().toLowerCase();
   var parts = userName.split(/\s+/).filter(Boolean);
   var initials = parts.length > 1
     ? (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase()
@@ -2393,8 +2399,9 @@
     if (!node || node.nodeType !== 3 || inSkipped(node)) return;
     var value = node.nodeValue;
     var next = value;
-    if (value.indexOf(DEFAULT_NAME) !== -1) next = value.split(DEFAULT_NAME).join(userName);
-    else if (value.indexOf('Welcome back, Alex') !== -1) next = value.replace('Welcome back, Alex', 'Welcome back, ' + userName);
+    if (next.indexOf(DEFAULT_NAME) !== -1) next = next.split(DEFAULT_NAME).join(userName);
+    if (next.indexOf('Welcome back, Alex') !== -1) next = next.replace('Welcome back, Alex', 'Welcome back, ' + userName);
+    if (userEmail && next.indexOf(DEFAULT_EMAIL) !== -1) next = next.split(DEFAULT_EMAIL).join(userEmail);
     if (next !== value) node.nodeValue = next;
   }
   function fixAvatar(el) {
@@ -2445,6 +2452,49 @@
       }
     }, 0);
   }).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+</script>
+<script>
+/* Responsive sidebar drawer (mobile/tablet) */
+(function () {
+  'use strict';
+  var sidebar = document.getElementById('appSidebar');
+  var toggle = document.getElementById('sidebarToggle');
+  var closeBtn = document.getElementById('sidebarClose');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar || !toggle) return;
+  function isMobile() { return window.innerWidth < 1024; }
+  function openNav() {
+    sidebar.classList.remove('-translate-x-full');
+    if (backdrop) backdrop.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (isMobile()) document.body.classList.add('overflow-hidden');
+  }
+  function closeNav() {
+    sidebar.classList.add('-translate-x-full');
+    if (backdrop) backdrop.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('-translate-x-full')) openNav(); else closeNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isMobile()) closeNav(); });
+  sidebar.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { if (isMobile()) closeNav(); });
+  });
+  window.addEventListener('resize', function () {
+    if (!isMobile()) {
+      sidebar.classList.remove('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      closeNav();
+    }
+  });
 })();
 </script>
 </body></html>

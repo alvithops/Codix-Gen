@@ -163,7 +163,8 @@
 <body class="bg-surface-base text-text-strong font-body-md antialiased min-h-screen flex selection:bg-brand-mint selection:text-brand-forest">
 <!-- ================= SIDE NAVIGATION BAR (MANDATORY SHARED COMPONENT) ================= -->
 <!-- SHARED SIDEBAR (canonical) -->
-<aside aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-40 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto">
+<aside id="appSidebar" aria-label="Main Navigation" class="fixed left-0 top-0 bottom-0 z-50 w-64 bg-surface-card border-r border-border-subtle flex flex-col justify-between py-6 px-4 shadow-sm overflow-y-auto -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out">
+<button id="sidebarClose" type="button" aria-label="Close navigation" class="lg:hidden absolute top-4 right-3 p-1.5 rounded-md text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button>
   <div class="flex flex-col gap-6">
     <div class="flex items-center gap-3 px-2">
       <div class="w-10 h-10 rounded-xl bg-brand-mint-subtle flex items-center justify-center text-primary border border-border-focus/20 shadow-sm">
@@ -209,16 +210,6 @@
     </nav>
   </div>
   <div class="flex flex-col gap-3 pt-4 border-t border-border-subtle">
-    <div class="flex items-center justify-between px-2 py-1.5 bg-surface-base rounded-lg border border-border-subtle">
-      <div class="flex items-center gap-2 text-text-muted">
-        <span class="material-symbols-outlined text-[18px]">translate</span>
-        <span id="langLabel" class="text-label-sm font-label-sm">Language: EN</span>
-      </div>
-      <div class="flex items-center bg-surface-card p-0.5 rounded border border-border-subtle text-label-sm font-label-sm">
-        <button id="langEN" type="button" class="px-2 py-0.5 rounded bg-primary text-on-primary font-semibold shadow-2xs cursor-pointer">EN</button>
-        <button id="langID" type="button" class="px-2 py-0.5 text-text-muted hover:text-text-strong cursor-pointer">ID</button>
-      </div>
-    </div>
     <div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-base border border-border-subtle">
       <div class="w-9 h-9 rounded-full bg-accent-teal-subtle text-accent-teal font-bold flex items-center justify-center text-sm border border-accent-teal/30">AM</div>
       <div class="flex flex-col min-w-0">
@@ -229,28 +220,30 @@
     </div>
   </div>
 </aside>
+<div id="sidebarBackdrop" class="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm hidden lg:hidden"></div>
 <!-- ================= MAIN WRAPPER ================= -->
-<div class="ml-64 flex-1 flex flex-col min-w-0">
+<div class="flex-1 flex flex-col min-w-0 lg:ml-64">
 <!-- ================= TOP NAVIGATION BAR (MANDATORY SHARED COMPONENT) ================= -->
-<header class="sticky top-0 z-30 flex items-center justify-between px-6 h-16 w-full bg-surface-card border-b border-border-subtle shadow-sm">
+<header class="sticky top-0 z-30 flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 min-h-[4rem] py-2 lg:py-0 lg:h-16 lg:flex-nowrap w-full bg-surface-card border-b border-border-subtle shadow-sm">
 <!-- Left side: Search bar & Links -->
-<div class="flex items-center gap-8">
-<div class="relative w-80">
+<div class="flex items-center gap-3 lg:gap-8 min-w-0">
+<button id="sidebarToggle" type="button" class="lg:hidden p-2 -ml-1 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" aria-label="Open navigation" aria-controls="appSidebar" aria-expanded="false"><span class="material-symbols-outlined text-[24px]">menu</span></button>
+<div class="relative hidden lg:block w-80">
 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-muted">
 <span class="material-symbols-outlined text-[18px]">search</span>
 </span>
 <input id="globalSearch" autocomplete="off" class="w-full pl-9 pr-4 py-2 text-body-sm font-body-sm bg-surface-base border border-border-subtle rounded-lg text-text-strong placeholder-text-muted focus:outline-none focus:border-border-focus focus:ring-1 focus:ring-border-focus transition-all" placeholder="Search telemetry, logs or SDG insights..." type="text"/>
 </div>
-<nav class="flex flex-col sm:flex-row items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
 <a data-nav="diagnostics" class="topnav-link text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md transition-colors cursor-pointer" href="#sec-live">Live Diagnostics</a>
 <a data-nav="sdg" class="topnav-link text-text-muted hover:text-text-strong text-label-md font-label-md transition-colors cursor-pointer" href="#sec-overview">SDG Goals</a>
 <a data-nav="docs" class="topnav-link text-text-muted hover:text-text-strong text-label-md font-label-md transition-colors cursor-pointer" href="#">Documentation</a>
 </nav>
 </div>
 <!-- Right side: Status, Notifications, Help & Action -->
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 sm:gap-4">
 <!-- Live System Status (trailing_secondary_action) -->
-<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-mint-subtle border border-brand-mint text-brand-forest">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-mint-subtle border border-brand-mint text-brand-forest">
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 <span class="text-label-sm font-label-sm font-semibold">System Operational</span>
 </div>
@@ -260,7 +253,7 @@
 <span class="material-symbols-outlined text-[20px]">notifications</span>
 <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger-rose rounded-full"></span>
 </button>
-<div id="notifPanel" class="hidden absolute right-0 mt-2 w-80 bg-surface-card border border-border-subtle rounded-xl shadow-lg p-3 z-50">
+<div id="notifPanel" class="hidden absolute right-0 mt-2 w-80 max-w-[85vw] bg-surface-card border border-border-subtle rounded-xl shadow-lg p-3 z-50">
 <div class="flex items-center justify-between px-2 pb-2 border-b border-border-subtle">
 <span class="text-label-md font-label-md text-text-strong font-semibold">Notifications</span>
 <span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-danger-rose-subtle text-danger-rose font-semibold">2 new</span>
@@ -281,13 +274,13 @@
 </div>
 </div>
 </div>
-<button id="helpBtn" class="p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" title="Help">
+<button id="helpBtn" class="hidden lg:inline-flex p-2 rounded-lg text-text-muted hover:text-text-strong hover:bg-surface-base transition-colors" title="Help">
 <span class="material-symbols-outlined text-[20px]">help</span>
 </button>
 <!-- Trailing Primary Action -->
 <button id="newScanBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-brand-emerald-dark text-on-primary font-label-md text-label-md transition-all duration-150 ease-in-out cursor-pointer active:scale-95 shadow-sm">
 <span class="material-symbols-outlined text-[18px]">add_a_photo</span>
-<span>New Scan</span>
+<span class="hidden sm:inline">New Scan</span>
 </button>
 <!-- Profile Avatar -->
 <button id="profileBtn" class="w-9 h-9 rounded-full bg-brand-mint-subtle border border-primary flex items-center justify-center text-primary font-bold text-label-md hover:ring-2 hover:ring-border-focus transition-all" title="Alex Mercer">
@@ -296,7 +289,7 @@
 </div>
 </header>
 <!-- ================= DASHBOARD CONTENT CANVAS ================= -->
-<main class="flex-1 p-6 lg:p-8 max-w-[1360px] w-full mx-auto space-y-6">
+<main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1360px] w-full mx-auto space-y-6">
 <!-- SECTION 1: WELCOME & FILTER HEADER -->
 <section id="sec-overview" class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
 <div>
@@ -450,64 +443,64 @@
 <div id="chartTooltip" class="hidden absolute z-30 pointer-events-none px-2.5 py-1.5 rounded-lg bg-text-strong text-white text-label-sm font-label-sm shadow-lg whitespace-nowrap"></div>
 <!-- Day 1: Mon -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Mon">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Mon</span>
 </div>
 <!-- Day 2: Tue -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Tue">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Tue</span>
 </div>
 <!-- Day 3: Wed -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Wed">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Wed</span>
 </div>
 <!-- Day 4: Thu -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Thu">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Thu</span>
 </div>
 <!-- Day 5: Fri (Peak) -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Fri">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-primary font-semibold">Fri (Peak)</span>
 </div>
 <!-- Day 6: Sat -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Sat">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Sat</span>
 </div>
 <!-- Day 7: Sun -->
 <div class="chart-day flex flex-col items-center gap-2 z-10 group cursor-pointer" data-day="Sun">
-<div class="flex items-end gap-1.5 h-44">
-<div class="chart-bar w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
-<div class="chart-bar w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
-<div class="chart-bar w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
+<div class="flex items-end gap-0.5 sm:gap-1.5 h-44">
+<div class="chart-bar w-2.5 sm:w-4 bg-primary rounded-t-md group-hover:brightness-110 transition-all" data-bar="recyclable"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-brand-mint rounded-t-md group-hover:brightness-110 transition-all" data-bar="compost"></div>
+<div class="chart-bar w-2.5 sm:w-4 bg-slate-200 rounded-t-md group-hover:bg-slate-300 transition-all" data-bar="landfill"></div>
 </div>
 <span class="text-label-sm font-label-sm text-text-muted">Sun</span>
 </div>
@@ -1659,6 +1652,49 @@
       }
     }, 0);
   }).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+</script>
+<script>
+/* Responsive sidebar drawer (mobile/tablet) */
+(function () {
+  'use strict';
+  var sidebar = document.getElementById('appSidebar');
+  var toggle = document.getElementById('sidebarToggle');
+  var closeBtn = document.getElementById('sidebarClose');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar || !toggle) return;
+  function isMobile() { return window.innerWidth < 1024; }
+  function openNav() {
+    sidebar.classList.remove('-translate-x-full');
+    if (backdrop) backdrop.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (isMobile()) document.body.classList.add('overflow-hidden');
+  }
+  function closeNav() {
+    sidebar.classList.add('-translate-x-full');
+    if (backdrop) backdrop.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('-translate-x-full')) openNav(); else closeNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isMobile()) closeNav(); });
+  sidebar.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { if (isMobile()) closeNav(); });
+  });
+  window.addEventListener('resize', function () {
+    if (!isMobile()) {
+      sidebar.classList.remove('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+    } else {
+      closeNav();
+    }
+  });
 })();
 </script>
 </body></html>
